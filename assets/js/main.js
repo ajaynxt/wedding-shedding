@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatsCounter();
   initScrollReveal();
   initProjectsGallery();
+  initPortfolioFilters();
+  initCustomCursor();
   initCameraFooter();
   initThemeToggle();
   initAIBot();
@@ -333,53 +335,152 @@ function initScrollReveal() {
    ============================================================ */
 function initProjectsGallery() {
   const PROJECTS = {
-  "royal-wedding": {
-    "title": "ROYAL WEDDING CELEBRATION",
-    "images": [
-      "assets/images/ws_photo-01.jpg",
-      "assets/images/ws_hero.jpg",
-      "assets/images/ws_photo-08.jpg",
-      "assets/images/ws_photo-09.jpg",
-      "assets/images/ws_photo-13.jpg",
-      "assets/images/ws_photo-17.jpg"
-    ]
-  },
-  "haldi-sangeet": {
-    "title": "VIBRANT HALDI & SANGEET",
-    "images": [
-      "assets/images/ws_photo-02.jpg",
-      "assets/images/ws_photo-03.jpg",
-      "assets/images/ws_photo-04.jpg",
-      "assets/images/ws_photo-05.jpg",
-      "assets/images/ws_photo-06.jpg",
-      "assets/images/ws_photo-07.jpg",
-      "assets/images/ws_photo-14.jpg",
-      "assets/images/ws_photo-15.jpg",
-      "assets/images/ws_photo-18.jpg"
-    ]
-  },
-  "pre-wedding": {
-    "title": "ROMANTIC PRE-WEDDING STORIES",
-    "images": [
-      "assets/images/ws_photo-10.jpg",
-      "assets/images/ws_photo-11.jpg",
-      "assets/images/ws_photo-12.jpg",
-      "assets/images/ws_photo-16.jpg",
-      "assets/images/ws_hero.jpg"
-    ]
-  },
-  "rituals-traditions": {
-    "title": "SACRED RITUALS & TRADITIONS",
-    "images": [
-      "assets/images/ws_photo-01.jpg",
-      "assets/images/ws_photo-04.jpg",
-      "assets/images/ws_photo-07.jpg",
-      "assets/images/ws_photo-08.jpg",
-      "assets/images/ws_photo-13.jpg",
-      "assets/images/ws_photo-18.jpg"
-    ]
-  }
-};
+    "royal-wedding": {
+      "title": "ROYAL WEDDING CELEBRATION",
+      "images": [
+        "assets/images/ws_photo-01.jpg",
+        "assets/images/ws_hero.jpg",
+        "assets/images/ws_photo-08.jpg",
+        "assets/images/ws_photo-09.jpg",
+        "assets/images/ws_photo-13.jpg",
+        "assets/images/ws_photo-17.jpg"
+      ]
+    },
+    "haldi-sangeet": {
+      "title": "VIBRANT HALDI & SANGEET CEREMONIES",
+      "images": [
+        "assets/images/ws_photo-02.jpg",
+        "assets/images/ws_photo-03.jpg",
+        "assets/images/ws_photo-04.jpg",
+        "assets/images/ws_photo-05.jpg",
+        "assets/images/ws_photo-06.jpg",
+        "assets/images/ws_photo-07.jpg",
+        "assets/images/ws_photo-14.jpg",
+        "assets/images/ws_photo-15.jpg",
+        "assets/images/ws_photo-18.jpg"
+      ]
+    },
+    "pre-wedding": {
+      "title": "ROMANTIC PRE-WEDDING & DESTINATION STORIES",
+      "images": [
+        "assets/images/ws_photo-10.jpg",
+        "assets/images/ws_photo-11.jpg",
+        "assets/images/ws_photo-12.jpg",
+        "assets/images/ws_photo-16.jpg",
+        "assets/images/ws_hero.jpg"
+      ]
+    },
+    "rituals-traditions": {
+      "title": "SACRED RITUALS, PHERAS & VIDAAI",
+      "images": [
+        "assets/images/ws_photo-01.jpg",
+        "assets/images/ws_photo-04.jpg",
+        "assets/images/ws_photo-07.jpg",
+        "assets/images/ws_photo-08.jpg",
+        "assets/images/ws_photo-13.jpg",
+        "assets/images/ws_photo-18.jpg"
+      ]
+    },
+    "pubg-esports": {
+      "title": "PUBG & ESPORTS CHAMPIONSHIP ARENA",
+      "images": [
+        "assets/images/ws_photo-09.jpg",
+        "assets/images/ws_photo-06.jpg",
+        "assets/images/ws_photo-17.jpg",
+        "assets/images/ws_photo-05.jpg",
+        "assets/images/ws_photo-02.jpg",
+        "assets/images/ws_photo-15.jpg"
+      ]
+    },
+    "lakme-fashion": {
+      "title": "LAKMÉ SALON & BRIDAL COUTURE CAMPAIGNS",
+      "images": [
+        "assets/images/ws_photo-07.jpg",
+        "assets/images/ws_photo-01.jpg",
+        "assets/images/ws_photo-08.jpg",
+        "assets/images/ws_photo-14.jpg",
+        "assets/images/ws_photo-13.jpg",
+        "assets/images/ws_photo-11.jpg"
+      ]
+    },
+    "ngo-documentary": {
+      "title": "NGO & SOCIAL IMPACT CSR DOCUMENTARIES",
+      "images": [
+        "assets/images/ws_photo-04.jpg",
+        "assets/images/ws_photo-18.jpg",
+        "assets/images/ws_photo-03.jpg",
+        "assets/images/ws_photo-05.jpg",
+        "assets/images/ws_photo-06.jpg",
+        "assets/images/ws_photo-02.jpg"
+      ]
+    },
+    "swiss-village": {
+      "title": "THE SWISS VILLAGE LUXURY RESORT CINEMATOGRAPHY",
+      "images": [
+        "assets/images/ws_photo-16.jpg",
+        "assets/images/ws_photo-12.jpg",
+        "assets/images/ws_photo-10.jpg",
+        "assets/images/ws_photo-11.jpg",
+        "assets/images/ws_hero.jpg",
+        "assets/images/ws_photo-09.jpg"
+      ]
+    },
+    "product-ecommerce": {
+      "title": "COMMERCIAL PRODUCT & E-COMMERCE CATALOGUES",
+      "images": [
+        "assets/images/ws_photo-15.jpg",
+        "assets/images/ws_photo-08.jpg",
+        "assets/images/ws_photo-02.jpg",
+        "assets/images/ws_photo-09.jpg",
+        "assets/images/ws_photo-17.jpg",
+        "assets/images/ws_photo-03.jpg"
+      ]
+    },
+    "healthcare-doctors": {
+      "title": "HEALTHCARE, CLINICS & DOCTORS MEDIA",
+      "images": [
+        "assets/images/ws_photo-03.jpg",
+        "assets/images/ws_photo-05.jpg",
+        "assets/images/ws_photo-18.jpg",
+        "assets/images/ws_photo-07.jpg",
+        "assets/images/ws_photo-04.jpg",
+        "assets/images/ws_photo-14.jpg"
+      ]
+    },
+    "iram-corporate": {
+      "title": "IRAM CORPORATE BRAND & CLIENT PRODUCTION",
+      "images": [
+        "assets/images/ws_photo-14.jpg",
+        "assets/images/ws_photo-17.jpg",
+        "assets/images/ws_photo-09.jpg",
+        "assets/images/ws_photo-01.jpg",
+        "assets/images/ws_photo-13.jpg",
+        "assets/images/ws_photo-08.jpg"
+      ]
+    },
+    "gym-fitness": {
+      "title": "GYM, ATHLETES & HIGH-ENERGY FITNESS MEDIA",
+      "images": [
+        "assets/images/ws_photo-05.jpg",
+        "assets/images/ws_photo-02.jpg",
+        "assets/images/ws_photo-06.jpg",
+        "assets/images/ws_photo-15.jpg",
+        "assets/images/ws_photo-11.jpg",
+        "assets/images/ws_photo-12.jpg"
+      ]
+    },
+    "political-campaigns": {
+      "title": "POLITICAL & PUBLIC LEADERSHIP EVENTS",
+      "images": [
+        "assets/images/ws_photo-17.jpg",
+        "assets/images/ws_photo-09.jpg",
+        "assets/images/ws_photo-14.jpg",
+        "assets/images/ws_photo-01.jpg",
+        "assets/images/ws_photo-08.jpg",
+        "assets/images/ws_photo-04.jpg"
+      ]
+    }
+  };
 
   const modal = document.getElementById('nkProjModal');
   const viewer = document.getElementById('nkProjViewer');
@@ -509,6 +610,103 @@ function initProjectsGallery() {
     }
     if (!modal.hidden && e.key === 'Escape') closeModal();
   });
+}
+
+/* ============================================================
+   5B. PORTFOLIO CATEGORY FILTER TABS (NIKHIL KAPUR STANDARD)
+   ============================================================ */
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+  const cards = document.querySelectorAll('.project-card[data-category]');
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter') || 'all';
+
+      // Update active tab button
+      filterBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Filter portfolio project cards
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const match = filter === 'all' || cat === filter;
+        if (match) {
+          card.classList.remove('is-filtered-out');
+          card.classList.remove('is-filtered-in');
+          void card.offsetWidth; // Force reflow to re-trigger smooth entrance animation
+          card.classList.add('is-filtered-in');
+        } else {
+          card.classList.remove('is-filtered-in');
+          card.classList.add('is-filtered-out');
+        }
+      });
+    });
+  });
+}
+
+/* ============================================================
+   5C. NIKHIL KAPUR SIGNATURE MAGNETIC LUXURY CURSOR
+   ============================================================ */
+function initCustomCursor() {
+  const dot = document.getElementById('nkCursorDot');
+  const ring = document.getElementById('nkCursorRing');
+  if (!dot || !ring) return;
+
+  // Touch device check
+  if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
+
+  let mouseX = -100;
+  let mouseY = -100;
+  let ringX = -100;
+  let ringY = -100;
+  let isMoving = false;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!isMoving) {
+      isMoving = true;
+      ringX = mouseX;
+      ringY = mouseY;
+    }
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    dot.classList.remove('is-hidden');
+    ring.classList.remove('is-hidden');
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    dot.classList.add('is-hidden');
+    ring.classList.add('is-hidden');
+  });
+
+  // Smooth lerp loop for outer magnetic follower ring
+  function renderCursor() {
+    ringX += (mouseX - ringX) * 0.16;
+    ringY += (mouseY - ringY) * 0.16;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  // Hover expansion on interactive elements
+  const interactiveSelector = 'a, button, [role="button"], [role="tab"], .project-card, .portfolio-filter-btn, input, select, textarea, .nk-camera-screen, .nkh__card, .nkf__key, .service-card, .package-card';
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      ring.classList.add('is-hovering');
+    }
+  }, { passive: true });
+
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      ring.classList.remove('is-hovering');
+    }
+  }, { passive: true });
 }
 
 /* ============================================================
@@ -751,11 +949,67 @@ function initAIBot() {
       `;
     }
 
-    if (q.includes('corporate') || q.includes('hospital') || q.includes('medical') || q.includes('conference') || q.includes('office') || q.includes('event')) {
+    if (q.includes('corporate') || q.includes('hospital') || q.includes('medical') || q.includes('conference') || q.includes('office') || q.includes('event') || q.includes('iram')) {
       return `
-        <p>🏢 <strong>Corporate, Hospital &amp; Institutional Events</strong></p>
-        <p style="margin-top:4px;">High-standard multi-camera coverage for medical conferences, hospital inaugurations, corporate annual meetings, seminars, and product launches with same-day highlights.</p>
-        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20corporate/hospital%20coverage." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Request Corporate Proposal &rarr;</a></p>
+        <p>🏢 <strong>Corporate, Hospital &amp; Brand Productions (IRAM)</strong></p>
+        <p style="margin-top:4px;">High-standard multi-camera coverage for corporate brand films (IRAM), medical masterclasses, hospital inaugurations, executive summits, and product launches with same-day highlights.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20corporate/brand%20coverage." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Request Corporate Proposal &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('pubg') || q.includes('esport') || q.includes('gaming') || q.includes('tournament')) {
+      return `
+        <p>🎮 <strong>PUBG &amp; Esports Arena Productions</strong></p>
+        <p style="margin-top:4px;">High-adrenaline broadcast cinematography, multi-camera live tournament production, pro-gamer stage coverage, and dynamic highlight reels for major esports championships.</p>
+        <p style="margin-top:6px;"><a href="#galleries" style="color:var(--g);font-weight:600;text-decoration:underline;">View Esports Gallery</a> or <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20Esports/PUBG%20event%20production." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Book Gaming Coverage on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('lakme') || q.includes('fashion') || q.includes('couture') || q.includes('model') || q.includes('runway') || q.includes('salon')) {
+      return `
+        <p>💄 <strong>Lakmé Salon &amp; High-Fashion Campaigns</strong></p>
+        <p style="margin-top:4px;">High-fashion editorials, bridal couture campaigns, salon lookbooks, runway cinematography, and luxury brand commercial catalogues.</p>
+        <p style="margin-top:6px;"><a href="#galleries" style="color:var(--g);font-weight:600;text-decoration:underline;">View Fashion Portfolio</a> or <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20fashion/salon%20shoots." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Inquire on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('ngo') || q.includes('csr') || q.includes('documentary') || q.includes('impact') || q.includes('social')) {
+      return `
+        <p>🤝 <strong>NGO, CSR &amp; Social Impact Documentaries</strong></p>
+        <p style="margin-top:4px;">Compelling human-interest storytelling, grassroots ground reporting, CSR foundation films, and donor presentation documentaries crafted with journalistic integrity.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20NGO/CSR%20documentary%20filmmaking." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Discuss NGO Documentary &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('swiss') || q.includes('resort') || q.includes('hotel') || q.includes('hospitality')) {
+      return `
+        <p>🏨 <strong>The Swiss Village &amp; Luxury Hospitality Cinematography</strong></p>
+        <p style="margin-top:4px;">Architectural walkthroughs, drone fly-throughs, scenic hill-station resort films, and luxury villa promotional visuals that boost direct guest bookings.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20resort/hospitality%20shoots." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Request Resort Showcase &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('gym') || q.includes('fitness') || q.includes('workout') || q.includes('athlete')) {
+      return `
+        <p>🏋️ <strong>Gym, Fitness &amp; Athlete Commercials</strong></p>
+        <p style="margin-top:4px;">High-tempo fitness centre promo reels, athlete brand endorsements, training documentaries, and dynamic fitness brand content.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20gym/fitness%20commercials." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Inquire on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('product') || q.includes('ecomm') || q.includes('commercial') || q.includes('amazon')) {
+      return `
+        <p>📦 <strong>Commercial Product &amp; E-Commerce Catalogues</strong></p>
+        <p style="margin-top:4px;">Clean white-background Amazon/Flipkart compliant shots, lifestyle contextual product photos, and 360-degree commercial brand videos.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20product/e-commerce%20shoots." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Get Product Catalog Quote &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('political') || q.includes('rally') || q.includes('campaign') || q.includes('leader')) {
+      return `
+        <p>🎙️ <strong>Political &amp; Public Leadership Media</strong></p>
+        <p style="margin-top:4px;">Full-scale public rally coverage, multi-camera live broadcast feeds, drone crowd estimates, and social media campaign clips for public leaders.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20political/public%20event%20coverage." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Connect with Lead Producer &rarr;</a></p>
       `;
     }
 

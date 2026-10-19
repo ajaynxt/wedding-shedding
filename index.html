@@ -30,6 +30,10 @@
 </head>
 <body>
 
+  <!-- Nikhil Kapur Signature Magnetic Cursor -->
+  <div class="nk-cursor-dot" id="nkCursorDot" aria-hidden="true"></div>
+  <div class="nk-cursor-ring" id="nkCursorRing" aria-hidden="true"></div>
+
   <!-- ============================================================
        SITE HEADER
        ============================================================ -->
@@ -897,24 +901,41 @@
   </section>
 
   <!-- ============================================================
-       FEATURED GALLERIES / PROJECTS (#galleries)
+       FEATURED GALLERIES / PROJECTS (#galleries) - ALL CLIENT WORKS
+       Weddings, PUBG Esports, Lakmé Fashion, NGO, Swiss Village, Commercial
        ============================================================ -->
   <section class="nk-projects-section" id="galleries">
     <div class="section-header nkx-rv">
-      <h2 class="section-heading-title">Featured Portfolios</h2>
+      <p style="font-size:12px;letter-spacing:3px;color:var(--g);text-transform:uppercase;margin-bottom:8px;">Portfolio Showcases &middot; 2015&ndash;2026</p>
+      <h2 class="section-heading-title">Featured Portfolios &amp; Productions</h2>
       <div class="section-divider"></div>
-      <p style="font-size:14px;color:var(--bd);margin-top:16px;">Tap any gallery to open high-resolution photography collections.</p>
+      <p style="font-size:14px;color:var(--bd);margin-top:16px;max-width:750px;margin-left:auto;margin-right:auto;">From royal wedding celebrations and 4K cinema films to national PUBG esports arenas, Lakmé fashion shoots, NGO impact stories, and commercial brand productions.</p>
+    </div>
+
+    <!-- Portfolio Category Filter Tabs (Nikhil Kapur Signature Filter) -->
+    <div class="portfolio-filter-bar nkx-rv" role="tablist" aria-label="Portfolio Category Filters">
+      <button class="portfolio-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+      <button class="portfolio-filter-btn" data-filter="wedding" role="tab" aria-selected="false">💍 Weddings &amp; Films</button>
+      <button class="portfolio-filter-btn" data-filter="esports" role="tab" aria-selected="false">🎮 PUBG &amp; Esports</button>
+      <button class="portfolio-filter-btn" data-filter="fashion" role="tab" aria-selected="false">💄 Lakmé Fashion</button>
+      <button class="portfolio-filter-btn" data-filter="ngo" role="tab" aria-selected="false">🤝 NGO &amp; Impact</button>
+      <button class="portfolio-filter-btn" data-filter="resorts" role="tab" aria-selected="false">🏨 Swiss Village Resort</button>
+      <button class="portfolio-filter-btn" data-filter="commercial" role="tab" aria-selected="false">📦 E-Commerce &amp; Products</button>
+      <button class="portfolio-filter-btn" data-filter="corporate" role="tab" aria-selected="false">🏢 Corporate (IRAM &amp; Doctors)</button>
+      <button class="portfolio-filter-btn" data-filter="fitness" role="tab" aria-selected="false">🏋️ Gym &amp; Fitness</button>
+      <button class="portfolio-filter-btn" data-filter="political" role="tab" aria-selected="false">🎙️ Political Events</button>
     </div>
 
     <div class="projects-grid">
-      <!-- Gallery 1: Royal Wedding Celebration -->
-      <div class="project-card nkx-rv" data-project="royal-wedding">
+      <!-- 1. Royal Wedding Celebration -->
+      <div class="project-card nkx-rv" data-category="wedding" data-project="royal-wedding">
         <div class="project-card-img">
           <img src="assets/images/ws_photo-01.jpg" alt="Royal Wedding Celebration Gallery" loading="lazy">
+          <span class="project-card-tag">💍 Royal Weddings</span>
         </div>
         <div class="project-card-content">
           <h3 class="project-card-title">Royal Wedding Celebration</h3>
-          <p class="project-card-sub">Grand Ceremony &amp; Pheras &middot; Tap to View Gallery</p>
+          <p class="project-card-sub">Grand Ceremony &amp; Sacred Pheras &middot; High-Res Collection</p>
           <div class="project-btn-wrap">
             <span class="btn-view-project">
               View Portfolio
@@ -924,14 +945,15 @@
         </div>
       </div>
 
-      <!-- Gallery 2: Vibrant Haldi & Sangeet -->
-      <div class="project-card nkx-rv" data-project="haldi-sangeet">
+      <!-- 2. Vibrant Haldi & Sangeet -->
+      <div class="project-card nkx-rv" data-category="wedding" data-project="haldi-sangeet">
         <div class="project-card-img">
           <img src="assets/images/ws_photo-02.jpg" alt="Vibrant Haldi & Sangeet Gallery" loading="lazy">
+          <span class="project-card-tag">💍 Pre-Wedding Rituals</span>
         </div>
         <div class="project-card-content">
           <h3 class="project-card-title">Vibrant Haldi &amp; Sangeet</h3>
-          <p class="project-card-sub">Turmeric Splashes &amp; Celebration &middot; Tap to View Gallery</p>
+          <p class="project-card-sub">Turmeric Splashes &amp; Celebration &middot; High-Res Collection</p>
           <div class="project-btn-wrap">
             <span class="btn-view-project">
               View Portfolio
@@ -941,14 +963,15 @@
         </div>
       </div>
 
-      <!-- Gallery 3: Romantic Pre-Wedding Stories -->
-      <div class="project-card nkx-rv" data-project="pre-wedding">
+      <!-- 3. Romantic Pre-Wedding -->
+      <div class="project-card nkx-rv" data-category="wedding" data-project="pre-wedding">
         <div class="project-card-img">
           <img src="assets/images/ws_photo-10.jpg" alt="Romantic Pre-Wedding Stories Gallery" loading="lazy">
+          <span class="project-card-tag">✨ Outdoor Stories</span>
         </div>
         <div class="project-card-content">
           <h3 class="project-card-title">Romantic Pre-Wedding</h3>
-          <p class="project-card-sub">Outdoor &amp; Scenic Narratives &middot; Tap to View Gallery</p>
+          <p class="project-card-sub">Scenic Narratives &amp; Drone Teasers &middot; High-Res Collection</p>
           <div class="project-btn-wrap">
             <span class="btn-view-project">
               View Portfolio
@@ -958,14 +981,15 @@
         </div>
       </div>
 
-      <!-- Gallery 4: Sacred Rituals & Traditions -->
-      <div class="project-card nkx-rv" data-project="rituals-traditions">
+      <!-- 4. Sacred Rituals & Traditions -->
+      <div class="project-card nkx-rv" data-category="wedding" data-project="rituals-traditions">
         <div class="project-card-img">
           <img src="assets/images/ws_photo-04.jpg" alt="Sacred Rituals & Traditions Gallery" loading="lazy">
+          <span class="project-card-tag">🪔 Vedic Traditions</span>
         </div>
         <div class="project-card-content">
           <h3 class="project-card-title">Sacred Rituals &amp; Traditions</h3>
-          <p class="project-card-sub">Vedic Customs &amp; Blessings &middot; Tap to View Gallery</p>
+          <p class="project-card-sub">Customs, Pheras &amp; Blessings &middot; High-Res Collection</p>
           <div class="project-btn-wrap">
             <span class="btn-view-project">
               View Portfolio
@@ -973,6 +997,185 @@
             </span>
           </div>
         </div>
+      </div>
+
+      <!-- 5. PUBG & Esports Gaming Tournaments (pub g folder) -->
+      <div class="project-card nkx-rv" data-category="esports" data-project="pubg-esports">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-05.jpg" alt="PUBG Esports Tournaments & Gaming Events" loading="lazy">
+          <span class="project-card-tag" style="background:#0F172A;color:#38BDF8;border-color:rgba(56,189,248,0.4);">🎮 Esports &amp; Gaming</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">PUBG &amp; Esports Tournaments</h3>
+          <p class="project-card-sub">Arena Live Coverage, Creator Highlights &amp; Gaming Cinematics</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Esports Showcase
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Lakmé Fashion & Beauty Campaigns (lakeme folder) -->
+      <div class="project-card nkx-rv" data-category="fashion" data-project="lakme-fashion">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-14.jpg" alt="Lakmé Fashion & Beauty Campaigns" loading="lazy">
+          <span class="project-card-tag" style="background:#831843;color:#FBCFE8;border-color:rgba(251,207,232,0.4);">💄 Lakmé Fashion</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Lakmé Fashion &amp; Beauty</h3>
+          <p class="project-card-sub">Runway Couture, Bridal Styling &amp; Commercial Cosmetics</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Fashion Gallery
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. NGO & Social Impact Documentaries (NGO folder) -->
+      <div class="project-card nkx-rv" data-category="ngo" data-project="ngo-documentary">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-07.jpg" alt="NGO & Social Impact Documentaries" loading="lazy">
+          <span class="project-card-tag" style="background:#064E3B;color:#6EE7B7;border-color:rgba(110,231,183,0.4);">🤝 NGO &amp; Impact</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">NGO &amp; Social Impact Documentaries</h3>
+          <p class="project-card-sub">Human Stories, CSR Initiatives &amp; Foundation Visuals</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Documentary Work
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. The Swiss Village Luxury Resort (The Swiss Village-Edited folder) -->
+      <div class="project-card nkx-rv" data-category="resorts" data-project="swiss-village">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-12.jpg" alt="The Swiss Village Resort & Hospitality Cinematography" loading="lazy">
+          <span class="project-card-tag" style="background:#1E293B;color:#FDE68A;border-color:rgba(253,230,138,0.4);">🏨 Luxury Resorts</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">The Swiss Village Luxury Resort</h3>
+          <p class="project-card-sub">Hospitality Drone Films, Scenic Stays &amp; Architectural Cinematography</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Resort Films
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Product & E-Commerce Commercials (Product-Ecommers folder) -->
+      <div class="project-card nkx-rv" data-category="commercial" data-project="product-ecommerce">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-09.jpg" alt="E-Commerce & Product Photography by Wedding Shedding" loading="lazy">
+          <span class="project-card-tag" style="background:#18181B;color:#F43F5E;border-color:rgba(244,63,94,0.4);">📦 Product &amp; E-Com</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Product &amp; E-Commerce Commercials</h3>
+          <p class="project-card-sub">Catalog Shoots, D2C Advertising &amp; Studio Product Reels</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Commercials
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Doctors & Healthcare Corporate (Docters 01 folder) -->
+      <div class="project-card nkx-rv" data-category="corporate" data-project="healthcare-doctors">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-08.jpg" alt="Doctors & Healthcare Corporate Productions" loading="lazy">
+          <span class="project-card-tag" style="background:#0F766E;color:#99F6E4;border-color:rgba(153,246,228,0.4);">🏥 Medical &amp; Health</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Doctors &amp; Healthcare Corporate</h3>
+          <p class="project-card-sub">Clinical Excellence, Doctor Profiles &amp; Medical Documentaries</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Medical Series
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. IRAM Corporate & Arbitration Masterclass (final iram & Arbitration course) -->
+      <div class="project-card nkx-rv" data-category="corporate" data-project="iram-corporate">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-15.jpg" alt="IRAM Corporate Brand & Arbitration Course Productions" loading="lazy">
+          <span class="project-card-tag" style="background:#312E81;color:#C7D2FE;border-color:rgba(199,210,254,0.4);">🏢 IRAM &amp; Arbitration</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">IRAM Corporate &amp; Legal Masterclass</h3>
+          <p class="project-card-sub">Brand Films, Arbitration Masterclasses &amp; Enterprise Video</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Corporate Work
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Gym, Fitness & Athletes (jym final folder) -->
+      <div class="project-card nkx-rv" data-category="fitness" data-project="gym-fitness">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-16.jpg" alt="Gym, Fitness & Bodybuilding Commercials" loading="lazy">
+          <span class="project-card-tag" style="background:#7F1D1D;color:#FECACA;border-color:rgba(254,202,202,0.4);">🏋️ Gym &amp; Fitness</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Gym &amp; Fitness Athlete Films</h3>
+          <p class="project-card-sub">High-Energy Workouts, Fitness Campaigns &amp; Athlete Reels</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Fitness Reels
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Political Campaigns & Public Events (Politicals folder) -->
+      <div class="project-card nkx-rv" data-category="political" data-project="political-campaigns">
+        <div class="project-card-img">
+          <img src="assets/images/ws_photo-17.jpg" alt="Political Campaigns & Public Events Coverage" loading="lazy">
+          <span class="project-card-tag" style="background:#78350F;color:#FDE68A;border-color:rgba(253,230,138,0.4);">🎙️ Politicals</span>
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Political &amp; Public Leadership Events</h3>
+          <p class="project-card-sub">Mega Rallies, State Conventions &amp; Official Campaign Media</p>
+          <div class="project-btn-wrap">
+            <span class="btn-view-project">
+              View Political Coverage
+              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Drive Cloud Archive Callout -->
+    <div class="client-drive-banner nkx-rv" style="max-width:1240px;margin:50px auto 0;background:linear-gradient(135deg, #141312 0%, #0A0908 100%);border:1px solid rgba(181,138,28,0.35);border-radius:16px;padding:36px clamp(20px, 4vw, 44px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:0 12px 32px rgba(0,0,0,0.4);">
+      <div style="max-width:720px;">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E2B94A;margin-bottom:8px;">
+          ✦ Studio Master Cloud Archives ✦
+        </span>
+        <h3 style="font-family:var(--font-serif);font-size:clamp(20px, 2.2vw, 28px);font-weight:600;color:#FFFFFF;margin:0 0 8px 0;">Looking for Raw Uncompressed 4K Footages &amp; Full Albums?</h3>
+        <p style="font-family:var(--font-sans);font-size:13.5px;color:#D0CCC5;line-height:1.6;margin:0;">Explore verified client folders across Weddings, PUBG Esports, Lakmé Fashion, Swiss Village, NGOs and Commercials directly on Google Drive.</p>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="https://drive.google.com/drive/folders/1_hRyhHuD2pvyBWiQOAsnWqwtx54gyY80" target="_blank" rel="noopener" class="btn-gold-solid" style="padding:14px 28px;border-radius:30px;font-size:12.5px;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          Open Client Google Drive &rarr;
+        </a>
       </div>
     </div>
   </section>
@@ -1235,7 +1438,13 @@
           <span class="nk-proj-modal__title" id="nkProjTitle">Wedding Collection</span>
           <span class="nk-proj-modal__count"></span>
         </div>
-        <button class="nk-proj-modal__close" data-proj-close aria-label="Close gallery">&times;</button>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <a href="https://drive.google.com/drive/folders/1_hRyhHuD2pvyBWiQOAsnWqwtx54gyY80" target="_blank" rel="noopener" class="nk-proj-modal__drive-btn" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg, #1A1715, #000);color:#E2B94A;border:1px solid rgba(181,138,28,0.5);border-radius:20px;padding:6px 14px;font-size:11.5px;font-weight:600;text-decoration:none;letter-spacing:0.8px;transition:all 0.25s ease;">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            Raw 4K Cloud Archives &rarr;
+          </a>
+          <button class="nk-proj-modal__close" data-proj-close aria-label="Close gallery">&times;</button>
+        </div>
       </div>
       <div class="nk-proj-modal__grid"></div>
     </div>
@@ -1282,7 +1491,10 @@
           <div class="ai-chips-container" id="aiQuickChips">
             <button class="ai-chip-btn" data-query="wedding">💍 Wedding Shoots</button>
             <button class="ai-chip-btn" data-query="prewedding">✨ Pre-Wedding &amp; Drone</button>
-            <button class="ai-chip-btn" data-query="baby">👶 Baby &amp; Family</button>
+            <button class="ai-chip-btn" data-query="esports">🎮 PUBG &amp; Esports</button>
+            <button class="ai-chip-btn" data-query="fashion">💄 Lakmé Fashion</button>
+            <button class="ai-chip-btn" data-query="ngo">🤝 NGO &amp; Documentaries</button>
+            <button class="ai-chip-btn" data-query="swiss">🏨 Swiss Village Resort</button>
             <button class="ai-chip-btn" data-query="corporate">🏢 Corporate &amp; Hospital</button>
             <button class="ai-chip-btn" data-query="albums">📖 Premium Albums</button>
             <button class="ai-chip-btn" data-query="whatsapp">💬 Chat on WhatsApp</button>
