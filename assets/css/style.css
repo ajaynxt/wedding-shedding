@@ -6,23 +6,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Bright Luxury Theme Colors */
+  /* Royal Gold Accents */
   --g: #B58A1C;              /* Royal Warm Gold */
-  --gh: #946E13;             /* Gold Hover / Deep Gold */
-  --gd: #7D5D0E;             /* Dark Gold */
+  --gh: #8C6514;             /* Deep Gold Hover */
+  --gd: #6E4E0C;             /* Dark Gold */
   --gold-tint: rgba(181, 138, 28, 0.08);
   --gold-glow: rgba(181, 138, 28, 0.2);
   
-  --bg: #FAF7F2;             /* Soft Ivory / Silk background */
-  --bg-alt: #F4EFEA;         /* Champagne Cream secondary */
+  /* Bright Crisp Light Mode */
+  --bg: #FFFFFF;             /* Pure Crisp White background */
+  --bg-alt: #F8F7F4;         /* Soft ivory cream secondary */
   --bg-card: #FFFFFF;        /* Crisp White Card */
-  --bg-card-hover: #FFFDF9;
+  --bg-card-hover: #FAF9F6;
   
-  --iv: #1A1715;             /* Deep Espresso / Rich Black for High-Contrast Headings */
-  --bd: #544C45;             /* Warm Charcoal for body readability */
-  --t3: #8C8276;             /* Muted Warm Gray for captions */
-  --ln: #E6DED5;             /* Refined Soft Cream Border */
-  --ln-dark: #D4C9BD;
+  /* High-Contrast Black Typography */
+  --iv: #000000;             /* Pure Solid Black for Headings, Titles & Brand */
+  --bd: #181614;             /* Solid Deep Black for Paragraphs & Bullet Points */
+  --t3: #524B44;             /* Clear Dark Gray for Subtitles & Meta */
+  --ln: #E5DFD6;             /* Clean hairline border */
+  --ln-dark: #D4CCC0;
   
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -32,57 +34,649 @@
 }
 
 /* ============================================================
-   DARK / NOIR LUXURY MODE PALETTE
+   DARK / NOIR OBSIDIAN LUXURY MODE PALETTE
    ============================================================ */
 body.theme-dark {
-  --bg: #0B0A09;             /* Luxury Obsidian Noir */
-  --bg-alt: #14120F;         /* Dark Espresso secondary */
-  --bg-card: #181613;        /* Dark elevation card */
-  --bg-card-hover: #201D19;
+  /* Pure Deep Noir Obsidian */
+  --bg: #000000;             /* Pure Black background */
+  --bg-alt: #0B0A09;         /* Dark Black secondary */
+  --bg-card: #141312;        /* Dark elevation card */
+  --bg-card-hover: #1C1B19;
   
-  --iv: #F4EFEA;             /* Champagne White for headings */
-  --bd: #B5ACA0;             /* Muted Warm Stone for readable text */
-  --t3: #8C8276;
-  --ln: rgba(230, 222, 213, 0.12); /* Soft hairline dark borders */
-  --ln-dark: rgba(230, 222, 213, 0.22);
+  /* High-Contrast White Typography */
+  --iv: #FFFFFF;             /* Pure Solid White for Headings, Titles & Brand */
+  --bd: #FFFFFF;             /* Pure Solid White for Paragraphs & Bullet Points */
+  --t3: #D0CCC5;             /* Bright Readable Light Gray for Captions/Meta */
+  --ln: rgba(255, 255, 255, 0.16); /* Clean hairline dark borders */
+  --ln-dark: rgba(255, 255, 255, 0.28);
   
-  --g: #D4AF37;              /* Lighter Imperial Gold */
-  --gh: #F3E5AB;             /* Gold Hover */
-  --gold-tint: rgba(212, 175, 55, 0.12);
-  --gold-glow: rgba(212, 175, 55, 0.35);
+  --g: #E2B94A;              /* Radiant Imperial Gold */
+  --gh: #F6D785;             /* Gold Hover */
+  --gold-tint: rgba(226, 185, 74, 0.14);
+  --gold-glow: rgba(226, 185, 74, 0.4);
 }
 
 /* Smooth Theme Transitions */
-body, .site-header, .service-card, .package-card, .custom-packages-banner, .about-section, .nkf {
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+body, .site-header, .service-card, .package-card, .project-card, .custom-packages-banner, .about-section, .nkf, .nkf__cam, .nk-proj-modal__panel {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Header & Navigation in Dark Mode */
 body.theme-dark .site-header {
-  background: rgba(11, 10, 9, 0.92);
+  background: rgba(0, 0, 0, 0.94);
   border-bottom: 1px solid var(--ln);
 }
-
 body.theme-dark .site-header.is-scrolled {
-  background: rgba(11, 10, 9, 0.98);
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+body.theme-dark .nav-link {
+  color: #FFFFFF;
+}
+body.theme-dark .nav-link:hover,
+body.theme-dark .nav-item:hover > .nav-link {
+  color: var(--g);
+}
+body.theme-dark .nav-dropdown {
+  background: #141312;
+  border-color: var(--ln);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
+}
+body.theme-dark .nav-dropdown a {
+  color: #FFFFFF;
+}
+body.theme-dark .nav-dropdown a:hover {
+  background: var(--gold-tint);
+  color: var(--g);
+}
+body.theme-dark .header-action-btn,
+body.theme-dark .header-wa-btn {
+  background: #141312;
+  color: #FFFFFF;
+  border-color: var(--ln);
+}
+body.theme-dark .header-wa-btn:hover {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: #25D366;
+  color: #25D366;
+}
+
+/* Mobile Drawer in Dark Mode */
+body.theme-dark .mobile-drawer {
+  background: #080808;
+  border-right: 1px solid var(--ln);
+}
+body.theme-dark .mobile-drawer-header {
+  border-bottom-color: var(--ln);
+}
+body.theme-dark .mobile-drawer-close {
+  color: #FFFFFF;
+}
+body.theme-dark .mobile-nav-item a {
+  color: #FFFFFF;
+}
+body.theme-dark .mobile-nav-sublist a {
+  color: #E0E0E0;
+}
+
+/* Hero Carousel & Controls in Dark Mode */
+body.theme-dark .nkh {
+  background: #000000;
+}
+body.theme-dark .nkh__btn {
+  background: #181614;
+  color: #FFFFFF;
+  border-color: var(--ln);
+}
+body.theme-dark .nkh__btn:hover {
+  background: var(--g);
+  color: #000000;
+  border-color: var(--g);
+}
+
+/* Stats Section in Dark Mode */
+body.theme-dark .nkx-stats {
+  background: #080808;
+  border-color: var(--ln);
+}
+body.theme-dark .nkx-stats__label {
+  color: #FFFFFF;
+}
+body.theme-dark .nkx-stats__sub {
+  color: #FFFFFF;
+}
+
+/* Awards Banner in Dark Mode */
+body.theme-dark .awards-banner {
+  background: #0E0D0C;
+  border-color: var(--ln);
+}
+body.theme-dark .award-text h4 {
+  color: #FFFFFF;
+}
+body.theme-dark .award-text p {
+  color: #FFFFFF;
+}
+body.theme-dark .award-icon-box {
+  background: rgba(226, 185, 74, 0.12);
+  border-color: var(--g);
+  color: var(--g);
+}
+
+/* Featured Showcase in Dark Mode */
+body.theme-dark .nkx-feat {
+  background: #000000;
+}
+body.theme-dark .nkx-feat__inset {
+  border-color: #000000;
+  background: #141312;
+}
+body.theme-dark .nkx-feat__tags li {
+  color: #FFFFFF;
+  border-top-color: var(--ln);
+}
+body.theme-dark .nkx-feat__note {
+  color: #FFFFFF;
+}
+body.theme-dark .nkx-feat__note small {
+  color: var(--t3);
+}
+
+/* Services Section in Dark Mode */
+body.theme-dark .nk-services-section {
+  background: #080808;
+  border-top-color: var(--ln);
+}
+body.theme-dark .service-card {
+  background: #141312;
+  border-color: var(--ln);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
-
-body.theme-dark .service-card,
-body.theme-dark .package-card {
-  background: var(--bg-card);
-  border-color: var(--ln);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+body.theme-dark .service-card:hover {
+  border-color: var(--g);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+}
+body.theme-dark .service-card-title {
+  color: #FFFFFF;
+}
+body.theme-dark .service-card-desc {
+  color: #FFFFFF;
+}
+body.theme-dark .service-items-list {
+  border-top-color: var(--ln);
+}
+body.theme-dark .service-items-list li {
+  color: #FFFFFF;
+}
+body.theme-dark .service-note {
+  color: #F6D785;
+}
+body.theme-dark .service-card-link {
+  color: var(--g);
 }
 
+/* Customized Packages Banner in Dark Mode */
 body.theme-dark .custom-packages-banner {
-  background: linear-gradient(135deg, #181613 0%, #12100E 100%);
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, #141312 0%, #0A0A0A 100%);
+  border-color: rgba(226, 185, 74, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+body.theme-dark .custom-pkg-title {
+  color: #FFFFFF;
+}
+body.theme-dark .custom-pkg-desc {
+  color: #FFFFFF;
 }
 
-body.theme-dark .mobile-drawer {
-  background: #12100E;
-  border-right: 1px solid var(--ln);
+/* Packages Section in Dark Mode */
+body.theme-dark .nk-packages-section {
+  background: #000000;
+  border-top-color: var(--ln);
+}
+body.theme-dark .package-card {
+  background: #141312;
+  border-color: var(--ln);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+body.theme-dark .package-card.is-featured {
+  background: #1A1917;
+  border-color: var(--g);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+}
+body.theme-dark .package-title {
+  color: #FFFFFF;
+}
+body.theme-dark .package-desc {
+  color: #FFFFFF;
+  border-bottom-color: var(--ln);
+}
+body.theme-dark .package-features li {
+  color: #FFFFFF;
+}
+
+/* Portfolios / Projects in Dark Mode */
+body.theme-dark .nk-projects-section {
+  background: #080808;
+  border-top-color: var(--ln);
+}
+body.theme-dark .project-card {
+  background: #141312;
+  border-color: var(--ln);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+body.theme-dark .project-card:hover {
+  border-color: var(--g);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8);
+}
+body.theme-dark .project-card-title {
+  color: #FFFFFF;
+}
+body.theme-dark .project-card-sub {
+  color: var(--g);
+}
+body.theme-dark .btn-view-project {
+  color: #FFFFFF;
+}
+body.theme-dark .btn-view-project:hover {
+  color: var(--g);
+}
+
+/* About Us in Dark Mode */
+body.theme-dark .nk-about-section {
+  background: #000000;
+  border-top-color: var(--ln);
+  border-bottom-color: var(--ln);
+}
+body.theme-dark .about-portrait {
+  border-color: var(--ln);
+}
+body.theme-dark .about-bio h2 {
+  color: #FFFFFF;
+}
+body.theme-dark .about-bio p {
+  color: #FFFFFF;
+}
+body.theme-dark .about-highlights {
+  border-left-color: var(--ln);
+}
+body.theme-dark .about-highlight-item {
+  color: #FFFFFF;
+}
+
+/* CTA & Policies / Appendix in Dark Mode */
+body.theme-dark .nk-cta-section {
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(226, 185, 74, 0.1), transparent 70%), #000000;
+}
+body.theme-dark .nk-cta-heading {
+  color: #FFFFFF;
+}
+body.theme-dark .nk-appendix {
+  background: #080808;
+  border-top-color: var(--ln);
+}
+body.theme-dark .nk-appendix h2 {
+  color: #FFFFFF;
+}
+body.theme-dark .nk-appendix p {
+  color: #FFFFFF;
+}
+
+/* Retro Camera Footer in Dark Mode */
+body.theme-dark .nkf {
+  background: #040404;
+  color: #FFFFFF;
+  border-top-color: var(--ln);
+}
+body.theme-dark .nkf__cam {
+  background: #100F0E;
+  border-color: var(--ln);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+}
+body.theme-dark .nkf__hump .hb { fill: #1C1B19; stroke: #2D2B28; }
+body.theme-dark .nkf__hump .cv { fill: #161514; }
+body.theme-dark .nkf__hump .shoe { fill: #242220; stroke: #33302C; }
+body.theme-dark .nkf__hump .cup { fill: #100F0E; stroke: #2D2B28; }
+body.theme-dark .nkf__hump .vf { fill: #000000; stroke: #262421; }
+body.theme-dark .nkf__shutter {
+  background: #2A2826;
+  border-color: #3D3A36;
+}
+body.theme-dark .nkf__b,
+body.theme-dark .nkf__arr,
+body.theme-dark .nkf__ic {
+  background: #1C1B19;
+  color: #FFFFFF;
+  border-color: var(--ln);
+}
+body.theme-dark .nkf__b:hover,
+body.theme-dark .nkf__arr:hover {
+  background: #282623;
+  border-color: var(--g);
+  color: var(--g);
+}
+body.theme-dark .nkf__ic:hover {
+  background: var(--gold-tint);
+  border-color: var(--g);
+  color: var(--g);
+}
+body.theme-dark .nkf__name {
+  color: #FFFFFF;
+}
+body.theme-dark .nkf__tag {
+  color: #FFFFFF;
+}
+body.theme-dark .nkf__menus {
+  border-top-color: var(--ln);
+}
+body.theme-dark .nkf__h {
+  color: #FFFFFF;
+}
+body.theme-dark .nkf__menu a {
+  color: #FFFFFF;
+}
+body.theme-dark .nkf__menu a:hover {
+  color: var(--g);
+}
+body.theme-dark .nkf__base {
+  border-top-color: var(--ln);
+  color: #B5ACA0;
+}
+body.theme-dark .nkf__wm {
+  color: var(--g);
+}
+
+/* Modal Gallery in Dark Mode */
+body.theme-dark .nk-proj-modal__panel {
+  background: #121110;
+  border-color: var(--ln);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.85);
+}
+body.theme-dark .nk-proj-modal__bar {
+  background: #181715;
+  border-bottom-color: var(--ln);
+}
+body.theme-dark .nk-proj-modal__title {
+  color: #FFFFFF;
+}
+body.theme-dark .nk-proj-modal__close {
+  background: #22201D;
+  color: #FFFFFF;
+  border-color: var(--ln);
+}
+body.theme-dark .nk-proj-modal__close:hover {
+  border-color: var(--g);
+  color: var(--g);
+  background: var(--gold-tint);
+}
+body.theme-dark .nk-proj-col a {
+  border-color: var(--ln);
+}
+
+/* Buttons in Dark Mode */
+body.theme-dark .btn-outline {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF !important;
+  background: transparent;
+}
+body.theme-dark .btn-outline:hover {
+  border-color: var(--g);
+  color: var(--g) !important;
+  background: var(--gold-tint);
+}
+body.theme-dark .btn-gold-outline {
+  background: #141312;
+  border-color: var(--g);
+  color: var(--g);
+}
+body.theme-dark .btn-gold-outline:hover {
+  background: var(--g);
+  color: #000000;
+}
+body.theme-dark .btn-gold {
+  background: var(--g);
+  color: #000000 !important;
+  font-weight: 700;
+}
+body.theme-dark .btn-gold:hover {
+  background: var(--gh);
+  color: #000000 !important;
+}
+body.theme-dark .btn-gold-solid {
+  background: var(--g);
+  color: #000000;
+  font-weight: 700;
+}
+body.theme-dark .btn-gold-solid:hover {
+  background: var(--gh);
+  color: #000000;
+}
+body.theme-dark .package-badge {
+  background: var(--g);
+  color: #000000;
+  font-weight: 800;
+}
+
+/* ============================================================
+   HIGH-CONTRAST HEADINGS & TEXT RULES (LIGHT & DARK DUAL MODE)
+   "Jaha white bg ho vaha black text, jaha black bg ho vaha white text, icon bhi dikhe heding bhi"
+   ============================================================ */
+
+/* LIGHT MODE: PURE SOLID BLACK HEADINGS & SHARP BLACK BODY TEXT */
+h1, h2, h3, h4, h5, h6,
+.section-heading-title,
+.service-card-title,
+.custom-pkg-title,
+.package-title,
+.project-card-title,
+.about-bio h2,
+.nk-cta-heading,
+.nkf__name,
+.nkf__h,
+.nk-proj-modal__title,
+.policy-card-title,
+.brand-title {
+  color: #000000;
+  font-weight: 700;
+}
+
+p,
+.service-card-desc,
+.custom-pkg-desc,
+.package-desc,
+.project-card-sub,
+.about-bio p,
+.nk-appendix p,
+.award-text p,
+.nkf__tag,
+.nkx-feat__lead,
+.nkx-stats__sub,
+.policy-card-desc {
+  color: #181614;
+}
+
+.service-items-list li,
+.package-features li,
+.nkx-feat__tags li,
+.about-highlight-item,
+.banner-features li {
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Light Mode Icons: 100% Crisp Visible Black */
+.nav-link svg.caret {
+  fill: #000000;
+}
+.service-card-link svg {
+  fill: #000000;
+}
+.package-features li svg {
+  fill: #000000;
+}
+.btn-view-project svg {
+  fill: #000000;
+}
+.about-highlight-item svg {
+  fill: #000000;
+}
+.header-action-btn svg {
+  fill: #000000;
+}
+.theme-toggle-btn svg {
+  fill: #000000;
+}
+.mobile-menu-toggle svg {
+  stroke: #000000;
+}
+.nkh__btn svg {
+  fill: #000000;
+}
+.nkf__arr svg {
+  fill: #000000;
+}
+.nkf__b svg {
+  fill: #000000;
+}
+.nkf__ic svg {
+  stroke: #000000;
+}
+.nkf__ic svg.fill {
+  fill: #000000;
+  stroke: none;
+}
+.nkf__ar {
+  stroke: #000000;
+}
+
+/* Policy Card Styles (Light & Dark) */
+.policy-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--ln);
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+.policy-card:hover {
+  border-color: var(--g);
+  transform: translateY(-3px);
+}
+.policy-card-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.policy-card-desc {
+  font-size: 13.5px;
+  color: #181614;
+  line-height: 1.65;
+}
+
+/* DARK MODE: PURE SOLID WHITE HEADINGS, TEXT & ICONS */
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6,
+body.theme-dark .section-heading-title,
+body.theme-dark .service-card-title,
+body.theme-dark .custom-pkg-title,
+body.theme-dark .package-title,
+body.theme-dark .project-card-title,
+body.theme-dark .about-bio h2,
+body.theme-dark .nk-cta-heading,
+body.theme-dark .nkf__name,
+body.theme-dark .nkf__h,
+body.theme-dark .nk-proj-modal__title,
+body.theme-dark .policy-card-title,
+body.theme-dark .brand-title {
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+body.theme-dark p,
+body.theme-dark .service-card-desc,
+body.theme-dark .custom-pkg-desc,
+body.theme-dark .package-desc,
+body.theme-dark .project-card-sub,
+body.theme-dark .about-bio p,
+body.theme-dark .nk-appendix p,
+body.theme-dark .award-text p,
+body.theme-dark .nkf__tag,
+body.theme-dark .nkx-feat__lead,
+body.theme-dark .nkx-stats__sub,
+body.theme-dark .policy-card-desc {
+  color: #FFFFFF !important;
+}
+
+body.theme-dark .service-items-list li,
+body.theme-dark .package-features li,
+body.theme-dark .nkx-feat__tags li,
+body.theme-dark .about-highlight-item,
+body.theme-dark .banner-features li {
+  color: #FFFFFF !important;
+}
+
+/* Dark Mode Icons: 100% Crisp Visible White */
+body.theme-dark .nav-link svg.caret {
+  fill: #FFFFFF;
+}
+body.theme-dark .service-card-link svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .package-features li svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .btn-view-project svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .about-highlight-item svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .header-action-btn svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .mobile-menu-toggle svg {
+  stroke: #FFFFFF;
+}
+body.theme-dark .nkh__btn svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .nkf__arr svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .nkf__b svg {
+  fill: #FFFFFF;
+}
+body.theme-dark .nkf__ic svg {
+  stroke: #FFFFFF;
+}
+body.theme-dark .nkf__ic svg.fill {
+  fill: #FFFFFF;
+  stroke: none;
+}
+body.theme-dark .nkf__ar {
+  stroke: #FFFFFF;
+}
+
+body.theme-dark .policy-card {
+  background: #141312;
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+body.theme-dark .policy-card:hover {
+  border-color: var(--g);
+}
+body.theme-dark .policy-card-title {
+  color: #FFFFFF !important;
+}
+body.theme-dark .policy-card-desc {
+  color: #FFFFFF !important;
 }
 
 /* Logo Swap for Light and Dark Modes */
