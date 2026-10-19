@@ -3652,41 +3652,54 @@ body.theme-dark .nkf__wm a:hover {
 /* ============================================================
    RESPONSIVE DESIGN (TABLET & MOBILE)
    ============================================================ */
+/* Global Viewport Guard against Horizontal Overflow */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
-  .site-header { padding: 0 24px; }
+  .site-header { padding: 0 20px; }
   .main-nav { display: none; }
   .mobile-menu-toggle { display: block; }
-  
+
   .nkx-stats__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .nkx-feat__media {
     grid-column: 1 / span 12;
-    margin: 0 22px 88px 0;
+    margin: 0 0 48px 0;
   }
   .nkx-feat__body {
     grid-column: 1 / span 12;
-    max-width: 620px;
+    max-width: 100%;
+  }
+  .nkx-feat__frame {
+    display: none !important;
   }
   .nkx-feat__inset {
-    right: -4px;
-    width: 30%;
-    bottom: -48px;
+    right: 4px;
+    width: 32%;
+    bottom: -32px;
   }
-  
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
-  
+
   .packages-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
-  
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
-  
+
   .nk-about-wrap {
     grid-template-columns: 1fr;
     text-align: left;
@@ -3697,7 +3710,7 @@ body.theme-dark .nkf__wm a:hover {
     padding-left: 0;
     padding-top: 24px;
   }
-  
+
   .nkf__main {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -3712,24 +3725,386 @@ body.theme-dark .nkf__wm a:hover {
 }
 
 @media (max-width: 768px) {
-  .site-header { height: 70px; padding: 0 20px; }
-  .nkh { padding-top: 90px; }
-  .nkh__stage { height: 440px; }
-  .nkh__item { flex: 0 0 75vw !important; }
-  
-  .nkx-stats { padding: 40px 20px; }
-  .nkx-stats__grid { grid-template-columns: 1fr; gap: 30px; }
-  
-  .services-grid { grid-template-columns: 1fr; }
-  .packages-grid { grid-template-columns: 1fr; }
-  
-  .nk-proj-modal__grid { grid-template-columns: 1fr; }
-  .nkf__menus { grid-template-columns: 1fr; }
-  .nkf__base { flex-direction: column; gap: 12px; text-align: center; }
-  
+  /* 1. Header & Navigation */
+  .site-header {
+    height: 66px;
+    padding: 0 16px;
+  }
+  .site-logo img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .site-logo .brand-title {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .site-logo .brand-sub {
+    font-size: 8.5px;
+    letter-spacing: 1.5px;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .header-action-btn {
+    display: none !important;
+  }
+  .header-wa-btn {
+    padding: 7px 12px;
+    font-size: 11px;
+    gap: 5px;
+  }
+  .header-wa-btn span {
+    display: inline;
+  }
+  .theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* 2. Hero Carousel (.nkh) */
+  .nkh {
+    padding-top: 76px;
+    padding-bottom: 24px;
+  }
+  .nkh__stage {
+    height: 480px;
+    max-width: 100vw;
+  }
+  .nkh__list {
+    padding: 0 16px;
+    gap: 14px;
+  }
+  .nkh__item {
+    flex: 0 0 calc(100vw - 44px) !important;
+    max-width: 360px;
+    height: 92%;
+  }
+  .nkh__item:nth-child(5),
+  .nkh__item.is-hot {
+    flex: 0 0 calc(100vw - 44px) !important;
+  }
+  .nkh__body {
+    padding: 24px 20px;
+  }
+  .nkh__name {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .nkh__desc {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  .nkh__controls {
+    padding: 0 16px;
+    margin-top: 14px;
+  }
+
+  /* 3. Stats Counter (.nkx-stats) */
+  .nkx-stats {
+    padding: 30px 16px;
+  }
+  .nkx-stats__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 0;
+  }
+  .stat-card {
+    padding: 16px 10px;
+    border-radius: 8px;
+  }
+  .stat-num {
+    font-size: 32px;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  /* 4. Awards Banner */
+  .awards-banner {
+    padding: 40px 16px;
+  }
+  .awards-section-title {
+    font-size: 22px;
+  }
+  .awards-section-subtitle {
+    font-size: 13px;
+  }
   .awards-wrap {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .award-item {
+    padding: 18px 16px;
+  }
+
+  /* 5. Signature Showcase (.nkx-feat) */
+  .nkx-feat {
+    padding: 50px 16px;
+  }
+  .nkx-feat__media {
+    margin: 0 0 36px 0;
+  }
+  .nkx-feat__frame {
+    display: none !important;
+  }
+  .nkx-feat__inset {
+    width: 38%;
+    right: 4px;
+    bottom: -24px;
+    border-width: 4px;
+  }
+  .nkx-feat__title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .nkx-feat__lead {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* 6. Services & Packages */
+  .services-section,
+  .packages-section {
+    padding: 50px 16px;
+  }
+  .services-grid,
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .service-card,
+  .package-card {
+    padding: 22px 18px;
+  }
+  .custom-packages-banner {
+    padding: 36px 18px;
+    margin-top: 30px;
+  }
+  .custom-pkg-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .custom-pkg-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 7. Portfolio Section & Horizontal Filter Bar */
+  .nk-projects-section {
+    padding: 50px 16px;
+  }
+  .portfolio-filter-bar {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    justify-content: flex-start !important;
+    padding: 6px 4px 14px 4px;
+    margin-bottom: 28px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+  .portfolio-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .portfolio-filter-btn {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    font-size: 11.5px;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-card-content {
+    padding: 20px 18px;
+  }
+  .project-card-title {
+    font-size: 19px;
+  }
+  .client-drive-banner {
+    padding: 24px 18px !important;
+    flex-direction: column !important;
+    text-align: center;
+    gap: 18px !important;
+  }
+  .client-drive-banner a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 8. About Section */
+  .nk-about-section {
+    padding: 50px 16px;
+  }
+  .nk-about-wrap {
+    gap: 28px;
+  }
+  .about-bio h2 {
+    font-size: 28px;
+  }
+  .about-bio p {
+    font-size: 14px;
+  }
+  .about-highlights {
     gap: 16px;
+  }
+
+  /* 9. Booking & Policies, Local Hub & CTA */
+  .nk-appendix,
+  .nk-locations-seo,
+  .nk-cta-section {
+    padding: 50px 16px;
+  }
+  .nk-cta-heading {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+  .nk-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .nk-cta-actions a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* 10. Retro Camera Footer (.nkf) */
+  .nkf__scene {
+    padding: 50px 14px 24px;
+  }
+  .nkf__cam {
+    padding: 24px 16px;
+    border-radius: 8px;
+  }
+  .nkf__plate {
+    top: -38px;
+    transform: translateX(-50%) scale(0.85);
+  }
+  .nkf__shutter {
+    display: none !important;
+  }
+  .nkf__main {
+    gap: 24px;
+  }
+  .nkf__screenwrap {
+    max-width: 100%;
+  }
+  .nkf__ctrl {
+    justify-content: center;
+    gap: 14px;
+  }
+  .nkf__pad {
+    grid-template-columns: repeat(3, 30px);
+    grid-template-rows: repeat(3, 30px);
+    gap: 3px;
+  }
+  .nkf__menus {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+  .nkf__menu-col {
+    text-align: center;
+  }
+  .nkf__base {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* 11. Project Lightbox Modal */
+  .nk-proj-modal__panel {
+    max-height: 94vh;
+    margin: 10px;
+    border-radius: 12px;
+  }
+  .nk-proj-modal__bar {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .nk-proj-modal__title {
+    font-size: 16px;
+  }
+  .nk-proj-modal__grid {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 12px;
+  }
+  .nk-proj-viewer {
+    padding: 16px;
+  }
+  .nk-proj-viewer__prev { left: 10px; width: 40px; height: 40px; }
+  .nk-proj-viewer__next { right: 10px; width: 40px; height: 40px; }
+
+  /* 12. AI Assistant (Riya) */
+  .ai-bot-trigger {
+    bottom: 16px;
+    right: 16px;
+  }
+  .ai-bot-bubble {
+    display: none !important;
+  }
+  .ai-bot-avatar-wrap {
+    width: 52px;
+    height: 52px;
+  }
+  .ai-bot-avatar-img {
+    width: 52px;
+    height: 52px;
+  }
+  .ai-chat-window {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    height: calc(100vh - 84px);
+    max-height: 560px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 60px;
+    padding: 0 12px;
+  }
+  .site-logo img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .site-logo .brand-title {
+    font-size: 14px;
+  }
+  .site-logo .brand-sub {
+    font-size: 8px;
+  }
+  .header-wa-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .header-wa-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+  .nkh {
+    padding-top: 70px;
+  }
+  .nkh__stage {
+    height: 440px;
+  }
+  .nkh__item {
+    flex: 0 0 calc(100vw - 36px) !important;
+  }
+  .stat-num {
+    font-size: 28px;
   }
 }
 

@@ -128,16 +128,43 @@ function initHeroCarousel() {
     if (!reduce && running()) root.classList.add('is-playing');
   }
 
-  function next() {
-    if (hot) setHot(null);
-    list.appendChild(items()[0]);
-    sync();
-  }
-
-  function prev() {
+  function slideStep(dir, onDone) {
     const all = items();
-    list.insertBefore(all[all.length - 1], all[0]);
-    sync();
+    if (!all.length) {
+      if (onDone) onDone();
+      return;
+    }
+    const firstItem = all[0];
+    const itemWidth = firstItem.getBoundingClientRect().width;
+    const gap = parseFloat(window.getComputedStyle(list).gap) || 20;
+    const distance = itemWidth + gap;
+
+    if (dir > 0) {
+      // Slide smoothly to the left
+      list.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+      list.style.transform = `translate3d(-${distance}px, 0, 0)`;
+      setTimeout(() => {
+        list.style.transition = 'none';
+        list.appendChild(items()[0]);
+        list.style.transform = 'translate3d(0, 0, 0)';
+        void list.offsetWidth; // Force reflow
+        sync();
+        if (onDone) onDone();
+      }, 460);
+    } else {
+      // Slide smoothly from the right
+      const lastItem = all[all.length - 1];
+      list.style.transition = 'none';
+      list.insertBefore(lastItem, all[0]);
+      list.style.transform = `translate3d(-${distance}px, 0, 0)`;
+      void list.offsetWidth; // Force reflow
+      list.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+      list.style.transform = 'translate3d(0, 0, 0)';
+      setTimeout(() => {
+        sync();
+        if (onDone) onDone();
+      }, 460);
+    }
   }
 
   function go(steps) {
@@ -146,14 +173,17 @@ function initHeroCarousel() {
     const dir = steps > 0 ? 1 : -1;
     let n = Math.abs(steps);
 
-    (function step() {
-      dir > 0 ? next() : prev();
-      if (--n > 0) {
-        setTimeout(step, reduce ? 0 : 240);
-      } else {
-        setTimeout(() => { busy = false; }, reduce ? 0 : 300);
-      }
-    })();
+    function step() {
+      if (hot) setHot(null);
+      slideStep(dir, () => {
+        if (--n > 0) {
+          step();
+        } else {
+          busy = false;
+        }
+      });
+    }
+    step();
   }
 
   function running() {
