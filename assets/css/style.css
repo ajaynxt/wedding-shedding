@@ -146,23 +146,6 @@ body.theme-dark .nkx-stats__sub {
   color: #FFFFFF;
 }
 
-/* Awards Banner in Dark Mode */
-body.theme-dark .awards-banner {
-  background: #0E0D0C;
-  border-color: var(--ln);
-}
-body.theme-dark .award-text h4 {
-  color: #FFFFFF;
-}
-body.theme-dark .award-text p {
-  color: #FFFFFF;
-}
-body.theme-dark .award-icon-box {
-  background: rgba(226, 185, 74, 0.12);
-  border-color: var(--g);
-  color: var(--g);
-}
-
 /* Featured Showcase in Dark Mode */
 body.theme-dark .nkx-feat {
   background: #000000;
@@ -606,7 +589,6 @@ body.theme-dark .package-desc,
 body.theme-dark .project-card-sub,
 body.theme-dark .about-bio p,
 body.theme-dark .nk-appendix p,
-body.theme-dark .award-text p,
 body.theme-dark .nkf__tag,
 body.theme-dark .nkx-feat__lead,
 body.theme-dark .nkx-stats__sub,
@@ -1799,63 +1781,215 @@ button {
 }
 
 /* ============================================================
-   AWARDS BANNER
+   AWARDS & ACCOLADES BANNER (UI/UX PRO MAX LUXURY POLISH)
+   Immaculate white background, high contrast, responsive grid
    ============================================================ */
 .awards-banner {
-  background: #FFFFFF;
-  border-top: 1px solid var(--ln);
-  border-bottom: 1px solid var(--ln);
-  padding: 44px 40px;
+  background: #FFFFFF !important;
+  border-top: 1px solid rgba(181, 138, 28, 0.22);
+  border-bottom: 1px solid rgba(181, 138, 28, 0.22);
+  padding: 56px clamp(20px, 4vw, 48px);
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.awards-header {
+  max-width: 1240px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.awards-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #B58A1C !important;
+  margin-bottom: 8px;
+}
+
+.awards-eyebrow .eyebrow-ornament {
+  font-size: 10px;
+  color: #D4AF37;
+}
+
+.awards-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 600;
+  color: #0A0908 !important;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
 .awards-wrap {
   max-width: 1240px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .award-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(229, 223, 214, 0.95);
+  border-radius: 18px;
+  padding: 24px 22px;
   display: flex;
-  align-items: center;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.award-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(181, 138, 28, 0.45);
+  box-shadow: 0 16px 36px -6px rgba(181, 138, 28, 0.14), 0 6px 14px rgba(0, 0, 0, 0.04);
 }
 
 .award-icon-box {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid var(--g);
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--g);
-  background: var(--gold-tint);
   flex-shrink: 0;
+  background: linear-gradient(135deg, #FFFDF8 0%, #FEF9EE 100%);
+  border: 1.5px solid rgba(181, 138, 28, 0.28);
+  box-shadow: 0 4px 12px rgba(181, 138, 28, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.award-icon-box svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
+.award-item:hover .award-icon-box {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.award-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.award-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.award-pill--gold {
+  background: #FFFBEB;
+  color: #92400E !important;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+.award-pill--amber {
+  background: #FEF3C7;
+  color: #78350F !important;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.award-pill--rose {
+  background: #FFF1F2;
+  color: #9F1239 !important;
+  border: 1px solid rgba(225, 29, 72, 0.25);
+}
+
+.award-pill--emerald {
+  background: #F0FDF4;
+  color: #065F46 !important;
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .award-text h4 {
   font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--iv);
-  margin-bottom: 4px;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #0A0908 !important;
+  margin: 0 0 6px 0;
+  line-height: 1.35;
 }
 
 .award-text p {
-  font-size: 12.5px;
-  color: var(--bd);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: #383531 !important;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Guaranteed 100% Contrast & Legibility in Dark Mode */
+body.theme-dark .awards-banner {
+  background: #FFFFFF !important;
+  border-top-color: rgba(181, 138, 28, 0.3) !important;
+  border-bottom-color: rgba(181, 138, 28, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.theme-dark .awards-banner .awards-eyebrow {
+  color: #B58A1C !important;
+}
+
+body.theme-dark .awards-banner .awards-section-title {
+  color: #0A0908 !important;
+}
+
+body.theme-dark .awards-banner .award-item {
+  background: #FFFFFF !important;
+  border-color: rgba(229, 223, 214, 0.95) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-dark .awards-banner .award-item:hover {
+  border-color: rgba(181, 138, 28, 0.6) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16) !important;
+}
+
+body.theme-dark .awards-banner .award-text h4 {
+  color: #0A0908 !important;
+}
+
+body.theme-dark .awards-banner .award-text p {
+  color: #383531 !important;
+}
+
+@media (max-width: 1080px) {
+  .awards-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .awards-banner {
+    padding: 40px 18px;
+  }
+  .awards-header {
+    margin-bottom: 24px;
+  }
+  .awards-wrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .award-item {
+    padding: 20px 18px;
+  }
 }
 
 /* ============================================================
@@ -3422,8 +3556,24 @@ button {
   .nkf__base { flex-direction: column; gap: 12px; text-align: center; }
   
   .awards-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY: REDUCED MOTION (UI/UX PRO MAX STANDARD)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .nkx-rv {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
