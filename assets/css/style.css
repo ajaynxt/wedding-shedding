@@ -1781,22 +1781,39 @@ button {
 }
 
 /* ============================================================
-   AWARDS & ACCOLADES BANNER (UI/UX PRO MAX LUXURY POLISH)
-   Immaculate white background, high contrast, responsive grid
+   AWARDS & ACCOLADES BANNER (BLACK & WHITE LUXURY FUSION - UI/UX PRO MAX)
+   Deep Noir Obsidian Canvas + Crisp White Floating Accreditation Cards
    ============================================================ */
 .awards-banner {
-  background: #FFFFFF !important;
-  border-top: 1px solid rgba(181, 138, 28, 0.22);
-  border-bottom: 1px solid rgba(181, 138, 28, 0.22);
-  padding: 56px clamp(20px, 4vw, 48px);
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 255, 255, 0.09) 0%, transparent 70%),
+    radial-gradient(circle at 50% 120%, rgba(181, 138, 28, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #0A0A09 0%, #151412 50%, #0A0A09 100%) !important;
+  border-top: 1px solid rgba(226, 185, 74, 0.4);
+  border-bottom: 1px solid rgba(226, 185, 74, 0.4);
+  padding: 64px clamp(20px, 4vw, 48px);
   position: relative;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Subtle luxury celestial pin-dot pattern in the dark background */
+.awards-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.8;
 }
 
 .awards-header {
   max-width: 1240px;
-  margin: 0 auto 36px;
+  margin: 0 auto 40px;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .awards-eyebrow {
@@ -1808,22 +1825,33 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #B58A1C !important;
-  margin-bottom: 8px;
+  color: #E2B94A !important;
+  margin-bottom: 10px;
 }
 
 .awards-eyebrow .eyebrow-ornament {
-  font-size: 10px;
-  color: #D4AF37;
+  font-size: 11px;
+  color: #F6D785;
 }
 
 .awards-section-title {
   font-family: var(--font-serif);
-  font-size: clamp(22px, 2.5vw, 32px);
+  font-size: clamp(24px, 2.8vw, 36px);
   font-weight: 600;
-  color: #0A0908 !important;
+  color: #FFFFFF !important;
   letter-spacing: -0.01em;
   margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.awards-section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #D1CCC4 !important;
+  margin: 10px auto 0;
+  max-width: 680px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .awards-wrap {
@@ -1832,43 +1860,51 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Floating Pristine White Luxury Cards */
 .award-item {
   background: #FFFFFF !important;
-  border: 1px solid rgba(229, 223, 214, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 3.5px solid #0A0A09;
   border-radius: 18px;
-  padding: 24px 22px;
+  padding: 26px 22px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  overflow: hidden;
 }
 
 .award-item:hover {
-  transform: translateY(-5px);
-  border-color: rgba(181, 138, 28, 0.45);
-  box-shadow: 0 16px 36px -6px rgba(181, 138, 28, 0.14), 0 6px 14px rgba(0, 0, 0, 0.04);
+  transform: translateY(-7px);
+  border-top-color: #B58A1C;
+  box-shadow: 0 24px 50px -4px rgba(181, 138, 28, 0.35), 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* Dark velvet jewelry box for glowing luxury SVGs */
 .award-icon-box {
   width: 58px;
   height: 58px;
-  border-radius: 16px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #FFFDF8 0%, #FEF9EE 100%);
-  border: 1.5px solid rgba(181, 138, 28, 0.28);
-  box-shadow: 0 4px 12px rgba(181, 138, 28, 0.08);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(135deg, #1C1A17 0%, #0A0908 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .award-item:hover .award-icon-box {
   transform: scale(1.08) rotate(-2deg);
+  border-color: #E2B94A;
+  box-shadow: 0 8px 22px rgba(181, 138, 28, 0.35);
 }
 
 .award-text {
@@ -1877,6 +1913,7 @@ button {
   flex: 1;
 }
 
+/* High-Contrast Black & Gold Category Pills */
 .award-pill {
   display: inline-block;
   align-self: flex-start;
@@ -1885,42 +1922,41 @@ button {
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 12px;
   margin-bottom: 8px;
   line-height: 1.3;
+  background: #0A0A09;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(181, 138, 28, 0.35);
 }
 
 .award-pill--gold {
-  background: #FFFBEB;
-  color: #92400E !important;
-  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-color: rgba(217, 119, 6, 0.6);
+  color: #FBBF24 !important;
 }
 
 .award-pill--amber {
-  background: #FEF3C7;
-  color: #78350F !important;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #FCD34D !important;
 }
 
 .award-pill--rose {
-  background: #FFF1F2;
-  color: #9F1239 !important;
-  border: 1px solid rgba(225, 29, 72, 0.25);
+  border-color: rgba(225, 29, 72, 0.6);
+  color: #FDA4AF !important;
 }
 
 .award-pill--emerald {
-  background: #F0FDF4;
-  color: #065F46 !important;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #6EE7B7 !important;
 }
 
 .award-text h4 {
   font-family: var(--font-display);
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  color: #0A0908 !important;
+  color: #000000 !important;
   margin: 0 0 6px 0;
   line-height: 1.35;
 }
@@ -1929,44 +1965,42 @@ button {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
-  color: #383531 !important;
+  color: #2E2B27 !important;
   line-height: 1.45;
   margin: 0;
 }
 
-/* Guaranteed 100% Contrast & Legibility in Dark Mode */
+/* Guaranteed Consistency in Dark Mode */
 body.theme-dark .awards-banner {
-  background: #FFFFFF !important;
-  border-top-color: rgba(181, 138, 28, 0.3) !important;
-  border-bottom-color: rgba(181, 138, 28, 0.3) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
-}
-
-body.theme-dark .awards-banner .awards-eyebrow {
-  color: #B58A1C !important;
+  border-top-color: rgba(226, 185, 74, 0.45) !important;
+  border-bottom-color: rgba(226, 185, 74, 0.45) !important;
 }
 
 body.theme-dark .awards-banner .awards-section-title {
-  color: #0A0908 !important;
+  color: #FFFFFF !important;
+}
+
+body.theme-dark .awards-banner .awards-section-subtitle {
+  color: #D1CCC4 !important;
 }
 
 body.theme-dark .awards-banner .award-item {
   background: #FFFFFF !important;
-  border-color: rgba(229, 223, 214, 0.95) !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+  border-top-color: #0A0A09 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
 }
 
 body.theme-dark .awards-banner .award-item:hover {
-  border-color: rgba(181, 138, 28, 0.6) !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16) !important;
+  border-top-color: #B58A1C !important;
+  box-shadow: 0 24px 50px -4px rgba(181, 138, 28, 0.4) !important;
 }
 
 body.theme-dark .awards-banner .award-text h4 {
-  color: #0A0908 !important;
+  color: #000000 !important;
 }
 
 body.theme-dark .awards-banner .award-text p {
-  color: #383531 !important;
+  color: #2E2B27 !important;
 }
 
 @media (max-width: 1080px) {
