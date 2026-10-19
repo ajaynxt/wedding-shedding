@@ -3293,6 +3293,27 @@ body.theme-dark .awards-banner .award-text p {
   font-weight: 500;
 }
 
+.nkf__wm a {
+  color: var(--g);
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.nkf__wm a:hover {
+  color: var(--gh);
+}
+
+body.theme-dark .nkf__wm a {
+  color: #E2B94A;
+}
+
+body.theme-dark .nkf__wm a:hover {
+  color: #FFFFFF;
+}
+
 /* ============================================================
    PROJECT MODAL & FULLSCREEN VIEWER (BRIGHT ELEGANCE)
    ============================================================ */
