@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Google & Major Search Crawlers
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# AI Search Crawlers (GEO & AEO for ChatGPT, Perplexity, Claude, Gemini)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://weddingshedding.in/sitemap.xml

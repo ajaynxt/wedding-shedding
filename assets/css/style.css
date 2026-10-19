@@ -3814,3 +3814,34 @@ body.theme-dark .nk-cursor-ring.is-hovering {
     display: none !important;
   }
 }
+
+/* ============================================================
+   REGIONAL LOCATIONS SEO CARDS
+   ============================================================ */
+.nk-locations-seo [style*="border-radius: 10px"] {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.nk-locations-seo [style*="border-radius: 10px"]:hover {
+  transform: translateY(-5px);
+  border-color: rgba(181, 138, 28, 0.45) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-dark .nk-locations-seo {
+  background: #0E0D0C !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.theme-dark .nk-locations-seo [style*="border-radius: 10px"] {
+  background: #151312 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.theme-dark .nk-locations-seo [style*="border-radius: 10px"]:hover {
+  border-color: rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+}
