@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initProjectsGallery();
   initCameraFooter();
+  initThemeToggle();
+  initAIBot();
 });
 
 /* ============================================================
@@ -630,3 +632,188 @@ function initCameraFooter() {
   if (reduce) f.classList.add('is-paused');
   show(0);
 }
+
+/* ============================================================
+   7. THEME TOGGLE (WHITE / BLACK DUAL MODE)
+   ============================================================ */
+function initThemeToggle() {
+  const toggleBtnDesktop = document.getElementById('themeToggleBtn');
+  const toggleBtnMobile = document.getElementById('themeToggleBtnMobile');
+
+  // Check persisted theme or default to bright/light mode
+  const savedTheme = localStorage.getItem('ws_theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('theme-dark');
+  } else {
+    document.body.classList.remove('theme-dark');
+  }
+
+  function handleToggle() {
+    const isDark = document.body.classList.toggle('theme-dark');
+    localStorage.setItem('ws_theme', isDark ? 'dark' : 'light');
+  }
+
+  toggleBtnDesktop?.addEventListener('click', handleToggle);
+  toggleBtnMobile?.addEventListener('click', handleToggle);
+}
+
+/* ============================================================
+   8. AI CONCIERGE BOT (RIYA)
+   ============================================================ */
+function initAIBot() {
+  const trigger = document.getElementById('aiBotTrigger');
+  const chatWindow = document.getElementById('aiChatWindow');
+  const closeBtn = document.getElementById('aiChatCloseBtn');
+  const messagesContainer = document.getElementById('aiChatMessages');
+  const form = document.getElementById('aiChatForm');
+  const input = document.getElementById('aiChatInput');
+
+  if (!trigger || !chatWindow) return;
+
+  function toggleChat(open) {
+    const shouldOpen = typeof open === 'boolean' ? open : !chatWindow.classList.contains('open');
+    if (shouldOpen) {
+      chatWindow.classList.add('open');
+      setTimeout(() => input?.focus(), 300);
+      scrollToBottom();
+    } else {
+      chatWindow.classList.remove('open');
+    }
+  }
+
+  trigger.addEventListener('click', () => toggleChat());
+  closeBtn?.addEventListener('click', () => toggleChat(false));
+
+  function scrollToBottom() {
+    if (messagesContainer) {
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  }
+
+  function appendUserMessage(text) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'ai-msg user';
+    msgDiv.innerHTML = `<div class="ai-msg-bubble"><p>${escapeHTML(text)}</p></div>`;
+    messagesContainer.appendChild(msgDiv);
+    scrollToBottom();
+  }
+
+  function appendBotMessage(html) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'ai-msg bot';
+    msgDiv.innerHTML = `<div class="ai-msg-bubble">${html}</div>`;
+    messagesContainer.appendChild(msgDiv);
+    scrollToBottom();
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag));
+  }
+
+  function generateResponse(query) {
+    const q = query.toLowerCase();
+
+    if (q.includes('price') || q.includes('cost') || q.includes('rate') || q.includes('package') || q.includes('charge') || q.includes('kitna') || q.includes('kitne')) {
+      return `
+        <p><strong>Bespoke Celebration Packages</strong></p>
+        <p style="margin-top:4px;">Because every wedding and event is unique in scale, venue, and vision, we craft <strong>tailored bespoke packages</strong> suited to your exact dates, locations, and requirements (with 30% advance reservation).</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20would%20like%20a%20custom%20quotation%20for%20my%20event." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Click here to chat on WhatsApp for a custom quote &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('wedding') || q.includes('shaadi') || q.includes('candid') || q.includes('cinemat')) {
+      return `
+        <p>💍 <strong>Wedding Photography &amp; Cinematography</strong></p>
+        <p style="margin-top:4px;">We specialize in emotional candid moments, traditional ceremonies, 4K cinematic films, Haldi, Mehndi, Sangeet, and bridal/groom portraits across Delhi NCR and destination locations.</p>
+        <p style="margin-top:6px;"><a href="#services-wedding" style="color:var(--g);font-weight:600;text-decoration:underline;">View Wedding Services</a> or <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20wedding%20photography." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Inquire on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('prewedding') || q.includes('pre-wedding') || q.includes('drone') || q.includes('aerial')) {
+      return `
+        <p>✨ <strong>Pre-Wedding &amp; Drone Shoots</strong></p>
+        <p style="margin-top:4px;">Scenic concept shoots with creative direction, cinematic teaser reels, and licensed 4K aerial drone coverage for magnificent venue captures.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20want%20to%20plan%20a%20pre-wedding%20or%20drone%20shoot." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Discuss Pre-Wedding Concepts &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('baby') || q.includes('maternity') || q.includes('godh') || q.includes('family') || q.includes('kid')) {
+      return `
+        <p>👶 <strong>Baby, Newborn &amp; Family Shoots</strong></p>
+        <p style="margin-top:4px;">Safe and heartwarming sessions: newborn photography, cake smash, maternity glows, Godh Bharai, naming ceremonies, and family milestone portraits.</p>
+        <p style="margin-top:6px;"><a href="#services-baby" style="color:var(--g);font-weight:600;text-decoration:underline;">Explore Baby &amp; Family</a> or <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20interested%20in%20a%20Baby%20or%20Family%20shoot." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Chat with us &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('corporate') || q.includes('hospital') || q.includes('medical') || q.includes('conference') || q.includes('office') || q.includes('event')) {
+      return `
+        <p>🏢 <strong>Corporate, Hospital &amp; Institutional Events</strong></p>
+        <p style="margin-top:4px;">High-standard multi-camera coverage for medical conferences, hospital inaugurations, corporate annual meetings, seminars, and product launches with same-day highlights.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20corporate/hospital%20coverage." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Request Corporate Proposal &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('album') || q.includes('print') || q.includes('book') || q.includes('sheet')) {
+      return `
+        <p>📖 <strong>Premium Photo Albums &amp; Printing</strong></p>
+        <p style="margin-top:4px;">Museum-grade flush-mount photobooks, archival HD luster paper, acrylic/velvet custom covers, and bespoke layout design.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20would%20like%20to%20see%20sample%20albums." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Order or Preview Albums on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('number') || q.includes('address') || q.includes('where') || q.includes('location')) {
+      return `
+        <p>📍 <strong>Wedding Shedding Studios</strong></p>
+        <p style="margin-top:4px;"><strong>Studio Locations:</strong> Delhi NCR (Pandav Nagar &amp; Mayapuri). We travel pan-India and globally for destination shoots!</p>
+        <p style="margin-top:4px;"><strong>Direct Line:</strong> <a href="tel:+917503550936" style="color:var(--g);font-weight:600;">+91 75035 50936</a></p>
+        <p style="margin-top:4px;"><strong>Email:</strong> weddingshedding@gmail.com</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Chat with Lead Artist on WhatsApp &rarr;</a></p>
+      `;
+    }
+
+    if (q.includes('whatsapp')) {
+      return `
+        <p>💬 <strong>WhatsApp Priority Line</strong></p>
+        <p style="margin-top:4px;">Connect directly with our creative director at <strong>+91 75035 50936</strong> for immediate date availability and portfolio reels.</p>
+        <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20connecting%20via%20your%20website%20AI%20assistant." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Open WhatsApp Chat Now &rarr;</a></p>
+      `;
+    }
+
+    // Default Fallback
+    return `
+      <p>Thank you for reaching out! ✨</p>
+      <p style="margin-top:4px;">We cover <strong>10 professional photography &amp; cinematography domains</strong> across Weddings, Pre-Weddings, Drones, Baby Shoots, Birthdays, Corporate/Hospitals, and Luxury Albums.</p>
+      <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20would%20like%20more%20information%20about%20your%20services." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Chat directly with our team on WhatsApp (+91 75035 50936) &rarr;</a></p>
+    `;
+  }
+
+  // Handle Quick Chips
+  document.getElementById('aiQuickChips')?.addEventListener('click', e => {
+    const btn = e.target.closest('.ai-chip-btn');
+    if (!btn) return;
+    const query = btn.dataset.query || btn.textContent;
+    appendUserMessage(btn.textContent.trim());
+    setTimeout(() => {
+      appendBotMessage(generateResponse(query));
+    }, 300);
+  });
+
+  // Handle Form Submit
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const query = input?.value?.trim();
+    if (!query) return;
+    input.value = '';
+    appendUserMessage(query);
+    setTimeout(() => {
+      appendBotMessage(generateResponse(query));
+    }, 350);
+  });
+}
+

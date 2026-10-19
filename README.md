@@ -1,10 +1,10 @@
-# Wedding Shedding Pvt. Ltd. — Luxury Wedding Photography & Cinematic Films
+# Wedding Shedding — Luxury Wedding Photography & Cinematic Films
 
-Official modern portfolio website for **Wedding Shedding Pvt. Ltd.**, inspired by luxury architectural editorial aesthetics with a bright, ivory-gold color palette.
+Official modern portfolio website for **Wedding Shedding**, inspired by luxury architectural editorial aesthetics with a bright, ivory-gold color palette.
 
 ---
 
-## 💍 About Wedding Shedding Pvt. Ltd.
+## 💍 About Wedding Shedding
 
 - **Operational Since**: 2015 (10+ Years in Industry)
 - **Specialization**: Candid Wedding Photography, 4K Cinematic Films, Pre-Wedding Shoots & Drone Aerials
