@@ -176,4 +176,50 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Best Wedding Photographer in Delhi NCR -->
+  <url>
+    <loc>https://weddingshedding.in/delhi-ncr.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-01.jpg</image:loc>
+      <image:title>Best Wedding Photographer Delhi NCR - Chhatarpur Farmhouses &amp; Five Star Hotels</image:title>
+      <image:caption>Award-winning candid wedding photography across South Delhi, Chhatarpur, Burari, and Gurugram</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_haldi_couple.jpg</image:loc>
+      <image:title>Vibrant Haldi Ceremony Delhi NCR</image:title>
+      <image:caption>Authentic emotional Haldi celebrations and couple portraits</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-10.jpg</image:loc>
+      <image:title>Pre-Wedding Photography Shoot Delhi NCR</image:title>
+      <image:caption>Cinematic pre-wedding film and portrait sessions in Delhi NCR</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Best Destination Wedding Photographer in Jaipur & Rajasthan -->
+  <url>
+    <loc>https://weddingshedding.in/jaipur.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-04.jpg</image:loc>
+      <image:title>Best Destination Wedding Photographer Jaipur &amp; Rajasthan Palaces</image:title>
+      <image:caption>Royal palace wedding photography, Rambagh, Fairmont, Samode, and heritage forts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-08.jpg</image:loc>
+      <image:title>Royal Baraat &amp; Palace Fireworks Photography Jaipur</image:title>
+      <image:caption>Grand night celebrations and royal entrance photography in Rajasthan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-09.jpg</image:loc>
+      <image:title>Destination Wedding Cinematography Jaipur &amp; Udaipur</image:title>
+      <image:caption>4K aerial drone and cinematic wedding films for destination couples</image:caption>
+    </image:image>
+  </url>
 </urlset>

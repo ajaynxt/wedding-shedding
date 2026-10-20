@@ -1036,6 +1036,7 @@ function initCameraFooter() {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const glass = f.querySelector('.nkf__glass');
   const slides = f.querySelectorAll('.nkf__slide');
+  if (!slides || slides.length === 0) return;
   const cat = f.querySelector('.nkf__cat');
   const ttl = f.querySelector('.nkf__ttl');
   const ctr = f.querySelector('.nkf__ctr');
