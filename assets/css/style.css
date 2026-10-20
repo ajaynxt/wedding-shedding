@@ -1229,11 +1229,12 @@ body.theme-dark .site-header.is-scrolled {
 
 .header-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1540px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 /* Slim Compact Logo */
@@ -4352,6 +4353,7 @@ html, body {
   }
   .project-card-title {
     font-size: 19px;
+  }
 
 
   /* 8. About Section */
@@ -4641,7 +4643,7 @@ body.theme-dark .nk-locations-seo [style*="border-radius: 10px"]:hover {
 }
 
 .subpage-hero {
-  padding: clamp(68px, 7vw, 88px) clamp(20px, 4vw, 40px) clamp(24px, 4vw, 40px);
+  padding: clamp(115px, 11vw, 145px) clamp(20px, 4vw, 40px) clamp(32px, 4vw, 48px);
   background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.12) 0%, rgba(181, 138, 28, 0.04) 50%, transparent 80%), var(--bg-alt);
   border-bottom: 1px solid var(--ln);
   text-align: center;

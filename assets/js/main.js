@@ -435,8 +435,9 @@ function initProjectsGallery() {
     "pre-wedding": {
       "title": "ROMANTIC PRE-WEDDING & DESTINATION STORIES",
       "images": [
-        "assets/images/ws_photo-01.jpg?v=3",
         "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_couple_portrait.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
         "assets/images/ws_photo-02.jpg?v=3",
         "assets/images/ws_photo-04.jpg?v=3"
       ]
@@ -446,6 +447,7 @@ function initProjectsGallery() {
       "title": "SACRED RITUALS, PHERAS & VIDAAI",
       "images": [
         "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-03.jpg?v=3",
         "assets/images/ws_photo-04.jpg?v=3",
         "assets/images/ws_celebration_01.jpg?v=3",
         "assets/images/ws_photo-08.jpg?v=3",
@@ -874,8 +876,8 @@ function initPortfolioFilters() {
 
       // Filter portfolio project cards
       cards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        const match = filter === 'all' || cat === filter;
+        const cat = card.getAttribute('data-category') || '';
+        const match = filter === 'all' || cat.split(/\s+/).includes(filter);
         if (match) {
           card.classList.remove('is-filtered-out');
           card.classList.remove('is-filtered-in');
