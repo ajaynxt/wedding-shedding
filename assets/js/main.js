@@ -26,19 +26,38 @@ document.addEventListener('DOMContentLoaded', () => {
    1. HEADER & MOBILE DRAWER
    ============================================================ */
 function initHeader() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('.site-header, #nk-site-header');
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const closeBtn = document.querySelector('.mobile-drawer-close');
   const drawer = document.querySelector('.mobile-drawer');
 
-  // Sticky header scroll shadow
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header?.classList.add('is-scrolled');
-    } else {
-      header?.classList.remove('is-scrolled');
+  // Sticky / Solid header scroll trigger
+  const THRESHOLD = 40;
+  let solid = null;
+
+  function paint() {
+    const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const next = y > THRESHOLD;
+    if (next !== solid) {
+      solid = next;
+      header?.classList.toggle('is-solid', next);
+      header?.classList.toggle('is-scrolled', next);
     }
-  }, { passive: true });
+  }
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      paint();
+      ticking = false;
+    });
+  }
+
+  paint();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', paint, { passive: true });
 
   // Mobile drawer
   if (toggleBtn && drawer) {
@@ -63,11 +82,12 @@ function initHeader() {
 }
 
 /* ============================================================
-   2. HERO CAROUSEL (.nkh)
+   2. HERO CAROUSEL (.nkh) - NIKHIL KAPUR AUTHENTIC ACCORDION ENGINE
    ============================================================ */
 function initHeroCarousel() {
   const root = document.getElementById('nkh');
-  if (!root) return;
+  if (!root || root.dataset.init) return;
+  root.dataset.init = '1';
 
   const list = root.querySelector('.nkh__list');
   const stage = root.querySelector('.nkh__stage');
@@ -76,7 +96,7 @@ function initHeroCarousel() {
   if (!list || !stage) return;
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const DUR = innerWidth <= 1024 ? 2800 : 2500;
+  const DUR = (window.innerWidth <= 1024 ? 2800 : 2500);
   let timer = null;
   let busy = false;
   let hover = false;
@@ -85,39 +105,44 @@ function initHeroCarousel() {
   let holdUntil = 0;
 
   root.style.setProperty('--dur', DUR + 'ms');
-  const ACTIVE = 4; // Center slot is open card
+  const ACTIVE = 4; // Zero-based: 5th slot is the open card
 
-  // Clone ring items for seamless continuous sliding
-  const originalChildren = Array.from(list.children);
-  originalChildren.forEach(li => {
-    const clone = li.cloneNode(true);
-    clone.classList.add('is-clone');
-    const img = clone.querySelector('img');
-    if (img) {
-      img.removeAttribute('fetchpriority');
-      img.loading = 'lazy';
+  // Second copy of the ring so columns can slide in from the hidden edges
+  Array.prototype.slice.call(list.children).forEach(function(li) {
+    const c = li.cloneNode(true);
+    c.classList.add('is-clone');
+    const im = c.querySelector('img');
+    if (im) {
+      im.removeAttribute('fetchpriority');
+      im.loading = 'lazy';
     }
-    list.appendChild(clone);
+    list.appendChild(c);
   });
 
-  const items = () => list.children;
+  const items = function() { return list.children; };
 
   function vis() {
     const w = window.innerWidth;
     return w < 768 ? [3, 5] : w <= 1024 ? [2, 6] : [1, 7];
   }
 
+  function header() {
+    const h = document.querySelector('header.header, #nk-site-header, .site-header, header');
+    let v = h ? Math.round(h.getBoundingClientRect().height) : 96;
+    if (v < 40 || v > 220) v = 96;
+    root.style.setProperty('--top', v + 'px');
+    root.style.setProperty('--stage-w', stage.clientWidth + 'px');
+  }
+
   function sync() {
-    const all = items();
-    const act = all[ACTIVE];
-    if (!act) return;
-    if (count) count.textContent = ('0' + act.dataset.i).slice(-2);
+    const a = items()[ACTIVE];
+    if (!a) return;
+    if (count) count.textContent = ('0' + a.dataset.i).slice(-2);
     const r = vis();
-    Array.from(all).forEach((li, k) => {
+    Array.prototype.forEach.call(items(), function(li, k) {
       const shown = k >= r[0] && k <= r[1];
       li.setAttribute('aria-hidden', shown ? 'false' : 'true');
-      const firstChild = li.firstElementChild;
-      if (firstChild) firstChild.tabIndex = shown ? 0 : -1;
+      if (li.firstElementChild) li.firstElementChild.tabIndex = shown ? 0 : -1;
     });
     restartBar();
   }
@@ -128,43 +153,16 @@ function initHeroCarousel() {
     if (!reduce && running()) root.classList.add('is-playing');
   }
 
-  function slideStep(dir, onDone) {
-    const all = items();
-    if (!all.length) {
-      if (onDone) onDone();
-      return;
-    }
-    const firstItem = all[0];
-    const itemWidth = firstItem.getBoundingClientRect().width;
-    const gap = parseFloat(window.getComputedStyle(list).gap) || 20;
-    const distance = itemWidth + gap;
+  function next() {
+    if (hot) setHot(null);
+    list.appendChild(items()[0]);
+    sync();
+  }
 
-    if (dir > 0) {
-      // Slide smoothly to the left
-      list.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
-      list.style.transform = `translate3d(-${distance}px, 0, 0)`;
-      setTimeout(() => {
-        list.style.transition = 'none';
-        list.appendChild(items()[0]);
-        list.style.transform = 'translate3d(0, 0, 0)';
-        void list.offsetWidth; // Force reflow
-        sync();
-        if (onDone) onDone();
-      }, 460);
-    } else {
-      // Slide smoothly from the right
-      const lastItem = all[all.length - 1];
-      list.style.transition = 'none';
-      list.insertBefore(lastItem, all[0]);
-      list.style.transform = `translate3d(-${distance}px, 0, 0)`;
-      void list.offsetWidth; // Force reflow
-      list.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
-      list.style.transform = 'translate3d(0, 0, 0)';
-      setTimeout(() => {
-        sync();
-        if (onDone) onDone();
-      }, 460);
-    }
+  function prev() {
+    if (hot) setHot(null);
+    list.insertBefore(items()[items().length - 1], items()[0]);
+    sync();
   }
 
   function go(steps) {
@@ -172,18 +170,11 @@ function initHeroCarousel() {
     busy = true;
     const dir = steps > 0 ? 1 : -1;
     let n = Math.abs(steps);
-
-    function step() {
-      if (hot) setHot(null);
-      slideStep(dir, () => {
-        if (--n > 0) {
-          step();
-        } else {
-          busy = false;
-        }
-      });
-    }
-    step();
+    (function step() {
+      dir > 0 ? next() : prev();
+      if (--n > 0) setTimeout(step, reduce ? 0 : 240);
+      else setTimeout(function() { busy = false; }, reduce ? 0 : 300);
+    })();
   }
 
   function running() {
@@ -196,7 +187,7 @@ function initHeroCarousel() {
     root.classList.toggle('is-paused', !running());
     if (running()) {
       root.classList.add('is-playing');
-      timer = setTimeout(() => {
+      timer = setTimeout(function() {
         if (running()) {
           go(1);
         }
@@ -213,10 +204,10 @@ function initHeroCarousel() {
     setTimeout(schedule, DUR + 20);
   }
 
-  root.querySelector('.nkh__btn--next')?.addEventListener('click', () => user(1));
-  root.querySelector('.nkh__btn--prev')?.addEventListener('click', () => user(-1));
+  root.querySelector('.nkh__btn--next')?.addEventListener('click', function() { user(1); });
+  root.querySelector('.nkh__btn--prev')?.addEventListener('click', function() { user(-1); });
 
-  stage.addEventListener('keydown', e => {
+  stage.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight') { e.preventDefault(); user(1); }
     if (e.key === 'ArrowLeft') { e.preventDefault(); user(-1); }
   });
@@ -238,12 +229,12 @@ function initHeroCarousel() {
     }
   }
 
-  // Desktop hover card expand
+  // Desktop hover card expand (5s arm delay as in Nikhil Kapur)
   if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
-    const desk = () => window.innerWidth > 1024;
-    const armAt = Date.now() + 3000;
+    const desk = function() { return window.innerWidth > 1024; };
+    const armAt = Date.now() + 5000;
     let lx = null, ly = null;
-    list.addEventListener('mousemove', e => {
+    list.addEventListener('mousemove', function(e) {
       if (!desk() || Date.now() < armAt) return;
       if (e.screenX === lx && e.screenY === ly) return;
       lx = e.screenX; ly = e.screenY;
@@ -253,47 +244,45 @@ function initHeroCarousel() {
         if (!hover) { hover = true; schedule(); }
       }
     });
-    list.addEventListener('mouseleave', () => {
+    list.addEventListener('mouseleave', function() {
       setHot(null);
       if (hover) { hover = false; schedule(); }
     });
   }
 
-  root.addEventListener('focusin', e => {
+  root.addEventListener('focusin', function(e) {
     if (e.target.matches(':focus-visible')) { focus = true; schedule(); }
   });
-  root.addEventListener('focusout', () => { focus = false; schedule(); });
+  root.addEventListener('focusout', function() {
+    focus = false; schedule();
+  });
 
   // Touch swipe support
   let sx = 0, sy = 0, t0 = 0, swiped = false;
-  stage.addEventListener('touchstart', e => {
-    const t = e.touches[0];
-    sx = t.clientX; sy = t.clientY;
-    t0 = Date.now();
-    swiped = false;
+  stage.addEventListener('touchstart', function(e) {
+    const t = e.touches[0]; sx = t.clientX; sy = t.clientY; t0 = Date.now(); swiped = false;
   }, { passive: true });
-
-  stage.addEventListener('touchend', e => {
-    const t = e.changedTouches[0];
-    const dx = t.clientX - sx, dy = t.clientY - sy;
+  stage.addEventListener('touchend', function(e) {
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
     if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2 && Date.now() - t0 < 800) {
       swiped = true;
       user(dx < 0 ? 1 : -1);
     }
   }, { passive: true });
-
-  list.addEventListener('click', e => {
+  list.addEventListener('click', function(e) {
     if (swiped) { e.preventDefault(); swiped = false; }
   });
 
   document.addEventListener('visibilitychange', schedule);
-
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      visible = entries[0].isIntersecting;
-      schedule();
+    new IntersectionObserver(function(es) {
+      visible = es[0].isIntersecting; schedule();
     }, { threshold: 0.25 }).observe(root);
   }
+
+  header();
+  window.addEventListener('resize', function() { header(); sync(); });
+  window.addEventListener('load', header);
 
   sync();
   root.classList.add('nkh-ready');
@@ -1063,12 +1052,12 @@ function initThemeToggle() {
   const toggleBtnDesktop = document.getElementById('themeToggleBtn');
   const toggleBtnMobile = document.getElementById('themeToggleBtnMobile');
 
-  // Check persisted theme or default to bright/light mode
+  // Check persisted theme or default to dark luxury mode (Nikhil Kapur palette)
   const savedTheme = localStorage.getItem('ws_theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('theme-dark');
-  } else {
+  if (savedTheme === 'light') {
     document.body.classList.remove('theme-dark');
+  } else {
+    document.body.classList.add('theme-dark');
   }
 
   function handleToggle() {
