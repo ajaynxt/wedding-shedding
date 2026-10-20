@@ -4261,14 +4261,28 @@ body.theme-dark .nk-locations-seo [style*="border-radius: 10px"]:hover {
    SUBPAGE HERO BANNER & NAVIGATION
    ============================================================ */
 .subpage-hero {
-  padding: clamp(120px, 14vw, 150px) clamp(20px, 4vw, 40px) clamp(40px, 6vw, 60px);
-  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 70%), var(--bg-alt);
+  padding: clamp(120px, 14vw, 155px) clamp(20px, 4vw, 40px) clamp(44px, 6vw, 68px);
+  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.12) 0%, rgba(181, 138, 28, 0.04) 50%, transparent 80%), var(--bg-alt);
   border-bottom: 1px solid var(--ln);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.subpage-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--g), transparent);
 }
 .subpage-hero-inner {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 .subpage-breadcrumb {
   display: inline-flex;
@@ -4279,7 +4293,11 @@ body.theme-dark .nk-locations-seo [style*="border-radius: 10px"]:hover {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--g);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  background: rgba(181, 138, 28, 0.08);
+  border: 1px solid rgba(181, 138, 28, 0.25);
+  padding: 4px 14px;
+  border-radius: 20px;
 }
 .subpage-breadcrumb a {
   color: var(--bd);
@@ -4291,44 +4309,63 @@ body.theme-dark .nk-locations-seo [style*="border-radius: 10px"]:hover {
 }
 .subpage-title {
   font-family: var(--font-serif);
-  font-size: clamp(32px, 4.5vw, 54px);
+  font-size: clamp(34px, 4.8vw, 58px);
   font-weight: 600;
   line-height: 1.15;
   color: var(--iv);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   letter-spacing: -0.5px;
 }
+.subpage-title em {
+  font-style: italic;
+  color: var(--g);
+  font-family: var(--font-serif);
+}
 .subpage-desc {
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-size: clamp(14.5px, 1.25vw, 17px);
   color: var(--bd);
-  line-height: 1.7;
-  max-width: 760px;
-  margin: 0 auto 24px auto;
+  line-height: 1.75;
+  max-width: 780px;
+  margin: 0 auto 26px auto;
 }
 .subpage-pills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 18px;
 }
 .subpage-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 7px 16px;
+  border-radius: 24px;
   background: var(--bg);
   border: 1px solid var(--ln);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--iv);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+.subpage-pill:hover {
+  border-color: var(--g);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(181, 138, 28, 0.15);
 }
 body.theme-dark .subpage-hero {
-  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 70%), #0A0A0A;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.6) 60%), #0A0A0A;
+}
+body.theme-dark .subpage-title {
+  color: #FFFFFF !important;
 }
 body.theme-dark .subpage-pill {
   background: #171513;
   border-color: rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
+}
+body.theme-dark .subpage-pill:hover {
+  border-color: var(--g);
+  background: #201D19;
 }

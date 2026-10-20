@@ -294,69 +294,88 @@
     </div>
   </section>
 
-  <!-- Project Modal -->
-  <dialog class="nk-proj-modal" id="nkProjModal" aria-labelledby="nkProjTitle">
-    <div class="nk-proj-modal__head">
-      <div>
-        <h2 class="nk-proj-modal__title" id="nkProjTitle"></h2>
-        <p class="nk-proj-modal__count"></p>
+  <!-- Project Modal & Lightbox Viewer -->
+  <div class="nk-proj-modal" id="nkProjModal" hidden>
+    <div class="nk-proj-modal__backdrop" data-proj-close></div>
+    <div class="nk-proj-modal__panel" role="dialog" aria-modal="true">
+      <div class="nk-proj-modal__bar">
+        <div>
+          <span class="nk-proj-modal__title" id="nkProjTitle">Media Showcase</span>
+          <span class="nk-proj-modal__count"></span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <a href="https://drive.google.com/drive/folders/1_hRyhHuD2pvyBWiQOAsnWqwtx54gyY80" target="_blank" rel="noopener" class="nk-proj-modal__drive-btn" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg, #1A1715, #000);color:#E2B94A;border:1px solid rgba(181,138,28,0.5);border-radius:20px;padding:6px 14px;font-size:11.5px;font-weight:600;text-decoration:none;letter-spacing:0.8px;transition:all 0.25s ease;">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            Raw 4K Cloud Archives &rarr;
+          </a>
+          <button class="nk-proj-modal__close" data-proj-close aria-label="Close gallery">&times;</button>
+        </div>
       </div>
-      <button class="nk-proj-modal__close" data-proj-close aria-label="Close gallery">&times;</button>
+      <div class="nk-proj-modal__grid"></div>
     </div>
-    <div class="nk-proj-modal__grid"></div>
-  </dialog>
+  </div>
 
-  <!-- Fullscreen Lightbox Viewer -->
-  <dialog class="nk-proj-viewer" id="nkProjViewer" aria-label="Image viewer">
+  <div class="nk-proj-viewer" id="nkProjViewer" hidden>
     <button class="nk-proj-viewer__close" data-proj-vclose aria-label="Close viewer">&times;</button>
-    <div class="nk-proj-viewer__count"></div>
     <button class="nk-proj-viewer__prev" aria-label="Previous image">&lsaquo;</button>
-    <img class="nk-proj-viewer__img" alt="">
+    <img src="" alt="" class="nk-proj-viewer__img">
     <button class="nk-proj-viewer__next" aria-label="Next image">&rsaquo;</button>
-  </dialog>
+    <div class="nk-proj-viewer__count"></div>
+  </div>
 
-  <!-- AI Assistant Chat Widget -->
-  <div class="ws-ai-bot" id="wsAIBot">
-    <button class="ai-bot-toggle" id="aiBotToggle" aria-label="Open AI Assistant" title="Chat with Wedding Shedding Assistant">
-      <img src="assets/images/ai-assistant-avatar.png" alt="Wedding Shedding Assistant Avatar" class="ai-bot-avatar-img">
-      <span class="ai-bot-pulse"></span>
-    </button>
-    <div class="ai-bot-window" id="aiBotWindow">
-      <div class="ai-bot-header">
-        <div class="ai-bot-header-left">
-          <div class="ai-bot-header-avatar">
-            <img src="assets/images/ai-assistant-avatar.png" alt="Assistant">
-            <span class="online-indicator"></span>
-          </div>
-          <div>
-            <h4>Wedding Shedding AI</h4>
-            <p>Direct Assistance &middot; Always Active</p>
-          </div>
-        </div>
-        <button class="ai-bot-close" id="aiBotClose" aria-label="Close chat">&times;</button>
-      </div>
-      <div class="ai-bot-messages" id="aiBotMessages">
-        <div class="ai-msg bot-msg">
-          <p>Namaste! 🙏 Welcome to <strong>Wedding Shedding Studios</strong>.</p>
-          <p style="margin-top:6px;">We cover <strong>Weddings, Real Estate, Corporate Brand Shoots, Mega Events, Clinics &amp; Schools</strong>. We also accept <strong>Cash and Online Payments</strong>.</p>
-          <p style="margin-top:6px;">How may I assist your celebration or production today?</p>
-        </div>
-      </div>
-      <div class="ai-quick-chips" id="aiQuickChips">
-        <button class="ai-chip-btn" data-query="wedding">💍 Wedding Quote</button>
-        <button class="ai-chip-btn" data-query="cash">💵 Cash Payment</button>
-        <button class="ai-chip-btn" data-query="realestate">🏙️ Real Estate 4K</button>
-        <button class="ai-chip-btn" data-query="corporate">🏢 Corporate Shoot</button>
-        <button class="ai-chip-btn" data-query="event">🎉 Mega Events</button>
-        <button class="ai-chip-btn" data-query="contact">📍 Studio Address</button>
-      </div>
-      <form class="ai-bot-form" id="aiBotForm">
-        <input type="text" id="aiBotInput" placeholder="Ask about dates, cash payment, shoots..." autocomplete="off">
-        <button type="submit" aria-label="Send message">
-          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-        </button>
-      </form>
+  <!-- ============================================================
+       AI WEDDING CONCIERGE BOT (RIYA)
+       ============================================================ -->
+  <aside class="ai-bot-trigger" id="aiBotTrigger" aria-label="Open AI Assistant" role="button" tabindex="0">
+    <div class="ai-bot-bubble">
+      <span>Need help? Ask Riya! 👋</span>
     </div>
+    <div class="ai-bot-avatar-wrap">
+      <img src="assets/images/ai-assistant-avatar.png" alt="Riya - Wedding Shedding AI Concierge" class="ai-bot-avatar-img" width="58" height="58">
+      <span class="ai-bot-online-dot" title="Online now"></span>
+    </div>
+  </aside>
+
+  <div class="ai-chat-window" id="aiChatWindow" role="dialog" aria-modal="true" aria-label="Wedding Shedding AI Assistant">
+    <div class="ai-chat-header">
+      <div class="ai-chat-profile">
+        <img src="assets/images/ai-assistant-avatar.png" alt="Riya" class="ai-chat-profile-img" width="44" height="44">
+        <div>
+          <div class="ai-chat-name">Riya &middot; AI Concierge</div>
+          <div class="ai-chat-status"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;"></span> Online &middot; Instant Replies</div>
+        </div>
+      </div>
+      <button class="ai-chat-close-btn" id="aiChatCloseBtn" aria-label="Close Chat">&times;</button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-msg bot">
+        <div class="ai-msg-bubble">
+          <p>Namaste! 🙏 Welcome to <strong>Wedding Shedding</strong>.</p>
+          <p style="margin-top: 6px;">I am <strong>Riya</strong>, your virtual concierge. We cover <strong>Weddings, Real Estate, Corporate Brand Shoots, Mega Events, Clinics &amp; Schools</strong>. We also accept <strong>Cash and Online Payments</strong>.</p>
+          <div class="ai-chips-container" id="aiQuickChips">
+            <button class="ai-chip-btn" data-query="wedding">💍 Wedding Quote</button>
+            <button class="ai-chip-btn" data-query="cash">💵 Cash Payment</button>
+            <button class="ai-chip-btn" data-query="prewedding">✨ Pre-Wedding &amp; Drone</button>
+            <button class="ai-chip-btn" data-query="realestate">🏙️ Real Estate 4K</button>
+            <button class="ai-chip-btn" data-query="corporate">🏢 Corporate Shoot</button>
+            <button class="ai-chip-btn" data-query="event">🎉 Mega Events</button>
+            <button class="ai-chip-btn" data-query="contact">📍 Studio Address</button>
+            <button class="ai-chip-btn" data-query="whatsapp">💬 Chat on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="ai-chat-input-bar" id="aiChatForm" onsubmit="return false;">
+      <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Ask about services, dates, cash payment..." autocomplete="off">
+      <button type="submit" class="ai-chat-send-btn" id="aiChatSendBtn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </form>
   </div>
 
   <!-- Floating WhatsApp Action -->
