@@ -31,18 +31,36 @@ function initHeader() {
   const closeBtn = document.querySelector('.mobile-drawer-close');
   const drawer = document.querySelector('.mobile-drawer');
 
-  // Sticky / Solid header scroll trigger
-  const THRESHOLD = 40;
+  // Sticky / Solid header scroll trigger & Smart Auto-Scroll Hide/Reveal
+  const THRESHOLD = 30;
   let solid = null;
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+  let isHidden = false;
 
   function paint() {
-    const y = window.pageYOffset || document.documentElement.scrollTop || 0;
-    const next = y > THRESHOLD;
-    if (next !== solid) {
-      solid = next;
-      header?.classList.toggle('is-solid', next);
-      header?.classList.toggle('is-scrolled', next);
+    const y = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
+    const nextSolid = y > THRESHOLD;
+    if (nextSolid !== solid) {
+      solid = nextSolid;
+      header?.classList.toggle('is-solid', nextSolid);
+      header?.classList.toggle('is-scrolled', nextSolid);
     }
+
+    // Auto-scroll / Auto-hide on scroll down, reveal on scroll up
+    const isDrawerOpen = drawer?.classList.contains('is-open');
+    if (!isDrawerOpen) {
+      const diff = y - lastScrollY;
+      if (y > 70 && diff > 6 && !isHidden) {
+        // Scrolling down: hide header
+        isHidden = true;
+        header?.classList.add('is-hidden');
+      } else if ((diff < -6 || y <= 40) && isHidden) {
+        // Scrolling up or near top: reveal header
+        isHidden = false;
+        header?.classList.remove('is-hidden');
+      }
+    }
+    lastScrollY = y;
   }
 
   let ticking = false;
@@ -63,6 +81,8 @@ function initHeader() {
   if (toggleBtn && drawer) {
     toggleBtn.addEventListener('click', () => {
       drawer.classList.add('is-open');
+      header?.classList.remove('is-hidden');
+      isHidden = false;
       document.body.classList.add('nk-proj-locked');
     });
   }
@@ -78,6 +98,36 @@ function initHeader() {
       drawer.classList.remove('is-open');
       document.body.classList.remove('nk-proj-locked');
     });
+  });
+
+  // Smooth Auto-scroll for in-page anchor links
+  document.querySelectorAll('a[href*="#"]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || href === '#!') return;
+    
+    const hashIndex = href.indexOf('#');
+    const path = href.slice(0, hashIndex);
+    const hash = href.slice(hashIndex);
+    
+    const isCurrentPage = !path || path === window.location.pathname.split('/').pop() || (window.location.pathname.endsWith('/') && path === 'index.html');
+    if (isCurrentPage && hash.length > 1) {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          const targetY = target.getBoundingClientRect().top + window.pageYOffset - 58;
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: 'smooth'
+          });
+          header?.classList.remove('is-hidden');
+          isHidden = false;
+          if (history.pushState) {
+            history.pushState(null, null, hash);
+          }
+        }
+      });
+    }
   });
 }
 
@@ -128,8 +178,8 @@ function initHeroCarousel() {
 
   function header() {
     const h = document.querySelector('header.header, #nk-site-header, .site-header, header');
-    let v = h ? Math.round(h.getBoundingClientRect().height) : 96;
-    if (v < 40 || v > 220) v = 96;
+    let v = h ? Math.round(h.getBoundingClientRect().height) : 52;
+    if (v < 30 || v > 120) v = 52;
     root.style.setProperty('--top', v + 'px');
     root.style.setProperty('--stage-w', stage.clientWidth + 'px');
   }
