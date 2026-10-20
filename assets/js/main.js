@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectsGallery();
   initPortfolioFilters();
   initCustomCursor();
+  initFilmModal();
   initCameraFooter();
   initThemeToggle();
   initAIBot();
@@ -951,6 +952,75 @@ function initCustomCursor() {
       ring.classList.remove('is-hovering');
     }
   }, { passive: true });
+}
+
+/* ============================================================
+   5D. CINEMATIC FILM LIGHTBOX MODAL
+   ============================================================ */
+function initFilmModal() {
+  const modal = document.getElementById('nkFilmModal');
+  const iframe = document.getElementById('nkFilmIframe');
+  const titleEl = document.getElementById('nkFilmModalTitle');
+  const ytLink = document.getElementById('nkFilmModalYtLink');
+  const waLink = document.getElementById('nkFilmModalWaLink');
+  if (!modal || !iframe) return;
+
+  function lock(on) {
+    if (on) {
+      const sw = window.innerWidth - document.documentElement.clientWidth;
+      if (sw > 0) document.body.style.paddingRight = sw + 'px';
+      document.body.classList.add('nk-proj-locked');
+    } else {
+      document.body.classList.remove('nk-proj-locked');
+      document.body.style.paddingRight = '';
+    }
+  }
+
+  function openFilm(ytId, title) {
+    if (!ytId) return;
+    if (titleEl) titleEl.textContent = title || 'Cinematic Wedding Film';
+    if (ytLink) ytLink.href = `https://youtu.be/${ytId}`;
+    if (waLink) waLink.href = `https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20loved%20the%20${encodeURIComponent(title || 'wedding film')}%20and%20want%20to%20inquire%20about%20booking.`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    modal.hidden = false;
+    lock(true);
+    modal.querySelector('.nk-film-modal__close')?.focus();
+  }
+
+  function closeFilm() {
+    modal.hidden = true;
+    iframe.src = '';
+    const isOtherOpen = !document.getElementById('nkProjModal')?.hidden || !document.getElementById('nkProjViewer')?.hidden;
+    if (!isOtherOpen) lock(false);
+  }
+
+  // Click on any film card play trigger
+  document.addEventListener('click', e => {
+    const playTrigger = e.target.closest('.js-play-film, [data-youtube-id] .nk-film-thumbwrap');
+    if (playTrigger) {
+      e.preventDefault();
+      const card = playTrigger.closest('.nk-film-card') || playTrigger;
+      const ytId = playTrigger.getAttribute('data-yt') || card.getAttribute('data-youtube-id');
+      const title = card.querySelector('.nk-film-name')?.textContent?.trim() || 'Cinematic Wedding Film';
+      openFilm(ytId, title);
+      return;
+    }
+
+    if (e.target.closest('[data-film-close]')) {
+      closeFilm();
+      return;
+    }
+    if (!modal.hidden && e.target === modal) {
+      closeFilm();
+      return;
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!modal.hidden && e.key === 'Escape') {
+      closeFilm();
+    }
+  });
 }
 
 /* ============================================================
