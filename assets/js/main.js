@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initProjectsGallery();
   initPortfolioFilters();
+  initPortfolioSlider();
   initCustomCursor();
   initFilmModal();
   initCameraFooter();
@@ -890,8 +891,209 @@ function initPortfolioFilters() {
           card.classList.add('is-filtered-out');
         }
       });
+
+      // Sync portfolio slider with filtered cards
+      const slider = document.getElementById('portfolioSlider');
+      if (slider && typeof slider.__syncSlider === 'function') {
+        slider.__syncSlider();
+      }
     });
   });
+}
+
+/* ============================================================
+   5C. PORTFOLIO SLIDER & AUTO SLIDE BAR (NIKHIL KAPUR STANDARD)
+   ============================================================ */
+function initPortfolioSlider() {
+  const slider = document.getElementById('portfolioSlider');
+  const track = document.getElementById('portfolioSliderTrack');
+  if (!slider || !track) return;
+
+  const currentCountEl = document.getElementById('portfolioSlideCurrent');
+  const totalCountEl = document.getElementById('portfolioSlideTotal');
+  const barFill = document.getElementById('portfolioSlideBarFill');
+  const progressBar = document.getElementById('portfolioSlideBar');
+  const prevBtn = document.getElementById('portfolioNavPrev');
+  const nextBtn = document.getElementById('portfolioNavNext');
+  const playPauseBtn = document.getElementById('portfolioNavPlayPause');
+  const autoPulse = document.getElementById('portfolioAutoPulse');
+  const autoLabel = document.getElementById('portfolioAutoLabel');
+
+  const INTERVAL = 3800; // 3.8s per slide
+  let isPaused = false;
+  let isHovered = false;
+  let isTouching = false;
+  let elapsed = 0;
+  let lastTimestamp = null;
+  let activeIndex = 0;
+
+  function getVisibleSlides() {
+    return Array.from(track.querySelectorAll('.project-card:not(.is-filtered-out)'));
+  }
+
+  function updateTotal() {
+    const visible = getVisibleSlides();
+    const count = visible.length;
+    if (totalCountEl) {
+      totalCountEl.textContent = ('0' + Math.max(count, 1)).slice(-2);
+    }
+    updateCurrent();
+  }
+
+  function updateCurrent() {
+    const visible = getVisibleSlides();
+    if (!visible.length) return;
+    if (activeIndex >= visible.length) activeIndex = 0;
+    if (currentCountEl) {
+      currentCountEl.textContent = ('0' + (activeIndex + 1)).slice(-2);
+    }
+  }
+
+  function scrollToSlide(index, smooth = true) {
+    const visible = getVisibleSlides();
+    if (!visible.length) return;
+    if (index >= visible.length) index = 0;
+    if (index < 0) index = visible.length - 1;
+    activeIndex = index;
+
+    const target = visible[activeIndex];
+    if (target) {
+      const scrollPos = target.offsetLeft - track.offsetLeft;
+      track.scrollTo({
+        left: scrollPos,
+        behavior: smooth ? 'smooth' : 'auto'
+      });
+    }
+    updateCurrent();
+  }
+
+  function animateLoop(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const delta = timestamp - lastTimestamp;
+    lastTimestamp = timestamp;
+
+    const visible = getVisibleSlides();
+    if (visible.length <= 1) {
+      if (barFill) barFill.style.width = '100%';
+    } else {
+      if (!isPaused && !isHovered && !isTouching) {
+        elapsed += delta;
+        const progress = Math.min(elapsed / INTERVAL, 1);
+        if (barFill) {
+          barFill.style.width = (progress * 100) + '%';
+        }
+
+        if (progress >= 1) {
+          elapsed = 0;
+          scrollToSlide(activeIndex + 1, true);
+        }
+      }
+    }
+
+    requestAnimationFrame(animateLoop);
+  }
+
+  function resetTimer() {
+    elapsed = 0;
+    if (barFill) barFill.style.width = '0%';
+  }
+
+  function togglePlayPause() {
+    isPaused = !isPaused;
+    if (playPauseBtn) {
+      const pauseIcon = playPauseBtn.querySelector('.icon-pause');
+      const playIcon = playPauseBtn.querySelector('.icon-play');
+      if (pauseIcon && playIcon) {
+        pauseIcon.style.display = isPaused ? 'none' : 'block';
+        playIcon.style.display = isPaused ? 'block' : 'none';
+      }
+      playPauseBtn.setAttribute('aria-label', isPaused ? 'Resume auto slide' : 'Pause auto slide');
+    }
+    if (autoPulse) {
+      autoPulse.classList.toggle('is-paused', isPaused);
+    }
+    if (autoLabel) {
+      autoLabel.textContent = isPaused ? 'PAUSED' : 'AUTO SLIDE';
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      scrollToSlide(activeIndex + 1, true);
+      resetTimer();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      scrollToSlide(activeIndex - 1, true);
+      resetTimer();
+    });
+  }
+
+  if (playPauseBtn) {
+    playPauseBtn.addEventListener('click', togglePlayPause);
+  }
+
+  // Hover detection
+  slider.addEventListener('mouseenter', () => { isHovered = true; });
+  slider.addEventListener('mouseleave', () => { isHovered = false; });
+
+  // Touch handling
+  track.addEventListener('touchstart', () => { isTouching = true; }, { passive: true });
+  track.addEventListener('touchend', () => {
+    isTouching = false;
+    resetTimer();
+  }, { passive: true });
+
+  // Click on progress bar to jump
+  if (progressBar) {
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const visible = getVisibleSlides();
+      if (visible.length) {
+        const targetIdx = Math.min(Math.floor(ratio * visible.length), visible.length - 1);
+        scrollToSlide(targetIdx, true);
+        resetTimer();
+      }
+    });
+  }
+
+  // Scroll listener for manual dragging / touch swiping
+  let scrollRAF = null;
+  track.addEventListener('scroll', () => {
+    if (scrollRAF) cancelAnimationFrame(scrollRAF);
+    scrollRAF = requestAnimationFrame(() => {
+      const visible = getVisibleSlides();
+      if (!visible.length) return;
+      const currentScroll = track.scrollLeft;
+      let closestIdx = 0;
+      let minDiff = Infinity;
+      visible.forEach((slide, idx) => {
+        const diff = Math.abs((slide.offsetLeft - track.offsetLeft) - currentScroll);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      if (closestIdx !== activeIndex) {
+        activeIndex = closestIdx;
+        updateCurrent();
+      }
+    });
+  }, { passive: true });
+
+  // Sync hook when filter tabs are clicked
+  slider.__syncSlider = function() {
+    activeIndex = 0;
+    updateTotal();
+    scrollToSlide(0, false);
+    resetTimer();
+  };
+
+  updateTotal();
+  requestAnimationFrame(animateLoop);
 }
 
 /* ============================================================

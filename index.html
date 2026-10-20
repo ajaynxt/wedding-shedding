@@ -191,7 +191,45 @@
               }
             }
           ]
-        }
+        },
+        "sameAs": [
+          "https://www.wedmegood.com/profile/Wedding-Shedding-506041/reviews",
+          "https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150",
+          "https://www.instagram.com/weddingshedding_0",
+          "https://www.youtube.com/@weddingshedding2308"
+        ],
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Hemant Rana" },
+            "reviewBody": "Wedding Shedding photography team captured every heartfelt moment with stunning vibrancy and creativity. The experience was flawless—they handled timelines expertly amid the chaos—and we relive our day through these beautiful images daily."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Priya Rawat" },
+            "reviewBody": "Had an amazing experience with the Wedding Shedding team. The shots are absolutely beautiful, they captured our moments so naturally."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "G. Khatter" },
+            "reviewBody": "Had a good experience with Mr. Sonu. He was very patient throughout the album process, even with multiple changes & edits. He listened carefully to all our preferences & delivered everything exactly the way we wanted."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Pawan Kumar" },
+            "reviewBody": "My experience with Wedding shedding has been amazing. All my wedding pictures and videos were so beautiful. Everyone in my family loved their work as well as their behaviour. They were polite and very accommodating."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Saurabh Kashyap" },
+            "reviewBody": "Excellent work by team Wedding Shedding! Very professional, fast delivery, great coordination, punctual, friendly staff, affordable rates. Special thanks to Sonu Kumar."
+          }
+        ]
       },
       {
         "@type": "WebSite",
@@ -300,8 +338,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
         </a>
 
-        <!-- Award Badge -->
-        <a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener" class="nk-hdr-btn" title="WeddingWire 4.9 Rating &amp; Award Winner" aria-label="WeddingWire Profile" style="padding:0 10px;">
+        <!-- WedMeGood 4.8★ & WeddingWire 4.9★ Trust Badges -->
+        <a href="https://www.wedmegood.com/profile/Wedding-Shedding-506041/reviews" target="_blank" rel="noopener" class="nk-hdr-btn" title="WedMeGood 4.8 Rating (57 Reviews)" aria-label="WedMeGood Reviews" style="padding:0 8px;gap:3px;">
+          <span style="font-size:9.5px;font-weight:900;background:#E72E77;color:#fff;padding:1px 4px;border-radius:3px;">WMG</span>
+          <span style="font-size:10.5px;font-weight:700;color:var(--g);">4.8★</span>
+        </a>
+        <a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener" class="nk-hdr-btn" title="WeddingWire 4.9 Rating &amp; Award Winner" aria-label="WeddingWire Profile" style="padding:0 8px;gap:3px;">
+          <span style="font-size:9.5px;font-weight:900;background:var(--g);color:#1A1715;padding:1px 4px;border-radius:3px;">WW</span>
           <span style="font-size:10.5px;font-weight:700;color:var(--g);">4.9★</span>
         </a>
       </div>
@@ -337,6 +380,7 @@
       <li class="mobile-nav-item"><a href="#instagram">Instagram Feed (@weddingshedding_0)</a></li>
       <li class="mobile-nav-item"><a href="#films">4K Wedding Films &amp; Teasers</a></li>
       <li class="mobile-nav-item"><a href="#about">About Founder Sonu Kumar</a></li>
+      <li class="mobile-nav-item"><a href="#reviews" style="color:var(--g);font-weight:700;">Verified Reviews (4.8★ WMG &middot; 4.9★ WW)</a></li>
       <li class="mobile-nav-item"><a href="corporate.html">Corporate, Source One &amp; IRAM</a></li>
       <li class="mobile-nav-item"><a href="real-estate.html">Real Estate &amp; 4K Drone</a></li>
       <li class="mobile-nav-item"><a href="events.html">Mega Events &amp; Celebrations</a></li>
@@ -1074,112 +1118,141 @@
       <button type="button" class="portfolio-filter-btn" data-filter="haldi" role="tab" aria-selected="false">Haldi &amp; Sangeet</button>
     </div>
 
-    <div class="projects-grid">
-      <!-- 1. Royal Wedding Celebration -->
-      <div class="project-card nkx-rv" data-category="wedding" data-project="royal-wedding">
-        <div class="project-card-img">
-          <img src="assets/images/ws_photo-01.jpg?v=3" alt="Royal Wedding Celebration Gallery" loading="lazy">
-          <span class="project-card-tag">Royal Weddings</span>
+    <!-- Portfolio Slider Stage with Auto Slide Bar -->
+    <div class="portfolio-slider" id="portfolioSlider" aria-roledescription="carousel" aria-label="Signature Masterpieces Showcase Carousel">
+      <div class="portfolio-slider-track" id="portfolioSliderTrack" role="region" aria-live="polite">
+        <!-- 1. Royal Wedding Celebration -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="wedding" data-project="royal-wedding" role="group" aria-roledescription="slide" aria-label="1 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_photo-01.jpg?v=3" alt="Royal Wedding Celebration Gallery" loading="lazy">
+            <span class="project-card-tag">Royal Weddings</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Royal Wedding Celebration</h3>
+            <p class="project-card-sub">Grand Palace Ceremony &amp; Sacred Pheras &middot; High-Res Collection</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Royal Wedding Celebration</h3>
-          <p class="project-card-sub">Grand Palace Ceremony &amp; Sacred Pheras &middot; High-Res Collection</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
+
+        <!-- 2. Grand Varmala & Cold Pyro Night -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="wedding" data-project="royal-wedding" role="group" aria-roledescription="slide" aria-label="2 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_celebration_01.jpg?v=3" alt="Grand Varmala and Cold Pyro Stage Celebration" loading="lazy">
+            <span class="project-card-tag">Grand Varmala</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Grand Varmala &amp; Cold Pyro Night</h3>
+            <p class="project-card-sub">Spectacular Stage Fireworks &amp; Garland Exchange &middot; Authentic Moments</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Baraat Grand Chariot Entry -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="wedding rituals" data-project="rituals-traditions" role="group" aria-roledescription="slide" aria-label="3 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_photo-04.jpg?v=3" alt="Baraat Grand Chariot Procession and Rose Petal Shower" loading="lazy">
+            <span class="project-card-tag">Royal Baraat</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Baraat Grand Chariot Entry</h3>
+            <p class="project-card-sub">Royal Chariot Procession &amp; Rose Petal Showers &middot; Authentic Celebrations</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Romantic Pre-Wedding Solace -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="prewedding" data-project="pre-wedding" role="group" aria-roledescription="slide" aria-label="4 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_photo-05.jpg?v=3" alt="Romantic Pre-Wedding Couple Portraits" loading="lazy">
+            <span class="project-card-tag">Pre-Wedding</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Romantic Pre-Wedding Stories</h3>
+            <p class="project-card-sub">Intimate Couple Portraits &amp; Candid Chemistry &middot; Golden Hour Collection</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Sacred Sindoor Daan & Pheras -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="wedding rituals" data-project="rituals-traditions" role="group" aria-roledescription="slide" aria-label="5 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_photo-06.jpg?v=3" alt="Sacred Sindoor Daan and Pheras Vedic Ritual" loading="lazy">
+            <span class="project-card-tag">Sacred Rituals</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Sacred Sindoor Daan &amp; Pheras</h3>
+            <p class="project-card-sub">Vedic Marriage Rites, Eternal Vows &amp; Emotional Moments &middot; Pure Heritage</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Joyful Sangeet & Celebrations -->
+        <div class="project-card portfolio-slide nkx-rv" data-category="wedding haldi" data-project="haldi-sangeet" role="group" aria-roledescription="slide" aria-label="6 of 6">
+          <div class="project-card-img">
+            <img src="assets/images/ws_photo-07.jpg?v=3" alt="Joyful Sangeet Dance and Family Celebrations" loading="lazy">
+            <span class="project-card-tag">Sangeet &amp; Haldi</span>
+          </div>
+          <div class="project-card-content">
+            <h3 class="project-card-title">Joyful Sangeet &amp; Celebrations</h3>
+            <p class="project-card-sub">High-Energy Dance, Kaleere Rites &amp; Vibrant Family Emotions &middot; Full Gallery</p>
+            <div class="project-btn-wrap">
+              <span class="btn-view-project">
+                View Portfolio
+                <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 2. Grand Varmala & Cold Pyro Night -->
-      <div class="project-card nkx-rv" data-category="wedding" data-project="royal-wedding">
-        <div class="project-card-img">
-          <img src="assets/images/ws_celebration_01.jpg?v=3" alt="Grand Varmala and Cold Pyro Stage Celebration" loading="lazy">
-          <span class="project-card-tag">Grand Varmala</span>
+      <!-- Slide Bar & Controls (Auto Slide Bar + Progress + Prev/Next + Pause) -->
+      <div class="portfolio-slider-ctrl nkx-rv">
+        <div class="portfolio-slider-status">
+          <span class="portfolio-slide-count"><b id="portfolioSlideCurrent">01</b> / <span id="portfolioSlideTotal">06</span></span>
+          <span class="portfolio-slide-badge" id="portfolioSlideBadge">
+            <span class="auto-pulse-dot" id="portfolioAutoPulse"></span>
+            <span id="portfolioAutoLabel">AUTO SLIDE</span>
+          </span>
         </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Grand Varmala &amp; Cold Pyro Night</h3>
-          <p class="project-card-sub">Spectacular Stage Fireworks &amp; Garland Exchange &middot; Authentic Moments</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
-          </div>
+        <div class="portfolio-slide-bar" id="portfolioSlideBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" title="Slide countdown bar">
+          <div class="portfolio-slide-bar-fill" id="portfolioSlideBarFill"></div>
         </div>
-      </div>
-
-      <!-- 3. Baraat Grand Chariot Entry -->
-      <div class="project-card nkx-rv" data-category="wedding rituals" data-project="rituals-traditions">
-        <div class="project-card-img">
-          <img src="assets/images/ws_photo-04.jpg?v=3" alt="Baraat Grand Chariot Procession and Rose Petal Shower" loading="lazy">
-          <span class="project-card-tag">Royal Baraat</span>
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Baraat Grand Chariot Entry</h3>
-          <p class="project-card-sub">Royal Chariot Procession &amp; Rose Petal Showers &middot; Authentic Celebrations</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Romantic Pre-Wedding Solace -->
-      <div class="project-card nkx-rv" data-category="prewedding" data-project="pre-wedding">
-        <div class="project-card-img">
-          <img src="assets/images/ws_photo-05.jpg?v=3" alt="Romantic Pre-Wedding Couple Portraits" loading="lazy">
-          <span class="project-card-tag">Pre-Wedding</span>
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Romantic Pre-Wedding Stories</h3>
-          <p class="project-card-sub">Intimate Couple Portraits &amp; Candid Chemistry &middot; Golden Hour Collection</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Sacred Sindoor Daan & Pheras -->
-      <div class="project-card nkx-rv" data-category="wedding rituals" data-project="rituals-traditions">
-        <div class="project-card-img">
-          <img src="assets/images/ws_photo-06.jpg?v=3" alt="Sacred Sindoor Daan and Pheras Vedic Ritual" loading="lazy">
-          <span class="project-card-tag">Sacred Rituals</span>
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Sacred Sindoor Daan &amp; Pheras</h3>
-          <p class="project-card-sub">Vedic Marriage Rites, Eternal Vows &amp; Emotional Moments &middot; Pure Heritage</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Joyful Sangeet & Celebrations -->
-      <div class="project-card nkx-rv" data-category="wedding haldi" data-project="haldi-sangeet">
-        <div class="project-card-img">
-          <img src="assets/images/ws_photo-07.jpg?v=3" alt="Joyful Sangeet Dance and Family Celebrations" loading="lazy">
-          <span class="project-card-tag">Sangeet &amp; Haldi</span>
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Joyful Sangeet &amp; Celebrations</h3>
-          <p class="project-card-sub">High-Energy Dance, Kaleere Rites &amp; Vibrant Family Emotions &middot; Full Gallery</p>
-          <div class="project-btn-wrap">
-            <span class="btn-view-project">
-              View Portfolio
-              <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-            </span>
-          </div>
+        <div class="portfolio-slider-nav">
+          <button type="button" class="portfolio-nav-btn portfolio-nav-prev" id="portfolioNavPrev" aria-label="Previous showcase slide">
+            <svg viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4"></path></svg>
+          </button>
+          <button type="button" class="portfolio-nav-playpause" id="portfolioNavPlayPause" aria-label="Pause auto slide" title="Pause auto slide">
+            <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </button>
+          <button type="button" class="portfolio-nav-btn portfolio-nav-next" id="portfolioNavNext" aria-label="Next showcase slide">
+            <svg viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4"></path></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1392,6 +1465,152 @@
   </section>
 
   <!-- ============================================================
+       VERIFIED CLIENT REVIEWS & TESTIMONIALS SECTION (#reviews)
+       ============================================================ -->
+  <section class="nk-reviews-section" id="reviews" aria-label="Client Reviews and Testimonials">
+    <div class="nk-reviews-header nkx-rv">
+      <div class="nk-reviews-badges">
+        <a href="https://www.wedmegood.com/profile/Wedding-Shedding-506041/reviews" target="_blank" rel="noopener" class="trust-badge-pill wmg">
+          <span class="badge-logo">WedMeGood</span>
+          <span>4.8★ &middot; 57 Verified Client Reviews</span>
+        </a>
+        <a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener" class="trust-badge-pill ww">
+          <span class="badge-logo">WeddingWire</span>
+          <span>4.9★ &middot; Couples Choice Awards 2024 &amp; 2025</span>
+        </a>
+      </div>
+      <p style="font-size:12px;letter-spacing:3px;color:var(--g);text-transform:uppercase;margin-bottom:8px;">Real Words From Real Couples</p>
+      <h2 class="section-heading-title">What Our Brides &amp; Grooms Say</h2>
+      <div class="section-divider"></div>
+      <p style="font-size:14.5px;color:var(--bd);margin-top:16px;max-width:760px;margin-left:auto;margin-right:auto;">
+        Unfiltered stories of joy, tears, and timeless wedding cinema. With 57+ five-star reviews on WedMeGood and WeddingWire, here is why couples across Delhi NCR and Rajasthan trust Wedding Shedding.
+      </p>
+    </div>
+
+    <div class="nk-reviews-grid">
+      <!-- Review 1 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          Wedding Shedding photography team captured every heartfelt moment with stunning vibrancy and creativity. The experience was flawless—they handled timelines expertly amid the chaos—and we relive our day through these beautiful images daily.
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">Hemant Rana</span>
+            <span class="nk-review-author-tag">Grand Wedding &middot; South Delhi</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+
+      <!-- Review 2 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          Had an amazing experience with the Wedding Shedding team. The shots are absolutely beautiful, they captured our moments so naturally.
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">Priya Rawat</span>
+            <span class="nk-review-author-tag">Pre-Wedding &amp; Wedding &middot; Delhi NCR</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+
+      <!-- Review 3 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          Had a good experience with Mr. Sonu. He was very patient throughout the album process, even with multiple changes &amp; edits. He listened carefully to all our preferences &amp; delivered everything exactly the way we wanted. The pictures also came out beautiful. Highly recommended!
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">G. Khatter</span>
+            <span class="nk-review-author-tag">Wedding &amp; Archival Album &middot; Delhi</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+
+      <!-- Review 4 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          My experience with Wedding Shedding has been amazing. All my wedding pictures and videos were so beautiful. Everyone in my family loved their work as well as their behaviour. They were polite and very accommodating. Outstanding work!
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">Pawan Kumar</span>
+            <span class="nk-review-author-tag">Complete Wedding Coverage &middot; Delhi NCR</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+
+      <!-- Review 5 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          Excellent work by team Wedding Shedding! They snapped the most beautiful memories. Very professional, fast delivery, great coordination, punctual, friendly staff, affordable rates. Special thanks to Sonu Kumar!
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">Saurabh Kashyap</span>
+            <span class="nk-review-author-tag">Wedding &amp; Post Production &middot; Delhi</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+
+      <!-- Review 6 -->
+      <article class="nk-review-card nkx-rv">
+        <div class="nk-review-card-top">
+          <div class="nk-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="nk-review-source is-wmg">WedMeGood 5.0</span>
+        </div>
+        <p class="nk-review-quote">
+          The images beautifully captured the essence of the day, preserving moments that we will cherish forever. The candid shots truly reflected the joy and emotions of the occasion. The team was professional, punctual, and attentive.
+        </p>
+        <div class="nk-review-author-wrap">
+          <div class="nk-review-author-info">
+            <span class="nk-review-author-name">Harsh Nishad</span>
+            <span class="nk-review-author-tag">Candid Wedding Photography &middot; Delhi NCR</span>
+          </div>
+          <span class="nk-review-verified">&#10003; Verified Client</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="nk-reviews-cta nkx-rv">
+      <a href="https://www.wedmegood.com/profile/Wedding-Shedding-506041/reviews" target="_blank" rel="noopener" class="btn-gold-solid" style="padding:12px 28px;border-radius:24px;font-size:12.5px;">
+        Read All 57 Reviews on WedMeGood &rarr;
+      </a>
+      <a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener" class="btn-gold-outline" style="padding:12px 28px;border-radius:24px;font-size:12.5px;">
+        WeddingWire 4.9★ Profile &amp; Awards &rarr;
+      </a>
+      <a href="https://g.page/r/CaNUqaPpp9tuEBM/review" target="_blank" rel="noopener" class="btn-gold-outline" style="padding:12px 28px;border-radius:24px;font-size:12.5px;">
+        Google Reviews (4.9★) &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
        BOOKING & POLICIES SECTION (#policies)
        ============================================================ -->
   <section class="nk-appendix" id="policies">
@@ -1524,6 +1743,14 @@
       <span class="nkf__depth" aria-hidden="true"></span>
       <div class="nkf__cam">
         <span class="nkf__inner" aria-hidden="true"></span>
+        <!-- Camera Reticle Corner Marks (CAMRE WALE NISAN) -->
+        <div class="nkf__corners" aria-hidden="true">
+          <span class="tl"></span>
+          <span class="tr"></span>
+          <span class="bl"></span>
+          <span class="br"></span>
+        </div>
+        <div class="nkf__spec-tag" aria-hidden="true">FULL-FRAME 4K HDR &middot; 60FPS</div>
         <!-- Top Plate with Vintage Viewfinder & Prism -->
         <div class="nkf__plate" aria-hidden="true">
           <svg class="nkf__hump" viewBox="0 0 260 56">
@@ -1608,15 +1835,9 @@
 
           <!-- Brand Profile -->
           <div class="nkf__brand">
-            <div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">
-              <img src="assets/images/ws_logo_light.png?v=3" alt="Wedding Shedding" class="ws-logo-light" style="width:48px;height:48px;border-radius:50%;border:1.5px solid var(--g);background:#FFFFFF;padding:2px;box-shadow:0 3px 10px rgba(181,138,28,0.25);flex-shrink:0;">
-              <img src="assets/images/ws_logo_dark.png?v=3" alt="Wedding Shedding" class="ws-logo-dark" style="width:48px;height:48px;border-radius:50%;border:1.5px solid var(--g);background:#1A1715;padding:2px;box-shadow:0 3px 10px rgba(0,0,0,0.6);flex-shrink:0;">
-              <div>
-                <p class="nkf__name" style="margin-bottom:2px;">Wedding Shedding</p>
-                <p class="nkf__sub" style="margin:0;">Photography &amp; Films &middot; Est. 2015</p>
-              </div>
-            </div>
-            <p class="nkf__tag">Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi &ndash; 110084</p>
+            <p class="nkf__name">Wedding Shedding</p>
+            <p class="nkf__sub">Photography &amp; Films</p>
+            <p class="nkf__tag">Delhi NCR &middot; Jaipur &middot; Luxury Wedding Photography &amp; 4K Films &middot; Est. 2015</p>
             <div class="nkf__icons">
               <a href="https://www.instagram.com/weddingshedding_0" target="_blank" rel="noopener" class="nkf__ic" aria-label="Instagram" title="Instagram"><svg class="fill" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
               <a href="https://www.youtube.com/@weddingshedding2308" target="_blank" rel="noopener" class="nkf__ic" aria-label="YouTube" title="YouTube"><svg class="fill" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
@@ -1653,6 +1874,7 @@
           <div>
             <h3 class="nkf__h">Studio &amp; Reviews</h3>
             <ul class="nkf__menu">
+              <li><a href="https://www.wedmegood.com/profile/Wedding-Shedding-506041/reviews" target="_blank" rel="noopener">WedMeGood Profile (4.8 ★ / 57 Reviews) <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
               <li><a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener">WeddingWire Profile (4.9 ★) <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
               <li><a href="https://g.page/r/CaNUqaPpp9tuEBM/review" target="_blank" rel="noopener">Google Reviews <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
               <li><a href="#about">About The Team <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
@@ -1669,9 +1891,26 @@
           </div>
         </div>
 
+        <!-- Also Serving Regional Links (Matching Nikhil Kapur) -->
+        <div class="nkf__areas">
+          <span>ALSO SERVING:</span>
+          <a href="delhi-ncr.html">Best Wedding Photographer in Delhi NCR</a>
+          <a href="jaipur.html">Best Wedding Photographer in Jaipur</a>
+          <a href="weddings.html">Pre-Wedding Shoots</a>
+          <a href="packages.html">Wedding Cinematography &amp; Drone</a>
+          <a href="events.html">Haldi &amp; Sangeet Photography</a>
+        </div>
+
+        <!-- Footer Base with Golden AJAYNXT Brand -->
         <div class="nkf__base">
-          <p>&copy; <span class="nkf__yr">2026</span> Wedding Shedding. All rights reserved.</p>
-          <p class="nkf__wm">Designed by <a href="https://ajaynxt.com" target="_blank" rel="noopener">ajaynxt</a> &middot; WeddingWire Awards Winner 2024 &amp; 2025</p>
+          <p class="nkf__copy">&copy; <span class="nkf__yr">2026</span> Wedding Shedding. All rights reserved.</p>
+          <p class="nkf__model">PHOTOGRAPHY &amp; FILM &middot; DELHI NCR &amp; JAIPUR &middot; EST. 2015</p>
+          <div class="nkf__credits">
+            <span class="nkf__credits-label">Designed by</span>
+            <a href="https://ajaynxt.com" target="_blank" rel="noopener" class="nkf__ajaynxt" aria-label="Designed by AJAYNXT">
+              <span class="ajaynxt-logo">ajaynxt</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
