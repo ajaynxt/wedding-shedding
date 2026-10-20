@@ -408,43 +408,48 @@ function initProjectsGallery() {
     "royal-wedding": {
       "title": "ROYAL WEDDING CELEBRATION",
       "images": [
-        "assets/images/ws_hero.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-03.jpg?v=2",
-        "assets/images/ws_photo-04.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-07.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2"
+        "assets/images/ws_hero.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_celebration_01.jpg?v=3",
+        "assets/images/ws_photo-04.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-03.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-07.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_family_01.jpg?v=3"
       ]
     },
     // 2. Haldi & Sangeet
     "haldi-sangeet": {
       "title": "VIBRANT HALDI & SANGEET CEREMONIES",
       "images": [
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-04.jpg?v=2",
-        "assets/images/ws_photo-07.jpg?v=2"
+        "assets/images/ws_celebration_01.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-07.jpg?v=3",
+        "assets/images/ws_family_01.jpg?v=3"
       ]
     },
     // 3. Romantic Pre-Wedding
     "pre-wedding": {
       "title": "ROMANTIC PRE-WEDDING & DESTINATION STORIES",
       "images": [
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2"
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-04.jpg?v=3"
       ]
     },
     // 4. Sacred Rituals & Traditions
     "rituals-traditions": {
       "title": "SACRED RITUALS, PHERAS & VIDAAI",
       "images": [
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2",
-        "assets/images/ws_photo-04.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2"
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-04.jpg?v=3",
+        "assets/images/ws_celebration_01.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3"
       ]
     },
     // 5. Real Estate Amore (4K Drone Video)
@@ -453,10 +458,10 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/13YlJQDQ9bocJ4kS242FbfmO04ccSZdEw/preview",
       "videoBadge": "4K AERIAL DRONE CINEMATOGRAPHY &middot; AMORE TOWERS",
       "images": [
-        "assets/images/ws_realestate_amore.jpg?v=2",
-        "assets/images/ws_photo-16.jpg?v=2",
-        "assets/images/ws_photo-12.jpg?v=2",
-        "assets/images/ws_photo-10.jpg?v=2"
+        "assets/images/ws_realestate_amore.jpg?v=3",
+        "assets/images/ws_photo-16.jpg?v=3",
+        "assets/images/ws_photo-12.jpg?v=3",
+        "assets/images/ws_photo-10.jpg?v=3"
       ]
     },
     // 6. Corporate Brand Shoot (4K Video)
@@ -465,11 +470,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1yxzlKQ0uS81pbwml0b7CaD42nQ6mw_p_/preview",
       "videoBadge": "4K CORPORATE BRAND CINEMA &middot; LEADERSHIP FILM",
       "images": [
-        "assets/images/ws_video_corporate.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2"
+        "assets/images/ws_video_corporate.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3"
       ]
     },
     // 7. Source One Corporate (4K Video)
@@ -478,11 +483,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1VrN7bfzPDa7rP6Dagmwodr6ShQZrJxtf/preview",
       "videoBadge": "4K TECH ENTERPRISE FILM &middot; SOURCE ONE",
       "images": [
-        "assets/images/ws_video_sourceone.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2"
+        "assets/images/ws_video_sourceone.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3"
       ]
     },
     // 8. Bougie Cut 2 Fashion (4K Video)
@@ -491,24 +496,24 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1Q9NNlStf5vIOe0dfpRZUeGRCa7kcApfV/preview",
       "videoBadge": "4K HAUTE COUTURE RUNWAY &middot; BOUGIE CUT 2",
       "images": [
-        "assets/images/ws_video_bougie.jpg?v=2",
-        "assets/images/ws_photo-07.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2",
-        "assets/images/ws_photo-11.jpg?v=2"
+        "assets/images/ws_video_bougie.jpg?v=3",
+        "assets/images/ws_photo-07.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_photo-11.jpg?v=3"
       ]
     },
     // 9. Lakmé Fashion & Beauty
     "lakme-fashion": {
       "title": "LAKMÉ SALON & BRIDAL COUTURE CAMPAIGNS",
       "images": [
-        "assets/images/ws_photo-07.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-13.jpg?v=2",
-        "assets/images/ws_photo-11.jpg?v=2"
+        "assets/images/ws_photo-07.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-13.jpg?v=3",
+        "assets/images/ws_photo-11.jpg?v=3"
       ]
     },
     // 10. Healthcare & Medical Clinic (4K Video)
@@ -517,11 +522,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1YVyasZASap-bq4vxUp5aAX3lZFbINP6f/preview",
       "videoBadge": "4K CLINICAL FACILITY TOUR &middot; MEDICAL INFRASTRUCTURE",
       "images": [
-        "assets/images/ws_video_clinic.jpg?v=2",
-        "assets/images/ws_photo-03.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-18.jpg?v=2",
-        "assets/images/ws_photo-07.jpg?v=2"
+        "assets/images/ws_video_clinic.jpg?v=3",
+        "assets/images/ws_photo-03.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-18.jpg?v=3",
+        "assets/images/ws_photo-07.jpg?v=3"
       ]
     },
     // 11. Dr. Prachi Benara Medical Success (4K Video)
@@ -530,11 +535,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1e3eryFBIA7D1sVSg9a5pqzgTNhFc79Ay/preview",
       "videoBadge": "4K MEDICAL SUCCESS DOCUMENTARY &middot; DR. PRACHI BENARA",
       "images": [
-        "assets/images/ws_video_dr_prachi.jpg?v=2",
-        "assets/images/ws_photo-03.jpg?v=2",
-        "assets/images/ws_photo-18.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2"
+        "assets/images/ws_video_dr_prachi.jpg?v=3",
+        "assets/images/ws_photo-03.jpg?v=3",
+        "assets/images/ws_photo-18.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3"
       ]
     },
     // 12. Diablo High-Energy Brand & Nightlife (4K Video)
@@ -543,18 +548,18 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1BmaOmYdxkXps2_PhoC049HRsydYwKEpQ/preview",
       "videoBadge": "4K HIGH-OCTANE BRAND CINEMA &middot; DIABLO",
       "images": [
-        "assets/images/ws_video_diablo.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2"
+        "assets/images/ws_video_diablo.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3"
       ]
     },
     // 13. PUBG & Esports Arena
     "pubg-esports": {
       "title": "PUBG & ESPORTS CHAMPIONSHIP ARENA",
       "images": [
-        "assets/images/ws_esports_01.jpg?v=2"
+        "assets/images/ws_esports_01.jpg?v=3"
       ]
     },
     // 14. E-Commerce Explainer Video (4K Video)
@@ -563,11 +568,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1CA77ORrNXFxf844dOZ8OIJfoV3OLXUq7/preview",
       "videoBadge": "4K E-COMMERCE EXPLAINER &middot; D2C STORE COMMERCIAL",
       "images": [
-        "assets/images/ws_video_ecommerce.jpg?v=2",
-        "assets/images/ws_photo-15.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2"
+        "assets/images/ws_video_ecommerce.jpg?v=3",
+        "assets/images/ws_photo-15.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3"
       ]
     },
     // 15. Mega Gala Event (4K Video)
@@ -576,11 +581,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1m3YcKKb05apywT9wRV-XVEu3gyIUNcEd/preview",
       "videoBadge": "4K MULTI-CAM LIVE EVENT FILM &middot; GRAND GALA",
       "images": [
-        "assets/images/ws_video_event.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2"
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3"
       ]
     },
     // 16. Utkarsh Classes 2023 JEE Result Celebration (4K Video)
@@ -589,11 +594,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1sK66FbH_XNDO85WTE0SNf2lpMkzlUccw/preview",
       "videoBadge": "4K MEGA ARENA CELEBRATION &middot; UTKARSH 2023",
       "images": [
-        "assets/images/ws_video_utkarsh.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2"
+        "assets/images/ws_video_utkarsh.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3"
       ]
     },
     // 17. Mic Drop Live Comedy & Show (4K Video)
@@ -602,11 +607,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1s4O3Dkyw0lQer3eZW1dFUdWKaQWj8GY9/preview",
       "videoBadge": "4K LIVE STANDUP &middot; MIC DROP COMEDY & CONCERT",
       "images": [
-        "assets/images/ws_video_micdrop.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2"
+        "assets/images/ws_video_micdrop.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3"
       ]
     },
     // 18. School Campus & Annual Day (4K Video)
@@ -615,11 +620,11 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1m7iBCeFVwyR3FNUkZt2JnWlS_8rjiwDy/preview",
       "videoBadge": "4K SCHOOL & CAMPUS FILM &middot; ANNUAL DAY",
       "images": [
-        "assets/images/ws_video_school.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-04.jpg?v=2"
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-04.jpg?v=3"
       ]
     },
     // 19. JEE Advanced Toppers Felicitation (4K Video)
@@ -628,67 +633,67 @@ function initProjectsGallery() {
       "videoUrl": "https://drive.google.com/file/d/1NEw4aj7_enT0PET8o0rUBFKtu5X91aEK/preview",
       "videoBadge": "4K ACADEMIC SUCCESS &middot; JEE ADVANCED",
       "images": [
-        "assets/images/ws_video_jee.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-17.jpg?v=2"
+        "assets/images/ws_video_jee.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-17.jpg?v=3"
       ]
     },
     // 20. The Swiss Village Resort
     "swiss-village": {
       "title": "THE SWISS VILLAGE LUXURY RESORT CINEMATOGRAPHY",
       "images": [
-        "assets/images/ws_photo-16.jpg?v=2",
-        "assets/images/ws_photo-12.jpg?v=2",
-        "assets/images/ws_photo-10.jpg?v=2",
-        "assets/images/ws_photo-11.jpg?v=2",
-        "assets/images/ws_hero.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2"
+        "assets/images/ws_photo-16.jpg?v=3",
+        "assets/images/ws_photo-12.jpg?v=3",
+        "assets/images/ws_photo-10.jpg?v=3",
+        "assets/images/ws_photo-11.jpg?v=3",
+        "assets/images/ws_hero.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3"
       ]
     },
     // 21. NGO & Social Impact Documentaries
     "ngo-documentary": {
       "title": "NGO & SOCIAL IMPACT CSR DOCUMENTARIES",
       "images": [
-        "assets/images/ws_photo-04.jpg?v=2",
-        "assets/images/ws_photo-18.jpg?v=2",
-        "assets/images/ws_photo-03.jpg?v=2",
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2"
+        "assets/images/ws_photo-04.jpg?v=3",
+        "assets/images/ws_photo-18.jpg?v=3",
+        "assets/images/ws_photo-03.jpg?v=3",
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3"
       ]
     },
     // 22. IRAM Corporate
     "iram-corporate": {
       "title": "ADVOCATE IRAM MAJID · EXECUTIVE CHAMBERS & LEGAL LEADERSHIP",
       "images": [
-        "assets/images/ws_corp_01.jpg?v=2",
-        "assets/images/ws_video_interview.jpg?v=2"
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3"
       ]
     },
     // 23. Gym & Fitness
     "gym-fitness": {
       "title": "GYM, ATHLETES & HIGH-ENERGY FITNESS MEDIA",
       "images": [
-        "assets/images/ws_photo-05.jpg?v=2",
-        "assets/images/ws_photo-02.jpg?v=2",
-        "assets/images/ws_photo-06.jpg?v=2",
-        "assets/images/ws_photo-15.jpg?v=2",
-        "assets/images/ws_photo-11.jpg?v=2",
-        "assets/images/ws_photo-12.jpg?v=2"
+        "assets/images/ws_photo-05.jpg?v=3",
+        "assets/images/ws_photo-02.jpg?v=3",
+        "assets/images/ws_photo-06.jpg?v=3",
+        "assets/images/ws_photo-15.jpg?v=3",
+        "assets/images/ws_photo-11.jpg?v=3",
+        "assets/images/ws_photo-12.jpg?v=3"
       ]
     },
     // 24. Political Campaigns
     "political-campaigns": {
       "title": "POLITICAL & PUBLIC LEADERSHIP EVENTS",
       "images": [
-        "assets/images/ws_photo-17.jpg?v=2",
-        "assets/images/ws_photo-09.jpg?v=2",
-        "assets/images/ws_photo-14.jpg?v=2",
-        "assets/images/ws_photo-01.jpg?v=2",
-        "assets/images/ws_photo-08.jpg?v=2",
-        "assets/images/ws_photo-04.jpg?v=2"
+        "assets/images/ws_photo-17.jpg?v=3",
+        "assets/images/ws_photo-09.jpg?v=3",
+        "assets/images/ws_photo-14.jpg?v=3",
+        "assets/images/ws_photo-01.jpg?v=3",
+        "assets/images/ws_photo-08.jpg?v=3",
+        "assets/images/ws_photo-04.jpg?v=3"
       ]
     }
   };

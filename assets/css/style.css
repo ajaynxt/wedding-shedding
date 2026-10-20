@@ -1643,6 +1643,7 @@ body.theme-dark .site-header.is-scrolled {
   max-width: none !important;
   max-height: none !important;
   object-fit: cover;
+  object-position: center 20%;
   transform: translateX(-50%);
   filter: grayscale(1) contrast(.9) brightness(.6);
   transition: transform 1.2s var(--ease), filter .65s ease;
@@ -2439,6 +2440,7 @@ body.theme-dark .awards-banner .award-text p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -2463,6 +2465,7 @@ body.theme-dark .awards-banner .award-text p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 .nkx-feat__cap {
@@ -2647,6 +2650,7 @@ body.theme-dark .awards-banner .award-text p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 0.8s ease;
 }
 
@@ -3167,6 +3171,7 @@ body.theme-dark .portfolio-filter-btn.is-active {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
@@ -3252,15 +3257,18 @@ body.theme-dark .portfolio-filter-btn.is-active {
 
 .about-portrait {
   position: relative;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--ln);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4/5;
 }
 
 .about-portrait img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
   display: block;
 }
 
@@ -3478,6 +3486,7 @@ body.theme-dark .portfolio-filter-btn.is-active {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
 /* Camera AF & HUD */
