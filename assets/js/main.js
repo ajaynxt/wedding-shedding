@@ -1052,12 +1052,12 @@ function initThemeToggle() {
   const toggleBtnDesktop = document.getElementById('themeToggleBtn');
   const toggleBtnMobile = document.getElementById('themeToggleBtnMobile');
 
-  // Check persisted theme or default to dark luxury mode (Nikhil Kapur palette)
+  // Check persisted theme or default to crisp white light mode
   const savedTheme = localStorage.getItem('ws_theme');
-  if (savedTheme === 'light') {
-    document.body.classList.remove('theme-dark');
-  } else {
+  if (savedTheme === 'dark') {
     document.body.classList.add('theme-dark');
+  } else {
+    document.body.classList.remove('theme-dark');
   }
 
   function handleToggle() {

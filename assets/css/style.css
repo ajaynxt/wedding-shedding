@@ -1300,14 +1300,14 @@ body:not(.theme-dark) .site-header.is-scrolled {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background: #14120F;
-  border: 1px solid rgba(201, 162, 39, 0.25);
+  background: var(--bg-card);
+  border: 1px solid var(--ln);
   border-radius: 4px;
   padding: 10px 0;
   min-width: 250px;
   opacity: 0;
   visibility: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
@@ -1352,13 +1352,13 @@ body:not(.theme-dark) .site-header.is-scrolled {
   gap: 8px;
   min-height: 36px;
   padding: 0 14px;
-  border: 1px solid #3a3226;
+  border: 1px solid var(--ln);
   border-radius: 2px;
   font-family: var(--font-display);
   font-size: 10px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: #F4F1EA;
+  color: var(--iv);
   text-decoration: none;
   white-space: nowrap;
   background: transparent;
@@ -1477,8 +1477,8 @@ body:not(.theme-dark) .site-header.is-scrolled {
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  background: #0B0A09;
-  border-left: 1px solid rgba(201, 162, 39, 0.16);
+  background: var(--bg);
+  border-left: 1px solid var(--ln);
   z-index: 1000;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1541,13 +1541,8 @@ body:not(.theme-dark) .site-header.is-scrolled {
    AUTHENTIC NIKHIL KAPUR SIGNATURE ACCORDION HERO (.nkh)
    ============================================================ */
 .nkh {
-  --g: #C9A227;
-  --gh: #E6C766;
-  --iv: #EFE8DB;
-  --bd: #A09788;
-  --t3: #7A7267;
-  --ln: #2A2622;
-  --bg: #0B0A09;
+  --g: #B58A1C;
+  --gh: #8C6514;
   --w: 52%;
   --gap: 6px;
   --ease: cubic-bezier(.2, .7, .2, 1);
@@ -1605,7 +1600,7 @@ body:not(.theme-dark) .site-header.is-scrolled {
   min-width: 0;
   height: 100%;
   overflow: hidden;
-  background: #050403;
+  background: var(--bg-alt);
   cursor: pointer;
   transition: flex-basis .75s var(--ease), margin .75s var(--ease), opacity .45s ease;
 }
@@ -1954,13 +1949,13 @@ body:not(.theme-dark) .site-header.is-scrolled {
   height: 42px;
   border-radius: 50%;
   border: 1px solid var(--ln);
-  background: transparent !important;
+  background: var(--bg-card) !important;
   color: var(--iv);
   display: grid;
   place-items: center;
   cursor: pointer;
   padding: 0;
-  transition: border-color .3s, color .3s;
+  transition: border-color .3s, color .3s, background-color .3s;
 }
 
 .nkh button.nkh__btn:hover,
@@ -2129,23 +2124,22 @@ body:not(.theme-dark) .site-header.is-scrolled {
    ============================================================ */
 .awards-banner {
   background: 
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 255, 255, 0.09) 0%, transparent 70%),
-    radial-gradient(circle at 50% 120%, rgba(181, 138, 28, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #0A0A09 0%, #151412 50%, #0A0A09 100%) !important;
-  border-top: 1px solid rgba(226, 185, 74, 0.4);
-  border-bottom: 1px solid rgba(226, 185, 74, 0.4);
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(181, 138, 28, 0.06) 0%, transparent 70%),
+    linear-gradient(180deg, #FBF9F5 0%, #FFFFFF 50%, #FBF9F5 100%) !important;
+  border-top: 1px solid var(--ln);
+  border-bottom: 1px solid var(--ln);
   padding: 64px clamp(20px, 4vw, 48px);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
-/* Subtle luxury celestial pin-dot pattern in the dark background */
+/* Subtle luxury celestial pin-dot pattern in the background */
 .awards-banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
   opacity: 0.8;
@@ -2168,29 +2162,29 @@ body:not(.theme-dark) .site-header.is-scrolled {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #E2B94A !important;
+  color: var(--g) !important;
   margin-bottom: 10px;
 }
 
 .awards-eyebrow .eyebrow-ornament {
   font-size: 11px;
-  color: #F6D785;
+  color: var(--g);
 }
 
 .awards-section-title {
   font-family: var(--font-serif);
   font-size: clamp(24px, 2.8vw, 36px);
   font-weight: 600;
-  color: #FFFFFF !important;
+  color: #000000 !important;
   letter-spacing: -0.01em;
   margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
 .awards-section-subtitle {
   font-family: var(--font-sans);
   font-size: 14px;
-  color: #D1CCC4 !important;
+  color: #524B44 !important;
   margin: 10px auto 0;
   max-width: 680px;
   font-weight: 400;
@@ -2207,17 +2201,17 @@ body:not(.theme-dark) .site-header.is-scrolled {
   z-index: 1;
 }
 
-/* Floating Pristine White Luxury Cards */
+/* Inverted Floating Luxury Cards (Noir Obsidian in Light Mode) */
 .award-item {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-top: 3.5px solid #0A0A09;
+  background: #0E0D0C !important;
+  border: 1px solid rgba(226, 185, 74, 0.25);
+  border-top: 3.5px solid #B58A1C;
   border-radius: 18px;
   padding: 26px 22px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -2225,8 +2219,8 @@ body:not(.theme-dark) .site-header.is-scrolled {
 
 .award-item:hover {
   transform: translateY(-7px);
-  border-top-color: #B58A1C;
-  box-shadow: 0 24px 50px -4px rgba(181, 138, 28, 0.35), 0 10px 24px rgba(0, 0, 0, 0.4);
+  border-top-color: #E2B94A;
+  box-shadow: 0 24px 50px -4px rgba(181, 138, 28, 0.3), 0 10px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Dark velvet jewelry box for glowing luxury SVGs */
@@ -2299,7 +2293,7 @@ body:not(.theme-dark) .site-header.is-scrolled {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  color: #000000 !important;
+  color: #FFFFFF !important;
   margin: 0 0 6px 0;
   line-height: 1.35;
 }
@@ -2308,15 +2302,24 @@ body:not(.theme-dark) .site-header.is-scrolled {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
-  color: #2E2B27 !important;
+  color: #CFC9BF !important;
   line-height: 1.45;
   margin: 0;
 }
 
 /* Guaranteed Consistency in Dark Mode */
 body.theme-dark .awards-banner {
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255, 255, 255, 0.09) 0%, transparent 70%),
+    radial-gradient(circle at 50% 120%, rgba(181, 138, 28, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #0A0A09 0%, #151412 50%, #0A0A09 100%) !important;
   border-top-color: rgba(226, 185, 74, 0.45) !important;
   border-bottom-color: rgba(226, 185, 74, 0.45) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.theme-dark .awards-banner::before {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
 body.theme-dark .awards-banner .awards-section-title {
@@ -4182,12 +4185,12 @@ html, body {
     padding: 0 12px;
   }
   .site-logo .brand-title {
-    font-size: 13px;
+    font-size: 11.5px;
+    letter-spacing: 0.6px;
   }
   .site-logo .brand-sub {
-    font-size: 7.5px;
+    display: none !important;
   }
-}
 
   /* 3. Stats Counter (.nkx-stats) */
   .nkx-stats {
