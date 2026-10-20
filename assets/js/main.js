@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initPortfolioSlider();
   initFilmsSlider();
+  initRegionalSlider();
+  initServicesSlider();
+  initReviewsSlider();
   initScrollTop();
   initInquiryModal();
   initCustomCursor();
@@ -467,9 +470,19 @@ function initProjectsGallery() {
       "videoBadge": "4K AERIAL DRONE CINEMATOGRAPHY &middot; AMORE TOWERS",
       "images": [
         "assets/images/ws_realestate_amore.jpg?v=3",
-        "assets/images/ws_photo-16.jpg?v=3",
-        "assets/images/ws_photo-12.jpg?v=3",
-        "assets/images/ws_photo-10.jpg?v=3"
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_video_ecommerce.jpg?v=3"
+      ]
+    },
+    // 5b. Campus & Infrastructure Drone (4K Video)
+    "campus-drone": {
+      "title": "INSTITUTIONAL CAMPUS & INFRASTRUCTURE DRONE CINEMATOGRAPHY",
+      "videoUrl": "https://drive.google.com/file/d/1m7iBCeFVwyR3FNUkZt2JnWlS_8rjiwDy/preview",
+      "videoBadge": "4K AERIAL DRONE TOUR &middot; CAMPUS INFRASTRUCTURE",
+      "images": [
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_realestate_amore.jpg?v=3",
+        "assets/images/ws_video_ecommerce.jpg?v=3"
       ]
     },
     // 6. Corporate Brand Shoot (4K Video)
@@ -479,28 +492,26 @@ function initProjectsGallery() {
       "videoBadge": "4K CORPORATE BRAND CINEMA &middot; LEADERSHIP FILM",
       "images": [
         "assets/images/ws_video_corporate.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-08.jpg?v=3"
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3",
+        "assets/images/ws_video_sourceone.jpg?v=3"
       ]
     },
     // 7. Source One Corporate (4K Video)
     "source-one-corporate": {
-      "title": "SOURCE ONE &bull; CORPORATE TECH & BRAND CULTURE PRODUCTION",
+      "title": "SOURCE ONE &middot; CORPORATE TECH & BRAND CULTURE PRODUCTION",
       "videoUrl": "https://drive.google.com/file/d/1VrN7bfzPDa7rP6Dagmwodr6ShQZrJxtf/preview",
       "videoBadge": "4K TECH ENTERPRISE FILM &middot; SOURCE ONE",
       "images": [
         "assets/images/ws_video_sourceone.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-01.jpg?v=3"
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_corporate.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3"
       ]
     },
     // 8. Bougie Cut 2 Fashion (4K Video)
     "bougie-cut-fashion": {
-      "title": "BOUGIE CUT 2 &bull; HIGH FASHION RUNWAY & COUTURE FILM",
+      "title": "BOUGIE CUT 2 &middot; HIGH FASHION RUNWAY & COUTURE FILM",
       "videoUrl": "https://drive.google.com/file/d/1Q9NNlStf5vIOe0dfpRZUeGRCa7kcApfV/preview",
       "videoBadge": "4K HAUTE COUTURE RUNWAY &middot; BOUGIE CUT 2",
       "images": [
@@ -531,36 +542,33 @@ function initProjectsGallery() {
       "videoBadge": "4K CLINICAL FACILITY TOUR &middot; MEDICAL INFRASTRUCTURE",
       "images": [
         "assets/images/ws_video_clinic.jpg?v=3",
-        "assets/images/ws_photo-03.jpg?v=3",
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-18.jpg?v=3",
-        "assets/images/ws_photo-07.jpg?v=3"
+        "assets/images/ws_video_dr_prachi.jpg?v=3",
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_corporate.jpg?v=3"
       ]
     },
     // 11. Dr. Prachi Benara Medical Success (4K Video)
     "dr-prachi-benara": {
-      "title": "DR. PRACHI BENARA &bull; MEDICAL SUCCESS & PATIENT STORIES",
+      "title": "DR. PRACHI BENARA &middot; MEDICAL SUCCESS & PATIENT STORIES",
       "videoUrl": "https://drive.google.com/file/d/1e3eryFBIA7D1sVSg9a5pqzgTNhFc79Ay/preview",
       "videoBadge": "4K MEDICAL SUCCESS DOCUMENTARY &middot; DR. PRACHI BENARA",
       "images": [
         "assets/images/ws_video_dr_prachi.jpg?v=3",
-        "assets/images/ws_photo-03.jpg?v=3",
-        "assets/images/ws_photo-18.jpg?v=3",
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3"
+        "assets/images/ws_video_clinic.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3",
+        "assets/images/ws_corp_01.jpg?v=3"
       ]
     },
     // 12. Diablo High-Energy Brand & Nightlife (4K Video)
     "gaming-diablo": {
-      "title": "DIABLO &bull; HIGH-ENERGY NIGHTLIFE & BRAND EXPERIENCE",
+      "title": "DIABLO &middot; HIGH-ENERGY NIGHTLIFE & BRAND EXPERIENCE",
       "videoUrl": "https://drive.google.com/file/d/1BmaOmYdxkXps2_PhoC049HRsydYwKEpQ/preview",
       "videoBadge": "4K HIGH-OCTANE BRAND CINEMA &middot; DIABLO",
       "images": [
         "assets/images/ws_video_diablo.jpg?v=3",
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-06.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3"
+        "assets/images/ws_video_micdrop.jpg?v=3",
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_esports_01.jpg?v=3"
       ]
     },
     // 13. PUBG & Esports Arena
@@ -577,10 +585,9 @@ function initProjectsGallery() {
       "videoBadge": "4K E-COMMERCE EXPLAINER &middot; D2C STORE COMMERCIAL",
       "images": [
         "assets/images/ws_video_ecommerce.jpg?v=3",
-        "assets/images/ws_photo-15.jpg?v=3",
-        "assets/images/ws_photo-08.jpg?v=3",
-        "assets/images/ws_photo-02.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3"
+        "assets/images/ws_fashion_portrait.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3",
+        "assets/images/ws_video_corporate.jpg?v=3"
       ]
     },
     // 15. Mega Gala Event (4K Video)
@@ -590,36 +597,33 @@ function initProjectsGallery() {
       "videoBadge": "4K MULTI-CAM LIVE EVENT FILM &middot; GRAND GALA",
       "images": [
         "assets/images/ws_video_event.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-01.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3"
+        "assets/images/ws_esports_01.jpg?v=3",
+        "assets/images/ws_video_utkarsh.jpg?v=3",
+        "assets/images/ws_video_micdrop.jpg?v=3"
       ]
     },
     // 16. Utkarsh Classes 2023 JEE Result Celebration (4K Video)
     "utkarsh-result-celebration": {
-      "title": "UTKARSH CLASSES 2023 &bull; JEE RESULT CELEBRATION & ARENA CONCERT",
+      "title": "UTKARSH CLASSES 2023 &middot; JEE RESULT CELEBRATION & ARENA CONCERT",
       "videoUrl": "https://drive.google.com/file/d/1sK66FbH_XNDO85WTE0SNf2lpMkzlUccw/preview",
       "videoBadge": "4K MEGA ARENA CELEBRATION &middot; UTKARSH 2023",
       "images": [
         "assets/images/ws_video_utkarsh.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-01.jpg?v=3",
-        "assets/images/ws_photo-08.jpg?v=3"
+        "assets/images/ws_video_jee.jpg?v=3",
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_video_school.jpg?v=3"
       ]
     },
     // 17. Mic Drop Live Comedy & Show (4K Video)
     "micdrop-live-comedy": {
-      "title": "MIC DROP &bull; LIVE STAND-UP COMEDY & CONCERT EXPERIENCE",
+      "title": "MIC DROP &middot; LIVE STAND-UP COMEDY & CONCERT EXPERIENCE",
       "videoUrl": "https://drive.google.com/file/d/1s4O3Dkyw0lQer3eZW1dFUdWKaQWj8GY9/preview",
       "videoBadge": "4K LIVE STANDUP &middot; MIC DROP COMEDY & CONCERT",
       "images": [
         "assets/images/ws_video_micdrop.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-02.jpg?v=3",
-        "assets/images/ws_photo-06.jpg?v=3"
+        "assets/images/ws_video_diablo.jpg?v=3",
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_esports_01.jpg?v=3"
       ]
     },
     // 18. School Campus & Annual Day (4K Video)
@@ -629,47 +633,41 @@ function initProjectsGallery() {
       "videoBadge": "4K SCHOOL & CAMPUS FILM &middot; ANNUAL DAY",
       "images": [
         "assets/images/ws_video_school.jpg?v=3",
-        "assets/images/ws_photo-06.jpg?v=3",
-        "assets/images/ws_photo-02.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3",
-        "assets/images/ws_photo-04.jpg?v=3"
+        "assets/images/ws_video_jee.jpg?v=3",
+        "assets/images/ws_video_utkarsh.jpg?v=3",
+        "assets/images/ws_video_event.jpg?v=3"
       ]
     },
     // 19. JEE Advanced Toppers Felicitation (4K Video)
     "jee-advanced-triumph": {
-      "title": "JEE ADVANCED &bull; MERIT FELICITATION & STUDENT TRIUMPH",
+      "title": "JEE ADVANCED &middot; MERIT FELICITATION & STUDENT TRIUMPH",
       "videoUrl": "https://drive.google.com/file/d/1NEw4aj7_enT0PET8o0rUBFKtu5X91aEK/preview",
       "videoBadge": "4K ACADEMIC SUCCESS &middot; JEE ADVANCED",
       "images": [
         "assets/images/ws_video_jee.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-17.jpg?v=3"
+        "assets/images/ws_video_utkarsh.jpg?v=3",
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3"
       ]
     },
     // 20. The Swiss Village Resort
     "swiss-village": {
       "title": "THE SWISS VILLAGE LUXURY RESORT CINEMATOGRAPHY",
       "images": [
-        "assets/images/ws_photo-16.jpg?v=3",
-        "assets/images/ws_photo-12.jpg?v=3",
-        "assets/images/ws_photo-10.jpg?v=3",
-        "assets/images/ws_photo-11.jpg?v=3",
-        "assets/images/ws_hero.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3"
+        "assets/images/films/film_sagar_manshi_rishikesh.jpg?v=3",
+        "assets/images/ws_realestate_amore.jpg?v=3",
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_video_ecommerce.jpg?v=3"
       ]
     },
     // 21. NGO & Social Impact Documentaries
     "ngo-documentary": {
       "title": "NGO & SOCIAL IMPACT CSR DOCUMENTARIES",
       "images": [
-        "assets/images/ws_photo-04.jpg?v=3",
-        "assets/images/ws_photo-18.jpg?v=3",
-        "assets/images/ws_photo-03.jpg?v=3",
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-06.jpg?v=3",
-        "assets/images/ws_photo-02.jpg?v=3"
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_school.jpg?v=3",
+        "assets/images/ws_video_interview.jpg?v=3"
       ]
     },
     // 22. IRAM Corporate
@@ -684,24 +682,19 @@ function initProjectsGallery() {
     "gym-fitness": {
       "title": "GYM, ATHLETES & HIGH-ENERGY FITNESS MEDIA",
       "images": [
-        "assets/images/ws_photo-05.jpg?v=3",
-        "assets/images/ws_photo-02.jpg?v=3",
-        "assets/images/ws_photo-06.jpg?v=3",
-        "assets/images/ws_photo-15.jpg?v=3",
-        "assets/images/ws_photo-11.jpg?v=3",
-        "assets/images/ws_photo-12.jpg?v=3"
+        "assets/images/ws_fashion_portrait.jpg?v=3",
+        "assets/images/ws_esports_01.jpg?v=3",
+        "assets/images/ws_video_diablo.jpg?v=3"
       ]
     },
     // 24. Political Campaigns
     "political-campaigns": {
       "title": "POLITICAL & PUBLIC LEADERSHIP EVENTS",
       "images": [
-        "assets/images/ws_photo-17.jpg?v=3",
-        "assets/images/ws_photo-09.jpg?v=3",
-        "assets/images/ws_photo-14.jpg?v=3",
-        "assets/images/ws_photo-01.jpg?v=3",
-        "assets/images/ws_photo-08.jpg?v=3",
-        "assets/images/ws_photo-04.jpg?v=3"
+        "assets/images/ws_video_event.jpg?v=3",
+        "assets/images/ws_video_utkarsh.jpg?v=3",
+        "assets/images/ws_corp_01.jpg?v=3",
+        "assets/images/ws_video_sourceone.jpg?v=3"
       ]
     }
   };
@@ -737,7 +730,7 @@ function initProjectsGallery() {
     const proj = PROJECTS[key];
     if (!proj) return;
     current = proj.images || [];
-    titleEl.textContent = proj.title;
+    titleEl.innerHTML = proj.title;
     countEl.textContent = proj.videoUrl
       ? ('1 4K Cinema Film' + (current.length ? ' + ' + current.length + ' High-Res Photos' : ''))
       : (current.length + ' High-Res Photographs');
@@ -1518,6 +1511,160 @@ function initFilmsSlider() {
 
   updateHUD();
   resetTimer();
+}
+
+/* ============================================================
+   REUSABLE AUTO-SLIDER ENGINE
+   ============================================================ */
+function setupAutoSlider(config) {
+  const slider = document.getElementById(config.sliderId);
+  const track = document.getElementById(config.trackId);
+  if (!slider || !track) return null;
+
+  const slides = Array.from(track.querySelectorAll(config.slideClass));
+  if (slides.length === 0) return null;
+
+  const currentEl = document.getElementById(config.currentId);
+  const totalEl = document.getElementById(config.totalId);
+  const progressFill = document.getElementById(config.progressFillId);
+  const prevBtn = document.getElementById(config.prevBtnId);
+  const nextBtn = document.getElementById(config.nextBtnId);
+  const playPauseBtn = document.getElementById(config.playPauseBtnId);
+
+  let currentIndex = 0;
+  let isPlaying = true;
+  let timer = null;
+  const interval = config.interval || 4500;
+
+  function updateHUD() {
+    const pad = n => String(n).padStart(2, '0');
+    if (currentEl) currentEl.textContent = pad(currentIndex + 1);
+    if (totalEl) totalEl.textContent = pad(slides.length);
+    if (progressFill) {
+      const pct = ((currentIndex + 1) / slides.length) * 100;
+      progressFill.style.width = pct + '%';
+    }
+  }
+
+  function scrollToSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    currentIndex = index;
+
+    const target = slides[currentIndex];
+    if (target) {
+      const targetLeft = target.offsetLeft - track.offsetLeft;
+      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
+    updateHUD();
+    resetTimer();
+  }
+
+  function nextSlide() { scrollToSlide(currentIndex + 1); }
+  function prevSlide() { scrollToSlide(currentIndex - 1); }
+
+  function tick() {
+    if (!isPlaying) return;
+    nextSlide();
+  }
+
+  function resetTimer() {
+    if (timer) clearInterval(timer);
+    if (isPlaying) timer = setInterval(tick, interval);
+  }
+
+  function setPlaying(state) {
+    isPlaying = state;
+    if (playPauseBtn) {
+      const pauseIcon = playPauseBtn.querySelector('.i-pause');
+      const playIcon = playPauseBtn.querySelector('.i-play');
+      if (pauseIcon && playIcon) {
+        pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        playIcon.style.display = isPlaying ? 'none' : 'block';
+      }
+      playPauseBtn.setAttribute('aria-label', isPlaying ? 'Pause Auto-Play' : 'Resume Auto-Play');
+    }
+    if (isPlaying) resetTimer();
+    else if (timer) clearInterval(timer);
+  }
+
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+  playPauseBtn?.addEventListener('click', () => setPlaying(!isPlaying));
+
+  slider.addEventListener('mouseenter', () => { if (isPlaying) clearInterval(timer); });
+  slider.addEventListener('mouseleave', () => { if (isPlaying) resetTimer(); });
+
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const scrollPos = track.scrollLeft;
+      let closestIdx = 0;
+      let minDiff = Infinity;
+      slides.forEach((slide, idx) => {
+        const diff = Math.abs(slide.offsetLeft - track.offsetLeft - scrollPos);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      if (closestIdx !== currentIndex) {
+        currentIndex = closestIdx;
+        updateHUD();
+      }
+    }, 100);
+  }, { passive: true });
+
+  updateHUD();
+  resetTimer();
+
+  return { next: nextSlide, prev: prevSlide, setPlaying };
+}
+
+function initRegionalSlider() {
+  setupAutoSlider({
+    sliderId: 'regionalSlider',
+    trackId: 'regionalSliderTrack',
+    slideClass: '.regional-slide',
+    currentId: 'regionalCurrent',
+    totalId: 'regionalTotal',
+    progressFillId: 'regionalProgressFill',
+    prevBtnId: 'regionalPrevBtn',
+    nextBtnId: 'regionalNextBtn',
+    playPauseBtnId: 'regionalPlayPauseBtn',
+    interval: 4200
+  });
+}
+
+function initServicesSlider() {
+  setupAutoSlider({
+    sliderId: 'servicesSlider',
+    trackId: 'servicesSliderTrack',
+    slideClass: '.service-card',
+    currentId: 'servicesCurrent',
+    totalId: 'servicesTotal',
+    progressFillId: 'servicesProgressFill',
+    prevBtnId: 'servicesPrevBtn',
+    nextBtnId: 'servicesNextBtn',
+    playPauseBtnId: 'servicesPlayPauseBtn',
+    interval: 4500
+  });
+}
+
+function initReviewsSlider() {
+  setupAutoSlider({
+    sliderId: 'reviewsSlider',
+    trackId: 'reviewsSliderTrack',
+    slideClass: '.nk-review-card',
+    currentId: 'reviewsCurrent',
+    totalId: 'reviewsTotal',
+    progressFillId: 'reviewsProgressFill',
+    prevBtnId: 'reviewsPrevBtn',
+    nextBtnId: 'reviewsNextBtn',
+    playPauseBtnId: 'reviewsPlayPauseBtn',
+    interval: 4800
+  });
 }
 
 /* ============================================================

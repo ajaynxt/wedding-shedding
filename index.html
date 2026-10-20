@@ -74,7 +74,6 @@
         "email": "sonukumar2255@gmail.com",
         "priceRange": "₹₹₹",
         "currenciesAccepted": "INR",
-        "paymentAccepted": "Cash, Credit Card, Debit Card, UPI, Net Banking",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari",
@@ -741,7 +740,8 @@
       <p style="font-size:14px;color:var(--bd);margin-top:16px;max-width:720px;margin-left:auto;margin-right:auto;">From weddings and family celebrations to corporate events and commercial shoots, we capture every moment with care and creativity.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="services-slider" id="servicesSlider">
+      <div class="services-slider-track" id="servicesSliderTrack">
       <!-- 1. Wedding Photography & Cinematography -->
       <div class="service-card nkx-rv" id="services-weddings">
         <div class="service-card-img">
@@ -988,6 +988,35 @@
           <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20interested%20in%20Photo%20and%20Video%20Editing%20services" target="_blank" rel="noopener" class="service-card-link">
             Inquire on WhatsApp <svg viewBox="0 0 448 512"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
           </a>
+        </div>
+      </div>
+      </div>
+
+      <!-- Services Slider Control HUD -->
+      <div class="films-slider-ctrl" id="servicesSliderCtrl" style="margin-top:28px;">
+        <div class="films-slide-counter">
+          <span class="films-counter-label">SERVICE</span>
+          <span class="films-slide-current" id="servicesCurrent">01</span>
+          <span class="films-counter-sep">/</span>
+          <span class="films-slide-total" id="servicesTotal">10</span>
+        </div>
+
+        <div class="films-slide-bar" id="servicesProgressBar" role="progressbar" aria-label="Services slider progress" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+          <div class="films-slide-bar-fill" id="servicesProgressFill" style="width: 10%;"></div>
+        </div>
+
+        <div class="films-slider-nav">
+          <button type="button" class="films-pause-btn" id="servicesPlayPauseBtn" aria-label="Pause Auto-Play" title="Pause or Resume Auto-Advance">
+            <svg class="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" style="display:none;"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+            <span class="txt">AUTO</span>
+          </button>
+          <button type="button" class="films-nav-btn" id="servicesPrevBtn" aria-label="Previous Service" title="Previous Service">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="films-nav-btn" id="servicesNextBtn" aria-label="Next Service" title="Next Service">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1569,7 +1598,8 @@
       </p>
     </div>
 
-    <div class="nk-reviews-grid">
+    <div class="nk-reviews-slider" id="reviewsSlider">
+      <div class="nk-reviews-slider-track" id="reviewsSliderTrack">
       <!-- Review 1 -->
       <article class="nk-review-card nkx-rv">
         <div class="nk-review-card-top">
@@ -1677,6 +1707,35 @@
           <span class="nk-review-verified">&#10003; Verified Client</span>
         </div>
       </article>
+      </div>
+
+      <!-- Reviews Slider Control HUD -->
+      <div class="films-slider-ctrl" id="reviewsSliderCtrl" style="margin-top:28px;">
+        <div class="films-slide-counter">
+          <span class="films-counter-label">REVIEW</span>
+          <span class="films-slide-current" id="reviewsCurrent">01</span>
+          <span class="films-counter-sep">/</span>
+          <span class="films-slide-total" id="reviewsTotal">06</span>
+        </div>
+
+        <div class="films-slide-bar" id="reviewsProgressBar" role="progressbar" aria-label="Reviews slider progress" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">
+          <div class="films-slide-bar-fill" id="reviewsProgressFill" style="width: 16.6%;"></div>
+        </div>
+
+        <div class="films-slider-nav">
+          <button type="button" class="films-pause-btn" id="reviewsPlayPauseBtn" aria-label="Pause Auto-Play" title="Pause or Resume Auto-Advance">
+            <svg class="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" style="display:none;"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor"/></svg>
+            <span class="txt">AUTO</span>
+          </button>
+          <button type="button" class="films-nav-btn" id="reviewsPrevBtn" aria-label="Previous Review" title="Previous Review">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="films-nav-btn" id="reviewsNextBtn" aria-label="Next Review" title="Next Review">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="nk-reviews-cta nkx-rv">
@@ -1709,8 +1768,8 @@
           <p class="policy-card-desc">Our reservation deposit is <strong>non-refundable</strong> as we decline all other inquiries for your booked dates to guarantee undivided commitment.</p>
         </div>
         <div class="policy-card">
-          <h3 class="policy-card-title">3. Flexible Payment Modes</h3>
-          <p class="policy-card-desc">We accept <strong>Cash Payments</strong> (at studio or shoot site), <strong>UPI (GPay / PhonePe / Paytm)</strong>, <strong>Net Banking (NEFT / RTGS)</strong>, <strong>Cards</strong>, and <strong>Cheques</strong>. Official printed receipts and signed GST invoices are provided for all transactions.</p>
+          <h3 class="policy-card-title">3. Direct Studio Retainer &amp; Contracts</h3>
+          <p class="policy-card-desc">All bookings, date locks, and scheduling are coordinated directly with Founder Sonu Kumar and our in-house Burari studio management team with formal written agreements.</p>
         </div>
       </div>
     </div>
@@ -1968,7 +2027,7 @@
             <ul class="nkf__menu">
               <li><a href="#policies">30% Advance Reservation <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
               <li><a href="#policies">Non-Refundable Deposit <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
-              <li><a href="#policies">Payment Modes (Cash &amp; UPI Accepted) <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
+              <li><a href="#policies">Direct Studio Retainer &amp; Booking <svg class="nkf__ar" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a></li>
             </ul>
           </div>
         </div>
