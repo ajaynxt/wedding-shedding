@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectsGallery();
   initPortfolioFilters();
   initPortfolioSlider();
+  initFilmsSlider();
+  initScrollTop();
+  initInquiryModal();
   initCustomCursor();
   initFilmModal();
   initCameraFooter();
@@ -1370,4 +1373,273 @@ function initThemeToggle() {
   toggleBtnDesktop?.addEventListener('click', handleToggle);
   toggleBtnMobile?.addEventListener('click', handleToggle);
 }
+
+/* ============================================================
+   8. CINEMA FILMS AUTO-SLIDER & FILTERS (#films)
+   ============================================================ */
+function initFilmsSlider() {
+  const slider = document.getElementById('filmsSlider');
+  const track = document.getElementById('filmsSliderTrack');
+  if (!slider || !track) return;
+
+  const slides = Array.from(track.querySelectorAll('.film-slide'));
+  const currentEl = document.getElementById('filmsCurrent');
+  const totalEl = document.getElementById('filmsTotal');
+  const progressFill = document.getElementById('filmsProgressFill');
+  const prevBtn = document.getElementById('filmsPrevBtn');
+  const nextBtn = document.getElementById('filmsNextBtn');
+  const playPauseBtn = document.getElementById('filmsPlayPauseBtn');
+  const filterBtns = Array.from(document.querySelectorAll('.films-filter-btn'));
+
+  let activeSlides = slides.slice();
+  let currentIndex = 0;
+  let isPlaying = true;
+  let timer = null;
+  const INTERVAL = 4500; // 4.5 seconds per slide
+
+  function updateHUD() {
+    if (activeSlides.length === 0) return;
+    const pad = n => String(n).padStart(2, '0');
+    if (currentEl) currentEl.textContent = pad(currentIndex + 1);
+    if (totalEl) totalEl.textContent = pad(activeSlides.length);
+    if (progressFill) {
+      const pct = ((currentIndex + 1) / activeSlides.length) * 100;
+      progressFill.style.width = pct + '%';
+    }
+  }
+
+  function scrollToSlide(index) {
+    if (index < 0) index = activeSlides.length - 1;
+    if (index >= activeSlides.length) index = 0;
+    currentIndex = index;
+
+    const target = activeSlides[currentIndex];
+    if (target) {
+      const targetLeft = target.offsetLeft - track.offsetLeft;
+      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
+    updateHUD();
+    resetTimer();
+  }
+
+  function nextSlide() {
+    scrollToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    scrollToSlide(currentIndex - 1);
+  }
+
+  function tick() {
+    if (!isPlaying) return;
+    nextSlide();
+  }
+
+  function resetTimer() {
+    if (timer) clearInterval(timer);
+    if (isPlaying) {
+      timer = setInterval(tick, INTERVAL);
+    }
+  }
+
+  function setPlaying(state) {
+    isPlaying = state;
+    if (playPauseBtn) {
+      const pauseIcon = playPauseBtn.querySelector('.i-pause');
+      const playIcon = playPauseBtn.querySelector('.i-play');
+      if (pauseIcon && playIcon) {
+        pauseIcon.style.display = isPlaying ? 'block' : 'none';
+        playIcon.style.display = isPlaying ? 'none' : 'block';
+      }
+      playPauseBtn.setAttribute('aria-label', isPlaying ? 'Pause Auto-Play' : 'Resume Auto-Play');
+    }
+    if (isPlaying) resetTimer();
+    else if (timer) clearInterval(timer);
+  }
+
+  // Filter Buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const filter = btn.dataset.filmFilter;
+      slides.forEach(slide => {
+        const cat = slide.dataset.filmCat || '';
+        if (filter === 'all' || cat.includes(filter)) {
+          slide.classList.remove('is-filtered-out');
+        } else {
+          slide.classList.add('is-filtered-out');
+        }
+      });
+
+      activeSlides = slides.filter(s => !s.classList.contains('is-filtered-out'));
+      currentIndex = 0;
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+      updateHUD();
+      resetTimer();
+    });
+  });
+
+  // Controls
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+  playPauseBtn?.addEventListener('click', () => setPlaying(!isPlaying));
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', () => { if (isPlaying) clearInterval(timer); });
+  slider.addEventListener('mouseleave', () => { if (isPlaying) resetTimer(); });
+
+  // Touch / Scroll event detection
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const scrollPos = track.scrollLeft;
+      let closestIdx = 0;
+      let minDiff = Infinity;
+      activeSlides.forEach((slide, idx) => {
+        const diff = Math.abs(slide.offsetLeft - track.offsetLeft - scrollPos);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      if (closestIdx !== currentIndex) {
+        currentIndex = closestIdx;
+        updateHUD();
+      }
+    }, 100);
+  }, { passive: true });
+
+  updateHUD();
+  resetTimer();
+}
+
+/* ============================================================
+   9. SCROLL TO TOP & FLOATING DOCK
+   ============================================================ */
+function initScrollTop() {
+  const scrollBtn = document.getElementById('nkScrollTop');
+  if (!scrollBtn) return;
+
+  function checkScroll() {
+    const y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (y > 350) {
+      scrollBtn.classList.add('is-visible');
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ============================================================
+   10. LUXURY INQUIRY & BOOKING MODAL
+   ============================================================ */
+function initInquiryModal() {
+  const modal = document.getElementById('nkInquiryModal');
+  const form = document.getElementById('nkInquiryForm');
+  if (!modal) return;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('#inqName')?.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  // Open modal on click of any .js-open-inquiry button
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('.js-open-inquiry');
+    if (trigger) {
+      e.preventDefault();
+      openModal();
+    }
+    if (e.target.closest('[data-inquiry-close]')) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (!modal.hidden && e.key === 'Escape') closeModal();
+  });
+
+  // Service Pills toggle
+  modal.querySelectorAll('.nk-service-pill').forEach(pill => {
+    const input = pill.querySelector('input');
+    pill.addEventListener('click', () => {
+      setTimeout(() => {
+        if (input.checked) {
+          pill.classList.add('is-selected');
+        } else {
+          pill.classList.remove('is-selected');
+        }
+      }, 10);
+    });
+  });
+
+  // Helper to get formatted inquiry details
+  function getInquiryData() {
+    const name = form.querySelector('#inqName')?.value.trim() || '';
+    const phone = form.querySelector('#inqPhone')?.value.trim() || '';
+    const date = form.querySelector('#inqDate')?.value.trim() || '';
+    const city = form.querySelector('#inqCity')?.value.trim() || '';
+    const notes = form.querySelector('#inqNotes')?.value.trim() || '';
+    const services = Array.from(form.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
+
+    return { name, phone, date, city, notes, services };
+  }
+
+  // Submit via WhatsApp
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const { name, phone, date, city, notes, services } = getInquiryData();
+    if (!name || !phone || !date || !city) {
+      alert('Please fill in your Name, Phone, Date, and City/Venue.');
+      return;
+    }
+
+    const sList = services.length ? services.join(', ') : 'Royal Wedding Coverage';
+    const text = `Hi Sonu & Wedding Shedding team! 👋\n\nI would like to check availability and get an instant quote:\n• Name: ${name}\n• Phone: ${phone}\n• Event Date: ${date}\n• City / Venue: ${city}\n• Services: ${sList}${notes ? `\n• Notes: ${notes}` : ''}\n\nLooking forward to hearing from you!`;
+
+    const waUrl = `https://wa.me/917503550936?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, '_blank');
+    closeModal();
+  });
+
+  // Submit via Email
+  const emailBtn = document.getElementById('inqSubmitMail');
+  emailBtn?.addEventListener('click', () => {
+    const { name, phone, date, city, notes, services } = getInquiryData();
+    if (!name || !phone) {
+      alert('Please enter at least your Name and Phone/WhatsApp number.');
+      return;
+    }
+
+    const sList = services.length ? services.join(', ') : 'Wedding Photography';
+    const subject = `Wedding Photography Inquiry - ${name} (${date || 'Upcoming'})`;
+    const body = `Hi Sonu,\n\nI would like to check availability for Wedding Shedding:\n\n• Name: ${name}\n• Phone: ${phone}\n• Event Date: ${date}\n• City / Venue: ${city}\n• Services: ${sList}\n• Notes: ${notes}\n\nBest regards,\n${name}`;
+
+    const mailUrl = `mailto:sonukumar2255@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailUrl;
+    closeModal();
+  });
+}
+
 

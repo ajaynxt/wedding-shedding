@@ -1276,137 +1276,219 @@
        ============================================================ -->
   <section class="nk-films-section" id="films">
     <div class="nk-films-header nkx-rv">
+      <div class="films-rec-badge">
+        <span class="films-rec-dot"></span>
+        <span>4K HDR LIVE &middot; 60FPS CINEMA</span>
+      </div>
       <p class="nk-films-eyebrow">4K Cinematic Films &middot; Teasers</p>
       <h2 class="nk-films-title">Love Stories in Motion</h2>
       <p class="nk-films-subtitle">Spontaneous tears, royal entries, and high-energy celebrations captured with 4K cinema cameras, aerial drones, and evocative sound design.</p>
+      
+      <!-- Film Category Filter Tabs -->
+      <div class="films-filters" role="tablist" aria-label="Film categories">
+        <button type="button" class="films-filter-btn is-active" data-film-filter="all" role="tab" aria-selected="true">All Films (06)</button>
+        <button type="button" class="films-filter-btn" data-film-filter="royal" role="tab" aria-selected="false">Royal Weddings</button>
+        <button type="button" class="films-filter-btn" data-film-filter="prewed" role="tab" aria-selected="false">Pre-Wedding Cinema</button>
+        <button type="button" class="films-filter-btn" data-film-filter="haldi" role="tab" aria-selected="false">Haldi &amp; Teasers</button>
+      </div>
     </div>
 
-    <div class="nk-films-grid">
-      <!-- Film 1: Yash & Bhumi Jaipur Grand Wedding -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="xSjFeHG3Gd8">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="xSjFeHG3Gd8" role="button" tabindex="0" aria-label="Play Yash &amp; Bhumi Jaipur Grand Wedding film">
-          <img src="assets/images/films/film_yash_bhumi_jaipur.jpg" alt="Yash &amp; Bhumi Jaipur Grand Wedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Jaipur Royal Wedding</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <!-- Luxury Auto-Advancing Cinema Slider -->
+    <div class="films-slider" id="filmsSlider">
+      <div class="films-slider-track" id="filmsSliderTrack">
+        <!-- Film 1: Yash & Bhumi Jaipur Grand Wedding -->
+        <article class="film-slide nkx-rv" data-film-cat="royal" data-youtube-id="xSjFeHG3Gd8">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="xSjFeHG3Gd8" role="button" tabindex="0" aria-label="Play Yash &amp; Bhumi Jaipur Grand Wedding film">
+            <img src="assets/images/films/film_yash_bhumi_jaipur.jpg" alt="Yash &amp; Bhumi Jaipur Grand Wedding Film" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Jaipur Royal Wedding</span>
+            <span class="nk-film-duration">4K UHD &middot; CINEMA</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Destination Wedding Film</span>
-          <h3 class="nk-film-name">Yash &amp; Bhumi &mdash; Jaipur Grand Wedding</h3>
-          <p class="nk-film-desc">Royal palace celebrations, vibrant bride &amp; groom dress shoots, and heritage aesthetics in Jaipur &middot; Wedding Shedding Studio.</p>
-          <a href="https://youtu.be/xSjFeHG3Gd8" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </article>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Destination Wedding Film</span>
+            <h3 class="nk-film-name">Yash &amp; Bhumi &mdash; Jaipur Grand Wedding</h3>
+            <p class="nk-film-desc">Royal palace celebrations, vibrant bride &amp; groom dress shoots, and heritage aesthetics in Jaipur &middot; Wedding Shedding Studio.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="xSjFeHG3Gd8">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/xSjFeHG3Gd8" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Film 2: Sagar & Manshi Rishikesh Pre-Wedding -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="K9oFSWJwftc">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="K9oFSWJwftc" role="button" tabindex="0" aria-label="Play Sagar &amp; Manshi Rishikesh Pre-Wedding film">
-          <img src="assets/images/films/film_sagar_manshi_rishikesh.jpg" alt="Sagar &amp; Manshi Rishikesh Pre-Wedding film by Wedding Shedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Rishikesh Pre-Wedding</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Film 2: Sagar & Manshi Rishikesh Pre-Wedding -->
+        <article class="film-slide nkx-rv" data-film-cat="prewed" data-youtube-id="K9oFSWJwftc">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="K9oFSWJwftc" role="button" tabindex="0" aria-label="Play Sagar &amp; Manshi Rishikesh Pre-Wedding film">
+            <img src="assets/images/films/film_sagar_manshi_rishikesh.jpg" alt="Sagar &amp; Manshi Rishikesh Pre-Wedding film by Wedding Shedding" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Rishikesh Pre-Wedding</span>
+            <span class="nk-film-duration">4K UHD &middot; DRONE</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Outdoor Pre-Wedding Narrative</span>
-          <h3 class="nk-film-name">Sagar &amp; Manshi &mdash; Rishikesh Pre-Wedding</h3>
-          <p class="nk-film-desc">Serene Ganges banks, romantic twilight frames, mountain vistas, and candid chemistry captured in Rishikesh &middot; Wedding Shedding Studio.</p>
-          <a href="https://youtu.be/K9oFSWJwftc" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </article>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Outdoor Pre-Wedding Narrative</span>
+            <h3 class="nk-film-name">Sagar &amp; Manshi &mdash; Rishikesh Pre-Wedding</h3>
+            <p class="nk-film-desc">Serene Ganges banks, romantic twilight frames, mountain vistas, and candid chemistry captured in Rishikesh &middot; Wedding Shedding Studio.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="K9oFSWJwftc">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/K9oFSWJwftc" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Film 3: Shakshi & Piyush Wedding Film -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="cJPGONbScBQ">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="cJPGONbScBQ" role="button" tabindex="0" aria-label="Play Shakshi &amp; Piyush Wedding Cinematic Video">
-          <img src="assets/images/films/film_shakshi_piyush_wedding.jpg" alt="Shakshi &amp; Piyush Wedding Cinematic Video by Wedding Shedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Royal Wedding Cinema</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Film 3: Shakshi & Piyush Wedding Film -->
+        <article class="film-slide nkx-rv" data-film-cat="royal" data-youtube-id="cJPGONbScBQ">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="cJPGONbScBQ" role="button" tabindex="0" aria-label="Play Shakshi &amp; Piyush Wedding Cinematic Video">
+            <img src="assets/images/films/film_shakshi_piyush_wedding.jpg" alt="Shakshi &amp; Piyush Wedding Cinematic Video by Wedding Shedding" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Royal Wedding Cinema</span>
+            <span class="nk-film-duration">4K UHD &middot; MASTER</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Cinematic Wedding Film</span>
-          <h3 class="nk-film-name">Shakshi &amp; Piyush &mdash; Wedding Highlights</h3>
-          <p class="nk-film-desc">High-emotion varmala moments, grand stage fireworks, soulful pheras, and unforgettable family celebrations &middot; Wedding Shedding Studio.</p>
-          <a href="https://youtu.be/cJPGONbScBQ" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </article>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Cinematic Wedding Film</span>
+            <h3 class="nk-film-name">Shakshi &amp; Piyush &mdash; Wedding Highlights</h3>
+            <p class="nk-film-desc">High-emotion varmala moments, grand stage fireworks, soulful pheras, and unforgettable family celebrations &middot; Wedding Shedding Studio.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="cJPGONbScBQ">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/cJPGONbScBQ" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Film 4: Shobhit Pre-Wedding Film -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="E4iUxwWwaCQ">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="E4iUxwWwaCQ" role="button" tabindex="0" aria-label="Play Shobhit PreWedding film">
-          <img src="assets/images/films/film_shobhit_prewedding.jpg" alt="Shobhit PreWedding film by Wedding Shedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Pre-Wedding Cinema</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Film 4: Shobhit Pre-Wedding Film -->
+        <article class="film-slide nkx-rv" data-film-cat="prewed" data-youtube-id="E4iUxwWwaCQ">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="E4iUxwWwaCQ" role="button" tabindex="0" aria-label="Play Shobhit PreWedding film">
+            <img src="assets/images/films/film_shobhit_prewedding.jpg" alt="Shobhit PreWedding film by Wedding Shedding" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Pre-Wedding Cinema</span>
+            <span class="nk-film-duration">4K UHD &middot; DRONE</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Scenic Pre-Wedding Story</span>
-          <h3 class="nk-film-name">Shobhit &mdash; Cinematic Pre-Wedding</h3>
-          <p class="nk-film-desc">Dreamy golden-hour frames, candid intimate moments, and poetic aerial drone vistas celebrating romance before the vows.</p>
-          <a href="https://youtu.be/E4iUxwWwaCQ" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </article>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Scenic Pre-Wedding Story</span>
+            <h3 class="nk-film-name">Shobhit &mdash; Cinematic Pre-Wedding</h3>
+            <p class="nk-film-desc">Dreamy golden-hour frames, candid intimate moments, and poetic aerial drone vistas celebrating romance before the vows.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="E4iUxwWwaCQ">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/E4iUxwWwaCQ" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Film 5: Dhruv & Garima Wedding -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="LgVLHQhyayo">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="LgVLHQhyayo" role="button" tabindex="0" aria-label="Play Dhruv &amp; Garima Wedding film">
-          <img src="assets/images/films/film_dhruv_garima_wedding.jpg" alt="Dhruv &amp; Garima Wedding by Wedding Shedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Grand Royal Wedding</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Film 5: Dhruv & Garima Wedding -->
+        <article class="film-slide nkx-rv" data-film-cat="royal" data-youtube-id="LgVLHQhyayo">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="LgVLHQhyayo" role="button" tabindex="0" aria-label="Play Dhruv &amp; Garima Wedding film">
+            <img src="assets/images/films/film_dhruv_garima_wedding.jpg" alt="Dhruv &amp; Garima Wedding by Wedding Shedding" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Grand Royal Wedding</span>
+            <span class="nk-film-duration">4K UHD &middot; HERITAGE</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Heritage Wedding Film</span>
-          <h3 class="nk-film-name">Dhruv &amp; Garima &mdash; Royal Wedding Teaser</h3>
-          <p class="nk-film-desc">Rich traditional attire, electrifying baaraat procession, floral canopy entry, and timeless Indian wedding elegance.</p>
-          <a href="https://youtu.be/LgVLHQhyayo" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </article>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Heritage Wedding Film</span>
+            <h3 class="nk-film-name">Dhruv &amp; Garima &mdash; Royal Wedding Teaser</h3>
+            <p class="nk-film-desc">Rich traditional attire, electrifying baaraat procession, floral canopy entry, and timeless Indian wedding elegance.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="LgVLHQhyayo">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/LgVLHQhyayo" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <!-- Film 6: Haldi Ceremony Teaser -->
-      <article class="nk-film-card nkx-rv" data-youtube-id="bFcPi3_OEaU">
-        <div class="nk-film-thumbwrap js-play-film" data-yt="bFcPi3_OEaU" role="button" tabindex="0" aria-label="Play Haldi Ceremony Teaser by Wedding Shedding">
-          <img src="assets/images/films/film_haldi_ceremony_teaser.jpg" alt="Haldi ceremony teaser by Wedding Shedding" class="nk-film-thumb" loading="lazy">
-          <span class="nk-film-badge">Haldi &amp; Sangeet Teaser</span>
-          <span class="nk-film-duration">4K UHD</span>
-          <div class="nk-film-playbtn" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <!-- Film 6: Haldi Ceremony Teaser -->
+        <article class="film-slide nkx-rv" data-film-cat="haldi" data-youtube-id="bFcPi3_OEaU">
+          <div class="nk-film-thumbwrap js-play-film" data-yt="bFcPi3_OEaU" role="button" tabindex="0" aria-label="Play Haldi Ceremony Teaser by Wedding Shedding">
+            <img src="assets/images/films/film_haldi_ceremony_teaser.jpg" alt="Haldi ceremony teaser by Wedding Shedding" class="nk-film-thumb" loading="lazy">
+            <span class="nk-film-badge">Haldi &amp; Sangeet Teaser</span>
+            <span class="nk-film-duration">4K UHD &middot; TEASER</span>
+            <div class="nk-film-playbtn" aria-hidden="true">
+              <span class="film-play-ping"></span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
           </div>
+          <div class="nk-film-body">
+            <span class="nk-film-cat">Haldi Celebration Highlights</span>
+            <h3 class="nk-film-name">Vibrant Haldi Ceremony &mdash; Official Teaser</h3>
+            <p class="nk-film-desc">Sun-drenched yellow marigold showers, high-energy dhol beats, laughter, and spontaneous family joy caught in 4K.</p>
+            <div class="film-actions">
+              <button type="button" class="btn-film-play js-play-film" data-yt="bFcPi3_OEaU">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Watch 4K
+              </button>
+              <a href="https://youtu.be/bFcPi3_OEaU" target="_blank" rel="noopener" class="nk-film-link">
+                YouTube
+                <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Cinema Slider Control HUD -->
+      <div class="films-slider-ctrl nkx-rv" id="filmsSliderCtrl">
+        <div class="films-slide-counter">
+          <span class="films-counter-label">SCENE</span>
+          <span class="films-slide-current" id="filmsCurrent">01</span>
+          <span class="films-counter-sep">/</span>
+          <span class="films-slide-total" id="filmsTotal">06</span>
         </div>
-        <div class="nk-film-body">
-          <span class="nk-film-cat">Haldi Celebration Highlights</span>
-          <h3 class="nk-film-name">Vibrant Haldi Ceremony &mdash; Official Teaser</h3>
-          <p class="nk-film-desc">Sun-drenched yellow marigold showers, high-energy dhol beats, laughter, and spontaneous family joy caught in 4K.</p>
-          <a href="https://youtu.be/bFcPi3_OEaU" target="_blank" rel="noopener" class="nk-film-link">
-            Watch on YouTube
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
+        <div class="films-slide-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="16">
+          <div class="films-slide-bar-fill" id="filmsProgressFill" style="width: 16.66%;"></div>
         </div>
-      </article>
+        <div class="films-ctrl-btns">
+          <button type="button" class="films-ctrl-btn" id="filmsPlayPauseBtn" aria-label="Pause Auto-Play" title="Toggle Auto-Play">
+            <svg class="i-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <button type="button" class="films-ctrl-btn" id="filmsPrevBtn" aria-label="Previous Film" title="Previous Film">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button type="button" class="films-ctrl-btn" id="filmsNextBtn" aria-label="Next Film" title="Next Film">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="nk-films-channel nkx-rv">
@@ -1968,6 +2050,116 @@
           Book Similar Film on WhatsApp &rarr;
         </a>
       </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING ACTION DOCK: BACK-TO-TOP & QUICK INQUIRY
+       ============================================================ -->
+  <div class="nk-floating-dock" id="nkFloatingDock" aria-label="Quick Actions">
+    <button type="button" class="nk-float-inquiry-btn js-open-inquiry" aria-label="Book Date & Check Availability">
+      <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>
+      <span>Book Date &middot; Instant Quote</span>
+    </button>
+    <button type="button" class="nk-scroll-top" id="nkScrollTop" aria-label="Scroll to top of page" title="Back to top">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       LUXURY INQUIRY & BOOKING MODAL
+       ============================================================ -->
+  <div class="nk-inquiry-modal" id="nkInquiryModal" hidden>
+    <div class="nk-inquiry-modal__backdrop" data-inquiry-close></div>
+    <div class="nk-inquiry-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="nkInquiryTitle">
+      <button type="button" class="nk-inquiry-modal__close" data-inquiry-close aria-label="Close inquiry dialog">&times;</button>
+      
+      <div class="nk-inquiry-header">
+        <div class="nk-inquiry-badge">
+          <span class="nk-inquiry-badge-dot"></span>
+          <span>Fast Response &middot; Within 2 Hours</span>
+        </div>
+        <h3 class="nk-inquiry-title" id="nkInquiryTitle">Check Availability &amp; Get Quote</h3>
+        <p class="nk-inquiry-sub">Direct response from Sonu Kumar (Lead Cinematographer) &amp; our Burari Studio core team.</p>
+      </div>
+
+      <form class="nk-inquiry-form" id="nkInquiryForm">
+        <div class="nk-form-row">
+          <div class="nk-form-group">
+            <label class="nk-form-label" for="inqName">Couple / Client Name <span class="req">*</span></label>
+            <input type="text" id="inqName" name="name" class="nk-form-input" required placeholder="e.g. Rahul &amp; Priya">
+          </div>
+          <div class="nk-form-group">
+            <label class="nk-form-label" for="inqPhone">Phone / WhatsApp <span class="req">*</span></label>
+            <input type="tel" id="inqPhone" name="phone" class="nk-form-input" required placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="nk-form-row">
+          <div class="nk-form-group">
+            <label class="nk-form-label" for="inqDate">Event / Wedding Date <span class="req">*</span></label>
+            <input type="date" id="inqDate" name="date" class="nk-form-input" required>
+          </div>
+          <div class="nk-form-group">
+            <label class="nk-form-label" for="inqCity">City &amp; Venue <span class="req">*</span></label>
+            <input type="text" id="inqCity" name="city" class="nk-form-input" required placeholder="e.g. Delhi NCR, Jaipur, etc.">
+          </div>
+        </div>
+
+        <div class="nk-form-group">
+          <label class="nk-form-label">Services Required</label>
+          <div class="nk-service-pills">
+            <label class="nk-service-pill is-selected">
+              <input type="checkbox" name="services" value="Royal Wedding Photography" checked>
+              <span>Royal Wedding Photography</span>
+            </label>
+            <label class="nk-service-pill is-selected">
+              <input type="checkbox" name="services" value="4K Cinematic Films" checked>
+              <span>4K Cinematic Films</span>
+            </label>
+            <label class="nk-service-pill">
+              <input type="checkbox" name="services" value="Pre-Wedding Cinema">
+              <span>Pre-Wedding Cinema</span>
+            </label>
+            <label class="nk-service-pill">
+              <input type="checkbox" name="services" value="Drone Aerial 4K">
+              <span>Drone Aerial 4K</span>
+            </label>
+            <label class="nk-service-pill">
+              <input type="checkbox" name="services" value="Haldi & Sangeet">
+              <span>Haldi &amp; Sangeet</span>
+            </label>
+            <label class="nk-service-pill">
+              <input type="checkbox" name="services" value="Complete 2-3 Day Package">
+              <span>Complete 2&ndash;3 Day Package</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="nk-form-group">
+          <label class="nk-form-label" for="inqNotes">Special Requests / Vision</label>
+          <textarea id="inqNotes" name="notes" class="nk-form-textarea" placeholder="Share your vision, number of guests, venues, approximate timelines..."></textarea>
+        </div>
+
+        <div class="nk-inquiry-actions">
+          <button type="submit" class="btn-submit-wa" id="inqSubmitWa">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
+            Send Inquiry via WhatsApp
+          </button>
+          <button type="button" class="btn-submit-mail" id="inqSubmitMail">
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+            Or Send via Email
+          </button>
+        </div>
+
+        <div class="nk-inquiry-trust">
+          <span>&check; 100% Privacy</span>
+          <span>&middot;</span>
+          <span>&check; No Spam Guarantee</span>
+          <span>&middot;</span>
+          <span>&check; 4.9&starf; Rated Studio</span>
+        </div>
+      </form>
     </div>
   </div>
 

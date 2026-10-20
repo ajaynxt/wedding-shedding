@@ -2,48 +2,45 @@
   "royal-wedding": {
     "title": "ROYAL WEDDING CELEBRATION",
     "images": [
-      "assets/images/ws_photo-01.jpg",
+      "assets/images/instagram/ig_post_02_royal_couple.jpg",
       "assets/images/ws_hero.jpg",
-      "assets/images/ws_photo-08.jpg",
-      "assets/images/ws_photo-09.jpg",
-      "assets/images/ws_photo-13.jpg",
-      "assets/images/ws_photo-17.jpg"
+      "assets/images/instagram/ig_post_03_editorial_bride.jpg",
+      "assets/images/ws_celebration_01.jpg",
+      "assets/images/instagram/ig_post_01_bride_glow.jpg",
+      "assets/images/ws_family_01.jpg"
     ]
   },
   "haldi-sangeet": {
     "title": "VIBRANT HALDI & SANGEET",
     "images": [
       "assets/images/ws_haldi_couple.jpg",
-      "assets/images/ws_photo-02.jpg",
-      "assets/images/ws_photo-03.jpg",
-      "assets/images/ws_photo-04.jpg",
-      "assets/images/ws_photo-05.jpg",
-      "assets/images/ws_photo-06.jpg",
-      "assets/images/ws_photo-07.jpg",
-      "assets/images/ws_photo-14.jpg",
-      "assets/images/ws_photo-15.jpg",
-      "assets/images/ws_photo-18.jpg"
+      "assets/images/instagram/ig_post_08_haldi_anshu_sona.jpg",
+      "assets/images/instagram/ig_post_05_candid_smile.jpg",
+      "assets/images/films/film_haldi_ceremony_teaser.jpg",
+      "assets/images/ws_celebration_01.jpg",
+      "assets/images/instagram/ig_post_pinned_anshu_sona.jpg"
     ]
   },
   "pre-wedding": {
     "title": "ROMANTIC PRE-WEDDING STORIES",
     "images": [
-      "assets/images/ws_photo-10.jpg",
-      "assets/images/ws_photo-11.jpg",
-      "assets/images/ws_photo-12.jpg",
-      "assets/images/ws_photo-16.jpg",
+      "assets/images/instagram/ig_post_pinned_cinematic_couple.jpg",
+      "assets/images/ws_couple_portrait.jpg",
+      "assets/images/films/film_sagar_manshi_rishikesh.jpg",
+      "assets/images/films/film_shobhit_prewedding.jpg",
+      "assets/images/instagram/ig_post_02_royal_couple.jpg",
       "assets/images/ws_hero.jpg"
     ]
   },
   "rituals-traditions": {
     "title": "SACRED RITUALS & TRADITIONS",
     "images": [
-      "assets/images/ws_photo-01.jpg",
-      "assets/images/ws_photo-04.jpg",
-      "assets/images/ws_photo-07.jpg",
-      "assets/images/ws_photo-08.jpg",
-      "assets/images/ws_photo-13.jpg",
-      "assets/images/ws_photo-18.jpg"
+      "assets/images/instagram/ig_post_01_bride_glow.jpg",
+      "assets/images/instagram/ig_post_09_bridal_queen.jpg",
+      "assets/images/instagram/ig_post_03_editorial_bride.jpg",
+      "assets/images/ws_celebration_01.jpg",
+      "assets/images/instagram/ig_post_05_candid_smile.jpg",
+      "assets/images/instagram/ig_post_07_fashion_bride.jpg"
     ]
   }
 }
