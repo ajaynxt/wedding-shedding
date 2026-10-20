@@ -3918,13 +3918,6 @@ body.theme-dark .nkf__wm a:hover {
   background: var(--gold-tint);
 }
 
-.nk-proj-modal__drive-btn:hover {
-  background: var(--g) !important;
-  color: #0E0D0C !important;
-  border-color: var(--gh) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(181, 138, 28, 0.35);
-}
 
 .nk-proj-modal__grid {
   padding: 30px;
@@ -4348,17 +4341,7 @@ html, body {
   }
   .project-card-title {
     font-size: 19px;
-  }
-  .client-drive-banner {
-    padding: 24px 18px !important;
-    flex-direction: column !important;
-    text-align: center;
-    gap: 18px !important;
-  }
-  .client-drive-banner a {
-    width: 100%;
-    justify-content: center;
-  }
+
 
   /* 8. About Section */
   .nk-about-section {

@@ -458,7 +458,6 @@ function initProjectsGallery() {
     "real-estate-amore": {
       "title": "AMORE LUXURY REAL ESTATE & AERIAL CINEMATOGRAPHY",
       "videoUrl": "https://drive.google.com/file/d/13YlJQDQ9bocJ4kS242FbfmO04ccSZdEw/preview",
-      "videoDirect": "https://drive.google.com/file/d/13YlJQDQ9bocJ4kS242FbfmO04ccSZdEw/view?usp=sharing",
       "videoBadge": "4K AERIAL DRONE CINEMATOGRAPHY &middot; AMORE TOWERS",
       "images": [
         "assets/images/ws_realestate_amore.jpg",
@@ -471,7 +470,6 @@ function initProjectsGallery() {
     "corporate-shoot": {
       "title": "CORPORATE BRAND CINEMATOGRAPHY & EXECUTIVE MEDIA",
       "videoUrl": "https://drive.google.com/file/d/1yxzlKQ0uS81pbwml0b7CaD42nQ6mw_p_/preview",
-      "videoDirect": "https://drive.google.com/file/d/1yxzlKQ0uS81pbwml0b7CaD42nQ6mw_p_/view?usp=drive_link",
       "videoBadge": "4K CORPORATE BRAND CINEMA &middot; LEADERSHIP FILM",
       "images": [
         "assets/images/ws_video_corporate.jpg",
@@ -485,7 +483,6 @@ function initProjectsGallery() {
     "source-one-corporate": {
       "title": "SOURCE ONE &bull; CORPORATE TECH & BRAND CULTURE PRODUCTION",
       "videoUrl": "https://drive.google.com/file/d/1VrN7bfzPDa7rP6Dagmwodr6ShQZrJxtf/preview",
-      "videoDirect": "https://drive.google.com/file/d/1VrN7bfzPDa7rP6Dagmwodr6ShQZrJxtf/view?usp=sharing",
       "videoBadge": "4K TECH ENTERPRISE FILM &middot; SOURCE ONE",
       "images": [
         "assets/images/ws_video_sourceone.jpg",
@@ -499,7 +496,6 @@ function initProjectsGallery() {
     "bougie-cut-fashion": {
       "title": "BOUGIE CUT 2 &bull; HIGH FASHION RUNWAY & COUTURE FILM",
       "videoUrl": "https://drive.google.com/file/d/1Q9NNlStf5vIOe0dfpRZUeGRCa7kcApfV/preview",
-      "videoDirect": "https://drive.google.com/file/d/1Q9NNlStf5vIOe0dfpRZUeGRCa7kcApfV/view?usp=sharing",
       "videoBadge": "4K HAUTE COUTURE RUNWAY &middot; BOUGIE CUT 2",
       "images": [
         "assets/images/ws_video_bougie.jpg",
@@ -526,7 +522,6 @@ function initProjectsGallery() {
     "healthcare-clinic": {
       "title": "CLINICAL INFRASTRUCTURE & ADVANCED HEALTHCARE FACILITY TOUR",
       "videoUrl": "https://drive.google.com/file/d/1YVyasZASap-bq4vxUp5aAX3lZFbINP6f/preview",
-      "videoDirect": "https://drive.google.com/file/d/1YVyasZASap-bq4vxUp5aAX3lZFbINP6f/view?usp=drive_link",
       "videoBadge": "4K CLINICAL FACILITY TOUR &middot; MEDICAL INFRASTRUCTURE",
       "images": [
         "assets/images/ws_video_clinic.jpg",
@@ -540,7 +535,6 @@ function initProjectsGallery() {
     "dr-prachi-benara": {
       "title": "DR. PRACHI BENARA &bull; MEDICAL SUCCESS & PATIENT STORIES",
       "videoUrl": "https://drive.google.com/file/d/1e3eryFBIA7D1sVSg9a5pqzgTNhFc79Ay/preview",
-      "videoDirect": "https://drive.google.com/file/d/1e3eryFBIA7D1sVSg9a5pqzgTNhFc79Ay/view?usp=sharing",
       "videoBadge": "4K MEDICAL SUCCESS DOCUMENTARY &middot; DR. PRACHI BENARA",
       "images": [
         "assets/images/ws_video_dr_prachi.jpg",
@@ -554,7 +548,6 @@ function initProjectsGallery() {
     "gaming-diablo": {
       "title": "DIABLO &bull; HIGH-ENERGY NIGHTLIFE & BRAND EXPERIENCE",
       "videoUrl": "https://drive.google.com/file/d/1BmaOmYdxkXps2_PhoC049HRsydYwKEpQ/preview",
-      "videoDirect": "https://drive.google.com/file/d/1BmaOmYdxkXps2_PhoC049HRsydYwKEpQ/view?usp=sharing",
       "videoBadge": "4K HIGH-OCTANE BRAND CINEMA &middot; DIABLO",
       "images": [
         "assets/images/ws_video_diablo.jpg",
@@ -580,7 +573,6 @@ function initProjectsGallery() {
     "ecommerce-explainer": {
       "title": "E-COMMERCE STORE EXPLAINER & D2C PRODUCT COMMERCIAL",
       "videoUrl": "https://drive.google.com/file/d/1CA77ORrNXFxf844dOZ8OIJfoV3OLXUq7/preview",
-      "videoDirect": "https://drive.google.com/file/d/1CA77ORrNXFxf844dOZ8OIJfoV3OLXUq7/view?usp=sharing",
       "videoBadge": "4K E-COMMERCE EXPLAINER &middot; D2C STORE COMMERCIAL",
       "images": [
         "assets/images/ws_video_ecommerce.jpg",
@@ -594,7 +586,6 @@ function initProjectsGallery() {
     "mega-gala-event": {
       "title": "GRAND GALA & LIVE STAGE EVENT PRODUCTION",
       "videoUrl": "https://drive.google.com/file/d/1m3YcKKb05apywT9wRV-XVEu3gyIUNcEd/preview",
-      "videoDirect": "https://drive.google.com/file/d/1m3YcKKb05apywT9wRV-XVEu3gyIUNcEd/view?usp=sharing",
       "videoBadge": "4K MULTI-CAM LIVE EVENT FILM &middot; GRAND GALA",
       "images": [
         "assets/images/ws_video_event.jpg",
@@ -608,7 +599,6 @@ function initProjectsGallery() {
     "utkarsh-result-celebration": {
       "title": "UTKARSH CLASSES 2023 &bull; JEE RESULT CELEBRATION & ARENA CONCERT",
       "videoUrl": "https://drive.google.com/file/d/1sK66FbH_XNDO85WTE0SNf2lpMkzlUccw/preview",
-      "videoDirect": "https://drive.google.com/file/d/1sK66FbH_XNDO85WTE0SNf2lpMkzlUccw/view?usp=sharing",
       "videoBadge": "4K MEGA ARENA CELEBRATION &middot; UTKARSH 2023",
       "images": [
         "assets/images/ws_video_utkarsh.jpg",
@@ -622,7 +612,6 @@ function initProjectsGallery() {
     "micdrop-live-comedy": {
       "title": "MIC DROP &bull; LIVE STAND-UP COMEDY & CONCERT EXPERIENCE",
       "videoUrl": "https://drive.google.com/file/d/1s4O3Dkyw0lQer3eZW1dFUdWKaQWj8GY9/preview",
-      "videoDirect": "https://drive.google.com/file/d/1s4O3Dkyw0lQer3eZW1dFUdWKaQWj8GY9/view?usp=sharing",
       "videoBadge": "4K LIVE STANDUP &middot; MIC DROP COMEDY & CONCERT",
       "images": [
         "assets/images/ws_video_micdrop.jpg",
@@ -636,7 +625,6 @@ function initProjectsGallery() {
     "school-campus-film": {
       "title": "CAMPUS LIFE, ACADEMICS & SCHOOL ANNUAL DAY CINEMATOGRAPHY",
       "videoUrl": "https://drive.google.com/file/d/1m7iBCeFVwyR3FNUkZt2JnWlS_8rjiwDy/preview",
-      "videoDirect": "https://drive.google.com/file/d/1m7iBCeFVwyR3FNUkZt2JnWlS_8rjiwDy/view?usp=sharing",
       "videoBadge": "4K SCHOOL & CAMPUS FILM &middot; ANNUAL DAY",
       "images": [
         "assets/images/ws_video_school.jpg",
@@ -650,7 +638,6 @@ function initProjectsGallery() {
     "jee-advanced-triumph": {
       "title": "JEE ADVANCED &bull; MERIT FELICITATION & STUDENT TRIUMPH",
       "videoUrl": "https://drive.google.com/file/d/1NEw4aj7_enT0PET8o0rUBFKtu5X91aEK/preview",
-      "videoDirect": "https://drive.google.com/file/d/1NEw4aj7_enT0PET8o0rUBFKtu5X91aEK/view?usp=sharing",
       "videoBadge": "4K ACADEMIC SUCCESS &middot; JEE ADVANCED",
       "images": [
         "assets/images/ws_video_jee.jpg",
@@ -773,8 +760,8 @@ function initProjectsGallery() {
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
             ${proj.videoBadge || '4K CINEMA PRODUCTION'}
           </span>
-          <a href="${proj.videoDirect || proj.videoUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--iv);font-weight:700;text-decoration:underline;">
-            Open Original 4K Video in Google Drive &rarr;
+          <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20${encodeURIComponent(proj.title)}." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g);font-weight:700;text-decoration:none;">
+            Book Similar Video on WhatsApp &rarr;
           </a>
         </div>
       `;
@@ -1194,7 +1181,7 @@ function initAIBot() {
       return `
         <p>🏙️ <strong>Real Estate &amp; 4K Drone Cinematography</strong></p>
         <p style="margin-top:4px;">Licensed 4K drone walkthroughs, builder presentations, luxury high-rises (such as Amore Towers), and scenic resort aerials across Delhi NCR.</p>
-        <p style="margin-top:6px;"><a href="real-estate.html" style="color:var(--g);font-weight:600;text-decoration:underline;">Explore Real Estate Page &rarr;</a> or <a href="https://drive.google.com/file/d/13YlJQDQ9bocJ4kS242FbfmO04ccSZdEw/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Watch Amore 4K Drone Video &rarr;</a></p>
+        <p style="margin-top:6px;"><a href="real-estate.html" style="color:var(--g);font-weight:600;text-decoration:underline;">Explore Real Estate Page &rarr;</a></p>
       `;
     }
 
