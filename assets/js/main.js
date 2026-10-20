@@ -409,6 +409,7 @@ function initProjectsGallery() {
       "title": "ROYAL WEDDING CELEBRATION",
       "images": [
         "assets/images/ws_hero.jpg?v=3",
+        "assets/images/ws_haldi_couple.jpg?v=4",
         "assets/images/ws_photo-01.jpg?v=3",
         "assets/images/ws_celebration_01.jpg?v=3",
         "assets/images/ws_photo-04.jpg?v=3",
@@ -425,6 +426,7 @@ function initProjectsGallery() {
     "haldi-sangeet": {
       "title": "VIBRANT HALDI & SANGEET CEREMONIES",
       "images": [
+        "assets/images/ws_haldi_couple.jpg?v=4",
         "assets/images/ws_celebration_01.jpg?v=3",
         "assets/images/ws_photo-02.jpg?v=3",
         "assets/images/ws_photo-07.jpg?v=3",
