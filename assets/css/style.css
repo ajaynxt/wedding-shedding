@@ -689,7 +689,6 @@ body:not(.theme-dark) .ws-logo-dark {
 .theme-toggle-btn:hover {
   border-color: var(--g);
   color: var(--g);
-  transform: rotate(20deg) scale(1.05);
 }
 
 .theme-toggle-btn svg {
@@ -727,11 +726,11 @@ body:not(.theme-dark) .theme-toggle-btn .moon-icon {
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
 .ai-bot-trigger:hover {
-  transform: scale(1.05);
+  opacity: 0.92;
 }
 
 .ai-bot-bubble {
@@ -814,8 +813,8 @@ body.theme-dark .ai-bot-online-dot {
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px) scale(0.95);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 body.theme-dark .ai-chat-window {
@@ -827,7 +826,7 @@ body.theme-dark .ai-chat-window {
 .ai-chat-window.open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1);
+  transform: none;
 }
 
 /* Chat Header */
@@ -3085,11 +3084,11 @@ body.theme-dark .portfolio-filter-btn.is-active {
 @keyframes filterCardFadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.96) translateY(14px);
+    transform: none;
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: none;
   }
 }
 
@@ -3606,8 +3605,11 @@ body.theme-dark .portfolio-filter-btn.is-active {
 }
 
 .nkf__b.pressed, .nkf__b:active {
-  transform: scale(0.92);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  background: var(--g);
+  color: #0A0908;
+  border-color: var(--g);
+  transform: none;
+  box-shadow: none;
 }
 
 .nkf__pad {
@@ -3868,8 +3870,8 @@ body.theme-dark .nkf__wm a:hover {
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: scale(0.96) translateY(12px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+  from { opacity: 0; transform: none; }
+  to { opacity: 1; transform: none; }
 }
 
 .nk-proj-modal__bar {
@@ -3980,8 +3982,8 @@ body.theme-dark .nkf__wm a:hover {
 }
 
 @keyframes viewerImgFade {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: none; }
+  to { opacity: 1; transform: none; }
 }
 
 .nk-proj-viewer__close {
@@ -4539,7 +4541,7 @@ html, body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 999999;
-  transform: translate3d(-100px, -100px, 0);
+  transform: translate(-100px, -100px);
   transition: opacity 0.25s ease;
   will-change: transform;
 }
@@ -4554,7 +4556,7 @@ html, body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 999998;
-  transform: translate3d(-100px, -100px, 0);
+  transform: translate(-100px, -100px);
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s ease,

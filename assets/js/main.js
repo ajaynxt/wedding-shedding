@@ -926,7 +926,7 @@ function initCustomCursor() {
       ringX = mouseX;
       ringY = mouseY;
     }
-    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
     dot.classList.remove('is-hidden');
     ring.classList.remove('is-hidden');
   }, { passive: true });
@@ -940,7 +940,7 @@ function initCustomCursor() {
   function renderCursor() {
     ringX += (mouseX - ringX) * 0.16;
     ringY += (mouseY - ringY) * 0.16;
-    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
     requestAnimationFrame(renderCursor);
   }
   requestAnimationFrame(renderCursor);
@@ -1171,7 +1171,7 @@ function initAIBot() {
     if (q.includes('cash') || q.includes('payment') || q.includes('pay') || q.includes('advance') || q.includes('upi') || q.includes('gpay') || q.includes('cheque') || q.includes('paise')) {
       return `
         <p>💵 <strong>Payment Modes &amp; Cash Accepted</strong></p>
-        <p style="margin-top:4px;">Yes! We proudly accept <strong>Cash Payments</strong> at our studios (Pandav Nagar &amp; Mayapuri) or on shoot location, alongside <strong>UPI (Google Pay, PhonePe, Paytm)</strong>, <strong>Net Banking (NEFT/RTGS)</strong>, <strong>Cards</strong>, and <strong>Cheques</strong>.</p>
+        <p style="margin-top:4px;">Yes! We proudly accept <strong>Cash Payments</strong> at our Burari studio (Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi, 110084) or on shoot location, alongside <strong>UPI (Google Pay, PhonePe, Paytm)</strong>, <strong>Net Banking (NEFT/RTGS)</strong>, <strong>Cards</strong>, and <strong>Cheques</strong>.</p>
         <p style="margin-top:4px;">Official signed receipts and GST invoices are provided for all transactions.</p>
         <p style="margin-top:6px;"><a href="packages.html" style="color:var(--g);font-weight:600;text-decoration:underline;">View Packages &amp; Pricing Page &rarr;</a> or <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20inquiring%20about%20booking%20and%20cash%20payment." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Chat with Studio on WhatsApp &rarr;</a></p>
       `;
@@ -1308,9 +1308,9 @@ function initAIBot() {
     if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('number') || q.includes('address') || q.includes('where') || q.includes('location')) {
       return `
         <p>📍 <strong>Wedding Shedding Studios</strong></p>
-        <p style="margin-top:4px;"><strong>Studio Locations:</strong> Delhi NCR (Pandav Nagar &amp; Mayapuri). We travel pan-India and globally for destination shoots!</p>
+        <p style="margin-top:4px;"><strong>Studio Address:</strong> Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi, 110084. We travel pan-India and globally for destination shoots!</p>
         <p style="margin-top:4px;"><strong>Direct Line:</strong> <a href="tel:+917503550936" style="color:var(--g);font-weight:600;">+91 75035 50936</a></p>
-        <p style="margin-top:4px;"><strong>Email:</strong> weddingshedding@gmail.com</p>
+        <p style="margin-top:4px;"><strong>Email:</strong> <a href="mailto:sonukumar2255@gmail.com" style="color:var(--g);font-weight:600;">sonukumar2255@gmail.com</a></p>
         <p style="margin-top:6px;"><a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20would%20like%20to%20schedule%20a%20consultation." target="_blank" rel="noopener" style="color:var(--g);font-weight:600;text-decoration:underline;">Chat with Lead Artist on WhatsApp &rarr;</a></p>
       `;
     }

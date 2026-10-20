@@ -8,8 +8,7 @@ Official modern portfolio website for **Wedding Shedding**, inspired by luxury a
 
 - **Operational Since**: 2015 (10+ Years in Industry)
 - **Specialization**: Candid Wedding Photography, 4K Cinematic Films, Pre-Wedding Shoots & Drone Aerials
-- **Studio Address**: F-13, Janta Garden, Pandav Nagar (near East Delhi Public School), East Delhi – 110092
-- **Branch**: A-13 Maya Puri Industrial Area, 2nd Floor, Delhi 110064
+- **Studio Address**: Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi, 110084
 - **Phone / WhatsApp**: [+91 75035 50936](https://wa.me/917503550936?text=Hi%20Wedding%20Shedding)
 - **Email**: sonukumar2255@gmail.com
 - **Accolades**: 
