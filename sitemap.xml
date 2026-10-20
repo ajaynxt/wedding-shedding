@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://weddingshedding.in/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://weddingshedding.in/assets/images/ws_hero.jpg</image:loc>
@@ -26,25 +27,143 @@
       <image:title>Romantic Pre-Wedding Shoot Delhi NCR &amp; Destination</image:title>
       <image:caption>Cinematic pre-wedding photography with licensed 4K aerial drone coverage</image:caption>
     </image:image>
+  </url>
+
+  <!-- Luxury Weddings & Cinema -->
+  <url>
+    <loc>https://weddingshedding.in/weddings.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
-      <image:loc>https://weddingshedding.in/assets/images/ws_photo-07.jpg</image:loc>
-      <image:title>Lakmé Salon &amp; Bridal Couture Fashion Shoot Delhi</image:title>
-      <image:caption>High-fashion bridal makeup and couture campaign photography</image:caption>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-01.jpg</image:loc>
+      <image:title>Royal Wedding Photography Delhi NCR</image:title>
+      <image:caption>Sacred pheras, royal varmala, and luxury couple portraits</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://weddingshedding.in/assets/images/ws_photo-09.jpg</image:loc>
-      <image:title>PUBG Esports Tournament Photography &amp; Stage Cinematography India</image:title>
-      <image:caption>National gaming championship arena and live pro esports coverage</image:caption>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-02.jpg</image:loc>
+      <image:title>Haldi &amp; Mehndi Ceremony Photography Delhi</image:title>
+      <image:caption>Sun-kissed turmeric celebrations and candid laughter</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-10.jpg</image:loc>
+      <image:title>Pre-Wedding Destination Shoot Delhi NCR</image:title>
+      <image:caption>Romantic pre-wedding films with 4K aerial drone captures</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Corporate & Commercial Productions -->
+  <url>
+    <loc>https://weddingshedding.in/corporate.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_corporate.jpg</image:loc>
+      <image:title>Corporate Brand Film &amp; Industrial Production Delhi</image:title>
+      <image:caption>High-end corporate documentary, facility tours, and executive interviews</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_sourceone.jpg</image:loc>
+      <image:title>Source One Tech Corporate Showcase Delhi NCR</image:title>
+      <image:caption>Corporate technology company profile and enterprise workforce film</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_ecommerce.jpg</image:loc>
+      <image:title>E-Commerce Store &amp; Brand Explainer Video Production</image:title>
+      <image:caption>High-converting product explainer videos and commercial shoots</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_bougie.jpg</image:loc>
+      <image:title>Bougie Cut 2 Fashion Editorial &amp; Commercial Shoot</image:title>
+      <image:caption>High-fashion editorial film, designer runway, and apparel lookbook</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Real Estate & Hospitality Drone -->
+  <url>
+    <loc>https://weddingshedding.in/real-estate.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_realestate_amore.jpg</image:loc>
+      <image:title>Amore Luxury High-Rise Real Estate 4K Drone Tour Delhi NCR</image:title>
+      <image:caption>4K drone flythrough and luxury architecture walkthrough</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://weddingshedding.in/assets/images/ws_photo-16.jpg</image:loc>
       <image:title>The Swiss Village Luxury Resort &amp; Hospitality Cinematography</image:title>
       <image:caption>Destination resort architectural and promotional video production</image:caption>
     </image:image>
+  </url>
+
+  <!-- Live Events, Concerts & Nightlife -->
+  <url>
+    <loc>https://weddingshedding.in/events.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
-      <image:loc>https://weddingshedding.in/assets/images/ws_photo-14.jpg</image:loc>
-      <image:title>Corporate Brand Film &amp; Industrial Media Production (IRAM) Delhi</image:title>
-      <image:caption>Corporate executive events, hospital conferences and brand commercial films</image:caption>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_utkarsh.jpg</image:loc>
+      <image:title>Utkarsh Classes 2023 Mega Celebration Stadium Event</image:title>
+      <image:caption>Grand arena celebration, 10,000+ attendee multi-cam live shoot</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_micdrop.jpg</image:loc>
+      <image:title>Mic Drop Live Standup Comedy &amp; Concert Stage Shoot Delhi</image:title>
+      <image:caption>High-energy stage cinematography and concert live multi-cam coverage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_diablo.jpg</image:loc>
+      <image:title>Diablo High-Energy Nightlife &amp; Entertainment Film Delhi NCR</image:title>
+      <image:caption>Neon nightlife, DJ stage lighting, and club vibe cinematography</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_event.jpg</image:loc>
+      <image:title>Mega Gala Live Event &amp; Awards Night Delhi</image:title>
+      <image:caption>Red carpet gala, award ceremonies, and keynote multi-cam coverage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_photo-09.jpg</image:loc>
+      <image:title>PUBG Esports Tournament Photography &amp; Stage Cinematography</image:title>
+      <image:caption>National gaming championship arena and live pro esports coverage</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Healthcare & Education -->
+  <url>
+    <loc>https://weddingshedding.in/healthcare-education.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_dr_prachi.jpg</image:loc>
+      <image:title>Dr. Prachi Benara Medical Success Series &amp; Patient Stories</image:title>
+      <image:caption>Compassionate medical documentary, IVF success journeys, and doctor interviews</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_clinic.jpg</image:loc>
+      <image:title>Specialty Clinic &amp; Medical Infrastructure Tour Film Delhi NCR</image:title>
+      <image:caption>Ultra-HD medical facility tour and clinical equipment cinematic walkthrough</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_jee.jpg</image:loc>
+      <image:title>JEE Advanced Toppers Felicitation &amp; Academic Honors Ceremony</image:title>
+      <image:caption>Inspirational felicitation documentary, topper interviews, and stage honors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://weddingshedding.in/assets/images/ws_video_school.jpg</image:loc>
+      <image:title>Elite School Campus Film &amp; Annual Day Grand Production</image:title>
+      <image:caption>Vibrant student performances, sports facilities, and aerial campus cinematography</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pricing, Packages & Payment Modes -->
+  <url>
+    <loc>https://weddingshedding.in/packages.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
