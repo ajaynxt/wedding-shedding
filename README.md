@@ -10,7 +10,7 @@ Official modern portfolio website for **Wedding Shedding**, inspired by luxury a
 - **Specialization**: Candid Wedding Photography, 4K Cinematic Films, Pre-Wedding Shoots & Drone Aerials
 - **Studio Address**: Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi, 110084
 - **Phone / WhatsApp**: [+91 75035 50936](https://wa.me/917503550936?text=Hi%20Wedding%20Shedding)
-- **Email**: sonukumar2255@gmail.com
+- **Email**: weddingshedding.india@gmail.com
 - **Accolades**: 
   - WeddingWire India Wedding Awards Winner (2024 & 2025)
   - 4.9 ★ Rating & 98% Couple Recommendation Rate

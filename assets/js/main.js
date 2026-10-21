@@ -1913,7 +1913,7 @@ function initInquiryModal() {
     const subject = `Wedding Photography Inquiry - ${name} (${date || 'Upcoming'})`;
     const body = `Hi Sonu,\n\nI would like to check availability for Wedding Shedding:\n\n• Name: ${name}\n• Phone: ${phone}\n• Event Date: ${date}\n• City / Venue: ${city}\n• Services: ${sList}\n• Notes: ${notes}\n\nBest regards,\n${name}`;
 
-    const mailUrl = `mailto:sonukumar2255@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailUrl = `mailto:weddingshedding.india@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailUrl;
     closeModal();
   });
