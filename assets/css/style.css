@@ -5020,7 +5020,7 @@ html, body {
     padding: 50px 16px;
   }
   .nkx-feat__media {
-    margin: 0 0 36px 0;
+    margin: 0 0 56px 0;
   }
   .nkx-feat__frame {
     display: none !important;
@@ -5030,6 +5030,12 @@ html, body {
     right: 4px;
     bottom: -24px;
     border-width: 4px;
+  }
+  .nkx-feat__cap {
+    bottom: -48px;
+    max-width: 58%;
+    font-size: 9.5px;
+    line-height: 1.4;
   }
   .nkx-feat__title {
     font-size: 32px;
