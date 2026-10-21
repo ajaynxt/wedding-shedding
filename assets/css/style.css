@@ -2177,29 +2177,29 @@ body.theme-dark .awards-banner .award-text p {
    ============================================================ */
 .nkx-feat {
   background: var(--bg);
-  padding: clamp(72px, 9vw, 136px) clamp(20px, 6vw, 100px);
+  padding: clamp(34px, 4.5vw, 56px) clamp(20px, 5vw, 70px);
   width: 100%;
   overflow: hidden;
 }
 
 .nkx-feat__wrap {
-  max-width: 1240px;
+  max-width: 1160px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: clamp(24px, 3vw, 48px);
+  column-gap: clamp(20px, 2.5vw, 40px);
   align-items: center;
 }
 
 .nkx-feat__media {
   grid-column: 1 / span 7;
   position: relative;
-  margin: 0 0 56px;
+  margin: 0 0 36px;
 }
 
 .nkx-feat__frame {
   position: absolute;
-  inset: 22px -22px -22px 22px;
+  inset: 16px -16px -16px 16px;
   border: 1px solid rgba(181, 138, 28, 0.45);
   pointer-events: none;
 }
@@ -2211,7 +2211,7 @@ body.theme-dark .awards-banner .award-text p {
   aspect-ratio: 16/10;
   background: #FFFFFF;
   border-radius: 4px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .nkx-feat__main img {
@@ -2228,12 +2228,12 @@ body.theme-dark .awards-banner .award-text p {
 
 .nkx-feat__inset {
   position: absolute;
-  right: -8%;
-  bottom: -56px;
-  width: 34%;
+  right: -6%;
+  bottom: -36px;
+  width: 32%;
   aspect-ratio: 1;
-  border: 8px solid #FAF7F2;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  border: 6px solid #FAF7F2;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
   border-radius: 4px;
   overflow: hidden;
   background: #FFFFFF;
@@ -2243,15 +2243,15 @@ body.theme-dark .awards-banner .award-text p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center center;
 }
 
 .nkx-feat__cap {
   position: absolute;
   left: 0;
-  bottom: -40px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
+  bottom: -30px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--t3);
   font-weight: 500;
@@ -2264,27 +2264,27 @@ body.theme-dark .awards-banner .award-text p {
 .nkx-feat__index {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .nkx-feat__no {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--g);
   letter-spacing: 1px;
 }
 
 .nkx-feat__line {
-  flex: 0 0 48px;
-  height: 2px;
+  flex: 0 0 36px;
+  height: 1.5px;
   background: var(--g);
 }
 
 .nkx-feat__eyebrow {
-  font-size: 12px;
-  letter-spacing: 3.5px;
+  font-size: 11px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--gh);
   font-weight: 600;
@@ -2293,10 +2293,10 @@ body.theme-dark .awards-banner .award-text p {
 .nkx-feat__title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(40px, 4.4vw, 64px);
-  line-height: 1.05;
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.1;
   color: var(--iv);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .nkx-feat__title em {
@@ -2306,10 +2306,10 @@ body.theme-dark .awards-banner .award-text p {
 }
 
 .nkx-feat__lead {
-  font-size: 15px;
-  line-height: 1.85;
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--bd);
-  margin-bottom: 36px;
+  margin-bottom: 22px;
   max-width: 420px;
 }
 
@@ -2437,7 +2437,7 @@ body.theme-dark .awards-banner .award-text p {
 }
 
 .service-card-content {
-  padding: 30px 26px;
+  padding: 16px 14px 18px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -2445,29 +2445,29 @@ body.theme-dark .awards-banner .award-text p {
 
 .service-card-title {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   color: var(--iv);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   text-transform: uppercase;
 }
 
 .service-card-desc {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 12px;
+  line-height: 1.5;
   color: var(--bd);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   flex-grow: 1;
 }
 
 .service-card-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 12px;
+  gap: 8px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--gh);
 }
@@ -2531,15 +2531,15 @@ body.theme-dark .awards-banner .award-text p {
   line-height: 1.4;
 }
 
-/* Customized Packages Banner */
+/* Customized Packages Banner (Framed & Sleek) */
 .custom-packages-banner {
-  max-width: 1240px;
-  margin: 48px auto 0;
+  max-width: 860px;
+  margin: 28px auto 0;
   background: linear-gradient(135deg, #FFFFFF 0%, #FAF5ED 100%);
-  border: 1.5px solid rgba(181, 138, 28, 0.35);
-  border-radius: 8px;
-  padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(181, 138, 28, 0.4);
+  border-radius: 12px;
+  padding: clamp(22px, 3vw, 32px) clamp(20px, 3.5vw, 36px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -2551,19 +2551,19 @@ body.theme-dark .awards-banner .award-text p {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, #D4AF37, #F3E5AB, #AA7A1E);
 }
 
 .custom-pkg-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--g);
-  margin-bottom: 12px;
-  padding: 5px 16px;
+  margin-bottom: 8px;
+  padding: 3px 12px;
   border-radius: 20px;
   background: rgba(181, 138, 28, 0.08);
   border: 1px solid rgba(181, 138, 28, 0.25);
@@ -2571,27 +2571,34 @@ body.theme-dark .awards-banner .award-text p {
 
 .custom-pkg-title {
   font-family: var(--font-display);
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: clamp(20px, 2.2vw, 26px);
   color: var(--iv);
-  margin-bottom: 14px;
-  letter-spacing: 1px;
+  margin-bottom: 8px;
+  letter-spacing: 0.8px;
   font-weight: 600;
 }
 
 .custom-pkg-desc {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--bd);
-  max-width: 860px;
-  margin: 0 auto 30px;
+  max-width: 700px;
+  margin: 0 auto 18px;
 }
 
 .custom-pkg-actions {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
+}
+
+.custom-pkg-actions .btn-gold,
+.custom-pkg-actions .btn-outline {
+  padding: 10px 20px;
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
 }
 
 .btn-gold {
@@ -2644,106 +2651,106 @@ body.theme-dark .awards-banner .award-text p {
 .nk-packages-section {
   background: var(--bg);
   border-top: 1px solid var(--ln);
-  padding: clamp(70px, 8vw, 120px) 40px;
+  padding: clamp(36px, 4.5vw, 56px) 24px;
 }
 
 .packages-grid {
-  max-width: 1240px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  gap: 16px;
 }
 
 .package-card {
   background: #FFFFFF;
   border: 1px solid var(--ln);
   border-radius: 8px;
-  padding: 34px 24px;
+  padding: 22px 18px 20px;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.35s ease;
 }
 
 .package-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: rgba(181, 138, 28, 0.5);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
 }
 
 .package-card.is-featured {
   border: 2px solid var(--g);
   background: #FFFFFF;
-  box-shadow: 0 16px 40px rgba(181, 138, 28, 0.12);
+  box-shadow: 0 14px 35px rgba(181, 138, 28, 0.12);
 }
 
 .package-badge {
   position: absolute;
-  top: -12px;
+  top: -11px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--g);
   color: #FFFFFF;
   font-family: var(--font-display);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  padding: 4px 14px;
+  padding: 3px 12px;
   border-radius: 20px;
   white-space: nowrap;
 }
 
 .package-tier {
   font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 2.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--g);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .package-title {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--iv);
-  margin-bottom: 14px;
-  line-height: 1.2;
+  margin-bottom: 8px;
+  line-height: 1.15;
 }
 
 .package-desc {
-  font-size: 13.5px;
+  font-size: 12px;
   color: var(--bd);
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.5;
+  margin-bottom: 14px;
   border-bottom: 1px solid var(--ln);
-  padding-bottom: 20px;
+  padding-bottom: 12px;
 }
 
 .package-features {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 16px;
   flex-grow: 1;
 }
 
 .package-features li {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 12px;
   color: var(--iv);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .package-features li svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   fill: var(--g);
   flex-shrink: 0;
 }
@@ -2756,9 +2763,9 @@ body.theme-dark .awards-banner .award-text p {
   width: 100%;
   text-align: center;
   justify-content: center;
-  padding: 12px 18px;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  padding: 10px 14px;
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
 }
 
 /* ============================================================
@@ -5486,15 +5493,15 @@ body.theme-dark .subpage-pill:hover {
    INSTAGRAM FEED SECTION (#instagram)
    ============================================================ */
 .nk-ig-section {
-  padding: 60px 20px 48px;
+  padding: 26px 20px 36px;
   background: var(--bg);
   text-align: center;
   border-top: 1px solid var(--ln);
   position: relative;
 }
 .nk-ig-header {
-  max-width: 600px;
-  margin: 0 auto 24px;
+  max-width: 860px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5548,7 +5555,7 @@ body.theme-dark .subpage-pill:hover {
 }
 
 #nk-ig-feed {
-  max-width: 600px;
+  max-width: 860px;
   margin: 0 auto !important;
   width: 100%;
 }
@@ -5558,8 +5565,8 @@ body.theme-dark .subpage-pill:hover {
 }
 #nk-ig-feed #sb_instagram #sbi_images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px !important;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px !important;
   padding: 0 !important;
 }
 #nk-ig-feed #sb_instagram .sbi_item {
@@ -5614,7 +5621,7 @@ body.theme-dark .subpage-pill:hover {
 }
 
 @media (max-width: 1024px) {
-  #nk-ig-feed { max-width: 540px; }
+  #nk-ig-feed { max-width: 740px; }
 }
 @media (max-width: 767px) {
   .nk-ig-header {
@@ -5626,7 +5633,7 @@ body.theme-dark .subpage-pill:hover {
     font-size: 12px;
   }
   #nk-ig-feed { max-width: 100%; }
-  #nk-ig-feed #sb_instagram #sbi_images { gap: 4px !important; }
+  #nk-ig-feed #sb_instagram #sbi_images { grid-template-columns: repeat(4, 1fr) !important; gap: 4px !important; }
 }
 
 /* ============================================================
@@ -7416,7 +7423,7 @@ body:not(.theme-dark) .nk-form-textarea {
    ============================================================ */
 .nk-signature-quote-wrap {
   text-align: center;
-  padding: 34px 20px 22px;
+  padding: 4px 20px 22px;
   max-width: 820px;
   margin: 0 auto;
   position: relative;
@@ -7464,7 +7471,7 @@ body:not(.theme-dark) .nk-signature-author {
   border-radius: 6px;
   border: 1px solid rgba(212, 175, 55, 0.35);
   box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.95), 0 16px 45px rgba(0, 0, 0, 0.35);
-  padding: 38px 16px 40px;
+  padding: 28px 14px 30px;
   margin: 0 auto;
   max-width: 1240px;
   overflow: hidden;
@@ -7483,15 +7490,15 @@ body:not(.theme-dark) .camera-reel-outer {
   position: absolute;
   left: 0;
   right: 0;
-  height: 11px;
+  height: 9px;
   background: repeating-linear-gradient(90deg, #000000 0 13px, #201C18 13px 26px);
   border-radius: 1px;
   pointer-events: none;
   z-index: 3;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.95);
 }
-.camera-reel-outer::before { top: 8px; }
-.camera-reel-outer::after { bottom: 8px; }
+.camera-reel-outer::before { top: 6px; }
+.camera-reel-outer::after { bottom: 6px; }
 
 /* Vintage Film Metadata Stamp Marks */
 .camera-reel-edge {
@@ -7502,15 +7509,15 @@ body:not(.theme-dark) .camera-reel-outer {
   justify-content: space-between;
   align-items: center;
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 8.5px;
-  letter-spacing: 2.5px;
+  font-size: 8px;
+  letter-spacing: 2px;
   color: #D4AF37;
   text-transform: uppercase;
   pointer-events: none;
   z-index: 3;
 }
-.camera-reel-edge.top { top: 22px; }
-.camera-reel-edge.bottom { bottom: 22px; }
+.camera-reel-edge.top { top: 16px; }
+.camera-reel-edge.bottom { bottom: 16px; }
 
 /* The Film Track */
 .camera-reel-track {
@@ -7667,13 +7674,13 @@ body:not(.theme-dark) .camera-reel-outer {
   .portfolio-slider-track .project-card,
   .services-slider-track .service-card {
     flex: 0 0 calc((100% - 64px) / 5) !important;
-    min-width: 220px !important;
-    max-width: 250px !important;
+    min-width: 200px !important;
+    max-width: 235px !important;
   }
   .services-slider-track .service-card-img,
   .portfolio-slider-track .project-card-img {
-    aspect-ratio: 16 / 11 !important;
-    max-height: 155px !important;
+    aspect-ratio: 16 / 10 !important;
+    max-height: 125px !important;
   }
 }
 
