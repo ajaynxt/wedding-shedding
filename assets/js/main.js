@@ -1814,14 +1814,10 @@ function initInquiryModal() {
   // Service Pills toggle
   modal.querySelectorAll('.nk-service-pill').forEach(pill => {
     const input = pill.querySelector('input');
-    pill.addEventListener('click', () => {
-      setTimeout(() => {
-        if (input.checked) {
-          pill.classList.add('is-selected');
-        } else {
-          pill.classList.remove('is-selected');
-        }
-      }, 10);
+    if (!input) return;
+    pill.classList.toggle('is-selected', input.checked);
+    input.addEventListener('change', () => {
+      pill.classList.toggle('is-selected', input.checked);
     });
   });
 
