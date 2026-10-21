@@ -191,6 +191,45 @@ function initHeader() {
     });
   });
 
+  // Strip /index.html from browser address bar so only clean domain name is shown
+  try {
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+      if (window.location.pathname.endsWith('/index.html') || window.location.pathname === '/index.html') {
+        const cleanPath = window.location.pathname.replace(/\/index\.html$/, '') || '/';
+        const cleanUrl = cleanPath + window.location.search + window.location.hash;
+        window.history.replaceState(null, '', cleanUrl);
+      }
+    }
+  } catch (err) {}
+
+  // Logo & Home click handling:
+  // When clicked on homepage, smoothly scroll to top and ensure clean root URL in address bar
+  document.querySelectorAll('.site-logo, a[href="/"], a[href="./"], a[href="index.html"]').forEach(link => {
+    const isLogo = link.classList.contains('site-logo');
+    const isHomeLink = link.textContent.trim().toLowerCase() === 'home';
+    if (!isLogo && !isHomeLink) return;
+
+    link.addEventListener('click', e => {
+      const p = window.location.pathname;
+      const isHome = p === '/' || p === '' || p.endsWith('/index.html') || p.endsWith('/nikhilkapur-clone/') || p.endsWith('/nikhilkapur-clone/index.html');
+      if (isHome) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        header?.classList.remove('is-hidden');
+        isHidden = false;
+        try {
+          if (window.history.pushState && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
+            const rootPath = p.includes('/nikhilkapur-clone') ? '/nikhilkapur-clone/' : '/';
+            window.history.pushState(null, '', rootPath);
+          }
+        } catch (err) {}
+      }
+    });
+  });
+
   // Smooth Auto-scroll for in-page anchor links
   document.querySelectorAll('a[href*="#"]').forEach(link => {
     const href = link.getAttribute('href');
@@ -200,7 +239,7 @@ function initHeader() {
     const path = href.slice(0, hashIndex);
     const hash = href.slice(hashIndex);
     
-    const isCurrentPage = !path || path === window.location.pathname.split('/').pop() || (window.location.pathname.endsWith('/') && path === 'index.html');
+    const isCurrentPage = !path || path === '/' || path === window.location.pathname.split('/').pop() || (window.location.pathname.endsWith('/') && (path === 'index.html' || path === ''));
     if (isCurrentPage && hash.length > 1) {
       link.addEventListener('click', e => {
         const target = document.querySelector(hash);
