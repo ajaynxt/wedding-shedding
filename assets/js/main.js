@@ -28,7 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initCameraFooter();
   initThemeToggle();
   initFilmstripDropdown();
+  initAboutPortrait();
 });
+
+/* ============================================================
+   0. ABOUT PORTRAIT INTERACTION (CLICK/TAP TO REVEAL COLOR)
+   ============================================================ */
+function initAboutPortrait() {
+  const card = document.querySelector('.about-portrait-card');
+  if (!card) return;
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-color');
+  });
+}
 
 /* ============================================================
    1. FILMSTRIP MEGA-MENU DROPDOWN (.nk-fs)
