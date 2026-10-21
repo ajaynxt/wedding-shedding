@@ -7102,10 +7102,311 @@ body:not(.theme-dark) .nk-form-textarea {
     padding: 22px 18px;
   }
   .services-slider-track .service-card {
-    flex: 0 0 clamp(280px, 88vw, 360px);
+    flex: 0 0 clamp(220px, 72vw, 260px);
   }
   .nk-reviews-slider-track .nk-review-card {
     flex: 0 0 clamp(280px, 86vw, 340px);
+  }
+}
+
+/* ============================================================
+   LUXURY CURSIVE PHILOSOPHY QUOTE (NIKHIL KAPUR SIGNATURE)
+   ============================================================ */
+.nk-signature-quote-wrap {
+  text-align: center;
+  padding: 70px 24px 50px;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.nk-signature-quote {
+  font-family: 'Alex Brush', 'Pinyon Script', 'Cormorant Garamond', cursive, serif;
+  font-size: clamp(28px, 4.4vw, 44px);
+  line-height: 1.48;
+  color: var(--iv, #EDE8DE);
+  font-style: normal;
+  letter-spacing: 0.5px;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+body:not(.theme-dark) .nk-signature-quote {
+  color: #1A1715;
+  text-shadow: none;
+}
+
+.nk-signature-author {
+  font-family: 'Alex Brush', 'Pinyon Script', cursive, serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  color: var(--g, #D4AF37);
+  letter-spacing: 2px;
+  margin-top: 10px;
+  display: block;
+}
+
+body:not(.theme-dark) .nk-signature-author {
+  color: #8C6D1F;
+}
+
+/* ============================================================
+   CAMERA FILM REEL STRIP CONTAINER ("bahar camera reel strip")
+   Vintage 35mm negative film reel with top & bottom sprocket holes
+   ============================================================ */
+.camera-reel-outer {
+  position: relative;
+  background: #0C0B0A !important;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.95), 0 16px 40px rgba(0, 0, 0, 0.45);
+  padding: 42px 16px 44px;
+  margin: 0 auto;
+  max-width: 1360px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body:not(.theme-dark) .camera-reel-outer {
+  background: #0C0B0A !important;
+  border-color: rgba(201, 162, 39, 0.35);
+}
+
+/* 35mm Perforations / Sprocket Holes (Top & Bottom) */
+.camera-reel-outer::before,
+.camera-reel-outer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(90deg, #000000 0 13px, #201C18 13px 26px);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 3;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+.camera-reel-outer::before { top: 9px; }
+.camera-reel-outer::after { bottom: 9px; }
+
+/* Vintage Film Metadata Stamp Marks */
+.camera-reel-edge {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8.5px;
+  letter-spacing: 2.5px;
+  color: #D4AF37;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 3;
+}
+.camera-reel-edge.top { top: 24px; }
+.camera-reel-edge.bottom { bottom: 24px; }
+
+/* The Film Track */
+.camera-reel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.camera-reel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Compact Film Frame Card ("choti choti frames" matching reference screenshot) */
+.camera-reel-card {
+  flex: 0 0 calc((100% - 64px) / 5);
+  min-width: 220px;
+  max-width: 250px;
+  background: #161412 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 4px;
+  padding: 14px 14px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  box-sizing: border-box;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.camera-reel-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(201, 162, 39, 0.5) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(201, 162, 39, 0.2);
+}
+
+.nk-projects-section {
+  background: #0C0B0A !important;
+  padding: clamp(70px, 8vw, 110px) 24px;
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.nk-projects-section .portfolio-filter-btn {
+  background: #181512;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #EDE8DE;
+}
+
+.nk-projects-section .portfolio-filter-btn.is-active,
+.nk-projects-section .portfolio-filter-btn:hover {
+  background: var(--g);
+  color: #000;
+  border-color: var(--g);
+}
+
+.nk-projects-section .portfolio-slide-count {
+  color: #EDE8DE;
+}
+
+.camera-reel-imgwrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background: #0B0A09;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.camera-reel-imgwrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.camera-reel-card:hover .camera-reel-imgwrap img {
+  transform: scale(1.05);
+}
+
+.camera-reel-info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.camera-reel-title {
+  font-family: var(--font-display), "Playfair Display", serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #EDE8DE;
+  margin: 0 0 4px 0;
+  line-height: 1.35;
+}
+
+.camera-reel-sub {
+  font-family: var(--font-body), Inter, sans-serif;
+  font-size: 11px;
+  color: #8A8177;
+  letter-spacing: 0.3px;
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+}
+
+.camera-reel-link {
+  font-family: var(--font-body), Inter, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #D4AF37;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  padding-top: 4px;
+}
+
+.camera-reel-link svg {
+  width: 12px;
+  height: 8px;
+  stroke: currentColor;
+  fill: none;
+  transition: transform 0.25s ease;
+}
+
+.camera-reel-card:hover .camera-reel-link {
+  color: #F7E7CE;
+}
+
+.camera-reel-card:hover .camera-reel-link svg {
+  transform: translateX(4px);
+}
+
+/* Responsive sizes for Camera Reel */
+@media (min-width: 1200px) {
+  .camera-reel-track .camera-reel-card,
+  .portfolio-slider-track .project-card,
+  .services-slider-track .service-card {
+    flex: 0 0 calc((100% - 64px) / 5) !important;
+    min-width: 220px !important;
+    max-width: 250px !important;
+  }
+  .services-slider-track .service-card-img,
+  .portfolio-slider-track .project-card-img {
+    aspect-ratio: 16 / 11 !important;
+    max-height: 155px !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
+  .camera-reel-track .camera-reel-card,
+  .portfolio-slider-track .project-card,
+  .services-slider-track .service-card {
+    flex: 0 0 calc((100% - 48px) / 4) !important;
+    min-width: 210px !important;
+  }
+}
+
+@media (max-width: 899px) and (min-width: 640px) {
+  .camera-reel-track .camera-reel-card,
+  .portfolio-slider-track .project-card,
+  .services-slider-track .service-card {
+    flex: 0 0 calc((100% - 32px) / 3) !important;
+    min-width: 195px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .camera-reel-track .camera-reel-card,
+  .portfolio-slider-track .project-card,
+  .services-slider-track .service-card {
+    flex: 0 0 clamp(220px, 72vw, 260px) !important;
+    padding: 12px 12px 16px 12px !important;
+  }
+  .camera-reel-outer {
+    padding: 30px 10px 32px !important;
+  }
+  .camera-reel-edge {
+    font-size: 7.5px !important;
+    letter-spacing: 1.5px !important;
+    left: 12px !important;
+    right: 12px !important;
   }
 }
 
