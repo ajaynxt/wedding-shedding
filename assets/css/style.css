@@ -3,7 +3,7 @@
    Warm Ivory, Champagne, Crisp White, Noir Obsidian & Royal Gold Palette
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@400;600;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
 
 :root {
   /* Royal Gold Accents */
@@ -3426,7 +3426,7 @@ body.dark-mode .portfolio-nav-playpause {
   background-color: var(--bg) !important;
   background-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201, 162, 39, .08), transparent 70%) !important;
   color: var(--bd) !important;
-  padding: clamp(64px, 7vw, 104px) clamp(14px, 4vw, 56px) clamp(24px, 3vw, 44px);
+  padding: clamp(38px, 4.5vw, 64px) clamp(16px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
   font-family: Inter, system-ui, sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -3440,7 +3440,7 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf p { margin: 0; }
 
 .nkf__scene {
-  max-width: 1320px;
+  max-width: 1060px;
   margin: 0 auto;
   position: relative;
 }
@@ -3452,7 +3452,7 @@ body.dark-mode .portfolio-nav-playpause {
   right: 2px;
   top: 18px;
   bottom: -18px;
-  border-radius: 30px;
+  border-radius: 22px;
   pointer-events: none;
   background: linear-gradient(180deg, #0d0c0a 0%, #070605 70%, #040403 100%);
   border: 1px solid rgba(201, 162, 39, .16);
@@ -3463,8 +3463,8 @@ body.dark-mode .portfolio-nav-playpause {
 /* Realistic Camera Chassis */
 .nkf__cam {
   position: relative;
-  border-radius: 30px;
-  padding: clamp(40px, 4vw, 56px) clamp(24px, 3.4vw, 52px) clamp(24px, 2.5vw, 36px);
+  border-radius: 22px;
+  padding: clamp(26px, 2.8vw, 38px) clamp(18px, 2.4vw, 34px) clamp(18px, 2vw, 26px);
   background:
     radial-gradient(ellipse 55% 70% at 18% 0%, rgba(255, 236, 200, .075), transparent 62%) padding-box,
     linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0) 93%, rgba(0, 0, 0, .5) 100%) padding-box,
@@ -3489,12 +3489,14 @@ body.dark-mode .portfolio-nav-playpause {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  opacity: .55;
+  opacity: .50;
   background:
-    radial-gradient(circle, rgba(255, 255, 255, .07) .7px, transparent 1.1px) 0 0/4px 4px,
-    radial-gradient(circle, rgba(0, 0, 0, .35) .8px, transparent 1.2px) 2px 2px/4px 4px;
-  -webkit-mask: linear-gradient(90deg, #000 0, #000 6%, transparent 14%, transparent 86%, #000 94%);
-  mask: linear-gradient(90deg, #000 0, #000 6%, transparent 14%, transparent 86%, #000 94%);
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .16) 0.75px, transparent 1.05px),
+    radial-gradient(circle at 3px 3px, rgba(0, 0, 0, .65) 0.85px, transparent 1.15px);
+  background-size: 4px 4px, 4px 4px;
+  background-position: 0 0, 2px 2px;
+  -webkit-mask: linear-gradient(90deg, #000 0%, #000 12%, rgba(0, 0, 0, 0.45) 22%, rgba(0, 0, 0, 0.45) 78%, #000 88%, #000 100%);
+  mask: linear-gradient(90deg, #000 0%, #000 12%, rgba(0, 0, 0, 0.45) 22%, rgba(0, 0, 0, 0.45) 78%, #000 88%, #000 100%);
 }
 
 .nkf__cam::after {
@@ -3508,8 +3510,8 @@ body.dark-mode .portfolio-nav-playpause {
 
 .nkf__inner {
   position: absolute;
-  inset: 9px;
-  border-radius: 22px;
+  inset: 7px;
+  border-radius: 17px;
   border: 1px solid rgba(0, 0, 0, .45);
   box-shadow: 0 1px 0 rgba(255, 255, 255, .05), inset 0 1px 0 rgba(0, 0, 0, .3);
   pointer-events: none;
@@ -3531,7 +3533,7 @@ body.dark-mode .portfolio-nav-playpause {
   left: 50%;
   bottom: -1px;
   transform: translateX(-50%);
-  width: clamp(190px, 20vw, 260px);
+  width: clamp(160px, 16vw, 215px);
   height: auto;
   overflow: visible;
   filter: drop-shadow(0 -2px 3px rgba(0, 0, 0, .6));
@@ -3621,8 +3623,8 @@ body.dark-mode .portfolio-nav-playpause {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) auto minmax(0, 1fr);
-  column-gap: clamp(24px, 3vw, 48px);
+  grid-template-columns: minmax(0, 1.28fr) auto minmax(0, 1fr);
+  column-gap: clamp(16px, 2.2vw, 32px);
   align-items: center;
 }
 
@@ -3630,12 +3632,13 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__screenwrap {
   display: flex;
   flex-direction: column;
+  max-width: 450px;
 }
 
 .nkf__screen {
   position: relative;
-  padding: 11px;
-  border-radius: 16px;
+  padding: 9px;
+  border-radius: 13px;
   background: linear-gradient(180deg, #0b0b0b, #050505);
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, .95),
@@ -3851,7 +3854,7 @@ body.dark-mode .portfolio-nav-playpause {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 .nkf button.nkf__b {
   all: unset;
@@ -3873,50 +3876,50 @@ body.dark-mode .portfolio-nav-playpause {
 }
 .nkf button.nkf__b:focus-visible { outline: 1px solid var(--g); outline-offset: 3px; }
 
-.nkf__sm { width: 38px; height: 38px; }
-.nkf__sm svg { width: 13px; height: 13px; fill: currentColor; }
-.nkf__sm span { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; }
-.nkf__cap-lbl { font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--t3); margin-top: -12px; }
+.nkf__sm { width: 32px; height: 32px; }
+.nkf__sm svg { width: 11px; height: 11px; fill: currentColor; }
+.nkf__sm span { font-size: 7.5px; font-weight: 700; letter-spacing: 1.2px; }
+.nkf__cap-lbl { font-size: 7.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--t3); margin-top: -10px; }
 
 /* 4-Way D-Pad */
 .nkf__pad {
   position: relative;
-  width: 108px;
-  height: 108px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 30%, #2c2822 0%, #171511 60%, #100e0b 100%);
   border: 1px solid rgba(201, 162, 39, .3);
-  box-shadow: 0 5px 0 #050403, 0 14px 22px -6px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .12), inset 0 0 0 6px rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 0 #050403, 0 10px 18px -4px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .12), inset 0 0 0 5px rgba(0, 0, 0, .2);
 }
 .nkf__pad::before {
   content: "";
   position: absolute;
-  inset: -7px;
+  inset: -6px;
   border-radius: 50%;
   border: 1px solid rgba(201, 162, 39, .16);
   background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, .08) 0 2deg, transparent 2deg 9deg);
-  -webkit-mask: radial-gradient(circle, transparent 57px, #000 58px);
-  mask: radial-gradient(circle, transparent 57px, #000 58px);
+  -webkit-mask: radial-gradient(circle, transparent 46px, #000 47px);
+  mask: radial-gradient(circle, transparent 46px, #000 47px);
 }
 .nkf button.nkf__arr {
   all: unset;
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   display: grid;
   place-items: center;
   cursor: pointer;
   color: var(--g);
-  border-radius: 8px;
+  border-radius: 6px;
 }
-.nkf button.nkf__arr svg { width: 9px; height: 9px; fill: currentColor; transition: transform .12s; }
+.nkf button.nkf__arr svg { width: 8px; height: 8px; fill: currentColor; transition: transform .12s; }
 .nkf button.nkf__arr:hover { color: var(--gh); }
 .nkf button.nkf__arr:active svg { transform: scale(.8); }
 .nkf button.nkf__arr:focus-visible { outline: 1px solid var(--g); }
-.nkf button.nkf__arr--u { left: 39px; top: 4px; }
-.nkf button.nkf__arr--d { left: 39px; bottom: 4px; }
-.nkf button.nkf__arr--l { left: 4px; top: 39px; }
-.nkf button.nkf__arr--r { right: 4px; top: 39px; }
+.nkf button.nkf__arr--u { left: 32px; top: 3px; }
+.nkf button.nkf__arr--d { left: 32px; bottom: 3px; }
+.nkf button.nkf__arr--l { left: 3px; top: 32px; }
+.nkf button.nkf__arr--r { right: 3px; top: 32px; }
 .nkf__arr--d svg { transform: rotate(180deg); }
 .nkf__arr--l svg { transform: rotate(-90deg); }
 .nkf__arr--r svg { transform: rotate(90deg); }
@@ -3924,43 +3927,43 @@ body.dark-mode .portfolio-nav-playpause {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 44px;
-  height: 44px;
-  margin: -22px 0 0 -22px;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
 }
-.nkf__ok span { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; color: var(--iv); }
+.nkf__ok span { font-size: 8px; font-weight: 700; letter-spacing: 1.2px; color: var(--iv); }
 
 /* Brand Column */
 .nkf__brand { min-width: 0; }
 .nkf__name {
   font-family: "Cormorant Garamond", Georgia, serif !important;
   font-weight: 400 !important;
-  font-size: clamp(26px, 2.2vw, 34px) !important;
-  letter-spacing: 4px !important;
+  font-size: clamp(20px, 1.8vw, 26px) !important;
+  letter-spacing: 3px !important;
   white-space: nowrap !important;
   color: var(--iv) !important;
   line-height: 1.1 !important;
   text-transform: uppercase !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 4px !important;
 }
 .nkf__sub {
-  font-size: 10.5px !important;
-  letter-spacing: 4px !important;
+  font-size: 9px !important;
+  letter-spacing: 3px !important;
   text-transform: uppercase !important;
   color: var(--g) !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 10px !important;
 }
 .nkf__tag {
-  font-size: 13.5px !important;
-  line-height: 1.7 !important;
+  font-size: 11.5px !important;
+  line-height: 1.55 !important;
   color: var(--bd) !important;
-  max-width: 360px !important;
-  margin-bottom: 20px !important;
+  max-width: 300px !important;
+  margin-bottom: 14px !important;
 }
-.nkf__icons { display: flex; gap: 14px; }
+.nkf__icons { display: flex; gap: 10px; }
 .nkf a.nkf__ic, .nkf a.nkf__ic:visited {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -4232,30 +4235,31 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__menus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 20px;
   border-top: 1px solid var(--ln);
-  padding-top: 40px;
+  padding-top: 24px;
+  margin-top: 24px;
 }
 
 /* Menu Headings with Authentic Camera Line (STUDIO ——) */
 .nkf h3.nkf__h {
   font-family: var(--font-display), Inter, sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.2px;
   text-transform: uppercase;
   color: var(--g);
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   line-height: 1.4;
 }
 
 .nkf h3.nkf__h::after {
   content: "";
-  flex: 0 0 28px;
-  height: 1.5px;
+  flex: 0 0 20px;
+  height: 1px;
   background: var(--g);
   opacity: 0.85;
 }
@@ -4263,15 +4267,15 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__menu {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .nkf__menu a {
-  font-size: 13px;
+  font-size: 11.5px;
   color: var(--bd);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s ease;
 }
 
@@ -4445,11 +4449,11 @@ body.dark-mode .portfolio-nav-playpause {
 
 /* Elegant, Refined ajaynxt Logo matching 'pretty pixels' from Nikhil Kapur */
 .ajaynxt-logo {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: lowercase;
+  font-family: 'Great Vibes', 'Caveat', 'Alex Brush', cursive;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: none;
   background: linear-gradient(135deg, #FFF6D1 0%, #F5D77F 25%, #D4AF37 55%, #AA8018 85%, #7A5808 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -4457,7 +4461,8 @@ body.dark-mode .portfolio-nav-playpause {
   color: #D4AF37;
   filter: drop-shadow(0 1px 6px rgba(212, 175, 55, 0.45));
   display: inline-block;
-  line-height: 1.2;
+  line-height: 1.1;
+  vertical-align: middle;
 }
 
 .nkf__ajaynxt:hover .ajaynxt-logo {
@@ -6328,15 +6333,15 @@ body:not(.theme-dark) .nkf__cam::before {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.38;
   background-image:
-    radial-gradient(circle, rgba(16, 14, 12, 0.55) 1.6px, transparent 1.8px),
-    radial-gradient(circle, rgba(28, 24, 18, 0.35) 1.1px, transparent 1.3px);
-  background-size: 11px 11px, 11px 11px;
-  background-position: 0 0, 5.5px 5.5px;
-  -webkit-mask: none !important;
-  mask: none !important;
-  filter: none !important;
+    radial-gradient(circle at 1px 1px, rgba(20, 18, 14, 0.45) 0.75px, transparent 1.05px),
+    radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.75) 0.7px, transparent 1px);
+  background-size: 4px 4px, 4px 4px;
+  background-position: 0 0, 2px 2px;
+  -webkit-mask: linear-gradient(90deg, #000 0%, #000 12%, rgba(0, 0, 0, 0.38) 22%, rgba(0, 0, 0, 0.38) 78%, #000 88%, #000 100%);
+  mask: linear-gradient(90deg, #000 0%, #000 12%, rgba(0, 0, 0, 0.38) 22%, rgba(0, 0, 0, 0.38) 78%, #000 88%, #000 100%);
+  filter: none;
 }
 body:not(.theme-dark) .nkf__inner {
   border: 1px solid rgba(0, 0, 0, .12);
@@ -7357,15 +7362,14 @@ body:not(.theme-dark) .nk-form-textarea {
 }
 
 .nk-signature-quote {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(18px, 2.1vw, 24px);
-  line-height: 1.55;
+  font-family: 'Caveat', 'Alex Brush', cursive;
+  font-size: clamp(24px, 2.6vw, 33px);
+  line-height: 1.45;
   color: var(--iv, #EDE8DE);
-  font-style: italic;
-  letter-spacing: 0.3px;
-  margin: 0 auto 10px;
-  font-weight: 400;
-  max-width: 760px;
+  letter-spacing: 0.4px;
+  margin: 0 auto 12px;
+  font-weight: 600;
+  max-width: 820px;
 }
 
 body:not(.theme-dark) .nk-signature-quote {
@@ -7374,12 +7378,12 @@ body:not(.theme-dark) .nk-signature-quote {
 }
 
 .nk-signature-author {
-  font-family: 'Jost', Inter, system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: 'Caveat', 'Alex Brush', cursive;
+  font-size: clamp(18px, 1.9vw, 23px);
+  font-weight: 700;
   color: var(--g, #D4AF37);
-  letter-spacing: 2.8px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-transform: none;
   margin-top: 6px;
   display: block;
 }
