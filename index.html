@@ -280,36 +280,26 @@
         <div class="nav-item">
           <a href="index.html" class="nav-link is-active">Home</a>
         </div>
-        <div class="nav-item">
-          <a href="weddings.html" class="nav-link">
-            Weddings &amp; Films
+        <div class="nav-item has-filmstrip" id="navItemPhotography">
+          <a href="weddings.html" class="nav-link" aria-haspopup="true" aria-expanded="false">
+            Photography
             <svg class="caret" viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
           </a>
-          <div class="nav-dropdown">
-            <a href="weddings.html">Royal Weddings</a>
-            <a href="delhi-ncr.html">Delhi NCR Coverage</a>
-            <a href="jaipur.html">Jaipur &amp; Rajasthan Palaces</a>
-            <a href="weddings.html">Pre-Wedding Shoots</a>
-            <a href="weddings.html">Sacred Rituals &amp; Pheras</a>
-            <a href="#films" style="color:var(--g);font-weight:700;border-top:1px dashed var(--ln);margin-top:6px;padding-top:10px;">Watch 4K Cinematic Films &rarr;</a>
-          </div>
         </div>
         <div class="nav-item">
-          <a href="#instagram" class="nav-link">Instagram</a>
+          <a href="#films" class="nav-link">Films</a>
         </div>
         <div class="nav-item">
-          <a href="#films" class="nav-link">4K Films</a>
+          <a href="#about" class="nav-link">About</a>
         </div>
         <div class="nav-item">
-          <a href="#about" class="nav-link">About Founder</a>
+          <a href="packages.html" class="nav-link" style="color:var(--g);font-weight:700;">Packages</a>
         </div>
         <div class="nav-item">
-          <a href="corporate.html" class="nav-link">Corporate &amp; Drone</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
         </div>
         <div class="nav-item">
-          <a href="packages.html" class="nav-link" style="color:var(--g);font-weight:700;">
-            Packages
-          </a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
       </nav>
 
@@ -356,6 +346,107 @@
       </a>
     </div>
   </header>
+
+  <!-- ============================================================
+       UPPER FILM STRIP DROPDOWN (.nk-fs)
+       ============================================================ -->
+  <div class="nk-fs" id="nkFsPanel" role="region" aria-label="Photography menu">
+    <div class="nk-fs__in">
+      <div class="nk-fs__intro">
+        <h3>Photography</h3>
+        <p>Weddings, spaces and people, seen with a filmmaker's eye.</p>
+        <a href="weddings.html">Explore all</a>
+      </div>
+      <div class="nk-fs__reel" style="--n:4">
+        <div class="nk-strip">
+          <div class="nk-edge t">
+            <span>NK 400</span>
+            <span>&bull; 01A</span>
+            <span>&bull; 02A</span>
+            <span>&bull; 03A</span>
+            <span>&bull; 04A</span>
+            <span>MUMBAI</span>
+          </div>
+          <div class="nk-frames">
+            <a class="nk-fr" href="corporate.html" data-i="0" aria-label="Architecture Photography">
+              <span class="nk-fr__n">01</span>
+              <span class="nk-fr__img">
+                <img src="assets/images/nk_hotel_arch.jpg" alt="Architecture &amp; Palace Photography" loading="lazy" decoding="async">
+              </span>
+            </a>
+            <a class="nk-fr is-current" href="weddings.html" data-i="1" aria-label="Weddings Photography">
+              <span class="nk-fr__n">02</span>
+              <span class="nk-fr__img">
+                <img src="assets/images/nk_wedding_mehendi.webp" alt="Wedding Haldi Bride Photography" loading="lazy" decoding="async">
+              </span>
+            </a>
+            <a class="nk-fr" href="weddings.html" data-i="2" aria-label="Portraits Photography">
+              <span class="nk-fr__n">03</span>
+              <span class="nk-fr__img">
+                <img src="assets/images/nk_kids_portrait.jpg" alt="Kids &amp; Family Portraits" loading="lazy" decoding="async">
+              </span>
+            </a>
+            <a class="nk-fr" href="corporate.html" data-i="3" aria-label="Product &amp; Commercials">
+              <span class="nk-fr__n">04</span>
+              <span class="nk-fr__img">
+                <img src="assets/images/nk_product.webp" alt="Commercial &amp; Product Shoots" loading="lazy" decoding="async">
+              </span>
+            </a>
+          </div>
+          <div class="nk-edge b">
+            <span>&bull; 1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>NK 400 SAFETY FILM</span>
+          </div>
+        </div>
+        <div class="nk-labels">
+          <div class="nk-lab">
+            <a href="corporate.html" data-i="0">
+              <b>ARCHITECTURE</b>
+              <small>Hotels, homes &amp; heritage</small>
+            </a>
+            <span class="nk-sublinks">
+              <a href="corporate.html">Hotels</a><i>&middot;</i>
+              <a href="jaipur.html">Heritage</a><i>&middot;</i>
+              <a href="corporate.html">Homes</a>
+            </span>
+          </div>
+          <div class="nk-lab">
+            <a href="weddings.html" data-i="1" class="is-hot" aria-current="page">
+              <b>WEDDINGS</b>
+              <small>Candid &amp; timeless</small>
+            </a>
+            <span class="nk-sublinks">
+              <a href="weddings.html">Candid</a><i>&middot;</i>
+              <a href="weddings.html">Pre-Wedding</a>
+            </span>
+          </div>
+          <div class="nk-lab">
+            <a href="weddings.html" data-i="2">
+              <b>PORTRAITS</b>
+              <small>Kids, families &amp; people</small>
+            </a>
+            <span class="nk-sublinks">
+              <a href="weddings.html">Kids</a><i>&middot;</i>
+              <a href="weddings.html">Lifestyle</a>
+            </span>
+          </div>
+          <div class="nk-lab">
+            <a href="corporate.html" data-i="3">
+              <b>PRODUCT</b>
+              <small>Food, jewelry &amp; products</small>
+            </a>
+            <span class="nk-sublinks">
+              <a href="corporate.html">Food</a><i>&middot;</i>
+              <a href="corporate.html">Jewelry</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Mobile Drawer -->
   <aside class="mobile-drawer" aria-label="Mobile Menu">
@@ -713,28 +804,28 @@
         <div class="nkx-feat__index nkx-rv">
           <span class="nkx-feat__no">01</span>
           <span class="nkx-feat__line"></span>
-          <span class="nkx-feat__eyebrow">Our Philosophy</span>
+          <span class="nkx-feat__eyebrow">Discover</span>
         </div>
         <h2 class="nkx-feat__title nkx-rv" id="ws-feat-title">
-          Moments you feel,
-          <em>not pose.</em>
+          Wedding
+          <em>Photography</em>
         </h2>
         <p class="nkx-feat__lead nkx-rv">
-          A wedding isn't just a schedule of rituals. It is a thousand little stories happening simultaneously &mdash; an affectionate touch, an unprompted laugh, and the tearful gaze of parents. We preserve these feelings so you can relive them forever.
+          I capture the invisible feelings hiding within fleeting moments. By framing the passing world, I create a permanent space to pause and look.
         </p>
         <ul class="nkx-feat__tags nkx-rv">
-          <li><span>i</span> Candid Storytelling</li>
-          <li><span>ii</span> 4K Cinema Films</li>
-          <li><span>iii</span> Aerial Perspectives</li>
-          <li><span>iv</span> Destination Shoots</li>
+          <li><span>i</span> Hotels &amp; resorts</li>
+          <li><span>ii</span> Residences</li>
+          <li><span>iii</span> Heritage</li>
+          <li><span>iv</span> Interiors</li>
         </ul>
         <p class="nkx-feat__note nkx-rv">
-          Rated 5.0 for Professionalism &amp; 98% Couple Recommendation.
-          <small>WeddingWire Accolades</small>
+          Trained under cinematic storytelling &amp; light masters.
+          <small>Mentorship &amp; Recognition</small>
         </p>
-        <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding%2C%20I%20would%20like%20to%20discuss%20my%20wedding%20dates." target="_blank" rel="noopener" class="nk-cta nkx-rv">
-          Check Date Availability
-          <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+        <a href="weddings.html" class="nkx-cta nkx-rv">
+          Explore Wedding Work
+          <svg aria-hidden="true" viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
         </a>
       </div>
     </div>
@@ -1534,44 +1625,68 @@
        ============================================================ -->
   <section class="nk-about-section" id="about">
     <div class="nk-about-wrap">
-      <div class="about-portrait nkx-rv">
-        <img src="assets/images/ws_haldi_couple.jpg?v=4" alt="Founder Sonu Kumar &amp; Bride during Wedding Celebrations" loading="lazy">
-        <div style="margin-top:14px;text-align:center;">
-          <span style="display:inline-block;padding:4px 14px;background:rgba(201,162,39,0.12);border:1px solid var(--g);border-radius:20px;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--g);font-weight:700;">Sonu Kumar &middot; Founder &amp; Lead Cinematographer</span>
+      <!-- Col 1: Photographer Portrait holding camera -->
+      <div class="about-portrait-col nkx-rv">
+        <div class="about-portrait-frame">
+          <img src="assets/images/ws_photographer_portrait.webp" alt="Wedding Shedding Photographer holding camera" loading="lazy" decoding="async">
         </div>
       </div>
-      <div class="about-bio nkx-rv">
-        <h2>About Wedding Shedding &amp; Founder Sonu Kumar</h2>
-        <p>Operational since <strong>2015</strong> with over a decade of excellence in the visual storytelling craft, <strong>Wedding Shedding</strong> was founded by visual artist and lead cinematographer <strong>Sonu Kumar</strong> on a single passionate conviction: that wedding photography should never feel like an awkward staged photoshoot, but an authentic celebration of human emotion.</p>
-        <p>Headquartered in our private studio in <strong>Burari, Delhi (Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave)</strong>, Sonu Kumar directs a dedicated in-house collective of <strong>10&ndash;12 visual artists, colorists, and licensed aerial drone pilots</strong> &mdash; ensuring every frame is captured with personal devotion, never outsourced to third-party freelancers.</p>
-        <p>Armed with top-tier 4K cinema gear, color-calibrated master grading suites, and drone aerial cameras, our team travels extensively across Delhi NCR, Jaipur, Udaipur, and royal destination venues throughout India. Our uncompromised dedication is validated by a <strong>4.9&starf; rating on WeddingWire</strong> and consecutive <strong>WeddingWire Industry Awards in 2024 &amp; 2025</strong>.</p>
-        <div style="margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap;">
-          <a href="https://wa.me/917503550936?text=Hi%20Sonu%2C%20I%20would%20like%20to%20discuss%20my%20wedding%20photography." target="_blank" rel="noopener" class="nk-cta">
-            Direct WhatsApp With Sonu Kumar
-            <svg viewBox="0 0 18 10"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
-          </a>
-          <a href="https://www.weddingwire.in/wedding-photographers/wedding-shedding--e385150" target="_blank" rel="noopener" class="btn-gold-outline" style="padding:10px 18px;border-radius:24px;font-size:11.5px;">
-            WeddingWire 4.9★ Profile
+
+      <!-- Col 2: Bio & Button -->
+      <div class="about-bio-col nkx-rv">
+        <h2 class="about-kicker-title">ABOUT WEDDING SHEDDING</h2>
+        <div class="about-bio-text">
+          <p>My journey began in the world of films. After studying filmmaking, I worked as an assistant director on television commercials and collaborated with some of the finest cinematographers in the industry. Over time, my love for still imagery led me to photography &mdash; where I found the perfect blend of storytelling, light and emotion.</p>
+          <p>With over 14 years of experience and 150+ weddings photographed across India and abroad, I continue to explore diverse genres &mdash; from weddings and architecture to aerials, commercials and personal projects.</p>
+        </div>
+        <div class="about-cta-wrap">
+          <a class="nk-btn-editorial-arrow" href="about.html">
+            <span>KNOW MORE ABOUT ME</span>
+            <svg aria-hidden="true" class="e-font-icon-svg" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg>
           </a>
         </div>
       </div>
-      <div class="about-highlights nkx-rv">
-        <div class="about-highlight-item">
-          <svg viewBox="0 0 576 512"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
-          <span>10+ Years Operational (Est. 2015 by Sonu Kumar)</span>
-        </div>
-        <div class="about-highlight-item">
-          <svg viewBox="0 0 576 512"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
-          <span>WeddingWire Award Winner 2024 &amp; 2025</span>
-        </div>
-        <div class="about-highlight-item">
-          <svg viewBox="0 0 576 512"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
-          <span>10&ndash;12 Dedicated In-House Artists</span>
-        </div>
-        <div class="about-highlight-item">
-          <svg viewBox="0 0 576 512"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
-          <span>Pan-India Palaces &amp; Destination Weddings</span>
-        </div>
+
+      <!-- Col 3: 6 Diamond Highlights -->
+      <div class="about-highlights-col nkx-rv">
+        <ul class="about-diamond-list">
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">14+ YEARS EXPERIENCE</span>
+          </li>
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">150+ WEDDINGS SHOT</span>
+          </li>
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">ACROSS INDIA &amp; ABROAD</span>
+          </li>
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">FILMMAKING BACKGROUND</span>
+          </li>
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">ARCHITECTURAL EYE</span>
+          </li>
+          <li class="about-diamond-item">
+            <span class="diamond-icon">
+              <svg aria-hidden="true" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"/></svg>
+            </span>
+            <span class="diamond-text">NATURAL &amp; CANDID APPROACH</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1863,15 +1978,13 @@
        ============================================================ -->
   <section class="nk-cta-section" id="contact">
     <div class="nk-cta-wrap nkx-rv">
-      <p style="font-size:13px;letter-spacing:3px;color:var(--g);text-transform:uppercase;margin-bottom:12px;">Let's Tell Your Love Story</p>
-      <h2 class="nk-cta-heading">Have an upcoming celebration?<br>Let's create something timeless together.</h2>
-      <p style="color:var(--bd);margin-bottom:36px;font-size:15px;">Studio: Gali NO 01, near Lance Ford School, Sunil Colony, Parshuram Enclave, Burari, Delhi &ndash; 110084 &middot; Serving Pan-India</p>
+      <h2 class="nk-cta-heading">
+        Have a project in mind?<br>Let's create something extraordinary together.
+      </h2>
       <div class="nk-cta-actions">
-        <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding%2C%20I%20would%20like%20to%20check%20availability%20for%20my%20wedding%20dates." target="_blank" rel="noopener" class="btn-gold-solid">
-          Chat on WhatsApp: +91 75035 50936
-        </a>
-        <a href="mailto:sonukumar2255@gmail.com?subject=Wedding%20Photography%20Inquiry" class="btn-gold-outline">
-          Email: sonukumar2255@gmail.com
+        <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding%2C%20I%20would%20like%20to%20discuss%20my%20wedding%20dates." target="_blank" rel="noopener" class="nk-btn-editorial">
+          <span>GET IN TOUCH</span>
+          <svg class="nk-btn-arr" viewBox="0 0 448 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
         </a>
       </div>
     </div>
