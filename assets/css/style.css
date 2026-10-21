@@ -3426,7 +3426,7 @@ body.dark-mode .portfolio-nav-playpause {
   background-color: var(--bg) !important;
   background-image: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201, 162, 39, .08), transparent 70%) !important;
   color: var(--bd) !important;
-  padding: clamp(38px, 4.5vw, 64px) clamp(16px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  padding: clamp(22px, 2.8vw, 36px) clamp(14px, 2.2vw, 28px) clamp(14px, 1.6vw, 20px);
   font-family: Inter, system-ui, sans-serif;
   box-sizing: border-box;
   width: 100%;
@@ -3440,7 +3440,7 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf p { margin: 0; }
 
 .nkf__scene {
-  max-width: 1060px;
+  max-width: 940px;
   margin: 0 auto;
   position: relative;
 }
@@ -3452,7 +3452,7 @@ body.dark-mode .portfolio-nav-playpause {
   right: 2px;
   top: 18px;
   bottom: -18px;
-  border-radius: 22px;
+  border-radius: 20px;
   pointer-events: none;
   background: linear-gradient(180deg, #0d0c0a 0%, #070605 70%, #040403 100%);
   border: 1px solid rgba(201, 162, 39, .16);
@@ -3463,8 +3463,8 @@ body.dark-mode .portfolio-nav-playpause {
 /* Realistic Camera Chassis */
 .nkf__cam {
   position: relative;
-  border-radius: 22px;
-  padding: clamp(26px, 2.8vw, 38px) clamp(18px, 2.4vw, 34px) clamp(18px, 2vw, 26px);
+  border-radius: 20px;
+  padding: clamp(16px, 1.8vw, 22px) clamp(14px, 1.6vw, 22px) clamp(14px, 1.4vw, 18px);
   background:
     radial-gradient(ellipse 55% 70% at 18% 0%, rgba(255, 236, 200, .075), transparent 62%) padding-box,
     linear-gradient(90deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0) 93%, rgba(0, 0, 0, .5) 100%) padding-box,
@@ -3489,7 +3489,7 @@ body.dark-mode .portfolio-nav-playpause {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  opacity: .50;
+  opacity: .24;
   background:
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .16) 0.75px, transparent 1.05px),
     radial-gradient(circle at 3px 3px, rgba(0, 0, 0, .65) 0.85px, transparent 1.15px);
@@ -3632,13 +3632,13 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__screenwrap {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 380px;
 }
 
 .nkf__screen {
   position: relative;
-  padding: 9px;
-  border-radius: 13px;
+  padding: 7px;
+  border-radius: 11px;
   background: linear-gradient(180deg, #0b0b0b, #050505);
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, .95),
@@ -3854,7 +3854,7 @@ body.dark-mode .portfolio-nav-playpause {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 .nkf button.nkf__b {
   all: unset;
@@ -3876,16 +3876,16 @@ body.dark-mode .portfolio-nav-playpause {
 }
 .nkf button.nkf__b:focus-visible { outline: 1px solid var(--g); outline-offset: 3px; }
 
-.nkf__sm { width: 32px; height: 32px; }
-.nkf__sm svg { width: 11px; height: 11px; fill: currentColor; }
-.nkf__sm span { font-size: 7.5px; font-weight: 700; letter-spacing: 1.2px; }
-.nkf__cap-lbl { font-size: 7.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--t3); margin-top: -10px; }
+.nkf__sm { width: 28px; height: 28px; }
+.nkf__sm svg { width: 10px; height: 10px; fill: currentColor; }
+.nkf__sm span { font-size: 7px; font-weight: 700; letter-spacing: 1px; }
+.nkf__cap-lbl { font-size: 7px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--t3); margin-top: -8px; }
 
 /* 4-Way D-Pad */
 .nkf__pad {
   position: relative;
-  width: 88px;
-  height: 88px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 30%, #2c2822 0%, #171511 60%, #100e0b 100%);
   border: 1px solid rgba(201, 162, 39, .3);
@@ -3894,18 +3894,18 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__pad::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: -5px;
   border-radius: 50%;
   border: 1px solid rgba(201, 162, 39, .16);
   background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, .08) 0 2deg, transparent 2deg 9deg);
-  -webkit-mask: radial-gradient(circle, transparent 46px, #000 47px);
-  mask: radial-gradient(circle, transparent 46px, #000 47px);
+  -webkit-mask: radial-gradient(circle, transparent 42px, #000 43px);
+  mask: radial-gradient(circle, transparent 42px, #000 43px);
 }
 .nkf button.nkf__arr {
   all: unset;
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -3916,10 +3916,10 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf button.nkf__arr:hover { color: var(--gh); }
 .nkf button.nkf__arr:active svg { transform: scale(.8); }
 .nkf button.nkf__arr:focus-visible { outline: 1px solid var(--g); }
-.nkf button.nkf__arr--u { left: 32px; top: 3px; }
-.nkf button.nkf__arr--d { left: 32px; bottom: 3px; }
-.nkf button.nkf__arr--l { left: 3px; top: 32px; }
-.nkf button.nkf__arr--r { right: 3px; top: 32px; }
+.nkf button.nkf__arr--u { left: 29px; top: 2px; }
+.nkf button.nkf__arr--d { left: 29px; bottom: 2px; }
+.nkf button.nkf__arr--l { left: 2px; top: 29px; }
+.nkf button.nkf__arr--r { right: 2px; top: 29px; }
 .nkf__arr--d svg { transform: rotate(180deg); }
 .nkf__arr--l svg { transform: rotate(-90deg); }
 .nkf__arr--r svg { transform: rotate(90deg); }
@@ -3927,11 +3927,11 @@ body.dark-mode .portfolio-nav-playpause {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
 }
-.nkf__ok span { font-size: 8px; font-weight: 700; letter-spacing: 1.2px; color: var(--iv); }
+.nkf__ok span { font-size: 7.5px; font-weight: 700; letter-spacing: 1px; color: var(--iv); }
 
 /* Brand Column */
 .nkf__brand { min-width: 0; }
@@ -4203,8 +4203,8 @@ body.dark-mode .portfolio-nav-playpause {
 }
 
 @media (max-width: 767px) {
-  .nkf { padding: 56px 10px 16px; }
-  .nkf__cam { border-radius: 24px; padding: 36px 14px 14px; }
+  .nkf { padding: 36px 10px 16px; }
+  .nkf__cam { border-radius: 20px; padding: 24px 12px 14px; }
   .nkf__inner { inset: 6px; border-radius: 18px; }
   .nkf__hump { width: 150px; }
   .nkf__shutter { right: 28px; top: -16px; width: 36px; height: 17px; }
@@ -4214,16 +4214,16 @@ body.dark-mode .portfolio-nav-playpause {
   .nkf__lug { top: 30px; height: 24px; width: 6px; }
   .nkf__lug--l { left: -6px; }
   .nkf__lug--r { right: -6px; }
-  .nkf__main { grid-template-columns: 1fr; row-gap: 18px; }
-  .nkf__screen { padding: 8px; border-radius: 13px; }
+  .nkf__main { grid-template-columns: 1fr; row-gap: 16px; }
+  .nkf__screen { padding: 7px; border-radius: 11px; }
   .nkf__glass { border-radius: 6px; }
   .nkf__hud { font-size: 9.5px; }
   .nkf__hud-t, .nkf__hud-b { padding: 8px 9px; }
   .nkf__hud-t span { gap: 8px; }
-  .nkf__ctrl { flex-direction: row; justify-content: center; gap: 22px; }
-  .nkf__pad { width: 96px; height: 96px; }
-  .nkf button.nkf__arr--u, .nkf button.nkf__arr--d { left: 33px; }
-  .nkf button.nkf__arr--l, .nkf button.nkf__arr--r { top: 33px; }
+  .nkf__ctrl { flex-direction: row; justify-content: center; gap: 16px; }
+  .nkf__pad { width: 80px; height: 80px; }
+  .nkf button.nkf__arr--u, .nkf button.nkf__arr--d { left: 29px; }
+  .nkf button.nkf__arr--l, .nkf button.nkf__arr--r { top: 29px; }
   .nkf__brand { display: block; text-align: center; padding-top: 6px; }
   .nkf__name { font-size: 24px !important; }
   .nkf__tag { margin: 0 auto 16px !important; }
@@ -4235,10 +4235,10 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__menus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
   border-top: 1px solid var(--ln);
-  padding-top: 24px;
-  margin-top: 24px;
+  padding-top: 18px;
+  margin-top: 18px;
 }
 
 /* Menu Headings with Authentic Camera Line (STUDIO ——) */
@@ -4267,7 +4267,7 @@ body.dark-mode .portfolio-nav-playpause {
 .nkf__menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .nkf__menu a {
@@ -4351,17 +4351,17 @@ body.dark-mode .portfolio-nav-playpause {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 22px;
-  margin-top: clamp(28px, 3.2vw, 42px);
-  padding-top: 20px;
+  gap: 6px 18px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid rgba(226, 185, 74, 0.18);
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 .nkf__areas span {
   font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 3px;
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--g);
   font-weight: 700;
@@ -4372,7 +4372,7 @@ body.dark-mode .portfolio-nav-playpause {
   text-decoration: none;
   border-bottom: 1px solid rgba(201, 162, 39, 0.35);
   padding-bottom: 2px;
-  font-size: 12.5px;
+  font-size: 12px;
   transition: color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -4388,21 +4388,21 @@ body.dark-mode .portfolio-nav-playpause {
   position: relative;
   z-index: 1;
   border-top: 1px solid rgba(226, 185, 74, 0.22);
-  margin-top: 32px;
-  padding: 26px 20px 14px;
+  margin-top: 16px;
+  padding: 16px 16px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 10px;
+  gap: 6px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.28);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .nkf__copy {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--t3);
   letter-spacing: 0.6px;
   margin: 0;
@@ -4410,12 +4410,12 @@ body.dark-mode .portfolio-nav-playpause {
 
 .nkf__model {
   font-family: var(--font-display), "JetBrains Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 3.5px;
+  font-size: 10.5px;
+  letter-spacing: 3px;
   color: var(--g);
   text-transform: uppercase;
   font-weight: 700;
-  margin: 2px 0 8px;
+  margin: 2px 0 4px;
 }
 
 .nkf__credits {
@@ -4819,7 +4819,7 @@ html, body {
   }
   .nkf__screenwrap {
     width: 100%;
-    max-width: 480px;
+    max-width: 380px;
   }
   .nkf__menus {
     grid-template-columns: repeat(2, 1fr);
@@ -6333,7 +6333,7 @@ body:not(.theme-dark) .nkf__cam::before {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  opacity: 0.38;
+  opacity: 0.20;
   background-image:
     radial-gradient(circle at 1px 1px, rgba(20, 18, 14, 0.45) 0.75px, transparent 1.05px),
     radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.75) 0.7px, transparent 1px);
