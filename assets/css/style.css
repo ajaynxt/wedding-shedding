@@ -2287,33 +2287,33 @@ body.theme-dark .awards-banner .award-text p {
 }
 
 .nkx-feat__body {
-  grid-column: 9 / span 4;
+  grid-column: 8 / span 5;
 }
 
 .nkx-feat__index {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 14px;
 }
 
 .nkx-feat__no {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   color: var(--g);
   letter-spacing: 1px;
 }
 
 .nkx-feat__line {
-  flex: 0 0 36px;
-  height: 1.5px;
+  flex: 0 0 44px;
+  height: 2px;
   background: var(--g);
 }
 
 .nkx-feat__eyebrow {
-  font-size: 11px;
-  letter-spacing: 3px;
+  font-size: 13px;
+  letter-spacing: 3.5px;
   text-transform: uppercase;
   color: var(--gh);
   font-weight: 600;
@@ -2322,24 +2322,26 @@ body.theme-dark .awards-banner .award-text p {
 .nkx-feat__title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(28px, 3.2vw, 42px);
-  line-height: 1.1;
+  font-size: clamp(38px, 4.4vw, 56px);
+  line-height: 1.08;
   color: var(--iv);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .nkx-feat__title em {
   font-style: italic;
   font-weight: 300;
   display: block;
+  font-size: 1.05em;
+  line-height: 1.05;
 }
 
 .nkx-feat__lead {
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: clamp(14.5px, 1.35vw, 17px);
+  line-height: 1.7;
   color: var(--bd);
-  margin-bottom: 22px;
-  max-width: 420px;
+  margin-bottom: 28px;
+  max-width: 520px;
 }
 
 .nkx-feat__tags {
@@ -8234,22 +8236,60 @@ body:not(.theme-dark) #films .films-ctrl-btn:hover {
   z-index: 2 !important;
 }
 
+.nkx-feat__body {
+  grid-column: 8 / span 5 !important;
+}
+
 .nkx-feat__index {
-  margin-bottom: 8px !important;
+  margin-bottom: 14px !important;
+  gap: 14px !important;
+}
+
+.nkx-feat__no {
+  font-size: 26px !important;
+}
+
+.nkx-feat__line {
+  flex: 0 0 44px !important;
+  height: 2px !important;
+}
+
+.nkx-feat__eyebrow {
+  font-size: 13px !important;
+  letter-spacing: 3.5px !important;
 }
 
 .nkx-feat__title {
-  font-size: clamp(26px, 3vw, 38px) !important;
-  line-height: 1.12 !important;
+  font-size: clamp(38px, 4.4vw, 56px) !important;
+  line-height: 1.08 !important;
   color: var(--iv) !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 18px !important;
+  font-weight: 400 !important;
+}
+
+.nkx-feat__title em {
+  font-size: 1.05em !important;
+  line-height: 1.05 !important;
 }
 
 .nkx-feat__lead {
-  font-size: 13px !important;
-  line-height: 1.55 !important;
+  font-size: clamp(14.5px, 1.35vw, 17px) !important;
+  line-height: 1.7 !important;
   color: var(--bd) !important;
-  margin-bottom: 18px !important;
+  margin-bottom: 26px !important;
+  max-width: 520px !important;
+}
+
+.nkx-cta {
+  font-size: 13px !important;
+  letter-spacing: 2px !important;
+  padding-bottom: 6px !important;
+  gap: 12px !important;
+}
+
+.nkx-cta svg {
+  width: 18px !important;
+  height: 10px !important;
 }
 
 @media (max-width: 1024px) {
@@ -8277,6 +8317,34 @@ body:not(.theme-dark) #films .films-ctrl-btn:hover {
     font-size: 8.5px !important;
     line-height: 1.35 !important;
     display: block !important;
+  }
+  .nkx-feat__index {
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .nkx-feat__no {
+    font-size: 20px !important;
+  }
+  .nkx-feat__line {
+    flex: 0 0 28px !important;
+  }
+  .nkx-feat__eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 2.5px !important;
+  }
+  .nkx-feat__title {
+    font-size: clamp(28px, 7vw, 34px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+  .nkx-feat__lead {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 18px !important;
+    max-width: 100% !important;
+  }
+  .nkx-cta {
+    font-size: 11.5px !important;
   }
 }
 
