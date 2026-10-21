@@ -708,7 +708,7 @@ function initProjectsGallery() {
       "videoBadge": "4K E-COMMERCE EXPLAINER &middot; D2C STORE COMMERCIAL",
       "images": [
         "assets/images/ws_video_ecommerce.jpg?v=3",
-        "assets/images/ws_fashion_portrait.jpg?v=3",
+        "assets/images/ws_service_product_stationery.jpg?v=3",
         "assets/images/ws_video_interview.jpg?v=3",
         "assets/images/ws_video_corporate.jpg?v=3"
       ]
@@ -805,7 +805,7 @@ function initProjectsGallery() {
     "gym-fitness": {
       "title": "GYM, ATHLETES & HIGH-ENERGY FITNESS MEDIA",
       "images": [
-        "assets/images/ws_fashion_portrait.jpg?v=3",
+        "assets/images/ws_service_esports_player_walk.jpg?v=3",
         "assets/images/ws_esports_01.jpg?v=3",
         "assets/images/ws_video_diablo.jpg?v=3"
       ]
