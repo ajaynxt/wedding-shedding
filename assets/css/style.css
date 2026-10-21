@@ -8178,13 +8178,13 @@ body:not(.theme-dark) #films .films-ctrl-btn:hover {
   position: relative !important;
   display: block !important;
   aspect-ratio: 3 / 2 !important;
-  background: #0B0A09 !important;
-  /* Solid Luxury Black Gallery Picture Frame */
-  border: 10px solid #0B0A09 !important;
+  background: #FFFFFF !important;
+  /* Pristine Luxury White Gallery Picture Frame */
+  border: 10px solid #FFFFFF !important;
   outline: 1px solid rgba(212, 175, 55, 0.5) !important;
   outline-offset: -2px !important;
   border-radius: 6px !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28), 0 4px 14px rgba(0, 0, 0, 0.16) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 4px 14px rgba(0, 0, 0, 0.2) !important;
   overflow: hidden !important;
   z-index: 2 !important;
 }
@@ -8204,13 +8204,13 @@ body:not(.theme-dark) #films .films-ctrl-btn:hover {
   bottom: -18px !important;
   width: 28% !important;
   aspect-ratio: 1 !important;
-  background: #0B0A09 !important;
-  /* Matching Solid Black Frame with Gold Bevel */
-  border: 4.5px solid #0B0A09 !important;
+  background: #FFFFFF !important;
+  /* Matching Pristine White Frame with Gold Bevel */
+  border: 5px solid #FFFFFF !important;
   outline: 1px solid rgba(212, 175, 55, 0.5) !important;
   outline-offset: -2px !important;
   border-radius: 6px !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
   z-index: 3 !important;
   overflow: hidden !important;
 }
