@@ -861,46 +861,62 @@ function initProjectsGallery() {
 
     // If project has an embedded video player
     if (proj.videoUrl) {
+      current = []; // Single item only: no extra filler photos below video
+      countEl.textContent = '4K CINEMA FILM';
+      const panel = modal.querySelector('.nk-proj-modal__panel');
+      if (panel) panel.classList.add('is-video-mode');
+      grid.style.display = 'block';
+
       const vidWrap = document.createElement('div');
       vidWrap.className = 'nk-proj-video-embed';
-      vidWrap.style.cssText = 'grid-column: 1 / -1; margin-bottom: 24px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(212,175,55,0.45); background: #000; box-shadow: 0 10px 35px rgba(0,0,0,0.35);';
+      vidWrap.style.cssText = 'width: 100%; max-width: 960px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid rgba(212,175,55,0.45); background: #000; box-shadow: 0 10px 35px rgba(0,0,0,0.35);';
+      
+      const cleanTitle = (proj.title || 'Film').replace(/&middot;|&amp;/g, ' ').replace(/\s+/g, ' ').trim();
       vidWrap.innerHTML = `
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
+        <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
           <iframe src="${proj.videoUrl}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <!-- Shield to block Google Drive top header pop-out button so user plays inline only -->
+          <div class="gdrive-shield-top" style="position:absolute;top:0;left:0;right:0;height:56px;z-index:15;pointer-events:all;background:transparent;" title=""></div>
         </div>
         <div style="padding:14px 18px;display:flex;align-items:center;justify-content:space-between;background:var(--bg-alt);flex-wrap:wrap;gap:10px;border-top:1px solid var(--ln);">
           <span style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--g);letter-spacing:1px;display:inline-flex;align-items:center;gap:6px;">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
             ${proj.videoBadge || '4K CINEMA PRODUCTION'}
           </span>
-          <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20${encodeURIComponent(proj.title)}." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g);font-weight:700;text-decoration:none;">
-            Book Similar Video on WhatsApp &rarr;
+          <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20${encodeURIComponent(cleanTitle)}." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g);font-weight:700;text-decoration:none;">
+            Book on WhatsApp &rarr;
           </a>
         </div>
       `;
       grid.appendChild(vidWrap);
-    }
+    } else {
+      current = proj.images || [];
+      countEl.textContent = current.length + ' High-Res Photographs';
+      const panel = modal.querySelector('.nk-proj-modal__panel');
+      if (panel) panel.classList.remove('is-video-mode');
+      grid.style.display = '';
 
-    const NUM_COLS = 3;
-    const cols = [];
-    for (let c = 0; c < NUM_COLS; c++) {
-      const colDiv = document.createElement('div');
-      colDiv.className = 'nk-proj-col';
-      grid.appendChild(colDiv);
-      cols.push(colDiv);
-    }
+      const NUM_COLS = 3;
+      const cols = [];
+      for (let c = 0; c < NUM_COLS; c++) {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'nk-proj-col';
+        grid.appendChild(colDiv);
+        cols.push(colDiv);
+      }
 
-    current.forEach((url, i) => {
-      const a = document.createElement('a');
-      a.href = '#';
-      a.setAttribute('data-proj-idx', i);
-      const im = document.createElement('img');
-      im.src = url;
-      im.alt = proj.title + ' ' + (i + 1);
-      im.loading = 'lazy';
-      a.appendChild(im);
-      cols[i % NUM_COLS].appendChild(a);
-    });
+      current.forEach((url, i) => {
+        const a = document.createElement('a');
+        a.href = '#';
+        a.setAttribute('data-proj-idx', i);
+        const im = document.createElement('img');
+        im.src = url;
+        im.alt = proj.title + ' ' + (i + 1);
+        im.loading = 'lazy';
+        a.appendChild(im);
+        cols[i % NUM_COLS].appendChild(a);
+      });
+    }
 
     lastFocus = document.activeElement;
     modal.hidden = false;
@@ -911,6 +927,10 @@ function initProjectsGallery() {
 
   function closeModal() {
     modal.hidden = true;
+    grid.innerHTML = ''; // Unload video iframe to stop audio/video immediately
+    grid.style.display = '';
+    const panel = modal.querySelector('.nk-proj-modal__panel');
+    if (panel) panel.classList.remove('is-video-mode');
     if (viewer.hidden) lock(false);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
