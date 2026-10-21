@@ -3676,6 +3676,7 @@ body.dark-mode .portfolio-nav-playpause {
   height: 100% !important;
   max-width: none !important;
   object-fit: cover;
+  object-position: center top !important;
   transform: scale(1.02);
   transition: transform 4.2s linear;
 }
@@ -7648,3 +7649,106 @@ a.nkx-cta:hover::after {
 a.nkx-cta:hover svg {
   transform: translateX(6px);
 }
+
+/* ============================================================
+   USER CUSTOMIZATIONS & COMPACT LAYOUT ENHANCEMENTS
+   ============================================================ */
+
+/* 1. Disable 3D trailing cursor & restore standard native cursor */
+.nk-cursor-dot,
+.nk-cursor-ring {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+*, html, body {
+  cursor: auto !important;
+}
+
+a, button, input[type="submit"], input[type="button"], [role="button"], select,
+.nkh__btn, .camera-reel-card, .camera-reel-link, .nk-fr, .nav-link, .nk-cta, .nkf__b, .nkf__arr {
+  cursor: pointer !important;
+}
+
+/* 2. Hero Carousel White Background with Sleek Black Photo Frames */
+.nkh,
+body.theme-dark .nkh {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid #EBE6DC !important;
+}
+
+.nkh__item {
+  background: #0B0A09 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.22) !important;
+  border-radius: 4px !important;
+}
+
+.nkh__count {
+  color: #666666 !important;
+}
+
+.nkh__count b {
+  color: #111111 !important;
+}
+
+.nkh__bar {
+  background: #E5E0D8 !important;
+}
+
+.nkh__bar i {
+  background: var(--g) !important;
+}
+
+.nkh button.nkh__btn,
+.nkh__btn {
+  border: 1px solid #D5CEBF !important;
+  color: #111111 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.nkh button.nkh__btn:hover,
+.nkh__btn:hover {
+  border-color: var(--g) !important;
+  background: var(--g) !important;
+  color: #000000 !important;
+}
+
+/* 3. Compact Page Spacing (no excessive empty space) */
+.nk-services-section,
+.nk-projects-section,
+.nk-films-section,
+.nk-reviews-section,
+.nk-about-section,
+.nk-cta-section,
+.nk-locations-seo,
+.nkx-feat,
+.subpage-hero,
+.editorial-grid-section,
+.regional-section,
+.packages-pricing-section {
+  padding-top: clamp(32px, 4vw, 52px) !important;
+  padding-bottom: clamp(32px, 4vw, 52px) !important;
+}
+
+.section-header {
+  margin-bottom: clamp(20px, 3vw, 32px) !important;
+}
+
+.section-heading-title {
+  margin-bottom: 8px !important;
+}
+
+.films-slider-ctrl,
+.services-slider-ctrl {
+  margin-top: 16px !important;
+}
+
+/* 4. Camera Viewfinder Precision Face Framing */
+.nkf .nkf__slide img {
+  object-position: center top !important;
+}
+

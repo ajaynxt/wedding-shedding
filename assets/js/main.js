@@ -1180,18 +1180,8 @@ function initPortfolioSlider() {
    5C. NIKHIL KAPUR SIGNATURE MAGNETIC LUXURY CURSOR
    ============================================================ */
 function initCustomCursor() {
-  const dot = document.getElementById('nkCursorDot');
-  const ring = document.getElementById('nkCursorRing');
-  if (!dot || !ring) return;
-
-  // Touch device check
-  if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
-
-  let mouseX = -100;
-  let mouseY = -100;
-  let ringX = -100;
-  let ringY = -100;
-  let isMoving = false;
+  // Disabled: native responsive system cursor requested by user
+  return;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -1356,6 +1346,7 @@ function initCameraFooter() {
 
   function restart() {
     clearTimeout(t);
+    if (n <= 1) return;
     if (prog) {
       prog.classList.remove('run');
       void prog.offsetWidth;
