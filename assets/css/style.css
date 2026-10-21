@@ -5640,59 +5640,59 @@ body.theme-dark .subpage-pill:hover {
    CINEMATIC WEDDING FILMS SECTION (#films)
    ============================================================ */
 .nk-films-section {
-  padding: 90px 20px 80px;
+  padding: 36px 16px 32px;
   background: var(--bg);
   position: relative;
   border-top: 1px solid var(--ln);
 }
 .nk-films-header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 50px;
+  max-width: 680px;
+  margin: 0 auto 16px;
 }
 .nk-films-eyebrow {
   font-family: var(--font-body);
-  font-size: 11.5px;
-  letter-spacing: 3.5px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
   color: var(--g);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   font-weight: 600;
 }
 .nk-films-title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 48px);
+  font-size: clamp(22px, 3.2vw, 32px);
   color: var(--iv);
   font-weight: 400;
   line-height: 1.15;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 .nk-films-subtitle {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--bd);
-  line-height: 1.6;
+  line-height: 1.45;
 }
 /* 4K Live Recording HUD Badge */
 .films-rec-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   background: rgba(181, 138, 28, 0.12);
   border: 1px solid rgba(201, 162, 39, 0.35);
-  padding: 6px 14px;
+  padding: 4px 11px;
   border-radius: 20px;
   font-family: var(--font-body), Inter, monospace;
-  font-size: 11px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   color: var(--g);
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .films-rec-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #E53935;
   box-shadow: 0 0 8px #E53935;
@@ -5709,19 +5709,19 @@ body.theme-dark .subpage-pill:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin: 18px auto 0;
+  gap: 6px;
+  margin: 10px auto 0;
 }
 
 .films-filter-btn {
   background: transparent;
   border: 1px solid var(--ln);
   color: var(--bd);
-  padding: 8px 18px;
+  padding: 5px 14px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -5768,13 +5768,13 @@ body.theme-dark .subpage-pill:hover {
 
 /* Film Slide Card - Compact 35mm Cinema Cell */
 .film-slide {
-  flex: 0 0 clamp(270px, 26vw, 320px);
+  flex: 0 0 clamp(235px, 22vw, 270px);
   scroll-snap-align: start;
   background: #161412 !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -5785,16 +5785,16 @@ body.theme-dark .subpage-pill:hover {
 }
 
 .film-slide:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: rgba(212, 175, 55, 0.55) !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.25);
 }
 
 /* Thumbnail Wrap */
 .film-slide .nk-film-thumbwrap {
   position: relative;
   aspect-ratio: 16/9;
-  max-height: 180px;
+  max-height: 140px;
   background: #000000;
   overflow: hidden;
   cursor: pointer;
@@ -5826,22 +5826,22 @@ body.theme-dark .subpage-pill:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #F8E192 0%, #D4AF37 50%, #B58A1C 100%);
   color: #0B0A09;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 16px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), 0 0 14px rgba(212, 175, 55, 0.4);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   z-index: 2;
 }
 
 .film-play-ping {
   position: absolute;
-  inset: -4px;
+  inset: -3px;
   border-radius: 50%;
   border: 2px solid rgba(248, 225, 146, 0.7);
   animation: filmPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
@@ -5855,12 +5855,12 @@ body.theme-dark .subpage-pill:hover {
 
 .film-slide:hover .nk-film-playbtn {
   transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.85);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.85);
 }
 
 .film-slide .nk-film-playbtn svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   margin-left: 2px;
   fill: currentColor;
 }
@@ -5868,35 +5868,35 @@ body.theme-dark .subpage-pill:hover {
 /* Badges on Thumbnail */
 .film-slide .nk-film-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(11, 10, 9, 0.82);
+  top: 8px;
+  left: 8px;
+  background: rgba(11, 10, 9, 0.85);
   border: 1px solid rgba(201, 162, 39, 0.4);
   color: var(--g);
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 8.5px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 2px 7px;
+  border-radius: 3px;
   backdrop-filter: blur(6px);
   z-index: 2;
 }
 
 .film-slide .nk-film-duration {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(0, 0, 0, 0.82);
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
   font-family: var(--font-body), monospace;
-  font-size: 10.5px;
-  letter-spacing: 1px;
+  font-size: 8.5px;
+  letter-spacing: 0.8px;
   font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 4px;
+  padding: 2px 6px;
+  border-radius: 3px;
   backdrop-filter: blur(4px);
   z-index: 2;
 }
@@ -5904,35 +5904,44 @@ body.theme-dark .subpage-pill:hover {
 /* Card Body */
 .film-slide .nk-film-body {
   background: #161412 !important;
-  padding: 14px 16px 16px;
+  padding: 10px 12px 12px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .film-slide .nk-film-cat {
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 9px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: #D4AF37 !important;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .film-slide .nk-film-name {
   font-family: var(--font-display);
-  font-size: 15.5px;
+  font-size: 13.5px;
   color: #EDE8DE !important;
-  margin-bottom: 6px;
-  font-weight: 500;
-  line-height: 1.35;
+  margin-bottom: 4px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .film-slide .nk-film-desc {
-  font-size: 12px;
+  font-size: 11px;
   color: #9E9689 !important;
-  line-height: 1.45;
-  margin-bottom: 12px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 30px;
+  max-height: 30px;
   flex: 1;
 }
 
@@ -5941,56 +5950,56 @@ body.theme-dark .subpage-pill:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding-top: 10px;
+  gap: 8px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .btn-film-play {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   background: linear-gradient(135deg, #F8E192 0%, #D4AF37 50%, #B58A1C 100%) !important;
   color: #0B0A09 !important;
   border: none;
-  border-radius: 20px;
-  padding: 7px 15px;
+  border-radius: 14px;
+  padding: 4px 11px;
   font-family: var(--font-body), Inter, sans-serif;
-  font-size: 11.5px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.35);
 }
 
 .btn-film-play svg {
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   fill: currentColor;
 }
 
 .btn-film-play:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.6);
 }
 
 .film-actions .nk-film-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   color: #D4AF37 !important;
-  font-size: 12px;
+  font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
 .film-actions .nk-film-link svg {
-  width: 12px;
-  height: 8px;
+  width: 10px;
+  height: 7px;
   stroke: #D4AF37 !important;
   fill: none;
   stroke-width: 2;
@@ -6013,14 +6022,17 @@ body.theme-dark .subpage-pill:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  margin-top: 32px;
-  padding: 16px 24px;
-  border-radius: 16px;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 6px 18px;
+  border-radius: 20px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(201, 162, 39, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body:not(.theme-dark) .films-slider-ctrl {
@@ -6082,26 +6094,27 @@ body:not(.theme-dark) .films-slider-ctrl {
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
-/* Navigation Buttons */
-.films-slider-nav {
+/* Navigation & Control Buttons */
+.films-slider-nav,
+.films-ctrl-btns {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   white-space: nowrap;
 }
 
 .films-pause-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   background: transparent;
   border: 1px solid rgba(201, 162, 39, 0.35);
   color: var(--bd);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 10.5px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -6112,21 +6125,22 @@ body:not(.theme-dark) .films-slider-ctrl {
 }
 
 .films-auto-pulse {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #4CAF50;
-  box-shadow: 0 0 6px #4CAF50;
+  box-shadow: 0 0 5px #4CAF50;
 }
 
 .films-pause-btn.is-paused .films-auto-pulse {
   background: #E53935;
-  box-shadow: 0 0 6px #E53935;
+  box-shadow: 0 0 5px #E53935;
 }
 
-.films-nav-btn {
-  width: 38px;
-  height: 38px;
+.films-nav-btn,
+.films-ctrl-btn {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: transparent;
   border: 1px solid rgba(201, 162, 39, 0.35);
@@ -6136,15 +6150,18 @@ body:not(.theme-dark) .films-slider-ctrl {
   justify-content: center;
   cursor: pointer;
   transition: all 0.25s ease;
+  padding: 0;
 }
 
-.films-nav-btn svg {
-  width: 18px;
-  height: 18px;
+.films-nav-btn svg,
+.films-ctrl-btn svg {
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
-.films-nav-btn:hover {
+.films-nav-btn:hover,
+.films-ctrl-btn:hover {
   background: var(--g);
   color: #0B0A09;
   border-color: var(--g);
@@ -7874,7 +7891,6 @@ body.theme-dark .nkh {
 /* 3. Compact Page Spacing (no excessive empty space) */
 .nk-services-section,
 .nk-projects-section,
-.nk-films-section,
 .nk-about-section,
 .nk-cta-section,
 .nk-locations-seo,
@@ -7885,6 +7901,121 @@ body.theme-dark .nkh {
 .packages-pricing-section {
   padding-top: clamp(32px, 4vw, 52px) !important;
   padding-bottom: clamp(32px, 4vw, 52px) !important;
+}
+
+.nk-films-section {
+  padding-top: clamp(20px, 2.6vw, 32px) !important;
+  padding-bottom: clamp(20px, 2.6vw, 32px) !important;
+}
+
+#films .nk-films-header {
+  margin-bottom: 12px !important;
+}
+
+#films .camera-reel-outer {
+  padding: 22px 10px 22px !important;
+  max-width: 1180px !important;
+}
+
+#films .films-slider-track {
+  gap: 14px !important;
+  padding: 4px 2px 6px !important;
+}
+
+#films .film-slide {
+  flex: 0 0 clamp(230px, 22vw, 265px) !important;
+}
+
+#films .film-slide .nk-film-thumbwrap {
+  max-height: 135px !important;
+}
+
+#films .film-slide .nk-film-body {
+  padding: 9px 12px 11px !important;
+}
+
+#films .film-slide .nk-film-name {
+  font-size: 13.5px !important;
+  margin-bottom: 3px !important;
+}
+
+#films .film-slide .nk-film-desc {
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  margin-bottom: 6px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+}
+
+#films .films-slider-ctrl {
+  margin-top: 12px !important;
+  padding: 6px 16px !important;
+  max-width: 600px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body:not(.theme-dark) #films .films-slider-ctrl {
+  background: #FFFFFF !important;
+  border-color: rgba(201, 162, 39, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+body:not(.theme-dark) #films .films-slide-counter {
+  color: #111111 !important;
+}
+
+body:not(.theme-dark) #films .films-slide-current {
+  color: #000000 !important;
+}
+
+body:not(.theme-dark) #films .films-counter-sep,
+body:not(.theme-dark) #films .films-slide-total {
+  color: #666666 !important;
+}
+
+body:not(.theme-dark) #films .films-ctrl-btn {
+  color: #111111 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+body:not(.theme-dark) #films .films-ctrl-btn:hover {
+  background: var(--g) !important;
+  color: #000000 !important;
+  border-color: var(--g) !important;
+}
+
+.nk-films-channel {
+  margin-top: 12px !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.nk-films-channel a.btn-gold-solid {
+  padding: 6px 18px !important;
+  font-size: 11px !important;
+  border-radius: 20px !important;
+}
+
+@media (max-width: 768px) {
+  #films .film-slide {
+    flex: 0 0 clamp(205px, 68vw, 235px) !important;
+  }
+  #films .camera-reel-outer {
+    padding: 18px 6px 18px !important;
+  }
+  #films .films-slider-ctrl {
+    padding: 5px 12px !important;
+    gap: 8px !important;
+  }
+  #films .films-filters {
+    gap: 4px !important;
+  }
+  #films .films-filter-btn {
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
 }
 
 .nk-reviews-section {
@@ -7900,7 +8031,6 @@ body.theme-dark .nkh {
   margin-bottom: 8px !important;
 }
 
-.films-slider-ctrl,
 .services-slider-ctrl {
   margin-top: 16px !important;
 }
