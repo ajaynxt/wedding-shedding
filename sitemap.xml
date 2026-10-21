@@ -34,6 +34,14 @@
     </image:image>
   </url>
 
+  <!-- 4K Cinematic Wedding Films & YouTube Showcase -->
+  <url>
+    <loc>https://weddingshedding.in/films.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Luxury Weddings & Cinema -->
   <url>
     <loc>https://weddingshedding.in/weddings.html</loc>
