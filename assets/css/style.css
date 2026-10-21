@@ -2194,31 +2194,58 @@ body.theme-dark .awards-banner .award-text p {
 .nkx-feat__media {
   grid-column: 1 / span 7;
   position: relative;
-  margin: 0 0 36px;
+  margin: 12px 0 36px;
 }
 
 .nkx-feat__frame {
   position: absolute;
-  inset: 16px -16px -16px 16px;
-  border: 1px solid rgba(181, 138, 28, 0.45);
+  inset: -10px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 6px;
   pointer-events: none;
+  z-index: 1;
+}
+
+.nkx-feat__frame::before,
+.nkx-feat__frame::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--g);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.nkx-feat__frame::before {
+  top: -3px;
+  left: -3px;
+  border-width: 2px 0 0 2px;
+}
+
+.nkx-feat__frame::after {
+  bottom: -3px;
+  right: -3px;
+  border-width: 0 2px 2px 0;
 }
 
 .nkx-feat__main {
   position: relative;
   display: block;
   overflow: hidden;
-  aspect-ratio: 16/10;
-  background: #FFFFFF;
+  aspect-ratio: 3 / 2;
+  background: var(--bg-card);
   border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ln);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.12);
+  z-index: 2;
 }
 
 .nkx-feat__main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 30%;
   transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -2228,22 +2255,23 @@ body.theme-dark .awards-banner .award-text p {
 
 .nkx-feat__inset {
   position: absolute;
-  right: -6%;
-  bottom: -36px;
-  width: 32%;
+  right: -4%;
+  bottom: -22px;
+  width: 28%;
   aspect-ratio: 1;
-  border: 6px solid #FAF7F2;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border: 3.5px solid var(--bg-card);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
   overflow: hidden;
-  background: #FFFFFF;
+  background: var(--bg-card);
+  z-index: 3;
 }
 
 .nkx-feat__inset img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 25%;
 }
 
 .nkx-feat__cap {
@@ -2254,7 +2282,8 @@ body.theme-dark .awards-banner .award-text p {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--t3);
-  font-weight: 500;
+  font-weight: 600;
+  z-index: 2;
 }
 
 .nkx-feat__body {
@@ -4832,19 +4861,22 @@ html, body {
 
   .nkx-feat__media {
     grid-column: 1 / span 12;
-    margin: 0 0 48px 0;
+    margin: 8px 0 42px 0;
   }
   .nkx-feat__body {
     grid-column: 1 / span 12;
     max-width: 100%;
   }
   .nkx-feat__frame {
-    display: none !important;
+    display: block !important;
+    inset: -6px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
   }
   .nkx-feat__inset {
     right: 4px;
-    width: 32%;
-    bottom: -32px;
+    width: 30%;
+    bottom: -18px;
+    border-width: 3px;
   }
 
   .services-grid {
@@ -5024,25 +5056,27 @@ html, body {
 
   /* 5. Signature Showcase (.nkx-feat) */
   .nkx-feat {
-    padding: 50px 16px;
+    padding: 36px 16px;
   }
   .nkx-feat__media {
-    margin: 0 0 56px 0;
+    margin: 6px 0 38px 0;
   }
   .nkx-feat__frame {
-    display: none !important;
+    display: block !important;
+    inset: -6px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
   }
   .nkx-feat__inset {
-    width: 38%;
-    right: 4px;
-    bottom: -24px;
-    border-width: 4px;
+    width: 32%;
+    right: 2px;
+    bottom: -16px;
+    border-width: 3px;
   }
   .nkx-feat__cap {
-    bottom: -48px;
-    max-width: 58%;
+    bottom: -32px;
+    max-width: 65%;
     font-size: 9.5px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .nkx-feat__title {
     font-size: 32px;
@@ -8109,4 +8143,457 @@ body:not(.theme-dark) #films .films-ctrl-btn:hover {
 .nkf .nkf__slide img {
   object-position: center center !important;
 }
+
+/* ============================================================
+   5. AUTHORITATIVE COMPACT & FRAMING PERFECTION SUITE
+   ============================================================ */
+
+/* 5.1 Global Visibility Guard: Ensure text and cards are never stuck at opacity 0 */
+.nkx-rv {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 5.2 Luxury Museum Framing: 01 Discover Wedding Photography (.nkx-feat) */
+.nkx-feat {
+  padding: clamp(24px, 3.2vw, 42px) clamp(16px, 4vw, 50px) !important;
+}
+
+.nkx-feat__wrap {
+  column-gap: clamp(24px, 3.5vw, 48px) !important;
+}
+
+.nkx-feat__media {
+  position: relative !important;
+  margin: 10px 0 32px 0 !important;
+}
+
+.nkx-feat__frame {
+  display: none !important;
+}
+
+.nkx-feat__main {
+  position: relative !important;
+  display: block !important;
+  aspect-ratio: 3 / 2 !important;
+  background: #0B0A09 !important;
+  /* Solid Luxury Black Gallery Picture Frame */
+  border: 10px solid #0B0A09 !important;
+  outline: 1px solid rgba(212, 175, 55, 0.5) !important;
+  outline-offset: -2px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28), 0 4px 14px rgba(0, 0, 0, 0.16) !important;
+  overflow: hidden !important;
+  z-index: 2 !important;
+}
+
+.nkx-feat__main img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  display: block !important;
+  border-radius: 2px !important;
+}
+
+.nkx-feat__inset {
+  position: absolute !important;
+  right: -3% !important;
+  bottom: -18px !important;
+  width: 28% !important;
+  aspect-ratio: 1 !important;
+  background: #0B0A09 !important;
+  /* Matching Solid Black Frame with Gold Bevel */
+  border: 4.5px solid #0B0A09 !important;
+  outline: 1px solid rgba(212, 175, 55, 0.5) !important;
+  outline-offset: -2px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38) !important;
+  z-index: 3 !important;
+  overflow: hidden !important;
+}
+
+.nkx-feat__inset img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+  border-radius: 2px !important;
+}
+
+.nkx-feat__cap {
+  position: relative !important;
+  margin-top: 16px !important;
+  font-size: 9.5px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: var(--t3) !important;
+  font-weight: 600 !important;
+  display: block !important;
+  z-index: 2 !important;
+}
+
+.nkx-feat__index {
+  margin-bottom: 8px !important;
+}
+
+.nkx-feat__title {
+  font-size: clamp(26px, 3vw, 38px) !important;
+  line-height: 1.12 !important;
+  color: var(--iv) !important;
+  margin-bottom: 10px !important;
+}
+
+.nkx-feat__lead {
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: var(--bd) !important;
+  margin-bottom: 18px !important;
+}
+
+@media (max-width: 1024px) {
+  .nkx-feat__media {
+    margin: 8px 0 24px 0 !important;
+  }
+  .nkx-feat__frame {
+    display: none !important;
+  }
+  .nkx-feat__main {
+    border-width: 7px !important;
+  }
+  .nkx-feat__inset {
+    right: 2px !important;
+    width: 30% !important;
+    bottom: -12px !important;
+    border-width: 3.5px !important;
+  }
+  .nkx-feat__cap {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin-top: 12px !important;
+    max-width: 64% !important;
+    font-size: 8.5px !important;
+    line-height: 1.35 !important;
+    display: block !important;
+  }
+}
+
+/* 5.3 Curated Packages Section (#packages) Compact Overrides */
+.nk-packages-section {
+  padding: clamp(22px, 2.8vw, 36px) 16px !important;
+}
+
+.nk-packages-section .section-header {
+  margin-bottom: 16px !important;
+}
+
+.nk-packages-section .section-header p:first-child {
+  font-size: 10.5px !important;
+  letter-spacing: 2.2px !important;
+  margin-bottom: 4px !important;
+}
+
+.nk-packages-section .section-heading-title {
+  font-size: clamp(20px, 2.4vw, 26px) !important;
+  margin-bottom: 4px !important;
+}
+
+.nk-packages-section .section-header p:last-child {
+  font-size: 12.5px !important;
+  margin-top: 6px !important;
+  line-height: 1.4 !important;
+}
+
+.packages-grid {
+  gap: 12px !important;
+  max-width: 1160px !important;
+}
+
+.package-card {
+  padding: 16px 14px 14px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
+.package-card.is-featured {
+  border-width: 1.5px !important;
+}
+
+.package-badge {
+  top: -9px !important;
+  padding: 2px 8px !important;
+  font-size: 8px !important;
+  letter-spacing: 1px !important;
+}
+
+.package-tier {
+  font-size: 9px !important;
+  letter-spacing: 1.6px !important;
+  margin-bottom: 3px !important;
+}
+
+.package-title {
+  font-size: 17px !important;
+  margin-bottom: 4px !important;
+  line-height: 1.15 !important;
+}
+
+.package-desc {
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.package-features {
+  gap: 5px !important;
+  margin-bottom: 12px !important;
+}
+
+.package-features li {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+  gap: 6px !important;
+}
+
+.package-features li svg {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.package-cta .btn-inquire {
+  padding: 7px 10px !important;
+  font-size: 9.5px !important;
+  letter-spacing: 1px !important;
+  border-radius: 4px !important;
+}
+
+/* 5.4 Regional & Destination Coverage (#locations) Compact Overrides */
+.nk-locations-seo {
+  padding: clamp(18px, 2.4vw, 28px) 16px !important;
+  background: var(--bg) !important;
+  border-top: 1px solid var(--ln) !important;
+}
+
+.nk-locations-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nk-locations-eyebrow {
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  color: var(--g) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+  font-weight: 600 !important;
+}
+
+.nk-locations-heading {
+  font-size: clamp(16px, 1.8vw, 20px) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--iv) !important;
+  margin-bottom: 10px !important;
+}
+
+.nk-locations-badges {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  max-width: 920px !important;
+  margin: 0 auto 12px !important;
+}
+
+.nk-loc-badge {
+  background: var(--bg-alt) !important;
+  border: 1px solid var(--ln) !important;
+  padding: 3px 9px !important;
+  border-radius: 14px !important;
+  font-size: 11px !important;
+  color: var(--iv) !important;
+  letter-spacing: 0.2px !important;
+}
+
+.nk-locations-actions {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.nk-locations-actions a.nk-btn-editorial {
+  padding: 6px 14px !important;
+  font-size: 10px !important;
+  letter-spacing: 1.2px !important;
+}
+
+/* 5.5 Verified Client Reviews (#reviews) Compact Overrides */
+.nk-reviews-section {
+  padding-top: clamp(18px, 2.2vw, 26px) !important;
+  padding-bottom: clamp(18px, 2.2vw, 26px) !important;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.nk-reviews-header {
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+
+.nk-reviews-badges {
+  gap: 6px !important;
+  margin-bottom: 6px !important;
+  justify-content: center;
+}
+
+.trust-badge-pill {
+  padding: 3px 8px !important;
+  font-size: 10px !important;
+  border-radius: 16px !important;
+}
+
+.nk-reviews-header h2 {
+  font-size: clamp(17px, 2vw, 22px) !important;
+  margin-bottom: 3px !important;
+}
+
+.nk-reviews-header p {
+  font-size: 11.5px !important;
+  margin-top: 3px !important;
+  line-height: 1.35 !important;
+}
+
+.nk-reviews-grid {
+  gap: 10px !important;
+}
+
+.nk-review-card {
+  padding: 12px 14px 10px !important;
+  min-width: 235px !important;
+  max-width: 275px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nk-review-card .card-stars {
+  font-size: 10.5px !important;
+  margin-bottom: 6px !important;
+}
+
+.nk-review-card .card-quote {
+  font-size: 11px !important;
+  line-height: 1.38 !important;
+  -webkit-line-clamp: 3 !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin-bottom: 8px !important;
+}
+
+.nk-review-card .card-author {
+  margin-top: 6px !important;
+  padding-top: 6px !important;
+}
+
+.nk-review-card .author-name {
+  font-size: 12px !important;
+}
+
+.nk-review-card .verified-pill {
+  font-size: 8px !important;
+  padding: 1px 5px !important;
+}
+
+#reviewsSliderCtrl {
+  margin-top: 8px !important;
+  padding: 4px 10px !important;
+}
+
+.nk-reviews-cta {
+  margin-top: 10px !important;
+  gap: 8px !important;
+}
+
+.nk-reviews-cta a {
+  font-size: 10px !important;
+  padding: 5px 12px !important;
+}
+
+/* 5.6 Our Services (#services) Compact Overrides */
+.nk-services-section {
+  padding: clamp(20px, 2.4vw, 32px) 16px !important;
+}
+
+.nk-services-section .section-header {
+  margin-bottom: 12px !important;
+}
+
+.nk-services-section .section-header h2 {
+  font-size: 13.5px !important;
+  letter-spacing: 2.8px !important;
+  margin-bottom: 6px !important;
+}
+
+.nk-services-section .section-header p {
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
+.camera-reel-outer {
+  padding: 20px 8px 20px !important;
+}
+
+.camera-reel-edge {
+  font-size: 8px !important;
+  letter-spacing: 1.5px !important;
+}
+
+.camera-reel-edge.top {
+  top: 4px !important;
+}
+
+.camera-reel-edge.bottom {
+  bottom: 4px !important;
+}
+
+.camera-reel-card {
+  padding: 10px 10px 12px 10px !important;
+  min-width: 190px !important;
+  max-width: 215px !important;
+}
+
+.camera-reel-imgwrap {
+  aspect-ratio: 16 / 10.5 !important;
+}
+
+.camera-reel-info {
+  margin-top: 8px !important;
+}
+
+.camera-reel-title {
+  font-size: 11px !important;
+  margin: 0 0 3px 0 !important;
+  letter-spacing: 0.8px !important;
+}
+
+.camera-reel-sub {
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+  -webkit-line-clamp: 2 !important;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.camera-reel-link {
+  font-size: 9px !important;
+  letter-spacing: 1.2px !important;
+  margin-top: 8px !important;
+}
+
 
