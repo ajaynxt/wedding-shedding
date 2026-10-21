@@ -137,21 +137,10 @@ function initHeader() {
       header?.classList.toggle('is-scrolled', nextSolid);
     }
 
-    // Auto-scroll / Auto-hide on scroll down, reveal on scroll up
-    const isDrawerOpen = drawer?.classList.contains('is-open');
-    if (!isDrawerOpen) {
-      const diff = y - lastScrollY;
-      if (y > 70 && diff > 6 && !isHidden) {
-        // Scrolling down: hide header
-        isHidden = true;
-        header?.classList.add('is-hidden');
-      } else if ((diff < -6 || y <= 40) && isHidden) {
-        // Scrolling up or near top: reveal header
-        isHidden = false;
-        header?.classList.remove('is-hidden');
-      }
+    // Header stays permanently locked at the top across all pages and all scroll positions
+    if (header?.classList.contains('is-hidden')) {
+      header.classList.remove('is-hidden');
     }
-    lastScrollY = y;
   }
 
   let ticking = false;

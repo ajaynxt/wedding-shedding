@@ -884,11 +884,11 @@ button {
    HEADER & NAVIGATION (NIKHIL KAPUR DUAL LUXURY BAR)
    ============================================================ */
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--ln);
   -webkit-backdrop-filter: saturate(150%) blur(16px);
@@ -897,14 +897,14 @@ button {
   display: flex;
   align-items: center;
   padding: 0 clamp(16px, 2.5vw, 36px);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
-  will-change: transform;
+  transition: background-color 0.25s ease, border-color 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
+  transform: none !important;
 }
 
-/* Auto-Scroll / Auto-Hide Header on Scroll Down */
+/* Header stays permanently locked at the top — never hides on scroll down */
 .site-header.is-hidden {
-  transform: translateY(-100%);
-  pointer-events: none;
+  transform: none !important;
+  pointer-events: auto !important;
 }
 
 .site-header.is-solid,
