@@ -4531,11 +4531,42 @@ body:not(.theme-dark) .ajaynxt-logo {
 .nk-proj-modal__panel.is-video-mode {
   max-width: 980px;
   max-height: 92vh;
+  background: #0E0D0B !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15) !important;
+}
+
+.nk-proj-modal__panel.is-video-mode .nk-proj-modal__bar {
+  background: #141311 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.nk-proj-modal__panel.is-video-mode .nk-proj-modal__title {
+  color: #EDE8DE !important;
+}
+
+.nk-proj-modal__panel.is-video-mode .nk-proj-modal__count {
+  color: #D4AF37 !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
+}
+
+.nk-proj-modal__panel.is-video-mode .nk-proj-modal__close {
+  background: #1E1C19 !important;
+  color: #EDE8DE !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.nk-proj-modal__panel.is-video-mode .nk-proj-modal__close:hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  color: #D4AF37 !important;
+  border-color: #D4AF37 !important;
 }
 
 .nk-proj-modal__panel.is-video-mode .nk-proj-modal__grid {
   padding: 24px;
   display: block;
+  background: #0E0D0B !important;
 }
 
 @keyframes modalFadeIn {
@@ -5671,15 +5702,15 @@ body.theme-dark .subpage-pill:hover {
   display: none;
 }
 
-/* Film Slide Card - Compact */
+/* Film Slide Card - Compact 35mm Cinema Cell */
 .film-slide {
-  flex: 0 0 clamp(270px, 26vw, 330px);
+  flex: 0 0 clamp(270px, 26vw, 320px);
   scroll-snap-align: start;
-  background: var(--bg-alt);
-  border: 1px solid var(--ln);
-  border-radius: 10px;
+  background: #161412 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -5691,8 +5722,8 @@ body.theme-dark .subpage-pill:hover {
 
 .film-slide:hover {
   transform: translateY(-5px);
-  border-color: var(--g);
-  box-shadow: 0 16px 36px rgba(181, 138, 28, 0.2);
+  border-color: rgba(212, 175, 55, 0.55) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.25);
 }
 
 /* Thumbnail Wrap */
@@ -5808,6 +5839,7 @@ body.theme-dark .subpage-pill:hover {
 
 /* Card Body */
 .film-slide .nk-film-body {
+  background: #161412 !important;
   padding: 14px 16px 16px;
   display: flex;
   flex-direction: column;
@@ -5818,7 +5850,7 @@ body.theme-dark .subpage-pill:hover {
   font-size: 10px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--g);
+  color: #D4AF37 !important;
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -5826,7 +5858,7 @@ body.theme-dark .subpage-pill:hover {
 .film-slide .nk-film-name {
   font-family: var(--font-display);
   font-size: 15.5px;
-  color: var(--iv);
+  color: #EDE8DE !important;
   margin-bottom: 6px;
   font-weight: 500;
   line-height: 1.35;
@@ -5834,7 +5866,7 @@ body.theme-dark .subpage-pill:hover {
 
 .film-slide .nk-film-desc {
   font-size: 12px;
-  color: var(--bd);
+  color: #9E9689 !important;
   line-height: 1.45;
   margin-bottom: 12px;
   flex: 1;
@@ -5847,25 +5879,26 @@ body.theme-dark .subpage-pill:hover {
   justify-content: space-between;
   gap: 10px;
   padding-top: 10px;
-  border-top: 1px solid var(--ln);
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 .btn-film-play {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--g);
-  color: #0B0A09;
+  background: linear-gradient(135deg, #F8E192 0%, #D4AF37 50%, #B58A1C 100%) !important;
+  color: #0B0A09 !important;
   border: none;
   border-radius: 20px;
-  padding: 8px 16px;
+  padding: 7px 15px;
   font-family: var(--font-body), Inter, sans-serif;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
 }
 
 .btn-film-play svg {
@@ -5875,16 +5908,15 @@ body.theme-dark .subpage-pill:hover {
 }
 
 .btn-film-play:hover {
-  background: var(--gh);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(181, 138, 28, 0.35);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
 }
 
 .film-actions .nk-film-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--bd);
+  color: #D4AF37 !important;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -5895,18 +5927,19 @@ body.theme-dark .subpage-pill:hover {
 .film-actions .nk-film-link svg {
   width: 12px;
   height: 8px;
-  stroke: var(--g);
+  stroke: #D4AF37 !important;
   fill: none;
   stroke-width: 2;
   transition: transform 0.25s ease;
 }
 
 .film-actions .nk-film-link:hover {
-  color: var(--g);
+  color: #F8E192 !important;
 }
 
 .film-actions .nk-film-link:hover svg {
   transform: translateX(3px);
+  stroke: #F8E192 !important;
 }
 
 /* ============================================================
@@ -7365,10 +7398,10 @@ body:not(.theme-dark) .nk-signature-author {
 .camera-reel-outer {
   position: relative;
   background: #0C0B0A !important;
-  border-radius: 4px;
-  border: 1px solid rgba(201, 162, 39, 0.35);
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.95), 0 16px 40px rgba(0, 0, 0, 0.45);
-  padding: 26px 14px 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.95), 0 16px 45px rgba(0, 0, 0, 0.35);
+  padding: 38px 16px 40px;
   margin: 0 auto;
   max-width: 1240px;
   overflow: hidden;
@@ -7377,7 +7410,7 @@ body:not(.theme-dark) .nk-signature-author {
 
 body:not(.theme-dark) .camera-reel-outer {
   background: #0C0B0A !important;
-  border-color: rgba(201, 162, 39, 0.35);
+  border-color: rgba(212, 175, 55, 0.35);
 }
 
 /* 35mm Perforations / Sprocket Holes (Top & Bottom) */
@@ -7387,15 +7420,15 @@ body:not(.theme-dark) .camera-reel-outer {
   position: absolute;
   left: 0;
   right: 0;
-  height: 10px;
+  height: 11px;
   background: repeating-linear-gradient(90deg, #000000 0 13px, #201C18 13px 26px);
   border-radius: 1px;
   pointer-events: none;
   z-index: 3;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.95);
 }
-.camera-reel-outer::before { top: 9px; }
-.camera-reel-outer::after { bottom: 9px; }
+.camera-reel-outer::before { top: 8px; }
+.camera-reel-outer::after { bottom: 8px; }
 
 /* Vintage Film Metadata Stamp Marks */
 .camera-reel-edge {
@@ -7413,8 +7446,8 @@ body:not(.theme-dark) .camera-reel-outer {
   pointer-events: none;
   z-index: 3;
 }
-.camera-reel-edge.top { top: 24px; }
-.camera-reel-edge.bottom { bottom: 24px; }
+.camera-reel-edge.top { top: 22px; }
+.camera-reel-edge.bottom { bottom: 22px; }
 
 /* The Film Track */
 .camera-reel-track {
@@ -7607,14 +7640,21 @@ body:not(.theme-dark) .camera-reel-outer {
     padding: 12px 12px 16px 12px !important;
   }
   .camera-reel-outer {
-    padding: 30px 10px 32px !important;
+    padding: 34px 10px 36px !important;
   }
   .camera-reel-edge {
     font-size: 7.5px !important;
     letter-spacing: 1.5px !important;
     left: 12px !important;
     right: 12px !important;
+    white-space: nowrap !important;
   }
+  .camera-reel-edge span:nth-child(2),
+  .camera-reel-edge span:nth-child(3) {
+    display: none !important;
+  }
+  .camera-reel-edge.top { top: 18px !important; }
+  .camera-reel-edge.bottom { bottom: 18px !important; }
 }
 
 

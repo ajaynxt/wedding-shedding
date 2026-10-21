@@ -878,12 +878,12 @@ function initProjectsGallery() {
           <!-- Shield to block Google Drive top header pop-out button so user plays inline only -->
           <div class="gdrive-shield-top" style="position:absolute;top:0;left:0;right:0;height:56px;z-index:15;pointer-events:all;background:transparent;" title=""></div>
         </div>
-        <div style="padding:14px 18px;display:flex;align-items:center;justify-content:space-between;background:var(--bg-alt);flex-wrap:wrap;gap:10px;border-top:1px solid var(--ln);">
-          <span style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--g);letter-spacing:1px;display:inline-flex;align-items:center;gap:6px;">
+        <div style="padding:14px 18px;display:flex;align-items:center;justify-content:space-between;background:#141311;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(255,255,255,0.08);">
+          <span style="font-family:var(--font-display);font-size:12px;font-weight:700;color:#D4AF37;letter-spacing:1px;display:inline-flex;align-items:center;gap:6px;">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
             ${proj.videoBadge || '4K CINEMA PRODUCTION'}
           </span>
-          <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20${encodeURIComponent(cleanTitle)}." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g);font-weight:700;text-decoration:none;">
+          <a href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20am%20inquiring%20about%20${encodeURIComponent(cleanTitle)}." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#D4AF37;font-weight:700;text-decoration:none;">
             Book on WhatsApp &rarr;
           </a>
         </div>
