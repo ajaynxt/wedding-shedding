@@ -6312,9 +6312,9 @@ body:not(.theme-dark) .nkf {
   --ln: rgba(0, 0, 0, 0.08);
   background-color: #FAF8F5 !important;
   background-image:
-    radial-gradient(circle, rgba(181, 138, 28, 0.16) 1.2px, transparent 1.2px),
-    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(181, 138, 28, .05), transparent 70%) !important;
+    radial-gradient(circle, rgba(18, 16, 14, 0.36) 1.4px, transparent 1.4px),
+    radial-gradient(circle, rgba(18, 16, 14, 0.22) 1.1px, transparent 1.1px),
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(212, 175, 55, .04), transparent 70%) !important;
   background-size: 16px 16px, 16px 16px, 100% 100% !important;
   background-position: 0 0, 8px 8px, 0 0 !important;
   color: #4A443C !important;
