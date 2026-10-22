@@ -3829,8 +3829,8 @@ body.dark-mode .portfolio-nav-playpause {
   transform-origin: center top !important;
 }
 .nkf__slide:nth-child(10) img {
-  object-position: center 35% !important;
-  transform: scale(1.4) translate(-16%, 8%) !important;
+  object-position: center 46% !important;
+  transform: scale(1.36) translate(-11.5%, -7%) !important;
   transform-origin: center center !important;
 }
 .nkf__slide:nth-child(11) img {
