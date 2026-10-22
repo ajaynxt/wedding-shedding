@@ -10,6 +10,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initIntroSplash();
   initHeader();
   initHeroCarousel();
   initStatsCounter();
@@ -30,6 +31,82 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilmstripDropdown();
   initAboutPortrait();
 });
+
+/* ============================================================
+   0. WELCOME INTRO POPUP (WHITE BG · LOGO · GOLDEN TYPEWRITER · SONU KUMAR)
+   ============================================================ */
+function initIntroSplash() {
+  const curtain = document.getElementById('wsIntroCurtain');
+  if (!curtain) return;
+
+  const textEl = document.getElementById('wsIntroText');
+  const caretEl = document.getElementById('wsIntroCaret');
+  const ruleEl = document.getElementById('wsIntroRule');
+  const founderEl = document.getElementById('wsIntroFounder');
+  const enterBtn = document.getElementById('wsIntroEnterBtn');
+
+  const fullText = 'WEDDING SHEDDING';
+  let charIdx = 0;
+  let isDismissed = false;
+
+  function dismissCurtain() {
+    if (isDismissed) return;
+    isDismissed = true;
+    curtain.classList.add('is-dismissed');
+    setTimeout(() => {
+      curtain.style.display = 'none';
+      if (curtain.parentNode) {
+        curtain.parentNode.removeChild(curtain);
+      }
+    }, 850);
+  }
+
+  // Click on background dismisses immediately
+  curtain.addEventListener('click', () => {
+    dismissCurtain();
+  });
+
+  if (enterBtn) {
+    enterBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismissCurtain();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+      dismissCurtain();
+    }
+  });
+
+  // Start typewriter after initial logo pop
+  setTimeout(() => {
+    if (isDismissed) return;
+
+    function typeChar() {
+      if (isDismissed) return;
+      if (charIdx < fullText.length) {
+        textEl.textContent += fullText.charAt(charIdx);
+        charIdx++;
+        const nextChar = fullText.charAt(charIdx - 1);
+        const delay = nextChar === ' ' ? 110 : (55 + Math.random() * 25);
+        setTimeout(typeChar, delay);
+      } else {
+        // Typing completed: reveal divider & Sonu Kumar
+        if (caretEl) caretEl.classList.add('is-hidden');
+        if (ruleEl) ruleEl.classList.add('is-active');
+        if (founderEl) founderEl.classList.add('is-active');
+
+        // Reading pause then graceful auto-curtain lift
+        setTimeout(() => {
+          dismissCurtain();
+        }, 1500);
+      }
+    }
+
+    typeChar();
+  }, 420);
+}
 
 /* ============================================================
    0. ABOUT PORTRAIT INTERACTION (CLICK/TAP TO REVEAL COLOR)
