@@ -3782,12 +3782,65 @@ body.dark-mode .portfolio-nav-playpause {
   height: 100% !important;
   max-width: none !important;
   object-fit: cover !important;
-  object-position: center top !important;
-  transform-origin: center top !important;
+  object-position: center center;
+  transform-origin: center center;
   transform: scale(1.01);
   transition: transform 4.2s linear;
 }
 .nkf__slide.is-on img { transform: scale(1.03); }
+
+/* Camera Viewfinder Precision Face & Subject Centering (.nkf) */
+.nkf__slide:nth-child(1) img {
+  object-position: center top !important;
+  transform: translateY(6%) scale(1.12) !important;
+  transform-origin: center top !important;
+}
+.nkf__slide:nth-child(2) img {
+  object-position: center 36% !important;
+  transform-origin: center 36% !important;
+}
+.nkf__slide:nth-child(3) img {
+  object-position: center 36% !important;
+  transform-origin: center 36% !important;
+}
+.nkf__slide:nth-child(4) img {
+  object-position: center 25% !important;
+  transform-origin: center 25% !important;
+}
+.nkf__slide:nth-child(5) img {
+  object-position: center 22% !important;
+  transform-origin: center 22% !important;
+}
+.nkf__slide:nth-child(6) img {
+  object-position: center 32% !important;
+  transform-origin: center 32% !important;
+}
+.nkf__slide:nth-child(7) img {
+  object-position: center 35% !important;
+  transform-origin: center 35% !important;
+}
+.nkf__slide:nth-child(8) img {
+  object-position: center 25% !important;
+  transform-origin: center 25% !important;
+}
+.nkf__slide:nth-child(9) img {
+  object-position: center top !important;
+  transform: translateY(6%) scale(1.12) !important;
+  transform-origin: center top !important;
+}
+.nkf__slide:nth-child(10) img {
+  object-position: center 35% !important;
+  transform: scale(1.4) translate(-16%, 8%) !important;
+  transform-origin: center center !important;
+}
+.nkf__slide:nth-child(11) img {
+  object-position: center 80% !important;
+  transform-origin: center 80% !important;
+}
+.nkf__slide:nth-child(12) img {
+  object-position: center 31% !important;
+  transform-origin: center 31% !important;
+}
 
 .nkf__glass::after {
   content: "";
