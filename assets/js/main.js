@@ -331,6 +331,37 @@ function initHeroCarousel() {
   root.style.setProperty('--dur', DUR + 'ms');
   const ACTIVE = 4; // Zero-based: 5th slot is the open card
 
+  // Randomize original 12 slides so a different photo appears in front on every visit/refresh
+  const origItems = Array.prototype.slice.call(list.children);
+  for (let idx = origItems.length - 1; idx > 0; idx--) {
+    const r = Math.floor(Math.random() * (idx + 1));
+    const tmp = origItems[idx];
+    origItems[idx] = origItems[r];
+    origItems[r] = tmp;
+  }
+  origItems.forEach(function(li) {
+    list.appendChild(li);
+  });
+
+  // Renumber data-i and labels sequentially (01..12) starting from ACTIVE slot (slot 4)
+  const total = origItems.length;
+  for (let step = 0; step < total; step++) {
+    const itemIdx = (ACTIVE + step) % total;
+    const item = origItems[itemIdx];
+    const num = step + 1;
+    const numStr = ('0' + num).slice(-2);
+    item.dataset.i = num;
+    const b = item.querySelector('.nkh__label b');
+    if (b) b.textContent = numStr;
+    const kicker = item.querySelector('.nkh__kicker');
+    if (kicker) {
+      const parts = kicker.innerHTML.split(/&middot;|·/);
+      if (parts.length > 1) {
+        kicker.innerHTML = numStr + ' &middot; ' + parts.slice(1).join('&middot;').trim();
+      }
+    }
+  }
+
   // Second copy of the ring so columns can slide in from the hidden edges
   Array.prototype.slice.call(list.children).forEach(function(li) {
     const c = li.cloneNode(true);
@@ -1634,8 +1665,8 @@ function initCameraFooter() {
   }
 
   document.addEventListener('visibilitychange', restart);
-  if (reduce) f.classList.add('is-paused');
-  show(0);
+  const startIdx = Math.floor(Math.random() * n);
+  show(startIdx);
 }
 
 /* ============================================================
