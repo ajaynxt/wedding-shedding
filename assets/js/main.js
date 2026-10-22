@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================================ */
 function initIntroSplash() {
   const curtain = document.getElementById('wsIntroCurtain');
-  if (!curtain) return;
+  if (!curtain || curtain.dataset.wsIntroInit === 'true') return;
+  curtain.dataset.wsIntroInit = 'true';
 
   const textEl = document.getElementById('wsIntroText');
   const caretEl = document.getElementById('wsIntroCaret');

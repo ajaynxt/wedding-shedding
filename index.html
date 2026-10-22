@@ -52,7 +52,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 
   <!-- High-Priority Preloads for Instant Hero Carousel Rendering -->
   <link rel="preload" as="image" type="image/webp" href="assets/images/ws_hero_poolside_couple.webp" fetchpriority="high">
@@ -329,6 +329,194 @@
     ]
   }
   </script>
+
+  <!-- Critical Inline Styles for Studio Intro Curtain (Guarantees zero FOUC & beats browser caching) -->
+  <style>
+    .ws-intro-curtain {
+      position: fixed;
+      inset: 0;
+      z-index: 9999999;
+      background: #FFFFFF;
+      background: radial-gradient(circle at 50% 50%, #FFFFFF 60%, #FAF7F2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+      cursor: pointer;
+      -webkit-font-smoothing: antialiased;
+    }
+    .ws-intro-curtain.is-dismissed {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(-16px) scale(1.02) !important;
+    }
+    .ws-intro-card {
+      max-width: 1400px;
+      width: 100%;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+    }
+    .ws-intro-logo-box {
+      width: clamp(84px, 9.5vw, 130px);
+      height: clamp(84px, 9.5vw, 130px);
+      margin-bottom: clamp(24px, 3.5vh, 40px);
+      border-radius: 50%;
+      background: #FFFFFF;
+      padding: 8px;
+      box-shadow: 0 10px 30px rgba(201, 162, 39, 0.16), 0 2px 10px rgba(0, 0, 0, 0.04);
+      border: 1.5px solid #D4AF37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: wsIntroLogoPop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .ws-intro-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    @keyframes wsIntroLogoPop {
+      0% { opacity: 0; transform: scale(0.7) translateY(12px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .ws-intro-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 6.8vw, 86px);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #C9A227;
+      background: linear-gradient(135deg, #B58A1C 0%, #D4AF37 35%, #F0D57E 65%, #996F10 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.15;
+      margin: 0;
+      padding: 0 6px;
+      white-space: nowrap;
+      filter: drop-shadow(0 2px 14px rgba(201, 162, 39, 0.18));
+    }
+    .ws-intro-text {
+      display: inline-block;
+    }
+    .ws-intro-caret {
+      display: inline-block;
+      margin-left: 4px;
+      font-family: sans-serif;
+      font-weight: 200;
+      font-size: 0.9em;
+      color: #C9A227;
+      -webkit-text-fill-color: #C9A227;
+      animation: wsCaretBlink 0.75s infinite;
+    }
+    .ws-intro-caret.is-hidden {
+      display: none !important;
+    }
+    @keyframes wsCaretBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .ws-intro-rule {
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #C9A227, transparent);
+      margin: clamp(18px, 2.8vh, 30px) auto clamp(16px, 2.4vh, 24px);
+      transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ws-intro-rule.is-active {
+      width: clamp(160px, 26vw, 360px);
+    }
+    .ws-intro-founder {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .ws-intro-founder.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ws-intro-founder-name {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(22px, 3.2vw, 38px);
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #1A1715;
+      margin-bottom: 6px;
+    }
+    .ws-intro-founder-tag {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(11px, 1.25vw, 14.5px);
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #7A7267;
+    }
+    .ws-intro-enter-btn {
+      margin-top: clamp(28px, 3.8vh, 44px);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 26px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7A7267;
+      background: #FFFFFF;
+      border: 1px solid rgba(138, 129, 119, 0.35);
+      border-radius: 28px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      min-height: 40px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+    .ws-intro-enter-btn:hover {
+      color: #C9A227;
+      border-color: #C9A227;
+      background: rgba(201, 162, 39, 0.06);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(201, 162, 39, 0.2);
+    }
+    @media (max-width: 768px) {
+      .ws-intro-logo-box {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+      }
+      .ws-intro-brand {
+        font-size: clamp(32px, 8.8vw, 48px);
+        white-space: normal;
+        line-height: 1.15;
+      }
+      .ws-intro-rule.is-active {
+        width: 140px;
+      }
+      .ws-intro-founder-name {
+        font-size: 24px;
+        letter-spacing: 0.2em;
+      }
+      .ws-intro-founder-tag {
+        font-size: 11px;
+        letter-spacing: 0.24em;
+      }
+      .ws-intro-enter-btn {
+        margin-top: 26px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -363,6 +551,88 @@
       </button>
     </div>
   </div>
+
+  <!-- Inline Controller for Intro Splash: Executes 0ms Immediately -->
+  <script>
+  (function() {
+    function launchIntro() {
+      var curtain = document.getElementById('wsIntroCurtain');
+      if (!curtain || curtain.dataset.wsIntroInit === 'true') return;
+      curtain.dataset.wsIntroInit = 'true';
+
+      var textEl = document.getElementById('wsIntroText');
+      var caretEl = document.getElementById('wsIntroCaret');
+      var ruleEl = document.getElementById('wsIntroRule');
+      var founderEl = document.getElementById('wsIntroFounder');
+      var enterBtn = document.getElementById('wsIntroEnterBtn');
+
+      var fullText = 'WEDDING SHEDDING';
+      var charIdx = 0;
+      var isDismissed = false;
+
+      function dismissCurtain() {
+        if (isDismissed) return;
+        isDismissed = true;
+        curtain.classList.add('is-dismissed');
+        setTimeout(function() {
+          curtain.style.display = 'none';
+          if (curtain.parentNode) {
+            curtain.parentNode.removeChild(curtain);
+          }
+        }, 850);
+      }
+
+      curtain.addEventListener('click', dismissCurtain);
+
+      if (enterBtn) {
+        enterBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dismissCurtain();
+        });
+      }
+
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+          dismissCurtain();
+        }
+      });
+
+      // Start typewriter after logo scale pop
+      setTimeout(function() {
+        if (isDismissed) return;
+
+        function typeChar() {
+          if (isDismissed) return;
+          if (charIdx < fullText.length) {
+            textEl.textContent += fullText.charAt(charIdx);
+            charIdx++;
+            var nextChar = fullText.charAt(charIdx - 1);
+            var delay = nextChar === ' ' ? 110 : (55 + Math.random() * 25);
+            setTimeout(typeChar, delay);
+          } else {
+            // Finished typing
+            if (caretEl) caretEl.classList.add('is-hidden');
+            if (ruleEl) ruleEl.classList.add('is-active');
+            if (founderEl) founderEl.classList.add('is-active');
+
+            // 1.5s reading pause before auto open
+            setTimeout(function() {
+              dismissCurtain();
+            }, 1500);
+          }
+        }
+
+        typeChar();
+      }, 420);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', launchIntro);
+    } else {
+      launchIntro();
+    }
+  })();
+  </script>
 
   <!-- Wedding Shedding Magnetic Cursor -->
   <div class="nk-cursor-dot" id="nkCursorDot" aria-hidden="true"></div>
@@ -2797,6 +3067,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
