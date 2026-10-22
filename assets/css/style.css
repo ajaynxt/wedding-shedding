@@ -8110,11 +8110,126 @@ a, button, input[type="submit"], input[type="button"], [role="button"], select,
   cursor: pointer !important;
 }
 
-/* 2. Hero Carousel White Background with Sleek Black Photo Frames */
-.nkh,
-body.theme-dark .nkh {
+/* ============================================================
+   2. HERO CAROUSEL: DUAL THEME LUXURY PRESENTATION (LIGHT & DARK)
+   ============================================================ */
+
+/* LIGHT MODE (WHITE THEME) */
+body:not(.theme-dark) .nkh {
   background: #FFFFFF !important;
   border-bottom: 1px solid #EBE6DC !important;
+}
+
+body:not(.theme-dark) .nkh__header {
+  background: #FAF8F5 !important;
+  border: 1px solid #EBE4D8 !important;
+}
+
+body:not(.theme-dark) .nkh__header h1,
+body:not(.theme-dark) .hero-h1 {
+  color: #111111 !important;
+}
+
+body:not(.theme-dark) .nkh__header .nkh__subtitle {
+  color: #7A5B10 !important;
+  background: rgba(201, 162, 39, 0.1) !important;
+  border: 1px solid rgba(201, 162, 39, 0.3) !important;
+}
+
+body:not(.theme-dark) .nkh__count {
+  color: #666666 !important;
+}
+
+body:not(.theme-dark) .nkh__count b {
+  color: #111111 !important;
+}
+
+body:not(.theme-dark) .nkh__bar {
+  background: #E5E0D8 !important;
+}
+
+body:not(.theme-dark) .nkh__bar i {
+  background: var(--g) !important;
+}
+
+body:not(.theme-dark) .nkh button.nkh__btn,
+body:not(.theme-dark) .nkh__btn {
+  border: 1px solid #D5CEBF !important;
+  color: #111111 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+body:not(.theme-dark) .nkh__btn svg {
+  stroke: #111111 !important;
+}
+
+/* DARK MODE (BLACK THEME - NOIR OBSIDIAN) */
+body.theme-dark .nkh {
+  background: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+body.theme-dark .nkh__header {
+  background: #141312 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+}
+
+body.theme-dark .nkh__header h1,
+body.theme-dark .hero-h1 {
+  color: #FFFFFF !important;
+}
+
+body.theme-dark .nkh__header h1::before,
+body.theme-dark .hero-h1::before {
+  background: #C9A227 !important;
+  box-shadow: 0 0 10px rgba(201, 162, 39, 0.8) !important;
+}
+
+body.theme-dark .nkh__header .nkh__subtitle {
+  color: #E6C766 !important;
+  background: rgba(201, 162, 39, 0.18) !important;
+  border: 1px solid rgba(201, 162, 39, 0.45) !important;
+  box-shadow: 0 1px 6px rgba(201, 162, 39, 0.2) !important;
+}
+
+body.theme-dark .nkh__count {
+  color: #A0988A !important;
+}
+
+body.theme-dark .nkh__count b {
+  color: #FFFFFF !important;
+}
+
+body.theme-dark .nkh__bar {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+body.theme-dark .nkh__bar i {
+  background: var(--g) !important;
+}
+
+body.theme-dark .nkh button.nkh__btn,
+body.theme-dark .nkh__btn {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+  background: #181614 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.theme-dark .nkh__btn svg {
+  stroke: #FFFFFF !important;
+}
+
+body.theme-dark .nkh button.nkh__btn:hover,
+body.theme-dark .nkh__btn:hover {
+  border-color: var(--g) !important;
+  background: var(--g) !important;
+  color: #000000 !important;
+}
+
+body.theme-dark .nkh__btn:hover svg {
+  stroke: #000000 !important;
 }
 
 .nkh__item {
@@ -8124,35 +8239,19 @@ body.theme-dark .nkh {
   border-radius: 4px !important;
 }
 
-.nkh__count {
-  color: #666666 !important;
+/* SECTION KICKERS IN BOTH THEMES */
+.section-kicker,
+.nk-packages-section .section-header p:first-child,
+.nk-reviews-section .section-header p:first-child,
+.nk-appendix .section-header h2 {
+  color: #8A6F27 !important;
 }
 
-.nkh__count b {
-  color: #111111 !important;
-}
-
-.nkh__bar {
-  background: #E5E0D8 !important;
-}
-
-.nkh__bar i {
-  background: var(--g) !important;
-}
-
-.nkh button.nkh__btn,
-.nkh__btn {
-  border: 1px solid #D5CEBF !important;
-  color: #111111 !important;
-  background: #FFFFFF !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
-}
-
-.nkh button.nkh__btn:hover,
-.nkh__btn:hover {
-  border-color: var(--g) !important;
-  background: var(--g) !important;
-  color: #000000 !important;
+body.theme-dark .section-kicker,
+body.theme-dark .nk-packages-section .section-header p:first-child,
+body.theme-dark .nk-reviews-section .section-header p:first-child,
+body.theme-dark .nk-appendix .section-header h2 {
+  color: #DFC27D !important;
 }
 
 /* 3. Compact Page Spacing (no excessive empty space) */
