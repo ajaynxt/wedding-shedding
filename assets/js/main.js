@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initFilmstripDropdown();
   initAboutPortrait();
+  initMetaPixelTracking();
 });
 
 /* ============================================================
@@ -2221,5 +2222,55 @@ function initInquiryModal() {
     closeModal();
   });
 }
+
+/* ============================================================
+   META PIXEL EVENT TRACKING (Leads & WhatsApp Contacts)
+   ============================================================ */
+function initMetaPixelTracking() {
+  // Track WhatsApp & Phone Clicks
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link || !window.fbq) return;
+
+    const href = link.getAttribute('href') || '';
+    if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+      window.fbq('track', 'Contact', {
+        content_name: 'WhatsApp Click',
+        content_category: 'Direct Inquiry'
+      });
+    } else if (href.startsWith('tel:')) {
+      window.fbq('track', 'Contact', {
+        content_name: 'Phone Call Click',
+        content_category: 'Direct Inquiry'
+      });
+    } else if (link.classList.contains('mob-book') || link.classList.contains('btn-inquire')) {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: 'Book Inquiry Button Click'
+      });
+    }
+  });
+
+  // Track Inquiry Modal Submissions as High-Value Leads
+  const waBtn = document.getElementById('inqSubmitWa');
+  waBtn?.addEventListener('click', () => {
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: 'Instant Quote WhatsApp Lead',
+        currency: 'INR'
+      });
+    }
+  });
+
+  const mailBtn = document.getElementById('inqSubmitMail');
+  mailBtn?.addEventListener('click', () => {
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: 'Instant Quote Email Lead',
+        currency: 'INR'
+      });
+    }
+  });
+}
+
 
 
