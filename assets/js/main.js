@@ -998,7 +998,7 @@ function initProjectsGallery() {
 
   function closeViewer() {
     viewer.hidden = true;
-    vImg.removeAttribute('src');
+    vImg.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     if (modal.hidden) lock(false);
   }
 
@@ -1460,7 +1460,7 @@ function initFilmModal() {
   function closeFilm() {
     modal.hidden = true;
     if (playerContainer) {
-      playerContainer.innerHTML = '<iframe id="nkFilmIframe" src="" title="Wedding Shedding Cinema Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
+      playerContainer.innerHTML = '';
     }
     const isOtherOpen = !document.getElementById('nkProjModal')?.hidden || !document.getElementById('nkProjViewer')?.hidden;
     if (!isOtherOpen) lock(false);
