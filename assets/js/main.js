@@ -2224,29 +2224,53 @@ function initInquiryModal() {
 }
 
 /* ============================================================
-   META PIXEL EVENT TRACKING (Leads & WhatsApp Contacts)
+   META PIXEL & GOOGLE ANALYTICS EVENT TRACKING
    ============================================================ */
 function initMetaPixelTracking() {
   // Track WhatsApp & Phone Clicks
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
-    if (!link || !window.fbq) return;
+    if (!link) return;
 
     const href = link.getAttribute('href') || '';
     if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-      window.fbq('track', 'Contact', {
-        content_name: 'WhatsApp Click',
-        content_category: 'Direct Inquiry'
-      });
+      if (window.fbq) {
+        window.fbq('track', 'Contact', {
+          content_name: 'WhatsApp Click',
+          content_category: 'Direct Inquiry'
+        });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          event_category: 'Direct Inquiry',
+          event_label: 'WhatsApp Click'
+        });
+      }
     } else if (href.startsWith('tel:')) {
-      window.fbq('track', 'Contact', {
-        content_name: 'Phone Call Click',
-        content_category: 'Direct Inquiry'
-      });
+      if (window.fbq) {
+        window.fbq('track', 'Contact', {
+          content_name: 'Phone Call Click',
+          content_category: 'Direct Inquiry'
+        });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          event_category: 'Direct Inquiry',
+          event_label: 'Phone Call Click'
+        });
+      }
     } else if (link.classList.contains('mob-book') || link.classList.contains('btn-inquire')) {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: 'Book Inquiry Button Click'
-      });
+      if (window.fbq) {
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: 'Book Inquiry Button Click'
+        });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'begin_checkout', {
+          event_category: 'Inquiry Modal',
+          event_label: 'Book Inquiry Button Click'
+        });
+      }
     }
   });
 
@@ -2259,6 +2283,13 @@ function initMetaPixelTracking() {
         currency: 'INR'
       });
     }
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Instant Quote Modal',
+        event_label: 'Instant Quote WhatsApp Lead',
+        value: 1
+      });
+    }
   });
 
   const mailBtn = document.getElementById('inqSubmitMail');
@@ -2267,6 +2298,13 @@ function initMetaPixelTracking() {
       window.fbq('track', 'Lead', {
         content_name: 'Instant Quote Email Lead',
         currency: 'INR'
+      });
+    }
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Instant Quote Modal',
+        event_label: 'Instant Quote Email Lead',
+        value: 1
       });
     }
   });
