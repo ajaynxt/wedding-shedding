@@ -1,5 +1,5 @@
 /**
- * NIKHIL KAPUR PHOTOGRAPHY - INTERACTIVE PORTFOLIO ENGINE
+ * WEDDING SHEDDING STUDIO - LUXURY WEDDING CINEMA & PHOTOGRAPHY ENGINE
  * Full-fidelity reverse-engineered functionality:
  * - Responsive Header & Mobile Drawer
  * - Hero 3D Card Carousel with Progress Timer
@@ -306,7 +306,7 @@ function initHeader() {
 }
 
 /* ============================================================
-   2. HERO CAROUSEL (.nkh) - NIKHIL KAPUR AUTHENTIC ACCORDION ENGINE
+   2. HERO CAROUSEL (.nkh) - WEDDING SHEDDING LUXURY ACCORDION ENGINE
    ============================================================ */
 function initHeroCarousel() {
   const root = document.getElementById('nkh');
@@ -484,7 +484,7 @@ function initHeroCarousel() {
     }
   }
 
-  // Desktop hover card expand (5s arm delay as in Nikhil Kapur)
+  // Desktop hover card expand (5s arm delay)
   if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
     const desk = function() { return window.innerWidth > 1024; };
     const armAt = Date.now() + 5000;
@@ -1072,7 +1072,7 @@ function initProjectsGallery() {
 }
 
 /* ============================================================
-   5B. PORTFOLIO CATEGORY FILTER TABS (NIKHIL KAPUR STANDARD)
+   5B. PORTFOLIO CATEGORY FILTER TABS
    ============================================================ */
 function initPortfolioFilters() {
   const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
@@ -1116,7 +1116,7 @@ function initPortfolioFilters() {
 }
 
 /* ============================================================
-   5C. PORTFOLIO SLIDER & AUTO SLIDE BAR (NIKHIL KAPUR STANDARD)
+   5C. PORTFOLIO SLIDER & COUNTDOWN BAR
    ============================================================ */
 function initPortfolioSlider() {
   const slider = document.getElementById('portfolioSlider');
@@ -1311,7 +1311,7 @@ function initPortfolioSlider() {
 }
 
 /* ============================================================
-   5C. NIKHIL KAPUR SIGNATURE MAGNETIC LUXURY CURSOR
+   5C. WEDDING SHEDDING MAGNETIC LUXURY CURSOR
    ============================================================ */
 function initCustomCursor() {
   // Disabled: native responsive system cursor requested by user

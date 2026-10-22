@@ -881,7 +881,7 @@ button {
 }
 
 /* ============================================================
-   HEADER & NAVIGATION (NIKHIL KAPUR DUAL LUXURY BAR)
+   HEADER & NAVIGATION (WEDDING SHEDDING DUAL LUXURY BAR)
    ============================================================ */
 .site-header {
   position: fixed !important;
@@ -1064,7 +1064,7 @@ body.theme-dark .site-header.is-scrolled {
   padding-left: 26px;
 }
 
-/* Nikhil Kapur Authentic Action Buttons (.nk-hdr-right) */
+/* Wedding Shedding Action Buttons (.nk-hdr-right) */
 .header-actions.nk-hdr-right {
   display: flex;
   align-items: center;
@@ -1265,7 +1265,7 @@ body.theme-dark .site-header.is-scrolled {
 
 /* ============================================================
 /* ============================================================
-   AUTHENTIC NIKHIL KAPUR SIGNATURE ACCORDION HERO (.nkh)
+   WEDDING SHEDDING LUXURY ACCORDION HERO (.nkh)
    ============================================================ */
 .nkh {
   --g: #C9A227;
@@ -2814,7 +2814,7 @@ body.theme-dark .awards-banner .award-text p {
   border-top: 1px solid var(--ln);
 }
 
-/* Portfolio Category Filter Tabs (Nikhil Kapur Signature Filter) */
+/* Portfolio Category Filter Tabs */
 .portfolio-filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -4502,7 +4502,7 @@ body.dark-mode .portfolio-nav-playpause {
   background: rgba(226, 185, 74, 0.6);
 }
 
-/* Also Serving Regional SEO Links (Matching Nikhil Kapur) */
+/* Also Serving Regional SEO Links */
 .nkf__areas {
   position: relative;
   z-index: 1;
@@ -4605,7 +4605,7 @@ body.dark-mode .portfolio-nav-playpause {
   transform: translateY(-1px);
 }
 
-/* Elegant, Refined ajaynxt Logo matching 'pretty pixels' from Nikhil Kapur */
+/* Elegant, Refined ajaynxt Logo */
 .ajaynxt-logo {
   font-family: 'Great Vibes', 'Caveat', 'Alex Brush', cursive;
   font-size: 32px;
@@ -5368,7 +5368,7 @@ html, body {
 }
 
 /* ============================================================
-   NIKHIL KAPUR SIGNATURE MAGNETIC LUXURY CURSOR
+   WEDDING SHEDDING MAGNETIC LUXURY CURSOR
    ============================================================ */
 .nk-cursor-dot {
   position: fixed;
