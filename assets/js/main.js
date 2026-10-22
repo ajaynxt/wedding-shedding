@@ -40,6 +40,7 @@ function initIntroSplash() {
   if (!curtain || curtain.dataset.wsIntroInit === 'true') return;
   curtain.dataset.wsIntroInit = 'true';
 
+  const brandEl = document.getElementById('wsIntroBrand');
   const textEl = document.getElementById('wsIntroText');
   const caretEl = document.getElementById('wsIntroCaret');
   const ruleEl = document.getElementById('wsIntroRule');
@@ -87,13 +88,27 @@ function initIntroSplash() {
     function typeChar() {
       if (isDismissed) return;
       if (charIdx < fullText.length) {
-        textEl.textContent += fullText.charAt(charIdx);
+        const ch = fullText.charAt(charIdx);
+        const span = document.createElement('span');
+        span.className = 'ws-char';
+        if (ch === ' ') {
+          span.className += ' ws-char-space';
+          span.innerHTML = '&nbsp;';
+        } else {
+          span.textContent = ch;
+        }
+        textEl.appendChild(span);
         charIdx++;
-        const nextChar = fullText.charAt(charIdx - 1);
-        const delay = nextChar === ' ' ? 110 : (55 + Math.random() * 25);
+
+        if (charIdx >= 8 && brandEl) {
+          brandEl.classList.add('is-settled');
+        }
+
+        const delay = ch === ' ' ? 220 : (120 + Math.random() * 30);
         setTimeout(typeChar, delay);
       } else {
         // Typing completed: reveal divider & Sonu Kumar
+        if (brandEl) brandEl.classList.add('is-settled', 'is-shimmering');
         if (caretEl) caretEl.classList.add('is-hidden');
         if (ruleEl) ruleEl.classList.add('is-active');
         if (founderEl) founderEl.classList.add('is-active');
@@ -101,12 +116,12 @@ function initIntroSplash() {
         // Reading pause then graceful auto-curtain lift
         setTimeout(() => {
           dismissCurtain();
-        }, 1500);
+        }, 1800);
       }
     }
 
     typeChar();
-  }, 420);
+  }, 450);
 }
 
 /* ============================================================
