@@ -96,6 +96,11 @@ function initIntroSplash() {
           span.innerHTML = '&nbsp;';
         } else {
           span.textContent = ch;
+          if (charIdx < 7) {
+            span.className += ' is-black';
+          } else {
+            span.className += ' is-gold';
+          }
         }
         textEl.appendChild(span);
         charIdx++;
