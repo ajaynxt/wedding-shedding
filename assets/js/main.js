@@ -1329,15 +1329,51 @@ function initCustomCursor() {
 }
 
 /* ============================================================
-   5D. CINEMATIC FILM LIGHTBOX MODAL
+   5D. CINEMATIC FILM LIGHTBOX MODAL (YOUTUBE & GOOGLE DRIVE)
    ============================================================ */
 function initFilmModal() {
-  const modal = document.getElementById('nkFilmModal');
-  const iframe = document.getElementById('nkFilmIframe');
-  const titleEl = document.getElementById('nkFilmModalTitle');
-  const ytLink = document.getElementById('nkFilmModalYtLink');
-  const waLink = document.getElementById('nkFilmModalWaLink');
-  if (!modal || !iframe) return;
+  let modal = document.getElementById('nkFilmModal');
+  
+  // Ensure modal exists on all pages
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'nk-film-modal';
+    modal.id = 'nkFilmModal';
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="nk-film-modal__backdrop" data-film-close></div>
+      <div class="nk-film-modal__dialog" role="dialog" aria-modal="true" aria-label="Cinematic Wedding Film Player">
+        <div class="nk-film-modal__top">
+          <div class="nk-film-modal__info">
+            <span class="nk-film-modal__pill" id="nkFilmModalPill">4K CINEMA PRODUCTION</span>
+            <span class="nk-film-modal__title" id="nkFilmModalTitle">Wedding Film</span>
+          </div>
+          <button class="nk-film-modal__close" data-film-close aria-label="Close cinema player">&times;</button>
+        </div>
+        <div class="nk-film-modal__player" id="nkFilmModalPlayer">
+          <iframe id="nkFilmIframe" src="" title="Wedding Shedding Cinema Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+        </div>
+        <div class="nk-film-modal__footer">
+          <a id="nkFilmModalYtLink" href="https://www.youtube.com/@weddingshedding2308" target="_blank" rel="noopener" class="nk-film-modal__yt">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span id="nkFilmModalYtText">Watch on YouTube</span>
+          </a>
+          <a id="nkFilmModalWaLink" href="https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20loved%20your%20wedding%20film%20and%20want%20to%20book%20a%20similar%20film." target="_blank" rel="noopener" class="nk-film-modal__wa">
+            Book Similar Film on WhatsApp &rarr;
+          </a>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const iframe = modal.querySelector('#nkFilmIframe');
+  const playerContainer = modal.querySelector('.nk-film-modal__player');
+  const titleEl = modal.querySelector('#nkFilmModalTitle');
+  const pillEl = modal.querySelector('#nkFilmModalPill, .nk-film-modal__pill');
+  const ytLink = modal.querySelector('#nkFilmModalYtLink');
+  const waLink = modal.querySelector('#nkFilmModalWaLink');
+  if (!playerContainer) return;
 
   function lock(on) {
     if (on) {
@@ -1350,12 +1386,72 @@ function initFilmModal() {
     }
   }
 
-  function openFilm(ytId, title) {
-    if (!ytId) return;
+  function parseVideoSource(raw) {
+    if (!raw) return null;
+    const str = String(raw).trim();
+
+    // 1. Google Drive Link or File ID
+    const driveMatch = str.match(/drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]+)/) ||
+                       str.match(/[?&]id=([a-zA-Z0-9_-]{25,})/);
+    if (driveMatch) {
+      return { type: 'drive', id: driveMatch[1], embedUrl: `https://drive.google.com/file/d/${driveMatch[1]}/preview` };
+    }
+    if (/^[a-zA-Z0-9_-]{25,}$/.test(str) && !str.includes('/') && !str.includes('.')) {
+      return { type: 'drive', id: str, embedUrl: `https://drive.google.com/file/d/${str}/preview` };
+    }
+
+    // 2. Direct Video File (.mp4, .webm)
+    if (/\.(mp4|webm|mov)(\?.*)?$/i.test(str)) {
+      return { type: 'video', url: str };
+    }
+
+    // 3. YouTube URL or 11-char ID
+    let ytId = null;
+    if (/^[a-zA-Z0-9_-]{11}$/.test(str)) {
+      ytId = str;
+    } else {
+      const ytMatch = str.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+      if (ytMatch) ytId = ytMatch[1];
+    }
+
+    if (ytId) {
+      return {
+        type: 'youtube',
+        id: ytId,
+        embedUrl: `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`,
+        watchUrl: `https://youtu.be/${ytId}`
+      };
+    }
+
+    return null;
+  }
+
+  function openFilm(source, title, pill) {
+    const video = parseVideoSource(source);
+    if (!video) return;
+
     if (titleEl) titleEl.textContent = title || 'Cinematic Wedding Film';
-    if (ytLink) ytLink.href = `https://youtu.be/${ytId}`;
-    if (waLink) waLink.href = `https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20loved%20the%20${encodeURIComponent(title || 'wedding film')}%20and%20want%20to%20inquire%20about%20booking.`;
-    iframe.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+    if (pillEl) pillEl.textContent = pill || (video.type === 'drive' ? 'GOOGLE DRIVE 4K CINEMA' : '4K CINEMA PRODUCTION');
+
+    if (waLink) {
+      waLink.href = `https://wa.me/917503550936?text=Hi%20Wedding%20Shedding,%20I%20loved%20the%20${encodeURIComponent(title || 'wedding film')}%20and%20want%20to%20inquire%20about%20booking.`;
+    }
+
+    if (video.type === 'video') {
+      playerContainer.innerHTML = `<video src="${video.url}" controls autoplay playsinline style="width:100%;height:100%;background:#000;border:none;"></video>`;
+      if (ytLink) ytLink.style.display = 'none';
+    } else {
+      playerContainer.innerHTML = `<iframe id="nkFilmIframe" src="${video.embedUrl}" title="${title || 'Wedding Shedding Cinema Film'}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>`;
+      if (ytLink) {
+        if (video.type === 'drive') {
+          ytLink.style.display = 'none'; // Google Drive plays inline inside popup, no external redirect
+        } else {
+          ytLink.style.display = 'inline-flex';
+          ytLink.href = video.watchUrl;
+        }
+      }
+    }
+
     modal.hidden = false;
     lock(true);
     modal.querySelector('.nk-film-modal__close')?.focus();
@@ -1363,25 +1459,35 @@ function initFilmModal() {
 
   function closeFilm() {
     modal.hidden = true;
-    iframe.src = '';
+    if (playerContainer) {
+      playerContainer.innerHTML = '<iframe id="nkFilmIframe" src="" title="Wedding Shedding Cinema Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>';
+    }
     const isOtherOpen = !document.getElementById('nkProjModal')?.hidden || !document.getElementById('nkProjViewer')?.hidden;
     if (!isOtherOpen) lock(false);
   }
 
-  // Click on any film card play trigger
+  // Intercept click on any film card, play button, or Drive/YouTube link
   document.addEventListener('click', e => {
-    const playTrigger = e.target.closest('.js-play-film, [data-youtube-id] .nk-film-thumbwrap');
-    if (playTrigger) {
-      e.preventDefault();
-      const card = playTrigger.closest('.nk-film-card') || playTrigger;
-      const ytId = playTrigger.getAttribute('data-yt') || card.getAttribute('data-youtube-id');
-      const title = playTrigger.getAttribute('data-title') ||
-                    card.getAttribute('data-title') ||
-                    card.querySelector('.nk-film-name')?.textContent?.trim() ||
-                    playTrigger.getAttribute('aria-label') ||
-                    'Cinematic Wedding Film';
-      openFilm(ytId, title);
-      return;
+    const trigger = e.target.closest('.js-play-film, [data-drive], [data-drive-id], [data-video-url], [data-youtube-id], [data-yt], a[href*="drive.google.com/file"], a[href*="youtu"]');
+    if (trigger) {
+      const href = trigger.getAttribute('href') || '';
+      const driveSrc = trigger.getAttribute('data-drive') || trigger.getAttribute('data-drive-id');
+      const videoSrc = trigger.getAttribute('data-video-url') || trigger.getAttribute('data-video');
+      const ytSrc = trigger.getAttribute('data-yt') || trigger.getAttribute('data-youtube-id');
+      
+      const source = driveSrc || videoSrc || ytSrc || href;
+      if (source && (trigger.classList.contains('js-play-film') || driveSrc || videoSrc || ytSrc || href.includes('drive.google.com') || trigger.closest('.nk-film-card') || trigger.closest('.nk-films-panel-thumb'))) {
+        e.preventDefault();
+        const card = trigger.closest('.nk-film-card') || trigger;
+        const title = trigger.getAttribute('data-title') ||
+                      card.getAttribute('data-title') ||
+                      card.querySelector('.nk-film-name, h3, h4')?.textContent?.trim() ||
+                      trigger.getAttribute('aria-label') ||
+                      'Cinematic Wedding Film';
+        const pill = trigger.getAttribute('data-pill') || card.getAttribute('data-pill');
+        openFilm(source, title, pill);
+        return;
+      }
     }
 
     if (e.target.closest('[data-film-close]')) {
@@ -1399,6 +1505,13 @@ function initFilmModal() {
       closeFilm();
     }
   });
+
+  // Expose global helper so any inline script or button can call WeddingShedding.playVideo(url, title)
+  window.WeddingShedding = window.WeddingShedding || {};
+  window.WeddingShedding.playVideo = openFilm;
+  window.WeddingShedding.playDriveVideo = function(driveUrlOrId, title) {
+    openFilm(driveUrlOrId, title, 'GOOGLE DRIVE 4K CINEMA');
+  };
 }
 
 /* ============================================================
