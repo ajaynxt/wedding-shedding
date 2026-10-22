@@ -362,6 +362,19 @@ function initHeroCarousel() {
     }
   }
 
+  // Prioritize and pre-decode active centerpiece and visible flanking slides immediately
+  [ACTIVE, ACTIVE - 1, ACTIVE + 1].forEach(function(pos) {
+    if (origItems[pos]) {
+      const im = origItems[pos].querySelector('img');
+      if (im) {
+        im.fetchPriority = 'high';
+        if (im.decode) {
+          im.decode().catch(function() {});
+        }
+      }
+    }
+  });
+
   // Second copy of the ring so columns can slide in from the hidden edges
   Array.prototype.slice.call(list.children).forEach(function(li) {
     const c = li.cloneNode(true);
