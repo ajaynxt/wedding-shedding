@@ -46,81 +46,124 @@ function initAboutPortrait() {
    1. FILMSTRIP MEGA-MENU DROPDOWN (.nk-fs)
    ============================================================ */
 function initFilmstripDropdown() {
-  const navItem = document.getElementById('navItemPhotography');
-  const panel = document.getElementById('nkFsPanel');
   const header = document.getElementById('nk-site-header') || document.querySelector('.site-header');
-  if (!navItem || !panel) return;
-
-  let timer = null;
   const isDesk = () => window.innerWidth >= 1025;
 
-  function place() {
-    if (!header) return;
+  const pairs = [
+    { navItem: document.getElementById('navItemPhotography'), panel: document.getElementById('nkFsPanel') },
+    { navItem: document.getElementById('navItemFilms'), panel: document.getElementById('nkFsFilmsPanel') }
+  ].filter(p => p.navItem && p.panel);
+
+  if (pairs.length === 0) return;
+
+  let activePair = null;
+  let timer = null;
+
+  function place(panel) {
+    if (!header || !panel) return;
     const b = header.getBoundingClientRect().bottom;
     panel.style.top = Math.max(0, Math.round(b)) + 'px';
   }
 
-  function show() {
+  function show(pair) {
     clearTimeout(timer);
-    place();
-    panel.classList.add('on');
-    navItem.classList.add('nk-fs-open');
+    // Hide other pair if open
+    pairs.forEach(p => {
+      if (p !== pair) {
+        p.panel.classList.remove('on');
+        p.navItem.classList.remove('nk-fs-open');
+        const a = p.navItem.querySelector('a');
+        if (a) a.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    place(pair.panel);
+    pair.panel.classList.add('on');
+    pair.navItem.classList.add('nk-fs-open');
     header?.classList.add('nk-fs-on');
-    const a = navItem.querySelector('a');
+    const a = pair.navItem.querySelector('a');
     if (a) a.setAttribute('aria-expanded', 'true');
+    activePair = pair;
   }
 
-  function hide(now) {
+  function hide(pair, now) {
+    if (!pair) return;
     if (now) {
       clearTimeout(timer);
-      panel.classList.remove('on');
-      navItem.classList.remove('nk-fs-open');
-      header?.classList.remove('nk-fs-on');
-      const a = navItem.querySelector('a');
+      pair.panel.classList.remove('on');
+      pair.navItem.classList.remove('nk-fs-open');
+      const a = pair.navItem.querySelector('a');
       if (a) a.setAttribute('aria-expanded', 'false');
+      if (activePair === pair) {
+        activePair = null;
+        header?.classList.remove('nk-fs-on');
+      }
     } else {
       clearTimeout(timer);
       timer = setTimeout(() => {
-        panel.classList.remove('on');
-        navItem.classList.remove('nk-fs-open');
-        header?.classList.remove('nk-fs-on');
-        const a = navItem.querySelector('a');
+        pair.panel.classList.remove('on');
+        pair.navItem.classList.remove('nk-fs-open');
+        const a = pair.navItem.querySelector('a');
         if (a) a.setAttribute('aria-expanded', 'false');
+        if (activePair === pair) {
+          activePair = null;
+          header?.classList.remove('nk-fs-on');
+        }
       }, 220);
     }
   }
 
-  navItem.addEventListener('mouseenter', () => { if (isDesk()) show(); });
-  navItem.addEventListener('mouseleave', () => { if (isDesk()) hide(false); });
-  panel.addEventListener('mouseenter', () => { clearTimeout(timer); });
-  panel.addEventListener('mouseleave', () => { if (isDesk()) hide(false); });
+  function hideAll(now) {
+    pairs.forEach(p => hide(p, now));
+  }
 
-  navItem.querySelector('a')?.addEventListener('click', (e) => {
-    if (isDesk()) {
-      e.preventDefault();
-      panel.classList.contains('on') ? hide(true) : show();
-    }
-  });
+  pairs.forEach(pair => {
+    pair.navItem.addEventListener('mouseenter', () => { if (isDesk()) show(pair); });
+    pair.navItem.addEventListener('mouseleave', () => { if (isDesk()) hide(pair, false); });
+    pair.panel.addEventListener('mouseenter', () => { clearTimeout(timer); });
+    pair.panel.addEventListener('mouseleave', () => { if (isDesk()) hide(pair, false); });
 
-  // Highlight corresponding label when hovering over film frame
-  const frames = panel.querySelectorAll('.nk-fr');
-  const labels = panel.querySelectorAll('.nk-labels .nk-lab a');
-  frames.forEach(fr => {
-    fr.addEventListener('mouseenter', () => {
-      const idx = fr.dataset.i;
-      labels.forEach(l => l.classList.toggle('is-hot', l.dataset.i === idx));
+    pair.navItem.querySelector('a')?.addEventListener('click', (e) => {
+      if (isDesk()) {
+        e.preventDefault();
+        pair.panel.classList.contains('on') ? hide(pair, true) : show(pair);
+      }
+    });
+
+    // Highlight corresponding label when hovering over film frame
+    const frames = pair.panel.querySelectorAll('.nk-fr');
+    const labels = pair.panel.querySelectorAll('.nk-labels .nk-lab a');
+    frames.forEach(fr => {
+      fr.addEventListener('mouseenter', () => {
+        const idx = fr.dataset.i;
+        labels.forEach(l => l.classList.toggle('is-hot', l.dataset.i === idx));
+      });
+    });
+    pair.panel.addEventListener('mouseleave', () => {
+      labels.forEach(l => l.classList.remove('is-hot'));
     });
   });
-  panel.addEventListener('mouseleave', () => {
-    labels.forEach(l => l.classList.remove('is-hot'));
+
+  window.addEventListener('scroll', () => {
+    if (activePair && activePair.panel.classList.contains('on')) place(activePair.panel);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    if (activePair && activePair.panel.classList.contains('on')) place(activePair.panel);
+  }, { passive: true });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideAll(true);
   });
 
-  window.addEventListener('scroll', () => { if (panel.classList.contains('on')) place(); }, { passive: true });
-  window.addEventListener('resize', () => { if (panel.classList.contains('on')) place(); }, { passive: true });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(true); });
   document.addEventListener('click', (e) => {
-    if (panel.classList.contains('on') && !panel.contains(e.target) && !navItem.contains(e.target)) {
-      hide(true);
+    const isInsideAny = pairs.some(p => p.panel.contains(e.target) || p.navItem.contains(e.target));
+    if (!isInsideAny) {
+      hideAll(true);
+    }
+    // Also dismiss dropdowns when a film playback is initiated
+    if (e.target.closest('.js-play-film')) {
+      hideAll(true);
     }
   });
 }
@@ -1332,7 +1375,11 @@ function initFilmModal() {
       e.preventDefault();
       const card = playTrigger.closest('.nk-film-card') || playTrigger;
       const ytId = playTrigger.getAttribute('data-yt') || card.getAttribute('data-youtube-id');
-      const title = card.querySelector('.nk-film-name')?.textContent?.trim() || 'Cinematic Wedding Film';
+      const title = playTrigger.getAttribute('data-title') ||
+                    card.getAttribute('data-title') ||
+                    card.querySelector('.nk-film-name')?.textContent?.trim() ||
+                    playTrigger.getAttribute('aria-label') ||
+                    'Cinematic Wedding Film';
       openFilm(ytId, title);
       return;
     }

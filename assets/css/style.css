@@ -1009,9 +1009,14 @@ body.theme-dark .site-header.is-scrolled {
   transition: transform 0.25s ease;
 }
 
-.nav-item:hover .nav-link svg.caret {
+.nav-item:hover .nav-link svg.caret,
+.nav-item.nk-fs-open .nav-link svg.caret {
   transform: rotate(180deg);
   fill: var(--g);
+}
+
+.nav-item.nk-fs-open .nav-link {
+  color: var(--g) !important;
 }
 
 /* Dropdown */
@@ -4236,6 +4241,53 @@ body.dark-mode .portfolio-nav-playpause {
   letter-spacing: 1px;
   color: #C9A227;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+.nk-fr__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(14, 12, 10, 0.78);
+  border: 1.5px solid rgba(201, 162, 39, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A227;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+.nk-fr__play svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+}
+.nk-fr:hover .nk-fr__play, .nk-fr:focus-visible .nk-fr__play {
+  background: #C9A227;
+  color: #0A0908;
+  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow: 0 0 24px rgba(201, 162, 39, 0.75);
+  border-color: #EFEAE2;
+}
+.nk-fr__badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: rgba(10, 9, 8, 0.86);
+  color: #C9A227;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 2;
+  pointer-events: none;
 }
 .nk-labels {
   margin-top: 20px;
