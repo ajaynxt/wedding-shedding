@@ -61,7 +61,7 @@ function initIntroSplash() {
       if (curtain.parentNode) {
         curtain.parentNode.removeChild(curtain);
       }
-    }, 850);
+    }, 400);
   }
 
   // Click on background dismisses immediately
@@ -110,7 +110,7 @@ function initIntroSplash() {
           brandEl.classList.add('is-settled');
         }
 
-        const delay = ch === ' ' ? 220 : (120 + Math.random() * 30);
+        const delay = ch === ' ' ? 70 : (32 + Math.random() * 12);
         setTimeout(typeChar, delay);
       } else {
         // Typing completed: reveal divider & Sonu Kumar
@@ -122,7 +122,7 @@ function initIntroSplash() {
         // Reading pause then graceful auto-curtain lift
         setTimeout(() => {
           dismissCurtain();
-        }, 1800);
+        }, 450);
       }
     }
 
