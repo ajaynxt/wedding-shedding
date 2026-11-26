@@ -10,7 +10,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initIntroSplash();
   initHeader();
   initHeroCarousel();
   initStatsCounter();
@@ -32,103 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutPortrait();
   initMetaPixelTracking();
 });
-
-/* ============================================================
-   0. WELCOME INTRO POPUP (WHITE BG · LOGO · GOLDEN TYPEWRITER · SONU KUMAR)
-   ============================================================ */
-function initIntroSplash() {
-  const curtain = document.getElementById('wsIntroCurtain');
-  if (!curtain || curtain.dataset.wsIntroInit === 'true') return;
-  curtain.dataset.wsIntroInit = 'true';
-
-  const brandEl = document.getElementById('wsIntroBrand');
-  const textEl = document.getElementById('wsIntroText');
-  const caretEl = document.getElementById('wsIntroCaret');
-  const ruleEl = document.getElementById('wsIntroRule');
-  const founderEl = document.getElementById('wsIntroFounder');
-  const enterBtn = document.getElementById('wsIntroEnterBtn');
-
-  const fullText = 'WEDDING SHEDDING';
-  let charIdx = 0;
-  let isDismissed = false;
-
-  function dismissCurtain() {
-    if (isDismissed) return;
-    isDismissed = true;
-    curtain.classList.add('is-dismissed');
-    setTimeout(() => {
-      curtain.style.display = 'none';
-      if (curtain.parentNode) {
-        curtain.parentNode.removeChild(curtain);
-      }
-    }, 400);
-  }
-
-  // Click on background dismisses immediately
-  curtain.addEventListener('click', () => {
-    dismissCurtain();
-  });
-
-  if (enterBtn) {
-    enterBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dismissCurtain();
-    });
-  }
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
-      dismissCurtain();
-    }
-  });
-
-  // Start typewriter after initial logo pop
-  setTimeout(() => {
-    if (isDismissed) return;
-
-    function typeChar() {
-      if (isDismissed) return;
-      if (charIdx < fullText.length) {
-        const ch = fullText.charAt(charIdx);
-        const span = document.createElement('span');
-        span.className = 'ws-char';
-        if (ch === ' ') {
-          span.className += ' ws-char-space';
-          span.innerHTML = '&nbsp;';
-        } else {
-          span.textContent = ch;
-          if (charIdx < 7) {
-            span.className += ' is-black';
-          } else {
-            span.className += ' is-gold';
-          }
-        }
-        textEl.appendChild(span);
-        charIdx++;
-
-        if (charIdx >= 8 && brandEl) {
-          brandEl.classList.add('is-settled');
-        }
-
-        const delay = ch === ' ' ? 70 : (32 + Math.random() * 12);
-        setTimeout(typeChar, delay);
-      } else {
-        // Typing completed: reveal divider & Sonu Kumar
-        if (brandEl) brandEl.classList.add('is-settled', 'is-shimmering');
-        if (caretEl) caretEl.classList.add('is-hidden');
-        if (ruleEl) ruleEl.classList.add('is-active');
-        if (founderEl) founderEl.classList.add('is-active');
-
-        // Reading pause then graceful auto-curtain lift
-        setTimeout(() => {
-          dismissCurtain();
-        }, 450);
-      }
-    }
-
-    typeChar();
-  }, 450);
-}
 
 /* ============================================================
    0. ABOUT PORTRAIT INTERACTION (CLICK/TAP TO REVEAL COLOR)
@@ -466,6 +368,7 @@ function initHeroCarousel() {
     if (origItems[pos]) {
       const im = origItems[pos].querySelector('img');
       if (im) {
+        im.loading = 'eager';
         im.fetchPriority = 'high';
         if (im.decode) {
           im.decode().catch(function() {});
