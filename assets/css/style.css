@@ -9662,3 +9662,23 @@ body:not(.theme-dark) .nk-locations-eyebrow,body:not(.theme-dark) .ws-seo-faq__e
   .nkx-stats .nkx-stats__sub { overflow-wrap:anywhere; }
 }
 .nkx-stats:focus-within .nkx-stats__track { animation-play-state:paused; }
+
+/* Stable first paint: reserve the hero geometry before JavaScript starts. */
+.nkh__stage { min-width:0; }
+.nkh__item { box-sizing:border-box; }
+@media (max-width:767px) {
+  .nkh { --top:68px; height:auto; min-height:0; max-height:none; grid-template-rows:auto auto auto; padding:calc(var(--top) + 12px) 12px 20px; row-gap:12px; }
+  .nkh .nkh__stage { height:clamp(360px,calc(100svh - 210px),620px); }
+  .nkh .nkh__list { width:100%; }
+  .nkh .nkh__item:not(:nth-child(5)) { display:none; }
+  .nkh .nkh__item:nth-child(5) { display:block; flex:0 0 100%; width:100%; margin:0; opacity:1; transition:none; }
+  .nkh .nkh__item:nth-child(5) .nkh__img { left:0; width:100%!important; height:100%!important; transform:none; filter:none; transition:none; }
+  .nkh .nkh__body { width:100%; max-width:100%; }
+  .nkh .nkh__item:nth-child(5) :is(.nkh__kicker,.nkh__name,.nkh__desc,.nkh__go) { opacity:1; transform:none; transition:none; }
+  .nkh .nkh__ctrl { width:100%; padding:0; gap:8px; grid-template-columns:auto minmax(0,1fr) auto; }
+  .nkh .nkh__btns { gap:6px; }
+  .nkh .nkh__header { min-height:66px; }
+  .nkh .nkh__header h1 { font-family:Georgia,serif!important; }
+  .nkh .nkh__subtitle { font-family:Arial,sans-serif!important; }
+}
+.nkh .nkh__pause { min-width:64px; }
