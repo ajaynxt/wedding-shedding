@@ -356,6 +356,16 @@
 }
   </script>
 
+<style id="nx-client-motion">
+@keyframes nxClientRise{from{translate:0 16px;opacity:.76}to{translate:0 0;opacity:1}}
+@keyframes nxClientPhoto{from{scale:1.035}to{scale:1}}
+@media(prefers-reduced-motion:no-preference){
+.nkh__header .nkh__subtitle{animation:nxClientRise .72s cubic-bezier(.2,.75,.2,1) both}
+.nx-client-enter{animation:nxClientRise .78s cubic-bezier(.2,.75,.2,1) both;animation-delay:var(--nx-client-delay,0ms)}
+.nkx-feat__main{overflow:hidden}.camera-reel-imgwrap{overflow:hidden}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.nkx-feat__main img,.camera-reel-imgwrap img{transition:scale .65s cubic-bezier(.2,.7,.2,1)}.nkx-feat__main:hover img,.camera-reel-imgwrap:hover img{scale:1.045}}
+</style>
 </head>
 <body>
   <a href="#main-content" class="ws-skip-link">Skip to main content</a>
@@ -2849,5 +2859,8 @@
 
   <!-- Scripts -->
   <script src="assets/js/main.js?v=18"></script>
+<script id="nx-client-motion-script">
+(()=>{"use strict";if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;const targets=[...document.querySelectorAll(".nkx-feat__main,.nkx-feat__inset img,.nk-services-section .camera-reel-imgwrap img,.nk-projects-section .camera-reel-imgwrap img,.nk-films-section h2,.nk-packages-section h2,.nk-cta-section h2")];const observer=new IntersectionObserver(entries=>{let i=0;for(const e of entries){if(!e.isIntersecting)continue;observer.unobserve(e.target);e.target.style.setProperty("--nx-client-delay",Math.min(i++*65,195)+"ms");e.target.classList.add("nx-client-enter");e.target.addEventListener("animationend",()=>{e.target.classList.remove("nx-client-enter");e.target.style.removeProperty("--nx-client-delay")},{once:true})}},{threshold:.12});targets.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight*.85)observer.observe(el)});})();
+</script>
 </body>
 </html>
