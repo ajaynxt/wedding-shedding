@@ -261,7 +261,7 @@ function initHeader() {
         e.preventDefault();
         window.scrollTo({
           top: 0,
-          behavior: 'smooth'
+          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
         header?.classList.remove('is-hidden');
         isHidden = false;
@@ -294,7 +294,7 @@ function initHeader() {
           const targetY = target.getBoundingClientRect().top + window.pageYOffset - 58;
           window.scrollTo({
             top: Math.max(0, targetY),
-            behavior: 'smooth'
+            behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
           });
           header?.classList.remove('is-hidden');
           isHidden = false;
@@ -617,7 +617,7 @@ function initScrollReveal() {
   }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });
 
   reveals.forEach((el, i) => {
-    el.style.transitionDelay = ((i % 5) * 80) + 'ms';
+    el.style.transitionDelay = ((i % 3) * 30) + 'ms';
     observer.observe(el);
   });
 }
@@ -1336,7 +1336,7 @@ function initPortfolioSlider() {
   };
 
   updateTotal();
-  if (motionQuery.matches) togglePlayPause();
+  togglePlayPause();
   syncTimer();
 }
 
@@ -1600,9 +1600,9 @@ function initCameraFooter() {
 
   let i = 0;
   const n = slides.length;
-  const DUR = 3000;
+  const DUR = 5000;
   let t = null;
-  let playing = !reduce;
+  let playing = false;
   let visible = false;
 
   f.style.setProperty('--dur', DUR + 'ms');
@@ -1742,7 +1742,9 @@ function initFilmsSlider() {
 
   let activeSlides = slides.slice();
   let currentIndex = 0;
-  let isPlaying = true;
+  let isPlaying = false;
+  let inView = !('IntersectionObserver' in window);
+  let interacting = false;
   let timer = null;
   const INTERVAL = 4500; // 4.5 seconds per slide
 
@@ -1765,7 +1767,7 @@ function initFilmsSlider() {
     const target = activeSlides[currentIndex];
     if (target) {
       const targetLeft = target.offsetLeft - track.offsetLeft;
-      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+      track.scrollTo({ left: targetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
     updateHUD();
     resetTimer();
@@ -1780,13 +1782,13 @@ function initFilmsSlider() {
   }
 
   function tick() {
-    if (!isPlaying) return;
+    if (!isPlaying || !inView || document.hidden || interacting) return;
     nextSlide();
   }
 
   function resetTimer() {
     if (timer) clearInterval(timer);
-    if (isPlaying) {
+    if (isPlaying && inView && !document.hidden && !interacting) {
       timer = setInterval(tick, INTERVAL);
     }
   }
@@ -1828,7 +1830,7 @@ function initFilmsSlider() {
 
       activeSlides = slides.filter(s => !s.classList.contains('is-filtered-out'));
       currentIndex = 0;
-      track.scrollTo({ left: 0, behavior: 'smooth' });
+      track.scrollTo({ left: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       updateHUD();
       resetTimer();
     });
@@ -1865,8 +1867,15 @@ function initFilmsSlider() {
     }, 100);
   }, { passive: true });
 
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { inView = entries[0].isIntersecting; resetTimer(); }, {threshold:0.1}).observe(slider);
+  }
+  document.addEventListener('visibilitychange', resetTimer);
+  track.addEventListener('pointerdown', () => { interacting = true; resetTimer(); }, {passive:true});
+  window.addEventListener('pointerup', () => { if(interacting){interacting = false; resetTimer();} }, {passive:true});
+  window.addEventListener('pointercancel', () => { if(interacting){interacting = false; resetTimer();} }, {passive:true});
   updateHUD();
-  resetTimer();
+  setPlaying(false);
 }
 
 /* ============================================================
@@ -1888,7 +1897,9 @@ function setupAutoSlider(config) {
   const playPauseBtn = document.getElementById(config.playPauseBtnId);
 
   let currentIndex = 0;
-  let isPlaying = true;
+  let isPlaying = false;
+  let inView = !('IntersectionObserver' in window);
+  let interacting = false;
   let timer = null;
   const interval = config.interval || 4500;
 
@@ -1910,7 +1921,7 @@ function setupAutoSlider(config) {
     const target = slides[currentIndex];
     if (target) {
       const targetLeft = target.offsetLeft - track.offsetLeft;
-      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+      track.scrollTo({ left: targetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     }
     updateHUD();
     resetTimer();
@@ -1920,13 +1931,13 @@ function setupAutoSlider(config) {
   function prevSlide() { scrollToSlide(currentIndex - 1); }
 
   function tick() {
-    if (!isPlaying) return;
+    if (!isPlaying || !inView || document.hidden || interacting) return;
     nextSlide();
   }
 
   function resetTimer() {
     if (timer) clearInterval(timer);
-    if (isPlaying) timer = setInterval(tick, interval);
+    if (isPlaying && inView && !document.hidden && !interacting) timer = setInterval(tick, interval);
   }
 
   function setPlaying(state) {
@@ -1972,8 +1983,15 @@ function setupAutoSlider(config) {
     }, 100);
   }, { passive: true });
 
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { inView = entries[0].isIntersecting; resetTimer(); }, {threshold:0.1}).observe(slider);
+  }
+  document.addEventListener('visibilitychange', resetTimer);
+  track.addEventListener('pointerdown', () => { interacting = true; resetTimer(); }, {passive:true});
+  window.addEventListener('pointerup', () => { if(interacting){interacting = false; resetTimer();} }, {passive:true});
+  window.addEventListener('pointercancel', () => { if(interacting){interacting = false; resetTimer();} }, {passive:true});
   updateHUD();
-  resetTimer();
+  setPlaying(false);
 
   return { next: nextSlide, prev: prevSlide, setPlaying };
 }
@@ -2043,7 +2061,7 @@ function initScrollTop() {
   checkScroll();
 
   scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
 }
 
