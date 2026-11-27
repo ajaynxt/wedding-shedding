@@ -1208,31 +1208,41 @@ function initPortfolioSlider() {
     updateCurrent();
   }
 
-  function animateLoop(timestamp) {
-    if (!lastTimestamp) lastTimestamp = timestamp;
-    const delta = timestamp - lastTimestamp;
-    lastTimestamp = timestamp;
-
+  // Only advance the progress timer while this carousel is in view.
+  let inView = !('IntersectionObserver' in window);
+  let timerId = null;
+  const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  function animateLoop() {
+    const now = performance.now();
+    const delta = lastTimestamp === null ? 0 : Math.min(now - lastTimestamp, 250);
+    lastTimestamp = now;
+    if (!inView || document.hidden || isPaused || isHovered || isTouching) return;
     const visible = getVisibleSlides();
     if (visible.length <= 1) {
       if (barFill) barFill.style.width = '100%';
-    } else {
-      if (!isPaused && !isHovered && !isTouching) {
-        elapsed += delta;
-        const progress = Math.min(elapsed / INTERVAL, 1);
-        if (barFill) {
-          barFill.style.width = (progress * 100) + '%';
-        }
-
-        if (progress >= 1) {
-          elapsed = 0;
-          scrollToSlide(activeIndex + 1, true);
-        }
-      }
+      return;
     }
-
-    requestAnimationFrame(animateLoop);
+    elapsed += delta;
+    const progress = Math.min(elapsed / INTERVAL, 1);
+    if (barFill) barFill.style.width = (progress * 100) + '%';
+    if (progress >= 1) {
+      elapsed = 0;
+      scrollToSlide(activeIndex + 1, !motionQuery.matches);
+    }
   }
+  function syncTimer() {
+    if (timerId !== null) clearInterval(timerId);
+    timerId = null;
+    lastTimestamp = null;
+    if (inView && !document.hidden && !isPaused) timerId = setInterval(animateLoop, 100);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      syncTimer();
+    }, { threshold: 0.05 }).observe(slider);
+  }
+  document.addEventListener('visibilitychange', syncTimer);
 
   function resetTimer() {
     elapsed = 0;
@@ -1241,6 +1251,7 @@ function initPortfolioSlider() {
 
   function togglePlayPause() {
     isPaused = !isPaused;
+    syncTimer();
     if (playPauseBtn) {
       const pauseIcon = playPauseBtn.querySelector('.icon-pause');
       const playIcon = playPauseBtn.querySelector('.icon-play');
@@ -1334,7 +1345,8 @@ function initPortfolioSlider() {
   };
 
   updateTotal();
-  requestAnimationFrame(animateLoop);
+  if (motionQuery.matches) togglePlayPause();
+  syncTimer();
 }
 
 /* ============================================================
@@ -1409,7 +1421,7 @@ function initFilmModal() {
           <button class="nk-film-modal__close" data-film-close aria-label="Close cinema player">&times;</button>
         </div>
         <div class="nk-film-modal__player" id="nkFilmModalPlayer">
-          <iframe id="nkFilmIframe" src="" title="Wedding Shedding Cinema Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+          <iframe id="nkFilmIframe" src="about:blank" title="Wedding Shedding Cinema Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
         </div>
         <div class="nk-film-modal__footer">
           <a id="nkFilmModalYtLink" href="https://www.youtube.com/@weddingshedding2308" target="_blank" rel="noopener" class="nk-film-modal__yt">
