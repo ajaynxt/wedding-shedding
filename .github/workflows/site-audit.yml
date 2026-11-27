@@ -1,0 +1,17 @@
+name: Static website checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate links, assets and sitemap
+        run: python3 scripts/audit_site.py
+      - name: Check shared JavaScript syntax
+        run: node --check assets/js/main.js
