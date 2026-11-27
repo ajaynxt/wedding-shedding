@@ -321,28 +321,31 @@ function initHeroCarousel() {
   if (!list || !stage) return;
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const DUR = (window.innerWidth <= 1024 ? 2800 : 2500);
+  const DUR = 5000;
   let timer = null;
   let busy = false;
   let hover = false;
   let focus = false;
   let visible = true;
   let holdUntil = 0;
+  let pausedByUser = false;
 
   root.style.setProperty('--dur', DUR + 'ms');
   const ACTIVE = 4; // Zero-based: 5th slot is the open card
 
-  // Randomize original 12 slides so a different photo appears in front on every visit/refresh
-  const origItems = Array.prototype.slice.call(list.children);
-  for (let idx = origItems.length - 1; idx > 0; idx--) {
+  // Keep the preloaded centerpiece in its initial slot; vary the remaining photos.
+  const origItems = Array.from(list.children);
+  const centerpiece = origItems[ACTIVE];
+  const others = origItems.filter((_, i) => i !== ACTIVE);
+  for (let idx = others.length - 1; idx > 0; idx--) {
     const r = Math.floor(Math.random() * (idx + 1));
-    const tmp = origItems[idx];
-    origItems[idx] = origItems[r];
-    origItems[r] = tmp;
+    [others[idx], others[r]] = [others[r], others[idx]];
   }
-  origItems.forEach(function(li) {
-    list.appendChild(li);
-  });
+  if (centerpiece) {
+    others.splice(ACTIVE, 0, centerpiece);
+    origItems.splice(0, origItems.length, ...others);
+    origItems.forEach(li => list.appendChild(li));
+  }
 
   // Renumber data-i and labels sequentially (01..12) starting from ACTIVE slot (slot 4)
   const total = origItems.length;
@@ -363,19 +366,12 @@ function initHeroCarousel() {
     }
   }
 
-  // Prioritize and pre-decode active centerpiece and visible flanking slides immediately
-  [ACTIVE, ACTIVE - 1, ACTIVE + 1].forEach(function(pos) {
-    if (origItems[pos]) {
-      const im = origItems[pos].querySelector('img');
-      if (im) {
-        im.loading = 'eager';
-        im.fetchPriority = 'high';
-        if (im.decode) {
-          im.decode().catch(function() {});
-        }
-      }
-    }
-  });
+  // Reserve high network priority for the actual initial centerpiece.
+  const firstImage = origItems[ACTIVE]?.querySelector('img');
+  if (firstImage) {
+    firstImage.loading = 'eager';
+    firstImage.fetchPriority = 'high';
+  }
 
   // Second copy of the ring so columns can slide in from the hidden edges
   Array.prototype.slice.call(list.children).forEach(function(li) {
@@ -448,7 +444,7 @@ function initHeroCarousel() {
   }
 
   function running() {
-    return !hover && !focus && visible && !document.hidden && Date.now() >= holdUntil;
+    return !pausedByUser && !hover && !focus && visible && !document.hidden && Date.now() >= holdUntil;
   }
 
   function schedule() {
@@ -472,6 +468,22 @@ function initHeroCarousel() {
     root.classList.remove('is-playing');
     clearTimeout(timer);
     setTimeout(schedule, DUR + 20);
+  }
+
+  const pauseBtn = root.querySelector('.nkh__pause');
+  if (pauseBtn) {
+    pausedByUser = reduce;
+    const updatePause = () => {
+      pauseBtn.textContent = pausedByUser ? 'Play' : 'Pause';
+      pauseBtn.setAttribute('aria-pressed', String(pausedByUser));
+    };
+    updatePause();
+    pauseBtn.addEventListener('click', () => {
+      pausedByUser = !pausedByUser;
+      updatePause();
+      schedule();
+    });
+    if (reduce) pauseBtn.hidden = true;
   }
 
   root.querySelector('.nkh__btn--next')?.addEventListener('click', function() { user(1); });
