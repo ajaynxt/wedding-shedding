@@ -1,0 +1,51 @@
+name: Live website performance and deployment check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/live-performance.yml'
+permissions:
+  contents: read
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check live URLs, response headers and deployed files
+        shell: bash
+        run: |
+          mkdir -p reports
+          base=https://weddingshedding.in
+          for path in / /pre-wedding.html /robots.txt /sitemap.xml /assets/css/style.css /assets/images/ws_hero_haldi_kiss_sunglasses.webp /test-page-not-found; do
+            echo "::group::$path"
+            curl -sS --compressed --max-time 30 -D reports/headers.tmp -o reports/body.tmp -w 'HTTP %{http_code}; TTFB %{time_starttransfer}s; total %{time_total}s; bytes %{size_download}\n' "$base$path" | tee -a reports/live.txt
+            grep -Ei '^(HTTP/|server:|cache-control:|cf-cache-status:|cf-ray:|age:|content-encoding:|content-type:)' reports/headers.tmp | tee -a reports/live.txt || true
+            if [ "$path" = "/" ]; then
+              if cmp -s index.html reports/body.tmp; then echo 'Homepage matches checked-out source' | tee -a reports/live.txt; else echo 'Homepage differs from source (deployment or edge transform)' | tee -a reports/live.txt; fi
+            fi
+            echo "::endgroup::"
+          done
+          rm -f reports/headers.tmp reports/body.tmp
+          echo 'Repeat static asset fetch to inspect cache status:' | tee -a reports/live.txt
+          curl -sS -D - -o /dev/null --max-time 30 "$base/assets/images/ws_hero_haldi_kiss_sunglasses.webp" | grep -Ei '^(HTTP/|server:|cache-control:|cf-cache-status:|cf-ray:|age:)' | tee -a reports/live.txt || true
+      - name: Lighthouse mobile
+        continue-on-error: true
+        run: npx --yes lighthouse@12 https://weddingshedding.in/ --only-categories=performance --output=json --output-path=reports/mobile.json --chrome-flags="--headless --no-sandbox" --quiet
+      - name: Lighthouse desktop
+        continue-on-error: true
+        run: npx --yes lighthouse@12 https://weddingshedding.in/ --preset=desktop --only-categories=performance --output=json --output-path=reports/desktop.json --chrome-flags="--headless --no-sandbox" --quiet
+      - name: Summarize scores
+        if: always()
+        run: |
+          node -e 'const fs=require("fs");for(const mode of ["mobile","desktop"]){const p="reports/"+mode+".json";if(!fs.existsSync(p)){console.log(mode+": unavailable");continue}const r=JSON.parse(fs.readFileSync(p));console.log(mode+": "+(r.categories.performance.score*100)+"/100");for(const k of ["largest-contentful-paint","cumulative-layout-shift","total-blocking-time"])console.log(k+": "+r.audits[k]?.displayValue)}' | tee -a reports/live.txt
+          cat reports/live.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-performance-reports
+          path: reports/
