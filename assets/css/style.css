@@ -9640,3 +9640,13 @@ body.theme-dark .ws-intro-enter-btn {
   .ws-seo-faq details { padding: 16px 0; }
   .ws-seo-faq summary { font-size: 14px; }
 }
+
+/* Homepage accessibility and carousel controls */
+.ws-skip-link{position:fixed;z-index:2147483647;top:8px;left:8px;padding:12px 18px;color:#fff;background:#30261e;border:2px solid #fff;transform:translateY(-160%);border-radius:4px}
+.ws-skip-link:focus{transform:translateY(0)}
+#main-content:focus{outline:none}
+.nkh__pause{min-height:44px;min-width:64px;padding:6px 12px;border:1px solid currentColor;border-radius:4px;background:var(--bg);color:var(--iv);font:inherit;cursor:pointer}
+.nkh__pause[hidden]{display:none!important}
+:where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{outline:2px solid currentColor;outline-offset:4px}
+body:not(.theme-dark) .nk-locations-eyebrow,body:not(.theme-dark) .ws-seo-faq__eyebrow,body:not(.theme-dark) .nk-signature-author{color:#73521c}
+@media(prefers-reduced-motion:reduce){.nkx-stats__track{animation:none!important}.nkh__item,.nkh__card,.nkh__img{transition:none!important}}
