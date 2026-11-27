@@ -328,24 +328,13 @@ function initHeroCarousel() {
   let focus = false;
   let visible = true;
   let holdUntil = 0;
-  let pausedByUser = false;
+  let pausedByUser = true;
 
   root.style.setProperty('--dur', DUR + 'ms');
   const ACTIVE = 4; // Zero-based: 5th slot is the open card
 
-  // Keep the preloaded centerpiece in its initial slot; vary the remaining photos.
+  // Preserve initial HTML order so first paint and LCP candidate remain stable.
   const origItems = Array.from(list.children);
-  const centerpiece = origItems[ACTIVE];
-  const others = origItems.filter((_, i) => i !== ACTIVE);
-  for (let idx = others.length - 1; idx > 0; idx--) {
-    const r = Math.floor(Math.random() * (idx + 1));
-    [others[idx], others[r]] = [others[r], others[idx]];
-  }
-  if (centerpiece) {
-    others.splice(ACTIVE, 0, centerpiece);
-    origItems.splice(0, origItems.length, ...others);
-    origItems.forEach(li => list.appendChild(li));
-  }
 
   // Renumber data-i and labels sequentially (01..12) starting from ACTIVE slot (slot 4)
   const total = origItems.length;
@@ -389,14 +378,14 @@ function initHeroCarousel() {
 
   function vis() {
     const w = window.innerWidth;
-    return w < 768 ? [3, 5] : w <= 1024 ? [2, 6] : [1, 7];
+    return w < 768 ? [4, 4] : w <= 1024 ? [2, 6] : [1, 7];
   }
 
   function header() {
     const h = document.querySelector('header.header, #nk-site-header, .site-header, header');
     let v = h ? Math.round(h.getBoundingClientRect().height) : 52;
     if (v < 30 || v > 120) v = 52;
-    root.style.setProperty('--top', v + 'px');
+    // Reserve the header clearance in CSS; do not shift the hero after first paint.
     root.style.setProperty('--stage-w', stage.clientWidth + 'px');
   }
 
@@ -472,7 +461,7 @@ function initHeroCarousel() {
 
   const pauseBtn = root.querySelector('.nkh__pause');
   if (pauseBtn) {
-    pausedByUser = reduce;
+    pausedByUser = true;
     const updatePause = () => {
       pauseBtn.textContent = pausedByUser ? 'Play' : 'Pause';
       pauseBtn.setAttribute('aria-pressed', String(pausedByUser));
