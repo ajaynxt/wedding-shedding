@@ -74,7 +74,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Caveat:wght@400;600;700&amp;family=Great+Vibes&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Syne:wght@400..800&amp;display=optional"></noscript>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
 
   <link rel="preload" as="image" href="assets/images/ws_hero_haldi_kiss_sunglasses.webp" fetchpriority="high">
 
@@ -786,7 +786,7 @@
         <!-- Slide 01: Haldi Kiss & Golden Flare (Slot 5 Centerpiece - 1 NO YE KR DO) -->
         <li class="nkh__item" data-i="1">
           <a href="#services" class="nkh__card">
-            <img src="assets/images/ws_hero_haldi_kiss_sunglasses.webp" alt="Romantic couple in yellow sunglasses kissing during Haldi ceremony by Wedding Shedding" class="nkh__img" loading="eager" decoding="async" fetchpriority="high" style="object-position: center top !important;">
+            <img src="assets/images/ws_hero_haldi_kiss_sunglasses.webp" alt="Romantic couple in yellow sunglasses kissing during Haldi ceremony by Wedding Shedding" class="nkh__img" loading="eager" decoding="auto" fetchpriority="high" style="object-position: center top !important;">
             <span class="nkh__tint"></span>
             <span class="nkh__shade"></span>
             <span class="nkh__label"><b>01</b> Haldi Celebration</span>
@@ -975,7 +975,7 @@
         </div>
 
         <!-- Group 2 (Duplicate for Seamless Infinite Slide) -->
-        <div class="nkx-stats__group" aria-hidden="true">
+        <div class="nkx-stats__group" aria-hidden="true" inert>
           <div class="nkx-stats__item">
             <span class="nkx-stats__num">11<sup>+</sup></span>
             <div class="nkx-stats__body">
@@ -1610,8 +1610,8 @@
         <span>&#9650; 24A</span>
       </div>
 
-      <div class="portfolio-slider" id="portfolioSlider" aria-roledescription="carousel" aria-label="Signature Masterpieces Showcase Carousel">
-        <div class="portfolio-slider-track camera-reel-track" id="portfolioSliderTrack" role="region" aria-live="polite">
+      <div class="portfolio-slider" id="portfolioSlider" role="region" aria-roledescription="carousel" aria-label="Signature Masterpieces Showcase Carousel">
+        <div class="portfolio-slider-track camera-reel-track" id="portfolioSliderTrack" role="group" aria-label="Portfolio slides" aria-live="off">
           <!-- 1. Pastel Bridal Dream -->
           <div class="camera-reel-card project-card portfolio-slide" data-category="wedding" data-project="royal-wedding" role="group" aria-roledescription="slide" aria-label="1 of 8">
             <div class="camera-reel-imgwrap">
@@ -1763,7 +1763,7 @@
       <div class="portfolio-slider-status">
         <span class="portfolio-slide-count"><b id="portfolioSlideCurrent">01</b> / <span id="portfolioSlideTotal">08</span></span>
       </div>
-      <div class="portfolio-slide-bar" id="portfolioSlideBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" title="Slide countdown bar">
+      <div class="portfolio-slide-bar" id="portfolioSlideBar" role="progressbar" aria-label="Portfolio slideshow progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" title="Slide countdown bar">
         <div class="portfolio-slide-bar-fill" id="portfolioSlideBarFill"></div>
       </div>
       <div class="portfolio-slider-nav">
@@ -2042,7 +2042,7 @@
         <span class="films-counter-sep">/</span>
         <span class="films-slide-total" id="filmsTotal">07</span>
       </div>
-      <div class="films-slide-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="14">
+      <div class="films-slide-bar" role="progressbar" aria-label="Wedding films slideshow progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="14">
         <div class="films-slide-bar-fill" id="filmsProgressFill" style="width: 14.28%;"></div>
       </div>
       <div class="films-ctrl-btns">
@@ -2848,6 +2848,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js?v=16"></script>
+  <script src="assets/js/main.js?v=17"></script>
 </body>
 </html>
