@@ -277,6 +277,7 @@ function initHeader() {
 
   // Smooth Auto-scroll for in-page anchor links
   document.querySelectorAll('a[href*="#"]').forEach(link => {
+    if (link.classList.contains('ws-skip-link')) return;
     const href = link.getAttribute('href');
     if (!href || href === '#' || href === '#!') return;
     
@@ -397,6 +398,7 @@ function initHeroCarousel() {
     Array.prototype.forEach.call(items(), function(li, k) {
       const shown = k >= r[0] && k <= r[1];
       li.setAttribute('aria-hidden', shown ? 'false' : 'true');
+      li.inert = !shown;
       if (li.firstElementChild) li.firstElementChild.tabIndex = shown ? 0 : -1;
     });
     restartBar();
