@@ -2103,7 +2103,8 @@ function initInquiryModal() {
     const text = `Hi Sonu & Wedding Shedding team! 👋\n\nI would like to check availability and get an instant quote:\n• Name: ${name}\n• Phone: ${phone}\n• Event Date: ${date}\n• City / Venue: ${city}\n• Services: ${sList}${notes ? `\n• Notes: ${notes}` : ''}\n\nLooking forward to hearing from you!`;
 
     const waUrl = `https://wa.me/917503550936?text=${encodeURIComponent(text)}`;
-    window.open(waUrl, '_blank');
+    trackInquiryHandoff('whatsapp');
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     closeModal();
   });
 
@@ -2121,6 +2122,7 @@ function initInquiryModal() {
     const body = `Hi Sonu,\n\nI would like to check availability for Wedding Shedding:\n\n• Name: ${name}\n• Phone: ${phone}\n• Event Date: ${date}\n• City / Venue: ${city}\n• Services: ${sList}\n• Notes: ${notes}\n\nBest regards,\n${name}`;
 
     const mailUrl = `mailto:weddingshedding.india@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    trackInquiryHandoff('email');
     window.location.href = mailUrl;
     closeModal();
   });
@@ -2129,6 +2131,15 @@ function initInquiryModal() {
 /* ============================================================
    META PIXEL & GOOGLE ANALYTICS EVENT TRACKING
    ============================================================ */
+function trackInquiryHandoff(channel) {
+  // A validated handoff is not proof that a message was sent.
+  if (typeof window.fbq === 'function') {
+    window.fbq('trackCustom', 'InquiryHandoff', { channel: channel });
+  }
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'inquiry_handoff', { contact_method: channel });
+  }
+}
 function initMetaPixelTracking() {
   // Track WhatsApp & Phone Clicks
   document.addEventListener('click', (e) => {
@@ -2144,9 +2155,8 @@ function initMetaPixelTracking() {
         });
       }
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', {
-          event_category: 'Direct Inquiry',
-          event_label: 'WhatsApp Click'
+        window.gtag('event', 'contact_click', {
+          contact_method: 'whatsapp'
         });
       }
     } else if (href.startsWith('tel:')) {
@@ -2157,9 +2167,8 @@ function initMetaPixelTracking() {
         });
       }
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', {
-          event_category: 'Direct Inquiry',
-          event_label: 'Phone Call Click'
+        window.gtag('event', 'contact_click', {
+          contact_method: 'phone'
         });
       }
     } else if (link.classList.contains('mob-book') || link.classList.contains('btn-inquire')) {
@@ -2177,40 +2186,7 @@ function initMetaPixelTracking() {
     }
   });
 
-  // Track Inquiry Modal Submissions as High-Value Leads
-  const waBtn = document.getElementById('inqSubmitWa');
-  waBtn?.addEventListener('click', () => {
-    if (window.fbq) {
-      window.fbq('track', 'Lead', {
-        content_name: 'Instant Quote WhatsApp Lead',
-        currency: 'INR'
-      });
-    }
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', {
-        event_category: 'Instant Quote Modal',
-        event_label: 'Instant Quote WhatsApp Lead',
-        value: 1
-      });
-    }
-  });
 
-  const mailBtn = document.getElementById('inqSubmitMail');
-  mailBtn?.addEventListener('click', () => {
-    if (window.fbq) {
-      window.fbq('track', 'Lead', {
-        content_name: 'Instant Quote Email Lead',
-        currency: 'INR'
-      });
-    }
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', {
-        event_category: 'Instant Quote Modal',
-        event_label: 'Instant Quote Email Lead',
-        value: 1
-      });
-    }
-  });
 }
 
 
