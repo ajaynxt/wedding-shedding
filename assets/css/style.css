@@ -9694,3 +9694,15 @@ body:not(.theme-dark) .nk-locations-eyebrow,body:not(.theme-dark) .ws-seo-faq__e
 }
 body:not(.theme-dark) .nk-locations-heading + p,body:not(.theme-dark) .ws-seo-faq__eyebrow {color:#73521c;}
 .nkh .nkh__pause:focus-visible,.nkh a.nkh__card:focus-visible {outline:3px solid #e2b94a;outline-offset:-4px;}
+
+/* Customer-controlled, lightweight page scrolling */
+html {scroll-padding-top:80px;}
+.nkx-rv {opacity:1;transform:none;transition:none;}
+.portfolio-slider-track,.films-slider-track,.regional-slider-track,.services-slider-track,.nk-reviews-slider-track,.camera-reel-track {scroll-snap-type:x proximity;overscroll-behavior-x:contain;}
+.portfolio-slider-track .project-card,.camera-reel-card {scroll-snap-stop:normal;}
+@media(max-width:767px){
+  html {scroll-padding-top:64px;}
+  .nkh__item,.nkh__img,.camera-reel-card,.film-slide,.regional-slide,.service-card,.package-card {transition:none!important;}
+  .nkx-stats__track {animation:none!important;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important;}}
