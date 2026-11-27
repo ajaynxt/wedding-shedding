@@ -9682,3 +9682,15 @@ body:not(.theme-dark) .nk-locations-eyebrow,body:not(.theme-dark) .ws-seo-faq__e
   .nkh .nkh__subtitle { font-family:Arial,sans-serif!important; }
 }
 .nkh .nkh__pause { min-width:64px; }
+
+/* Keep mobile LCP image in normal flow and reserve a stable image box. */
+@media (max-width:767px) {
+  .nkh .nkh__item:nth-child(5) > .nkh__card { position:relative; inset:auto; height:100%; width:100%; overflow:hidden; }
+  .nkh .nkh__item:nth-child(5) img.nkh__img { position:relative; top:auto; left:auto; display:block; width:100%!important; height:100%!important; max-width:100%!important; transform:none!important; filter:none!important; opacity:1; object-fit:cover; }
+  .nkh button.nkh__btn { width:44px; height:44px; }
+  .nkh .nkh__pause { min-height:44px; }
+  .nk-ig-header a, .ws-reel-player button { min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+  .portfolio-filter-btn, .films-filter-btn { min-height:44px; }
+}
+body:not(.theme-dark) .nk-locations-heading + p,body:not(.theme-dark) .ws-seo-faq__eyebrow {color:#73521c;}
+.nkh .nkh__pause:focus-visible,.nkh a.nkh__card:focus-visible {outline:3px solid #e2b94a;outline-offset:-4px;}
