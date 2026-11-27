@@ -9650,3 +9650,15 @@ body.theme-dark .ws-intro-enter-btn {
 :where(a,button,input,textarea,select,summary,[tabindex]):focus-visible{outline:2px solid currentColor;outline-offset:4px}
 body:not(.theme-dark) .nk-locations-eyebrow,body:not(.theme-dark) .ws-seo-faq__eyebrow,body:not(.theme-dark) .nk-signature-author{color:#73521c}
 @media(prefers-reduced-motion:reduce){.nkx-stats__track{animation:none!important}.nkh__item,.nkh__card,.nkh__img{transition:none!important}}
+
+/* Static, readable trust strip on mobile and for reduced-motion users. */
+@media (max-width:767px), (prefers-reduced-motion:reduce) {
+  .nkx-stats .nkx-stats__track { width:100%; animation:none!important; transform:none!important; will-change:auto; }
+  .nkx-stats .nkx-stats__group[aria-hidden="true"] { display:none; }
+  .nkx-stats .nkx-stats__group:not([aria-hidden="true"]) { width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 10px; padding:12px; }
+  .nkx-stats .nkx-stats__item { min-width:0; white-space:normal; padding:4px; align-items:flex-start; flex-direction:column; gap:6px; }
+  .nkx-stats .nkx-stats__sep { display:none; }
+  .nkx-stats .nkx-stats__body { min-width:0; }
+  .nkx-stats .nkx-stats__sub { overflow-wrap:anywhere; }
+}
+.nkx-stats:focus-within .nkx-stats__track { animation-play-state:paused; }
